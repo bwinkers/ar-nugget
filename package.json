@@ -1,0 +1,27 @@
+{
+  "name": "ar-nugget",
+  "version": "0.1.0",
+  "description": "A Mongoose alternative using JSON Schema and Mongorito with generators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwinkers/nugget.git"
+  },
+  "keywords": [
+    "nugget",
+    "mongo",
+    "mongorito",
+    "json",
+    "schema",
+    "mongoose"
+  ],
+  "author": "Brian Winkers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwinkers/nugget/issues"
+  },
+  "homepage": "https://github.com/bwinkers/nugget#readme"
+}
