@@ -1,8 +1,8 @@
 <?php
 
-namespace Bwinkers\Nugget;
+namespace Activerules\Nugget;
 
-use Bwinkers\Nugget\Exceptions\NuggetException;
+use Activerules\Nugget\Exceptions\NuggetException;
 
 class Nugget
 {

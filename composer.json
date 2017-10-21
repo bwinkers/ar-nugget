@@ -1,5 +1,5 @@
 {
-    "name": "bwinkers/nugget",
+    "name": "activerules/nugget",
     "description": "Validate complex JSON objects and process them on change.",
     "keywords": [
         "forms", "api", "business object", "activerules"
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Bwinkers\\Nugget\\": "src"
+            "Activerules\\Nugget\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bwinkers\\Nugget\\Test\\": "tests"
+            "Activerules\\Nugget\\Test\\": "tests"
         }
     },
     "license": "MIT",
