@@ -1,0 +1,25 @@
+{
+    "name": "bwinkers/nugget",
+    "description": "Validate complex JSON objects and process them on change.",
+    "keywords": [
+        "forms", "api", "business object", "activerules"
+    ],
+    "type": "library",
+    "require": {
+        "mongodb/mongodb": "^1.1",
+        "justinrainbow/json-schema": "^5.2",
+        "nette/utils": "^2.4",
+        "nette/forms": "^2.4"
+    },
+    "require-dev": {
+        "tracy/tracy": "^2.4",
+        "nette/tester": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Winkers",
+            "email": "bwinkers@gmail.com"
+        }
+    ]
+}
