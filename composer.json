@@ -15,7 +15,18 @@
     "require-dev": {
         "tracy/tracy": "^2.4",
         "nette/tester": "^2.0",
-        "squizlabs/php_codesniffer": "^2.0"
+        "squizlabs/php_codesniffer": "^2.0",
+        "phpunit/phpunit" : "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bwinkers\\Nugget\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bwinkers\\Nugget\\Test\\": "tests"
+        }
     },
     "license": "MIT",
     "authors": [
