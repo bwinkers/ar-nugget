@@ -13,16 +13,26 @@ class Nugget
     public function __construct()
     {
     }
-
+    
     /**
-     * Test function
+     * Determine if an object is valid
      *
      * @param string $phrase Phrase to return
      *
      * @return string Returns the phrase passed in
      */
-    public function echoPhrase($phrase)
+    public function isValid(string $object, $schema)
     {
-        return $phrase;
+        $data = json_decode($object);
+
+        $validator     = new \League\JsonGuard\Validator($data, $schema);
+   
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            return false;
+        }
+        
+        return true;
     }
+
 }
