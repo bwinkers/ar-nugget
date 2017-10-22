@@ -10,13 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class NuggetTest extends TestCase {
   
-    public function __construct($name = null, array $data = array(), $dataName = '') {
-        
-        $this->
-
-        parent::__construct($name, $data, $dataName);
-    }
-
     public function testIsValid() {
       
         $nugget = new \Activerules\Nugget\Nugget();
