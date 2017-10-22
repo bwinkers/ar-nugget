@@ -1,10 +1,10 @@
 <?php
 
-namespace Bwinkers\Nugget\Exceptions;
+namespace Activerules\Nugget\Exceptions;
 
 /**
  * Class NuggetException
- * @package Bwinkers\Nugget\Exceptions
+ * @package Activerules\Nugget\Exceptions
  */
 class NuggetException extends \Exception
 {
