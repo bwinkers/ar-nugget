@@ -39,7 +39,7 @@ class NuggetTest extends TestCase {
         
         //echo $result;
         
-        $this->assertEquals(true, $result);
+        $this->assertEquals(false, $result);
     }
 
 }
