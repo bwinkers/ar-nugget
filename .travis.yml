@@ -2,10 +2,17 @@ language: php
 php:
   - 7.0
   - 7.1
+  
+before_script: phpenv config-add myconfig.ini
 
 install:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --no-interaction
+  - php composer.phar install --no-interaction
+  - pyrus install http://phptal.org/latest.tar.gz
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - composer install
+
 script:
   - mkdir -p build/logs
   - php vendor/bin/phpunit -c phpunit.xml.dist
