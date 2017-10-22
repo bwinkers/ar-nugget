@@ -11,7 +11,7 @@ services:
       links:
           - php
   php:
-      image: bwinkers/docker-php7-phalcon
+      image: bwinkers/docker-php7-phalcon-devtools
       volumes:
           - .:/var/www/html
           - /data/cache:/var/www/html/cache
