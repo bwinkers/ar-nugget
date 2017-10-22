@@ -12,6 +12,7 @@ install:
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
   - composer install
+  - pecl install mongo
 
 script:
   - mkdir -p build/logs
