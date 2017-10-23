@@ -8,13 +8,14 @@ before_script: phpenv config-add myconfig.ini
 install:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --no-interaction
-  - composer install
+  - travis_retry composer self-update
+  - travis_retry composer install
 
 script:
   - mkdir -p build/logs
   - php vendor/bin/phpunit -c phpunit.xml.dist
 
 after_success:
-  - travis_retry php vendor/bin/coveralls
+  # - travis_retry php vendor/bin/coveralls
   # or enable logging
   - travis_retry php vendor/bin/coveralls -v
