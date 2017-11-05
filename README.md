@@ -9,4 +9,10 @@ Rules can then be applied to any changes to an object.
 
 ## Testing 
 
-php vendor/bin/phpunit
+## Local only tests (run by Travis CI)
+
+```php vendor/bin/phpunit```
+
+## Using remote schema (broken on Travis CI)
+
+```php vendor/bin/phpunit tests/Activerules/Nugget/NuggetTest-Dev.php --testdox```
