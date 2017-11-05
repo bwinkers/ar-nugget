@@ -10,36 +10,88 @@ use PHPUnit\Framework\TestCase;
 
 class NuggetTest extends TestCase {
   
-    public function testIsValid() {
-      
-        $nugget = new \Activerules\Nugget\Nugget();
-        
+    /**
+     * This gets called before all test functions
+     */
+    public function setUp() 
+    {
+        // Use the League dereferencer
         $dereferencer  = \League\JsonReference\Dereferencer::draft4();
-        $personSchema        = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
-
-        $input = '{"name":"Brian"}';
-
-        $result = $nugget->isValid($input, $personSchema);
         
-        echo $result;
+        // A known valid Person object, it has a name property.
+        $this->validPerson = '{"name":"Brian"}';
         
+        // A known invalid Person object, it has NO name property.
+        $this->invalidPerson = '{"noName":"Brian"}';
+        
+        // A known valid Person/Address object, it has a name property and the address has a type.
+        $this->validPersonAddress = '{"name":"Brian","addresses": []}';
+        
+        // A known valid Person/Address object, it has a name property and the address has a type.
+        $this->invalidPersonAddress = '{"name":"Brian","addresses": ["notype":"street"]}';
+      
+        // All test will have these variables available to them under $this->
+        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->localPersonSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
+        $this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
+    }
+
+    /**
+     * This gets called after each test function
+     */
+    public function tearDown() 
+    {
+        //$this->myClass = null;
+    }
+  
+    /**
+     * A known valid schema should pass validation
+     */
+    public function testValidDataPasses() 
+    {
+        $result = $this->nugget->isValid($this->validPerson, $this->localPersonSchema);
+
         $this->assertEquals(true, $result);
     }
     
-    public function testIsValidFailure() {
-      
-        $nugget = new \Activerules\Nugget\Nugget();
-        
-        $dereferencer  = \League\JsonReference\Dereferencer::draft4();
-        $personSchema        = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
+    /**
+     * A known invalid schema should fail validation
+     */
+    public function testInvalidDataFails() 
+    {
+        $result = $this->nugget->isValid($this->invalidPerson, $this->localPersonSchema);
 
-        $input = '{"noName":"Brian"}';
-
-        $result = $nugget->isValid($input, $personSchema);
-        
-        //echo $result;
-        
         $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A known valid schema, fetched remotely, should pass validation
+     */
+    public function testValidDataPassesRemoteSchema() 
+    {
+        $result = $this->nugget->isValid($this->validPerson, $this->remotePersonSchema);
+
+        $this->assertEquals(true, $result);
+    }
+    
+    /**
+     * A known valid schema, fetched remotely, should pass validation
+     */
+    public function testInvalidDataFailsRemoteSchema() 
+    {
+        $result = $this->nugget->isValid($this->invalidPerson, $this->remotePersonSchema);
+
+        $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A valid object should pass a referenced remote schema validation
+     */
+    public function testValidDataPassesReferencedSchema() 
+    {
+        $result = $this->nugget->isValid($this->validPersonAddress, $this->localPersonSchema);
+
+        $this->assertEquals(true, $result);
     }
 
 }

@@ -15,7 +15,18 @@
         },
         "name": {
           "type": "string"
-        }
+        },
+        "addresses": {
+            "type": "array",
+              "items": {
+                      "type": "object",
+                      "schema": {
+                              "$ref": "https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/address.json"
+                          }
+                  }
+            
+        },
+        "address": { "$ref": "https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/address.json" },
     },
     "required": ["name"]
 }

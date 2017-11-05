@@ -4,6 +4,9 @@ namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
 
+/**
+ * The Nugget 
+ */
 class Nugget
 {
 
