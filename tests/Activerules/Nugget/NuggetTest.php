@@ -25,10 +25,13 @@ class NuggetTest extends TestCase {
         $this->invalidPerson = '{"noName":"Brian"}';
         
         // A known valid Person/Address object, it has a name property and the address has a type.
-        $this->validPersonAddress = '{"name":"Brian","addresses": []}';
+        $this->validPersonAddress = '{"name":"Brian","address": {"type": "street"} }';
+        
         
         // A known valid Person/Address object, it has a name property and the address has a type.
-        $this->invalidPersonAddress = '{"name":"Brian","addresses": ["notype":"street"]}';
+        $this->invalidPersonAddressEnum = '{"name":"Brian","address": {"type": "notstreet"} }';
+        // A known valid Person/Address object, it has a name property and the address has a type.
+        $this->invalidPersonAddress = '{"name":"Brian","address": {"notype":"street"}}';
       
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
@@ -92,6 +95,26 @@ class NuggetTest extends TestCase {
         $result = $this->nugget->isValid($this->validPersonAddress, $this->localPersonSchema);
 
         $this->assertEquals(true, $result);
+    }
+    
+    /**
+     * An invalid object should pass a referenced remote schema validation
+     */
+    public function testInvalidDataFailsReferencedSchema() 
+    {
+        $result = $this->nugget->isValid($this->invalidPersonAddress, $this->localPersonSchema);
+
+        $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A valid object should pass a referenced remote schema validation
+     */
+    public function testStringNotInEnumFails() 
+    {
+        $result = $this->nugget->isValid($this->invalidPersonAddressEnum, $this->localPersonSchema);
+
+        $this->assertEquals(false, $result);
     }
 
 }
