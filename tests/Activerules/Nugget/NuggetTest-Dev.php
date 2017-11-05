@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetTestLocalSchema extends TestCase {
+class NuggetTest extends TestCase {
   
     /**
      * This gets called before all test functions
@@ -36,10 +36,7 @@ class NuggetTestLocalSchema extends TestCase {
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
         $this->localPersonSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
-        
-        // NOTE: NO REMOTE SCHEMA TESTS IN THIS FILE!
-        // This test gets run by Travis CI and for some as of yet unresolved reason it does not work with remote schema.
-        //$this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
+        $this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
     }
 
     /**
@@ -66,6 +63,56 @@ class NuggetTestLocalSchema extends TestCase {
     public function testInvalidDataFails() 
     {
         $result = $this->nugget->isValid($this->invalidPerson, $this->localPersonSchema);
+
+        $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A known valid schema, fetched remotely, should pass validation
+     */
+    public function testValidDataPassesRemoteSchema() 
+    {
+        $result = $this->nugget->isValid($this->validPerson, $this->remotePersonSchema);
+
+        $this->assertEquals(true, $result);
+    }
+    
+    /**
+     * A known valid schema, fetched remotely, should pass validation
+     */
+    public function testInvalidDataFailsRemoteSchema() 
+    {
+        $result = $this->nugget->isValid($this->invalidPerson, $this->remotePersonSchema);
+
+        $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A valid object should pass a referenced remote schema validation
+     */
+    public function testValidDataPassesReferencedSchema() 
+    {
+        $result = $this->nugget->isValid($this->validPersonAddress, $this->localPersonSchema);
+
+        $this->assertEquals(true, $result);
+    }
+    
+    /**
+     * An invalid object should pass a referenced remote schema validation
+     */
+    public function testInvalidDataFailsReferencedSchema() 
+    {
+        $result = $this->nugget->isValid($this->invalidPersonAddress, $this->localPersonSchema);
+
+        $this->assertEquals(false, $result);
+    }
+    
+    /**
+     * A valid object should pass a referenced remote schema validation
+     */
+    public function testStringNotInEnumFails() 
+    {
+        $result = $this->nugget->isValid($this->invalidPersonAddressEnum, $this->localPersonSchema);
 
         $this->assertEquals(false, $result);
     }
