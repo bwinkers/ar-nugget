@@ -9,8 +9,8 @@
         "php" : ">=7.0",
         "nette/utils": "^2.4",
         "nette/forms": "^2.4",
-        "league/json-guard": "^1.0",
-        "league/json-reference": "^1.0"
+        "activerules/json-guard": "^1.0.3",
+        "activerules/json-reference": "^1.0.2"
     },
     "require-dev": {
         "tracy/tracy": "^2.4",
@@ -36,5 +36,5 @@
             "email": "bwinkers@gmail.com"
         }
     ],
-    "version": "0.1.0"
+    "version": "0.2.0"
 }
