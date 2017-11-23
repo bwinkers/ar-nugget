@@ -15,27 +15,29 @@ class NuggetTest extends TestCase {
      */
     public function setUp() 
     {
-        // Use the League dereferencer
-        $dereferencer  = \League\JsonReference\Dereferencer::draft4();
+        // Use the Activerules dereferencer
+        $dereferencer  = \Activerules\JsonReference\Dereferencer::draft4();
         
-        // A known valid Person object, it has a name property.
-        $this->validPerson = '{"name":"Brian"}';
+        $validPersonArray = ['name'=>'Brian'];
+        $this->validPerson = json_encode($validPersonArray);
         
-        // A known invalid Person object, it has NO name property.
-        $this->invalidPerson = '{"noName":"Brian"}';
-        
-        // A known valid Person/Address object, it has a name property and the address has a type.
-        $this->validPersonAddress = '{"name":"Brian","address": {"type": "street"} }';
+        $validPersonAddressArray = array_merge($validPersonArray, array('address'=>array('type'=>'street')));
+        $this->validPersonAddress = json_encode($validPersonAddressArray);
         
         
-        // A known valid Person/Address object, it has a name property and the address has a type.
-        $this->invalidPersonAddressEnum = '{"name":"Brian","address": {"type": "notstreet"} }';
-        // A known valid Person/Address object, it has a name property and the address has a type.
-        $this->invalidPersonAddress = '{"name":"Brian","address": {"notype":"street"}}';
+        $invalidPersonArray = ['noName'=>'Brian'];
+        $this->invalidPerson = json_encode($invalidPersonArray);
+        
+        $invalidPersonAddressEnumArray = array_merge($validPersonArray, array('address'=>array('type'=>'nostreet')));
+        $this->invalidPersonAddressEnum = json_encode($invalidPersonAddressEnumArray);
+        
+        $invalidPersonAddressArray = array_merge($validPersonArray, array('address'=>array('notype'=>'street')));
+        $this->invalidPersonAddress = json_encode($invalidPersonAddressArray);
       
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
-        $this->localPersonSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
+        $this->localPersonSchema = $dereferencer->dereference('file://' . dirname(dirname(dirname(__DIR__))) . '/schema/person.json');
+        $this->localRefPersonSchema = $dereferencer->dereference('file://' . dirname(dirname(dirname(__DIR__))) . '/schema/refPerson.json');
         $this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
     }
 
@@ -46,13 +48,13 @@ class NuggetTest extends TestCase {
     {
         //$this->myClass = null;
     }
-  
+    
     /**
      * A known valid schema should pass validation
      */
     public function testValidDataPasses() 
     {
-        $result = $this->nugget->isValid($this->validPerson, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->validPerson, $this->localPersonSchema);
 
         $this->assertEquals(true, $result);
     }
@@ -62,7 +64,7 @@ class NuggetTest extends TestCase {
      */
     public function testInvalidDataFails() 
     {
-        $result = $this->nugget->isValid($this->invalidPerson, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->invalidPerson, $this->localPersonSchema);
 
         $this->assertEquals(false, $result);
     }
@@ -72,7 +74,7 @@ class NuggetTest extends TestCase {
      */
     public function testValidDataPassesRemoteSchema() 
     {
-        $result = $this->nugget->isValid($this->validPerson, $this->remotePersonSchema);
+        $result = $this->nugget->meetsSchema($this->validPerson, $this->remotePersonSchema);
 
         $this->assertEquals(true, $result);
     }
@@ -82,7 +84,7 @@ class NuggetTest extends TestCase {
      */
     public function testInvalidDataFailsRemoteSchema() 
     {
-        $result = $this->nugget->isValid($this->invalidPerson, $this->remotePersonSchema);
+        $result = $this->nugget->meetsSchema($this->invalidPerson, $this->remotePersonSchema);
 
         $this->assertEquals(false, $result);
     }
@@ -92,7 +94,7 @@ class NuggetTest extends TestCase {
      */
     public function testValidDataPassesReferencedSchema() 
     {
-        $result = $this->nugget->isValid($this->validPersonAddress, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->validPersonAddress, $this->localPersonSchema);
 
         $this->assertEquals(true, $result);
     }
@@ -100,9 +102,9 @@ class NuggetTest extends TestCase {
     /**
      * An invalid object should pass a referenced remote schema validation
      */
-    public function testInvalidDataFailsReferencedSchema() 
+    public function testInvalidDataFailsLocalSchema() 
     {
-        $result = $this->nugget->isValid($this->invalidPersonAddress, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->invalidPersonAddress, $this->localPersonSchema);
 
         $this->assertEquals(false, $result);
     }
@@ -112,9 +114,18 @@ class NuggetTest extends TestCase {
      */
     public function testStringNotInEnumFails() 
     {
-        $result = $this->nugget->isValid($this->invalidPersonAddressEnum, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->invalidPersonAddressEnum, $this->localPersonSchema);
 
         $this->assertEquals(false, $result);
     }
+    
+    /**
+     *  Validate using a local reference
+     */
+    public function testLocalFileRefs() 
+    {
+        $result = $this->nugget->meetsSchema($this->validPersonAddress, $this->localRefPersonSchema);
 
+        $this->assertEquals(true, $result);
+    }
 }

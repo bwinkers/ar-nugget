@@ -1,0 +1,25 @@
+{
+  "title": "Nugget",
+  "description": "Core Nugget object, all other objects are extensions of it.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "A name used to refer to the thing or nugget."
+    },
+    "type": {
+      "type": "string",
+      "description": "Derived from the `Thing` object titles defined at schema.org.",
+      "enum": ["Action","CreativeWork","Event","Organization","Person","Place","Product"]
+    },
+    "properties": {
+      "type": "object",
+      "description": "The properties of the object."
+    },
+    "required": {
+      "type": "array",
+      "description": "A list of required property names."
+    }
+  },
+  "required": ["type"]
+}

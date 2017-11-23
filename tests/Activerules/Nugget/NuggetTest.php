@@ -16,7 +16,7 @@ class NuggetTestLocalSchema extends TestCase {
     public function setUp() 
     {
         // Use the League dereferencer
-        $dereferencer  = \League\JsonReference\Dereferencer::draft4();
+        $dereferencer  = \Activerules\JsonReference\Dereferencer::draft4();
         
         // A known valid Person object, it has a name property.
         $this->validPerson = '{"name":"Brian"}';
@@ -55,7 +55,7 @@ class NuggetTestLocalSchema extends TestCase {
      */
     public function testValidDataPasses() 
     {
-        $result = $this->nugget->isValid($this->validPerson, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->validPerson, $this->localPersonSchema);
 
         $this->assertEquals(true, $result);
     }
@@ -65,7 +65,7 @@ class NuggetTestLocalSchema extends TestCase {
      */
     public function testInvalidDataFails() 
     {
-        $result = $this->nugget->isValid($this->invalidPerson, $this->localPersonSchema);
+        $result = $this->nugget->meetsSchema($this->invalidPerson, $this->localPersonSchema);
 
         $this->assertEquals(false, $result);
     }
