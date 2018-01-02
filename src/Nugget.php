@@ -20,15 +20,15 @@ class Nugget
     /**
      * Determine if an object is valid
      *
-     * @param string $phrase Phrase to return
-     *
-     * @return string Returns the phrase passed in
+     * @param string $object, JSON serialized object
+     * @param type $schema
+     * @return boolean
      */
     public function meetsSchema(string $object, $schema)
     {
         $data = json_decode($object);
 
-        $validator     = new \Activerules\JsonGuard\Validator($data, $schema);
+        $validator = new \Activerules\JsonGuard\Validator($data, $schema);
    
         if ($validator->fails()) {
             $errors = $validator->errors();
@@ -40,25 +40,31 @@ class Nugget
     
     /**
      * Remove all properties not defined in the schema
-     *
-     * @param string $phrase Phrase to return
-     *
-     * @return string Returns the phrase passed in
+     * 
+     * @param string $object
+     * @param type $schema
+     * @return boolean
      */
-    public function limitToSchema(string $object, $schema)
+    public function limitToSchema(string $object, $schema, $jsonOut=true)
     {
         $data = json_decode($object);
-        
-        var_export($schema);
 
-        $validator     = new \Activerules\JsonGuard\Validator($data, $schema);
-   
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            return false;
+        // We loop through the top level schema objects and only use the data elements defined therein.
+        // We don't loop though data becasue it could be much larger than the schema.
+        // Start with an empty array.
+        $cleanObject = [];
+        
+        foreach($schema->properties as $prop => $val) {
+            if(isset($data->$prop)) {
+                $cleanObject[$prop] = $data->$prop;
+            }
+        }
+
+        if(!$jsonOut) {
+            return $cleanObject;
         }
         
-        return true;
+        return json_encode($cleanObject);
     }
 
 }

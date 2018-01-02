@@ -1,0 +1,9 @@
+{
+    "title": "Person",
+    "description": "A person (alive, dead, undead, or fictional)",
+    "required": [],
+    "properties": [],
+    "extends": [
+        "Thing"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "description": "Test result",
+    "label": "Result",
+    "name": "result",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/result"
+    }
+}

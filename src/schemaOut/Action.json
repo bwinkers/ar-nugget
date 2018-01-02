@@ -1,0 +1,45 @@
+{
+    "title": "Action",
+    "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.",
+    "required": [],
+    "properties": {
+        "error": {
+            "description": "Error message",
+            "label": "Error",
+            "name": "error"
+        },
+        "result": {
+            "description": "Test result",
+            "label": "Result",
+            "name": "result",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/result"
+            }
+        }
+    },
+    "definitions": {
+        "result": {
+            "title": "Result",
+            "description": "Test Result",
+            "required": [],
+            "properties": {
+                "error": {
+                    "description": "Error message",
+                    "label": "Error",
+                    "name": "error"
+                },
+                "test": {
+                    "description": "Test result",
+                    "label": "Result",
+                    "name": "result",
+                    "type": "array",
+                    "items": {
+                        "$ref": "http://json-schema.org/draft-07/schema"
+                    }
+                }
+            },
+            "type": "object"
+        }
+    }
+}

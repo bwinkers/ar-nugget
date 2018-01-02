@@ -1,0 +1,34 @@
+{
+    "title": "Person",
+    "description": "A person (alive, dead, undead, or fictional)",
+    "required": [],
+    "properties": [
+        "additionalName",
+        "address",
+        "affiliation",
+        "alumniOf",
+        "award",
+        "birthDate",
+        "birthPlace",
+        "brand",
+        "children",
+        "colleague",
+        "contactPoint",
+        "deathDate",
+        "deathPlace",
+        "duns",
+        "email",
+        "familyName",
+        "faxNumber",
+        "follows",
+        "funder",
+        "gender",
+        "givenName",
+        "globalLocationNumber",
+        "hasOccupation",
+        "hasOfferCatalog"        
+    ],
+    "extends": [
+        "Thing"
+    ]
+}

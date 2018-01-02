@@ -23,8 +23,7 @@ class NuggetTest extends TestCase {
         
         $validPersonAddressArray = array_merge($validPersonArray, array('address'=>array('type'=>'street')));
         $this->validPersonAddress = json_encode($validPersonAddressArray);
-        
-        
+
         $invalidPersonArray = ['noName'=>'Brian'];
         $this->invalidPerson = json_encode($invalidPersonArray);
         
