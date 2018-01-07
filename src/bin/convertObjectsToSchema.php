@@ -7,7 +7,7 @@ $objectDir = realpath('./objects');
 // They can be extended and reused across objects.
 $propertyDir = realpath('./properties');
 
-// A writeable directory for the OpenAPI docs
+// A writeable directory for the OpenAPI schema definitions
 $schemaDir = './schemaOut';
 if (false === realpath($schemaDir)) {
     mkdir($schemaDir);
@@ -213,6 +213,4 @@ function loadRef($refString, & $defs) {
             }
         }
     }
-      
-    
 }
