@@ -1,23 +1,31 @@
 <?php
 
+$shortopts  = "";
+$shortopts .= "o:";  // Required - path to object definitions
+$shortopts .= "p:";  // Required - path to property definitions
+$shortopts .= "s:";  // Required - path for generated Open API schema objects
+
+$options = getopt($shortopts);
+
 // Objects and their related properties are defined here. 
-$objectDir = realpath('./objects');
+$objectDir = realpath($options['o']);
 
 // Properties are stored here.
 // They can be extended and reused across objects.
-$propertyDir = realpath('./properties');
+$propertyDir = realpath($options['p']);
 
 // A writeable directory for the OpenAPI schema definitions
-$schemaDir = './schemaOut';
-if (false === realpath($schemaDir)) {
-    mkdir($schemaDir);
-    $schemaDir = realpath($schemaDir);
+$schemaDir = realpath($options['s']);
+// Attempt creating directory if needed
+if (false === $schemaDir) {
+    mkdir($options['s']);
+    $schemaDir = realpath($options['s']);
 }
 
 // Create a directory iterator for the defined objects directory
 $dir = new DirectoryIterator($objectDir);
 
-// Iterate through directories
+// Iterate through object definitions
 foreach ($dir as $fileInfo) {
 
     // Property objects
@@ -25,12 +33,12 @@ foreach ($dir as $fileInfo) {
 
     // definition objects
     $defs = array();
+    
+    // Get the file name
+    $name = $fileInfo->getFilename();
 
-    // Skip '..' etc
-    if (!$fileInfo->isDot()) {
-        
-        // Use Object name as Schema name
-        $name = $fileInfo->getFilename();
+    // Skip '.', '..' and `.*` files
+    if (!$fileInfo->isDot() && substr($name,0,1) != '.') {
 
         // Get the full path to the JSON schema file
         $file = realpath ($objectDir.'/'.$name);

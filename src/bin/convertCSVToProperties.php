@@ -17,33 +17,38 @@ $dir = new DirectoryIterator($propsDir);
 // Iterate through files in the incoming properties directory
 foreach ($dir as $fileInfo) {
 
-    // Property objects
-    $props = array();
+    // Get the file name
+    $name = $fileInfo->getFilename();
 
-    // definition objects
-    $defs = array();
-
-    // Skip '..' etc
-    if (!$fileInfo->isDot()) {
-        
-        // Use Object name as Schema name
-        $name = $fileInfo->getFilename();
-
-        // Get the full path to the JSON schema file
-        $file = realpath ($objectDir.'/'.$name);
+    // Skip '.', '..' and `.*` files
+    if (!$fileInfo->isDot() && substr($name,0,1) != '.') {
 
         
-        // JSON encode the obj to get a valid spec JSON
-        $spec = json_encode($obj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        var_dump($fileInfo->getPathname());
         
-        // Create a writeable file pointer for the property definition
-        $fp = fopen($propertyDir.'/'.$name, 'w');
+        $fullPath = $fileInfo->getPathname();
+        
+        $row = 1;
+        if (($handle = fopen($fullPath, "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
+                $num = count($data);
+                echo "<p> $num fields in line $row: <br /></p>\n";
+                $row++;
+                for ($c=0; $c < $num; $c++) {
+                    echo $data[$c] . "<br />\n";
+                }
+            }
+            fclose($handle);
+        }
 
+        
+
+        
         // Write the spec to the file pointer
-        fwrite($fp, $spec);
+        //fwrite($fp, $spec);
 
         // Close the file pointer
-        fclose($fp);
+        //fclose($fp);
     }
 }
 
