@@ -1,17 +1,1 @@
-version: '2'
-services:
-  web:
-      image: nginx:latest
-      ports:
-          - "8686:80"
-      volumes:
-          - .:/var/www/html
-          - ./site.conf:/etc/nginx/conf.d/default.conf
-          - /data/cache:/var/www/html/cache
-      links:
-          - php
-  php:
-      image: bwinkers/docker-php7-phalcon-devtools
-      volumes:
-          - .:/var/www/html
-          - /data/cache:/var/www/html/cache
+null

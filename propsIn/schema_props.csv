@@ -1,0 +1,632 @@
+about	Thing 	"The subject matter of the content.
+Inverse property: subjectOf."
+accessMode	Text 	The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.
+accessModeSufficient	Text 	A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include: auditory, tactile, textual, visual.
+accessibilityAPI	Text 	Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).
+accessibilityControl	Text 	Identifies input methods that are sufficient to fully control the described resource (WebSchemas wiki lists possible values).
+accessibilityFeature	Text 	Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).
+accessibilityHazard	Text 	A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 (WebSchemas wiki lists possible values).
+accessibilitySummary	Text 	"A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as ""short descriptions are present but long descriptions will be needed for non-visual users"" or ""short descriptions are present and no long descriptions are needed."""
+accountablePerson	Person 	Specifies the Person that is legally accountable for the CreativeWork.
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+alternativeHeadline	Text 	A secondary title of the CreativeWork.
+associatedMedia	MediaObject 	A media object that encodes this CreativeWork. This property is a synonym for encoding.
+audience	Audience 	An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.
+audio	AudioObject 	An embedded audio object.
+author	"Organization  or 
+Person "	The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+award	Text 	An award won by or for this item. Supersedes awards.
+character	Person 	Fictional person connected with a creative work.
+citation	"CreativeWork  or 
+Text "	A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+comment	Comment 	Comments, typically from users.
+commentCount	Integer 	The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+contentLocation	Place 	The location depicted or described in the content. For example, the location in a photograph or painting.
+contentRating	Text 	Official rating of a piece of content—for example,'MPAA PG-13'.
+contentReferenceTime	DateTime 	The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+contributor	"Organization  or 
+Person "	A secondary contributor to the CreativeWork or Event.
+copyrightHolder	"Organization  or 
+Person "	The party holding the legal copyright to the CreativeWork.
+copyrightYear	Number 	The year during which the claimed copyright for the CreativeWork was first asserted.
+creator	"Organization  or 
+Person "	The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+dateCreated	"Date  or 
+DateTime "	The date on which the CreativeWork was created or the item was added to a DataFeed.
+dateModified	"Date  or 
+DateTime "	The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+datePublished	Date 	Date of first broadcast/publication.
+discussionUrl	URL 	A link to the page containing the comments of the CreativeWork.
+editor	Person 	Specifies the Person who edited the CreativeWork.
+educationalAlignment	AlignmentObject 	An alignment to an established educational framework.
+educationalUse	Text 	The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+encoding	MediaObject 	A media object that encodes this CreativeWork. This property is a synonym for associatedMedia. Supersedes encodings.
+exampleOfWork	CreativeWork 	"A creative work that this work is an example/instance/realization/derivation of.
+Inverse property: workExample."
+expires	Date 	Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, or a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+fileFormat	"Text  or 
+URL "	Media type, typically MIME format (see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+funder	"Organization  or 
+Person "	A person or organization that supports (sponsors) something through some kind of financial contribution.
+genre	"Text  or 
+URL "	Genre of the creative work, broadcast channel or group.
+hasPart	CreativeWork 	"Indicates a CreativeWork that is (in some sense) a part of this CreativeWork.
+Inverse property: isPartOf."
+headline	Text 	Headline of the article.
+inLanguage	"Language  or 
+Text "	The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.
+interactionStatistic	InteractionCounter 	The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used. Supersedes interactionCount.
+interactivityType	Text 	The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+isAccessibleForFree	Boolean 	A flag to signal that the item, event, or place is accessible for free. Supersedes free.
+isBasedOn	"CreativeWork  or 
+Product  or 
+URL "	A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. Supersedes isBasedOnUrl.
+isFamilyFriendly	Boolean 	Indicates whether this content is family friendly.
+isPartOf	CreativeWork 	"Indicates a CreativeWork that this CreativeWork is (in some sense) part of.
+Inverse property: hasPart."
+keywords	Text 	Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
+learningResourceType	Text 	The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+license	"CreativeWork  or 
+URL "	A license document that applies to this content, typically indicated by URL.
+locationCreated	Place 	The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+mainEntity	Thing 	"Indicates the primary entity described in some page or other CreativeWork.
+Inverse property: mainEntityOfPage."
+material	"Product  or 
+Text  or 
+URL "	A material that something is made from, e.g. leather, wool, cotton, paper.
+mentions	Thing 	Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+offers	Offer 	An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+position	"Integer  or 
+Text "	The position of an item in a series or sequence of items.
+producer	"Organization  or 
+Person "	The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+provider	"Organization  or 
+Person "	The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.
+publication	PublicationEvent 	A publication event associated with the item.
+publisher	"Organization  or 
+Person "	The publisher of the creative work.
+publisherImprint	Organization 	The publishing division which published the comic.
+publishingPrinciples	"CreativeWork  or 
+URL "	"The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology."
+recordedAt	Event 	"The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+Inverse property: recordedIn."
+releasedEvent	PublicationEvent 	The place and time the release was issued, expressed as a PublicationEvent.
+review	Review 	A review of the item. Supersedes reviews.
+schemaVersion	"Text  or 
+URL "	Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.
+sourceOrganization	Organization 	The Organization on whose behalf the creator was working.
+spatialCoverage	Place 	The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York. Supersedes spatial.
+sponsor	"Organization  or 
+Person "	A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+temporalCoverage	"DateTime  or 
+Text  or 
+URL "	"The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written ""2011/2012""). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via ""1939/1945"". Supersedes datasetTimeInterval, temporal."
+text	Text 	The textual content of this CreativeWork.
+thumbnailUrl	URL 	A thumbnail image relevant to the Thing.
+timeRequired	Duration 	Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.
+translationOfWork	CreativeWork 	"The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
+Inverse property: workTranslation."
+translator	"Organization  or 
+Person "	Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+typicalAgeRange	Text 	The typical expected age range, e.g. '7-9', '11-'.
+version	"Number  or 
+Text "	The version of the CreativeWork embodied by a specified resource.
+video	VideoObject 	An embedded video object.
+workExample	CreativeWork 	"Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+Inverse property: exampleOfWork."
+workTranslation	CreativeWork 	"A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.
+Inverse property: translationOfWork."
+additionalType	URL 	An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+alternateName	Text 	An alias for the item.
+description	Text 	A description of the item.
+disambiguatingDescription	Text 	A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+identifier	"PropertyValue  or 
+Text  or 
+URL "	The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+image	"ImageObject  or 
+URL "	An image of the item. This can be a URL or a fully described ImageObject.
+mainEntityOfPage	"CreativeWork  or 
+URL "	"Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notesfor details.
+Inverse property: mainEntity."
+name	Text 	The name of the item.
+potentialAction	Action 	Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+sameAs	URL 	URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+subjectOf	"CreativeWork  or 
+Event "	"A CreativeWork or Event about this Thing..
+Inverse property: about."
+url	URL 	URL of the item.
+caption	Text 	The caption for this object.
+exifData	"PropertyValue  or 
+Text "	exif data for this object.
+representativeOfPage	Boolean 	Indicates whether this image is representative of the content of the page.
+thumbnail	ImageObject 	Thumbnail image for an image or video.
+about	Thing 	"The subject matter of the content.
+Inverse property: subjectOf."
+actor	Person 	An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. Supersedes actors.
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+attendee	"Organization  or 
+Person "	A person or organization attending the event. Supersedes attendees.
+audience	Audience 	An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.
+composer	"Organization  or 
+Person "	The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+contributor	"Organization  or 
+Person "	A secondary contributor to the CreativeWork or Event.
+director	Person 	A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.
+doorTime	DateTime 	The time admission will commence.
+duration	Duration 	The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+endDate	"Date  or 
+DateTime "	The end date and time of the item (in ISO 8601 date format).
+eventStatus	EventStatusType 	An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+funder	"Organization  or 
+Person "	A person or organization that supports (sponsors) something through some kind of financial contribution.
+inLanguage	"Language  or 
+Text "	The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.
+isAccessibleForFree	Boolean 	A flag to signal that the item, event, or place is accessible for free. Supersedes free.
+location	"Place  or 
+PostalAddress  or 
+Text "	The location of for example where the event is happening, an organization is located, or where an action takes place.
+maximumAttendeeCapacity	Integer 	The total number of individuals that may attend an event or venue.
+offers	Offer 	An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+organizer	"Organization  or 
+Person "	An organizer of an Event.
+performer	"Organization  or 
+Person "	A performer at the event—for example, a presenter, musician, musical group or actor. Supersedes performers.
+previousStartDate	Date 	Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+recordedIn	CreativeWork 	"The CreativeWork that captured all or part of this Event.
+Inverse property: recordedAt."
+remainingAttendeeCapacity	Integer 	The number of attendee places for an event that remain unallocated.
+review	Review 	A review of the item. Supersedes reviews.
+sponsor	"Organization  or 
+Person "	A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+startDate	"Date  or 
+DateTime "	The start date and time of the item (in ISO 8601 date format).
+subEvent	Event 	"An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supersedes subEvents.
+Inverse property: superEvent."
+superEvent	Event 	"An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+Inverse property: subEvent."
+translator	"Organization  or 
+Person "	Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+typicalAgeRange	Text 	The typical expected age range, e.g. '7-9', '11-'.
+workFeatured	CreativeWork 	A work featured in some event, e.g. exhibited in an ExhibitionEvent. Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
+workPerformed	CreativeWork 	A work performed in some event, for example a play performed in a TheaterEvent.
+additionalType	URL 	An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+alternateName	Text 	An alias for the item.
+description	Text 	A description of the item.
+disambiguatingDescription	Text 	A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+identifier	"PropertyValue  or 
+Text  or 
+URL "	The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+image	"ImageObject  or 
+URL "	An image of the item. This can be a URL or a fully described ImageObject.
+mainEntityOfPage	"CreativeWork  or 
+URL "	"Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notesfor details.
+Inverse property: mainEntity."
+name	Text 	The name of the item.
+potentialAction	Action 	Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+sameAs	URL 	URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+subjectOf	"CreativeWork  or 
+Event "	"A CreativeWork or Event about this Thing..
+Inverse property: about."
+url	URL 	URL of the item.
+actionableFeedbackPolicy	"CreativeWork  or 
+URL "	For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+address	"PostalAddress  or 
+Text "	Physical address of the item.
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+alumni	Person 	"Alumni of an organization.
+Inverse property: alumniOf."
+areaServed	"AdministrativeArea  or 
+GeoShape  or 
+Place  or 
+Text "	The geographic area where a service or offered item is provided. Supersedes serviceArea.
+award	Text 	An award won by or for this item. Supersedes awards.
+brand	"Brand  or 
+Organization "	The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+contactPoint	ContactPoint 	A contact point for a person or organization. Supersedes contactPoints.
+correctionsPolicy	"CreativeWork  or 
+URL "	For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+department	Organization 	A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+dissolutionDate	Date 	The date that this organization was dissolved.
+diversityPolicy	"CreativeWork  or 
+URL "	Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+duns	Text 	The Dun & Bradstreet DUNS number for identifying an organization or business person.
+email	Text 	Email address.
+employee	Person 	Someone working for this organization. Supersedes employees.
+ethicsPolicy	"CreativeWork  or 
+URL "	Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+event	Event 	Upcoming or past event associated with this place, organization, or action. Supersedes events.
+faxNumber	Text 	The fax number.
+founder	Person 	A person who founded this organization. Supersedes founders.
+foundingDate	Date 	The date that this organization was founded.
+foundingLocation	Place 	The place where the Organization was founded.
+funder	"Organization  or 
+Person "	A person or organization that supports (sponsors) something through some kind of financial contribution.
+globalLocationNumber	Text 	The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+hasOfferCatalog	OfferCatalog 	Indicates an OfferCatalog listing for this Organization, Person, or Service.
+hasPOS	Place 	Points-of-Sales operated by the organization or person.
+isicV4	Text 	The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+legalName	Text 	The official name of the organization, e.g. the registered company name.
+leiCode	Text 	An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+location	"Place  or 
+PostalAddress  or 
+Text "	The location of for example where the event is happening, an organization is located, or where an action takes place.
+logo	"ImageObject  or 
+URL "	An associated logo.
+makesOffer	Offer 	"A pointer to products or services offered by the organization or person.
+Inverse property: offeredBy."
+member	"Organization  or 
+Person "	"A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes members, musicGroupMember.
+Inverse property: memberOf."
+memberOf	"Organization  or 
+ProgramMembership "	"An Organization (or ProgramMembership) to which this Person or Organization belongs.
+Inverse property: member."
+naics	Text 	The North American Industry Classification System (NAICS) code for a particular organization or business person.
+numberOfEmployees	QuantitativeValue 	The number of employees in an organization e.g. business.
+owns	"OwnershipInfo  or 
+Product "	Products owned by the organization or person.
+parentOrganization	Organization 	"The larger organization that this organization is a subOrganization of, if any. Supersedes branchOf.
+Inverse property: subOrganization."
+publishingPrinciples	"CreativeWork  or 
+URL "	"The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology."
+review	Review 	A review of the item. Supersedes reviews.
+seeks	Demand 	A pointer to products or services sought by the organization or person (demand).
+sponsor	"Organization  or 
+Person "	A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+subOrganization	Organization 	"A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+Inverse property: parentOrganization."
+taxID	Text 	The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+telephone	Text 	The telephone number.
+unnamedSourcesPolicy	"CreativeWork  or 
+URL "	For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.
+vatID	Text 	The Value-added Tax ID of the organization or person.
+additionalName	Text 	An additional name for a Person, can be used for a middle name.
+address	"PostalAddress  or 
+Text "	Physical address of the item.
+affiliation	Organization 	An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+alumniOf	"EducationalOrganization  or 
+Organization "	"An organization that the person is an alumni of.
+Inverse property: alumni."
+award	Text 	An award won by or for this item. Supersedes awards.
+birthDate	Date 	Date of birth.
+birthPlace	Place 	The place where the person was born.
+brand	"Brand  or 
+Organization "	The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+children	Person 	A child of the person.
+colleague	"Person  or 
+URL "	A colleague of the person. Supersedes colleagues.
+contactPoint	ContactPoint 	A contact point for a person or organization. Supersedes contactPoints.
+deathDate	Date 	Date of death.
+deathPlace	Place 	The place where the person died.
+duns	Text 	The Dun & Bradstreet DUNS number for identifying an organization or business person.
+email	Text 	Email address.
+familyName	Text 	Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
+faxNumber	Text 	The fax number.
+follows	Person 	The most generic uni-directional social relation.
+funder	"Organization  or 
+Person "	A person or organization that supports (sponsors) something through some kind of financial contribution.
+gender	"GenderType  or 
+Text "	Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.
+givenName	Text 	Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
+globalLocationNumber	Text 	The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+hasOccupation	Occupation 	The Person's occupation. For past professions, use Role for expressing dates.
+hasOfferCatalog	OfferCatalog 	Indicates an OfferCatalog listing for this Organization, Person, or Service.
+hasPOS	Place 	Points-of-Sales operated by the organization or person.
+height	"Distance  or 
+QuantitativeValue "	The height of the item.
+homeLocation	"ContactPoint  or 
+Place "	A contact location for a person's residence.
+honorificPrefix	Text 	An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+honorificSuffix	Text 	An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.
+isicV4	Text 	The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+jobTitle	Text 	The job title of the person (for example, Financial Manager).
+knows	Person 	The most generic bi-directional social/work relation.
+makesOffer	Offer 	"A pointer to products or services offered by the organization or person.
+Inverse property: offeredBy."
+memberOf	"Organization  or 
+ProgramMembership "	"An Organization (or ProgramMembership) to which this Person or Organization belongs.
+Inverse property: member."
+naics	Text 	The North American Industry Classification System (NAICS) code for a particular organization or business person.
+nationality	Country 	Nationality of the person.
+netWorth	"MonetaryAmount  or 
+PriceSpecification "	The total financial value of the person as calculated by subtracting assets from liabilities.
+owns	"OwnershipInfo  or 
+Product "	Products owned by the organization or person.
+parent	Person 	A parent of this person. Supersedes parents.
+performerIn	Event 	Event that this person is a performer or participant in.
+publishingPrinciples	"CreativeWork  or 
+URL "	"The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork.
+While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology."
+relatedTo	Person 	The most generic familial relation.
+seeks	Demand 	A pointer to products or services sought by the organization or person (demand).
+sibling	Person 	A sibling of the person. Supersedes siblings.
+sponsor	"Organization  or 
+Person "	A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+spouse	Person 	The person's spouse.
+taxID	Text 	The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+telephone	Text 	The telephone number.
+vatID	Text 	The Value-added Tax ID of the organization or person.
+weight	QuantitativeValue 	The weight of the product or person.
+workLocation	"ContactPoint  or 
+Place "	A contact location for a person's place of work.
+worksFor	Organization 	Organizations that the person works for.
+additionalProperty	PropertyValue 	"A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
+Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism."
+address	"PostalAddress  or 
+Text "	Physical address of the item.
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+amenityFeature	LocationFeatureSpecification 	An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+branchCode	Text 	"A short textual code (also called ""store code"") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.
+For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code ""3047"" is a branchCode for a particular branch."
+containedInPlace	Place 	"The basic containment relation between a place and one that contains it. Supersedes containedIn.
+Inverse property: containsPlace."
+containsPlace	Place 	"The basic containment relation between a place and another that it contains.
+Inverse property: containedInPlace."
+event	Event 	Upcoming or past event associated with this place, organization, or action. Supersedes events.
+faxNumber	Text 	The fax number.
+geo	"GeoCoordinates  or 
+GeoShape "	The geo coordinates of the place.
+geospatiallyContains	"GeospatialGeometry  or 
+Place "	"Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. ""a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a"". As defined in DE-9IM."
+geospatiallyCoveredBy	"GeospatialGeometry  or 
+Place "	Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.
+geospatiallyCovers	"GeospatialGeometry  or 
+Place "	"Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. ""Every point of b is a point of (the interior or boundary of) a"". As defined in DE-9IM."
+geospatiallyCrosses	"GeospatialGeometry  or 
+Place "	"Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: ""a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them"". As defined in DE-9IM."
+geospatiallyDisjoint	"GeospatialGeometry  or 
+Place "	"Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries."" (a symmetric relationship, as defined in DE-9IM)"
+geospatiallyEquals	"GeospatialGeometry  or 
+Place "	"Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. ""Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other"" (a symmetric relationship)"
+geospatiallyIntersects	"GeospatialGeometry  or 
+Place "	Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.
+geospatiallyOverlaps	"GeospatialGeometry  or 
+Place "	Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.
+geospatiallyTouches	"GeospatialGeometry  or 
+Place "	"Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points."" (a symmetric relationship, as defined in DE-9IM )"
+geospatiallyWithin	"GeospatialGeometry  or 
+Place "	Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.
+globalLocationNumber	Text 	The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+hasMap	"Map  or 
+URL "	A URL to a map of the place. Supersedes map, maps.
+isAccessibleForFree	Boolean 	A flag to signal that the item, event, or place is accessible for free. Supersedes free.
+isicV4	Text 	The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+logo	"ImageObject  or 
+URL "	An associated logo.
+maximumAttendeeCapacity	Integer 	The total number of individuals that may attend an event or venue.
+openingHoursSpecification	OpeningHoursSpecification 	The opening hours of a certain place.
+photo	"ImageObject  or 
+Photograph "	A photograph of this place. Supersedes photos.
+publicAccess	Boolean 	A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value
+review	Review 	A review of the item. Supersedes reviews.
+smokingAllowed	Boolean 	Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+specialOpeningHoursSpecification	OpeningHoursSpecification 	"The special opening hours of a certain place.
+Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours."
+telephone	Text 	The telephone number.
+currenciesAccepted	Text 	The currency accepted (in ISO 4217 currency format).
+openingHours	Text 	"The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.
+Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su.
+Times are specified using 24:00 time. For example, 3pm is specified as 15:00.
+Here is an example: <time itemprop=""openingHours"" datetime=""Tu,Th 16:00-20:00"">Tuesdays and Thursdays 4-8pm</time>.
+If a business is open 7 days a week, then it can be specified as <time itemprop=""openingHours"" datetime=""Mo-Su"">Monday through Sunday, all day</time>."
+paymentAccepted	Text 	Cash, credit card, etc.
+priceRange	Text 	The price range of the business, for example $$$.
+acceptsReservations	"Boolean  or 
+Text  or 
+URL "	Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.
+hasMenu	"Menu  or 
+Text  or 
+URL "	Either the actual menu as a structured representation, as text, or a URL of the menu. Supersedes menu.
+servesCuisine	Text 	The cuisine of the restaurant.
+starRating	Rating 	An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+additionalProperty	PropertyValue 	"A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.
+Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism."
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+audience	Audience 	An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.
+award	Text 	An award won by or for this item. Supersedes awards.
+brand	"Brand  or 
+Organization "	The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+category	"PhysicalActivityCategory  or 
+Text  or 
+Thing "	A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+color	Text 	The color of the product.
+depth	"Distance  or 
+QuantitativeValue "	The depth of the item.
+gtin12	Text 	The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.
+gtin13	Text 	The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.
+gtin14	Text 	The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.
+gtin8	Text 	The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.
+height	"Distance  or 
+QuantitativeValue "	The height of the item.
+isAccessoryOrSparePartFor	Product 	A pointer to another product (or multiple products) for which this product is an accessory or spare part.
+isConsumableFor	Product 	A pointer to another product (or multiple products) for which this product is a consumable.
+isRelatedTo	"Product  or 
+Service "	A pointer to another, somehow related product (or multiple products).
+isSimilarTo	"Product  or 
+Service "	A pointer to another, functionally similar product (or multiple products).
+itemCondition	OfferItemCondition 	A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
+logo	"ImageObject  or 
+URL "	An associated logo.
+manufacturer	Organization 	The manufacturer of the product.
+material	"Product  or 
+Text  or 
+URL "	A material that something is made from, e.g. leather, wool, cotton, paper.
+model	"ProductModel  or 
+Text "	The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+mpn	Text 	The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+offers	Offer 	An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+productID	Text 	"The product identifier, such as ISBN. For example: meta itemprop=""productID"" content=""isbn:123-456-789""."
+productionDate	Date 	The date of production of the item, e.g. vehicle.
+purchaseDate	Date 	The date the item e.g. vehicle was purchased by the current owner.
+releaseDate	Date 	The release date of a product or product model. This can be used to distinguish the exact variant of a product.
+review	Review 	A review of the item. Supersedes reviews.
+sku	Text 	The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+weight	QuantitativeValue 	The weight of the product or person.
+width	"Distance  or 
+QuantitativeValue "	The width of the item.
+acceptedPaymentMethod	"LoanOrCredit  or 
+PaymentMethod "	The payment method(s) accepted by seller for this offer.
+addOn	Offer 	An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
+advanceBookingRequirement	QuantitativeValue 	The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+aggregateRating	AggregateRating 	The overall rating, based on a collection of reviews or ratings, of the item.
+areaServed	"AdministrativeArea  or 
+GeoShape  or 
+Place  or 
+Text "	The geographic area where a service or offered item is provided. Supersedes serviceArea.
+availability	ItemAvailability 	The availability of this item—for example In stock, Out of stock, Pre-order, etc.
+availabilityEnds	DateTime 	The end of the availability of the product or service included in the offer.
+availabilityStarts	DateTime 	The beginning of the availability of the product or service included in the offer.
+availableAtOrFrom	Place 	The place(s) from which the offer can be obtained (e.g. store locations).
+availableDeliveryMethod	DeliveryMethod 	The delivery method(s) available for this offer.
+businessFunction	BusinessFunction 	The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+category	"PhysicalActivityCategory  or 
+Text  or 
+Thing "	A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+deliveryLeadTime	QuantitativeValue 	The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+eligibleCustomerType	BusinessEntityType 	The type(s) of customers for which the given offer is valid.
+eligibleDuration	QuantitativeValue 	The duration for which the given offer is valid.
+eligibleQuantity	QuantitativeValue 	The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+eligibleRegion	"GeoShape  or 
+Place  or 
+Text "	"The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
+See also ineligibleRegion."
+eligibleTransactionVolume	PriceSpecification 	The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+gtin12	Text 	The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.
+gtin13	Text 	The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.
+gtin14	Text 	The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.
+gtin8	Text 	The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.
+includesObject	TypeAndQuantityNode 	This links to a node or nodes indicating the exact quantity of the products included in the offer.
+ineligibleRegion	"GeoShape  or 
+Place  or 
+Text "	"The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.
+See also eligibleRegion."
+inventoryLevel	QuantitativeValue 	The current approximate inventory level for the item or items.
+itemCondition	OfferItemCondition 	A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
+itemOffered	"Product  or 
+Service "	The item being offered.
+mpn	Text 	The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+offeredBy	"Organization  or 
+Person "	"A pointer to the organization or person making the offer.
+Inverse property: makesOffer."
+price	"Number  or 
+Text "	"The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
+Usage guidelines:
+Use the priceCurrency property (with ISO 4217 codes e.g. ""USD"") instead of including ambiguous symbols such as '$' in the value.
+Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+Note that both RDFa and Microdata syntax allow the use of a ""content="" attribute for publishing simple machine-readable values alongside more human-friendly formatting.
+Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols."
+priceCurrency	Text 	The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecificationand its subtypes.
+priceSpecification	PriceSpecification 	One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+priceValidUntil	Date 	The date after which the price is no longer available.
+review	Review 	A review of the item. Supersedes reviews.
+seller	"Organization  or 
+Person "	An entity which offers (sells / leases / lends / loans) the services / goods. A seller may also be a provider. Supersedes merchant, vendor.
+serialNumber	Text 	The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+sku	Text 	The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+validFrom	DateTime 	The date when the item becomes valid.
+validThrough	DateTime 	The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+warranty	WarrantyPromise 	The warranty promise(s) included in the offer. Supersedes warrantyPromise.
+abridged	Boolean 	Indicates whether the book is an abridged edition.
+bookEdition	Text 	The edition of the book.
+bookFormat	BookFormatType 	The format of the book.
+illustrator	Person 	The illustrator of the book.
+isbn	Text 	The ISBN of the book.
+numberOfPages	Integer 	The number of pages in the book.
+actor	Person 	An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. Supersedes actors.
+countryOfOrigin	Country 	The country of the principal offices of the production company or individual responsible for the movie or program.
+director	Person 	A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.
+duration	Duration 	The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+musicBy	"MusicGroup  or 
+Person "	The composer of the soundtrack.
+productionCompany	Organization 	The production company or studio responsible for the item e.g. series, video game, episode etc.
+subtitleLanguage	"Language  or 
+Text "	Languages in which subtitles/captions are available, in IETF BCP 47 standard format.
+trailer	VideoObject 	The trailer of a movie or tv/radio series, season, episode, etc.
+actor	Person 	An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. Supersedes actors.
+caption	Text 	The caption for this object.
+director	Person 	A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.
+musicBy	"MusicGroup  or 
+Person "	The composer of the soundtrack.
+thumbnail	ImageObject 	Thumbnail image for an image or video.
+transcript	Text 	If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+videoFrameSize	Text 	The frame size of the video.
+videoQuality	Text 	The quality of the video.
+byArtist	MusicGroup 	The artist that performed this album or recording.
+duration	Duration 	The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+inAlbum	MusicAlbum 	The album to which this recording belongs.
+inPlaylist	MusicPlaylist 	The playlist to which this recording belongs.
+isrcCode	Text 	The International Standard Recording Code for the recording.
+recordingOf	MusicComposition 	"The composition this track is a recording of.
+Inverse property: recordedAs."
+cookTime	Duration 	The time it takes to actually cook the dish, in ISO 8601 duration format.
+cookingMethod	Text 	The method of cooking, such as Frying, Steaming, ...
+nutrition	NutritionInformation 	Nutrition information about the recipe or menu item.
+recipeCategory	Text 	The category of the recipe—for example, appetizer, entree, etc.
+recipeCuisine	Text 	The cuisine of the recipe (for example, French or Ethiopian).
+recipeIngredient	Text 	A single ingredient used in the recipe, e.g. sugar, flour or garlic. Supersedes ingredients.
+recipeInstructions	"CreativeWork  or 
+ItemList  or 
+Text "	A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+recipeYield	"QuantitativeValue  or 
+Text "	The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+suitableForDiet	RestrictedDiet 	Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+actor	Person 	An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. Supersedes actors.
+containsSeason	CreativeWorkSeason 	A season that is part of the media series. Supersedes season.
+countryOfOrigin	Country 	The country of the principal offices of the production company or individual responsible for the movie or program.
+director	Person 	A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.
+episode	Episode 	An episode of a tv, radio or game media within a series or season. Supersedes episodes.
+musicBy	"MusicGroup  or 
+Person "	The composer of the soundtrack.
+numberOfEpisodes	Integer 	The number of episodes in this season or series.
+numberOfSeasons	Integer 	The number of seasons in this series.
+productionCompany	Organization 	The production company or studio responsible for the item e.g. series, video game, episode etc.
+trailer	VideoObject 	The trailer of a movie or tv/radio series, season, episode, etc.
+transcript	Text 	If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+Properties from MediaObject		
+associatedArticle	NewsArticle 	A NewsArticle associated with the Media Object.
+bitrate	Text 	The bitrate of the media object.
+contentSize	Text 	File size in (mega/kilo) bytes.
+contentUrl	URL 	Actual bytes of the media object, for example the image file or video file.
+duration	Duration 	The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
+embedUrl	URL 	A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag.
+encodesCreativeWork	CreativeWork 	The CreativeWork encoded by this media object.
+encodingFormat	Text 	mp3, mpeg4, etc.
+height	"Distance  or 
+QuantitativeValue "	The height of the item.
+playerType	Text 	Player type required—for example, Flash or Silverlight.
+productionCompany	Organization 	The production company or studio responsible for the item e.g. series, video game, episode etc.
+regionsAllowed	Place 	The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in ISO 3166 format.
+requiresSubscription	Boolean 	Indicates if use of the media require a subscription (either paid or free). Allowed values are true or false (note that an earlier version had 'yes', 'no').
+uploadDate	Date 	Date when this media object was uploaded to this site.
+width	"Distance  or 
+QuantitativeValue "	The width of the item.
+highPrice	"Number  or 
+Text "	The highest price of all offers available.
+lowPrice	"Number  or 
+Text "	The lowest price of all offers available.
+offerCount	Integer 	The number of offers for the product.
+offers	Offer 	An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.
+actionStatus	ActionStatusType 	Indicates the current disposition of the Action.
+agent	"Organization  or 
+Person "	The direct performer or driver of the action (animate or inanimate). e.g. John wrote a book.
+endTime	DateTime 	"The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."
+error	Thing 	For failed actions, more information on the cause of the failure.
+instrument	Thing 	The object that helped the agent perform the action. e.g. John wrote a book with a pen.
+location	"Place  or 
+PostalAddress  or 
+Text "	The location of for example where the event is happening, an organization is located, or where an action takes place.
+object	Thing 	The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read a book.
+participant	"Organization  or 
+Person "	Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.
+result	Thing 	The result produced in the action. e.g. John wrote a book.
+startTime	DateTime 	"The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.
+Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."
+target	EntryPoint 	Indicates a target EntryPoint for an Action.
+highPrice	"Number  or 
+Text "	The highest price of all offers available.
+lowPrice	"Number  or 
+Text "	The lowest price of all offers available.
+offerCount	Integer 	The number of offers for the product.
+offers	Offer 	An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.

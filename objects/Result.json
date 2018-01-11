@@ -1,0 +1,10 @@
+{
+    "title": "Result",
+    "description": "Test Result",
+    "required": [],
+    "properties": [
+        "endTime",
+        "error",
+        "test"
+    ]
+}

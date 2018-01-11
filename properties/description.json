@@ -1,0 +1,6 @@
+{
+    "description": "A description of the item.",
+    "label": "Description",
+    "name": "description",
+    "type": "string"    
+}

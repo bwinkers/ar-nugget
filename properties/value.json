@@ -1,0 +1,6 @@
+{
+    "description": "The value of the quantitative value or property value node.",
+    "label": "Value",
+    "name": "value",
+    "type": ["boolean","number","object","array"]    
+}

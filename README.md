@@ -16,3 +16,20 @@ Rules can then be applied to any changes to an object.
 ## Using remote schema (broken on Travis CI)
 
 ```php vendor/bin/phpunit tests/Activerules/Nugget/NuggetTest-Dev.php --testdox```
+
+## Generate Property definitions from CSV files
+
+Import property name, type and description from a CSV file.
+More options will be added later.
+
+```
+php src/bin/convertCSVToProperties.php
+```
+
+## Generate Open API schema objects
+
+ActiveRules obejct definitions are converted to Open API schema objects composed of property defintions.
+
+```
+php src/bin/convertObjectsToSchema.php
+```

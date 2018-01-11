@@ -1,0 +1,9 @@
+{
+    "oneOf": [
+        {"$ref": "/CreativeWork.json"},
+        {
+            "type": "string",
+            "format": "url"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Thing",
+    "description": "Base object type for everything else",
+    "required": [],
+    "properties": [
+        "alternateName",
+        "additionalType",
+        "description",
+        "disambiguationDescription",
+        "identifier",
+        "image",
+        "mainEntityOfpage",
+        "name",
+        "potentialAction",
+        "sameAs",
+        "subjectOf",
+        "url"        
+    ]
+}
