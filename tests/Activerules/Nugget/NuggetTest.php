@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetTestLocalSchema extends TestCase {
+class NuggetTest extends TestCase {
   
     /**
      * This gets called before all test functions
@@ -66,37 +66,6 @@ class NuggetTestLocalSchema extends TestCase {
     public function testInvalidDataFails() 
     {
         $result = $this->nugget->meetsSchema($this->invalidPerson, $this->localPersonSchema);
-
-        $this->assertEquals(false, $result);
-    }
-    
-    /**
-     * An object missing required fields should fail.
-     */
-    public function testMissingCoreDataFails() 
-    {
-        $result = $this->nugget->meetsSchema($this->missingCoreType, $this->nuggetSchema);
-
-        $this->assertEquals(false, $result);
-    }
-    
-    /**
-     * An object with valid core data should pass nugget validation
-     */
-    public function testValidRequiredCoreDataPasses() 
-    {
-        $result = $this->nugget->meetsSchema($this->validCoreType, $this->nuggetSchema);
-
-        $this->assertEquals(true, $result);
-    }
-   
-    
-    /**
-     * An object with invalid core data should fail nugget validation
-     */
-    public function testInvalidRequiredCoreDataFails() 
-    {
-        $result = $this->nugget->meetsSchema($this->invalidCoreType, $this->nuggetSchema);
 
         $this->assertEquals(false, $result);
     }
