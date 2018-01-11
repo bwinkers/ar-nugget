@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515646217">
-  <project timestamp="1515646217">
+<coverage generated="1515646958">
+  <project timestamp="1515646958">
     <package name="Activerules\Nugget">
       <file name="/home/brian/sandbox/nugget/src/Nugget.php">
         <class name="Nugget" namespace="Activerules\Nugget">
-          <metrics complexity="7" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="7" elements="18" coveredelements="9"/>
+          <metrics complexity="7" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="18" coveredelements="16"/>
         </class>
-        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="18" type="stmt" count="3"/>
-        <line num="27" type="method" name="meetsSchema" visibility="public" complexity="2" crap="2" count="3"/>
-        <line num="29" type="stmt" count="3"/>
-        <line num="31" type="stmt" count="3"/>
-        <line num="33" type="stmt" count="3"/>
-        <line num="34" type="stmt" count="2"/>
-        <line num="35" type="stmt" count="2"/>
-        <line num="38" type="stmt" count="1"/>
-        <line num="48" type="method" name="limitToSchema" visibility="public" complexity="4" crap="20" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
+        <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="18" type="stmt" count="6"/>
+        <line num="27" type="method" name="meetsSchema" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="29" type="stmt" count="6"/>
+        <line num="31" type="stmt" count="6"/>
+        <line num="33" type="stmt" count="6"/>
+        <line num="34" type="stmt" count="3"/>
+        <line num="35" type="stmt" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="48" type="method" name="limitToSchema" visibility="public" complexity="4" crap="4.03" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="57" type="stmt" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
         <line num="64" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <metrics loc="69" ncloc="43" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="7" elements="18" coveredelements="9"/>
+        <line num="67" type="stmt" count="1"/>
+        <metrics loc="69" ncloc="43" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="14" elements="18" coveredelements="16"/>
       </file>
     </package>
     <file name="/home/brian/sandbox/nugget/src/bin/convertCSVToProperties.php">
@@ -276,6 +276,6 @@
         <metrics loc="12" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="6" loc="537" ncloc="296" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="7" elements="246" coveredelements="9"/>
+    <metrics files="6" loc="537" ncloc="296" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="14" elements="246" coveredelements="16"/>
   </project>
 </coverage>
