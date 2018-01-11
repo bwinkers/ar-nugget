@@ -39,7 +39,7 @@ class NuggetTest extends TestCase {
         
         // NOTE: NO REMOTE SCHEMA TESTS IN THIS FILE!
         // This test gets run by Travis CI and for some as of yet unresolved reason it does not work with remote schema.
-        //$this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
+        //$this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/objects/person.json');
     }
 
     /**
