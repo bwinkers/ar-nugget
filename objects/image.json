@@ -1,0 +1,7 @@
+{
+  "title": "Image",
+  "description": "An image file.",
+  "type": "object",
+  "properties": ["caption","exifData"],
+  "required": ["roleName"]
+}

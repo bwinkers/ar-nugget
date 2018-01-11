@@ -1,0 +1,6 @@
+{
+  "title": "Core Type",
+  "type": "string",
+  "description": "Derived from the `Thing` object titles defined at schema.org.",
+  "enum": ["Action","CreativeWork","Event","Organization","Person","Place","Product"]
+}
