@@ -57,9 +57,9 @@ class NuggetLimitToSchemaTest extends TestCase {
     /**
      * A known valid schema, fetched remotely, should pass validation
      */
-    public function testLimitingToSchemaJson() 
+    public function testLimitingToSchemaNoJson() 
     {
-        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPerson, $this->personSchema,true);
+        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPerson, $this->personSchema, false);
         
         $this->assertEquals($cleanPerson, $this->validPerson);
         
