@@ -26,7 +26,7 @@ class NuggetLimitToSchemaTest extends TestCase {
 
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
-        $this->personSchema = $dereferencer->dereference('file://' . __DIR__ . '/objects/person.json');
+        $this->personSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
         //$this->personSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/objects/person.json'); 
         
     }

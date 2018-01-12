@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetTest extends TestCase {
+class NuggetTestDev extends TestCase {
   
     /**
      * This gets called before all test functions

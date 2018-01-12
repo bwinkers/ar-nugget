@@ -35,7 +35,7 @@ class NuggetTest extends TestCase {
       
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
-        $this->localPersonSchema = $dereferencer->dereference('file://' . __DIR__ . '/objects/person.json');
+        $this->localPersonSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
         
         // NOTE: NO REMOTE SCHEMA TESTS IN THIS FILE!
         // This test gets run by Travis CI and for some as of yet unresolved reason it does not work with remote schema.

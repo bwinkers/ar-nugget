@@ -30,12 +30,7 @@ class Nugget
 
         $validator = new \Activerules\JsonGuard\Validator($data, $schema);
    
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            return false;
-        }
-        
-        return true;
+        return $validator->fails() ? false : true ;
     }
     
     /**
@@ -59,12 +54,8 @@ class Nugget
                 $cleanObject[$prop] = $data->$prop;
             }
         }
-
-        if(!$jsonOut) {
-            return $cleanObject;
-        }
         
-        return json_encode($cleanObject);
+        return $jsonOut ? json_encode($cleanObject) : $cleanObject;
     }
 
 }
