@@ -33,3 +33,7 @@ ActiveRules obejct definitions are converted to Open API schema objects composed
 ```
 php src/bin/convertObjectsToSchema.php
 ```
+
+```
+php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json
+```
