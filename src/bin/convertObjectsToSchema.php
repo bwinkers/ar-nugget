@@ -12,22 +12,17 @@ if(empty($options['p']) || empty($options['o']) || empty($options['s'])) {
 }
 
 // Objects and their related properties are defined here. 
-$objectDir = realpath($options['o']);
+define('OBJECTDIR', realpath($options['o']));
 
 // Properties are stored here.
 // They can be extended and reused across objects.
-$propertyDir = realpath($options['p']);
+define('PROPERTYDIR', realpath($options['p']));
 
 // A writeable directory for the OpenAPI schema definitions
-$schemaDir = realpath($options['s']);
-// Attempt creating directory if needed
-if (false === $schemaDir) {
-    mkdir($options['s']);
-    $schemaDir = realpath($options['s']);
-}
+define('SCHEMADIR', realpath($options['s']));
 
 // Create a directory iterator for the defined objects directory
-$dir = new DirectoryIterator($objectDir);
+$dir = new DirectoryIterator(OBJECTDIR);
 
 // Iterate through object definitions
 foreach ($dir as $fileInfo) {
@@ -45,7 +40,7 @@ foreach ($dir as $fileInfo) {
     if (!$fileInfo->isDot() && substr($name,0,1) != '.') {
 
         // Get the full path to the JSON schema file
-        $file = realpath ($objectDir.'/'.$name);
+        $file = realpath (OBJECTDIR.'/'.$name);
 
         // Read the file into a PHP string
         $def = file_get_contents($file);
@@ -64,7 +59,7 @@ foreach ($dir as $fileInfo) {
             foreach($obj->properties as $property) {
 
                 // Get the full path to the JSON property JSON file
-                $propertyFile = realpath ($propertyDir.'/'.$property.'.json');
+                $propertyFile = realpath (PROPERTYDIR.'/'.$property.'.json');
 
                 if($propertyFile) {
                     // Read the file into a PHP string
@@ -95,7 +90,7 @@ foreach ($dir as $fileInfo) {
         $spec = json_encode($obj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         
         // Create a writeable file pointer to the OpenAPI schema location
-        $fp = fopen($schemaDir.'/'.$name, 'w');
+        $fp = fopen(SCHEMADIR.'/'.$name, 'w');
 
         // Write the spec to the file pointer
         fwrite($fp, $spec);
@@ -160,14 +155,7 @@ function populateRefs($propObj, & $defs) {
  * @param type $defs
  */
 function loadRef($refString, & $defs) {
-
-    // Objects and their related properties are defined here. 
-    $objectDir = realpath('./objects');
-
-    // Properties are stored here.
-    // They can be extended and reused across objects.
-    $propertyDir = realpath('./properties');
-    
+   
     // If the first char is a '#' hydrate the referenced object into definitions
     if(substr($refString, 0, 13) === '#/definitions') {
         
@@ -178,7 +166,7 @@ function loadRef($refString, & $defs) {
 
         if(!array_key_exists($name, $defs)) {
             // Get the full path to the JSON schema file
-            $file = realpath ($objectDir.'/'.ucfirst($name).'.json');
+            $file = realpath (OBJECTDIR.'/'.ucfirst($name).'.json');
 
             if($file) {
 
@@ -200,7 +188,7 @@ function loadRef($refString, & $defs) {
                 foreach($obj->properties as $property) {
 
                     // Get the full path to the JSON property JSON file
-                    $propertyFile = realpath ($propertyDir.'/'.$property.'.json');
+                    $propertyFile = realpath (PROPERTYDIR.'/'.$property.'.json');
 
                     if($propertyFile) {
                         // Read the file into a PHP string

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.codeline { font-family: monospace; white-space: pre; }
+		</style>
+		<title>PHP_Testability report</title>
+	</head>
+	<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="index.html">
+	        PHP_Testability
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+
+		<!--Content starts here-->
+
+<h4>src/bin/readPropertiesFromGoogle.php </h4>
+
+<div>&nbsp;</div>
+
+<table class="table table-bordered table-hover table-condensed">
+	<tbody>
+		<tr>
+			<th>Procedures</th>
+			<th>Status</th>			
+		</tr>	
+
+		<tr class="success">
+			<td> No issues </td>
+			<td><span class="label label-success">OK</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+<div class="codeline"><a name="1" href="#1">1.</a>	&lt;?php</div>
+<div class="codeline"><a name="2" href="#2">2.</a>	</div>
+<div class="codeline"><a name="3" href="#3">3.</a>	// include your composer dependencies</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger"><a name="4" href="#4">4.</a>	require_once 'vendor/autoload.php';</div>
+<div class="codeline"><a name="5" href="#5">5.</a>	</div>
+<div class="codeline"><a name="6" href="#6">6.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="7" href="#7">7.</a>	$shortopts  = &quot;&quot;;</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="8" href="#8">8.</a>	$shortopts .= &quot;s:&quot;;  // Required - Google Spreadsheet ID</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="9" href="#9">9.</a>	$shortopts .= &quot;p:&quot;;  // Required - path to property definitions directory</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="10" href="#10">10.</a>	$shortopts .= &quot;c:&quot;;  // Required - path to credentials file for Google Drive API</div>
+<div class="codeline"><a name="11" href="#11">11.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="12" href="#12">12.</a>	$options = getopt($shortopts);</div>
+<div class="codeline"><a name="13" href="#13">13.</a>	</div>
+<div class="codeline"><a name="14" href="#14">14.</a>	// Google Spreadsheet ID</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="15" href="#15">15.</a>	$spreadsheetID = $options['s'];</div>
+<div class="codeline"><a name="16" href="#16">16.</a>	</div>
+<div class="codeline"><a name="17" href="#17">17.</a>	// Properties are stored here.</div>
+<div class="codeline"><a name="18" href="#18">18.</a>	// They can be extended and reused across objects.</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="19" href="#19">19.</a>	$propertyDir = realpath($options['p']);</div>
+<div class="codeline"><a name="20" href="#20">20.</a>	// Create properties directory if needed</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="21" href="#21">21.</a>	if (false === realpath($propertyDir)) {</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="22" href="#22">22.</a>	    mkdir($propertyDir);</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="23" href="#23">23.</a>	    $propertyDir = realpath($propertyDir);</div>
+<div class="codeline"><a name="24" href="#24">24.</a>	}</div>
+<div class="codeline"><a name="25" href="#25">25.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="26" href="#26">26.</a>	define('SCOPES', implode(' ', array(</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger"><a name="27" href="#27">27.</a>	  Google_Service_Sheets::SPREADSHEETS_READONLY)</div>
+<div class="codeline"><a name="28" href="#28">28.</a>	));</div>
+<div class="codeline"><a name="29" href="#29">29.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="30" href="#30">30.</a>	putenv('GOOGLE_APPLICATION_CREDENTIALS='.realpath($options['c']));</div>
+<div class="codeline"><a name="31" href="#31">31.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="32" href="#32">32.</a>	$client = new Google_Client();</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger"><a name="33" href="#33">33.</a>	$client-&gt;setScopes(SCOPES);</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger"><a name="34" href="#34">34.</a>	$client-&gt;useApplicationDefaultCredentials();</div>
+<div class="codeline"><a name="35" href="#35">35.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="36" href="#36">36.</a>	$service = new Google_Service_Sheets($client);</div>
+<div class="codeline"><a name="37" href="#37">37.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="38" href="#38">38.</a>	$range = 'IncomingProperties!A1:C';</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger bg-danger"><a name="39" href="#39">39.</a>	$response = $service-&gt;spreadsheets_values-&gt;get($spreadsheetID, $range);</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger bg-danger"><a name="40" href="#40">40.</a>	$values = $response-&gt;getValues();</div>
+<div class="codeline"><a name="41" href="#41">41.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Code on global space 
+	</span> &nbsp;
+<div class="codeline bg-danger bg-danger bg-danger"><a name="42" href="#42">42.</a>	var_dump($values);</div>
+
+
+		<!--Content ends here-->
+
+		<div> &nbsp; </div>
+		<div>
+			Generated Thu, 11 Jan 2018 21:56:06 -0800 by <a href="https://github.com/edsonmedina/php_testability">PHP_Testability</a>
+		</div>
+
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+	</body>
+</html>

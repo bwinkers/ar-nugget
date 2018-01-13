@@ -1,7 +1,0 @@
-{
-  "title": "Nugget",
-  "description": "Core Nugget object, all other objects are extensions of it.",
-  "type": "object",
-  "properties": ["name","coreType","description","identifier","image"],
-  "required": ["coreType"]
-}

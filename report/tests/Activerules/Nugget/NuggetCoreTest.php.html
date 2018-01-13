@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.codeline { font-family: monospace; white-space: pre; }
+		</style>
+		<title>PHP_Testability report</title>
+	</head>
+	<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="index.html">
+	        PHP_Testability
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+
+		<!--Content starts here-->
+
+<h4>tests/Activerules/Nugget/NuggetCoreTest.php </h4>
+
+<div>&nbsp;</div>
+
+<table class="table table-bordered table-hover table-condensed">
+	<tbody>
+		<tr>
+			<th>Procedures</th>
+			<th>Status</th>			
+		</tr>	
+
+		<tr>
+			<td><a href="#16">NuggetCoreTest::setUp</a></td>
+			<td>
+				<a href="#16" class="btn btn-danger btn-xs" role="button">
+				  Issues <span class="badge">2</span>
+				</a>
+
+			</td>
+		</tr>
+		<tr>
+			<td><a href="#36">NuggetCoreTest::tearDown</a></td>
+			<td>
+
+				<a href="#36" class="btn btn-success btn-xs" role="button">Testable</a>
+			</td>
+		</tr>
+		<tr>
+			<td><a href="#44">NuggetCoreTest::testMissingCoreDataFails</a></td>
+			<td>
+
+				<a href="#44" class="btn btn-success btn-xs" role="button">Testable</a>
+			</td>
+		</tr>
+		<tr>
+			<td><a href="#54">NuggetCoreTest::testValidRequiredCoreDataPasses</a></td>
+			<td>
+
+				<a href="#54" class="btn btn-success btn-xs" role="button">Testable</a>
+			</td>
+		</tr>
+		<tr>
+			<td><a href="#65">NuggetCoreTest::testInvalidRequiredCoreDataFails</a></td>
+			<td>
+
+				<a href="#65" class="btn btn-success btn-xs" role="button">Testable</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+<div class="codeline"><a name="1" href="#1">1.</a>	&lt;?php</div>
+<div class="codeline"><a name="2" href="#2">2.</a>	</div>
+<div class="codeline"><a name="3" href="#3">3.</a>	namespace Activerules\Nugget;</div>
+<div class="codeline"><a name="4" href="#4">4.</a>	</div>
+<div class="codeline"><a name="5" href="#5">5.</a>	use PHPUnit\Framework\TestCase;</div>
+<div class="codeline"><a name="6" href="#6">6.</a>	</div>
+<div class="codeline"><a name="7" href="#7">7.</a>	</div>
+<div class="codeline"><a name="8" href="#8">8.</a>	// Need more test</div>
+<div class="codeline"><a name="9" href="#9">9.</a>	</div>
+<div class="codeline"><a name="10" href="#10">10.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Extended class (NuggetCoreTest)
+	</span> &nbsp;
+<div class="codeline bg-danger"><a name="11" href="#11">11.</a>	class NuggetCoreTest extends TestCase {</div>
+<div class="codeline"><a name="12" href="#12">12.</a>	</div>
+<div class="codeline"><a name="13" href="#13">13.</a>	    /**</div>
+<div class="codeline"><a name="14" href="#14">14.</a>	     * This gets called before all test functions</div>
+<div class="codeline"><a name="15" href="#15">15.</a>	     */</div>
+<div class="codeline"><a name="16" href="#16">16.</a>	    public function setUp()</div>
+<div class="codeline"><a name="17" href="#17">17.</a>	    {</div>
+<div class="codeline"><a name="18" href="#18">18.</a>	        // Use the Activerules dereferencer</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		Static method call (Activerules\JsonReference\Dereferencer::draft4)
+	</span> &nbsp;
+<div class="codeline bg-danger"><a name="19" href="#19">19.</a>	        $dereferencer  = \Activerules\JsonReference\Dereferencer::draft4();</div>
+<div class="codeline"><a name="20" href="#20">20.</a>	</div>
+	<span class="label label-danger">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		New instance (Activerules\Nugget\Nugget)
+	</span> &nbsp;
+<div class="codeline bg-danger"><a name="21" href="#21">21.</a>	        $this-&gt;nugget = new \Activerules\Nugget\Nugget();</div>
+<div class="codeline"><a name="22" href="#22">22.</a>	</div>
+<div class="codeline"><a name="23" href="#23">23.</a>	        $this-&gt;nuggetSchema = $dereferencer-&gt;dereference('file://./nugget.json');</div>
+<div class="codeline"><a name="24" href="#24">24.</a>	</div>
+<div class="codeline"><a name="25" href="#25">25.</a>	        $this-&gt;missingCoreType = file_get_contents(__DIR__.'/objects/missingCoreType-Nugget.json');</div>
+<div class="codeline"><a name="26" href="#26">26.</a>	</div>
+<div class="codeline"><a name="27" href="#27">27.</a>	        $this-&gt;validCoreType = file_get_contents(__DIR__.'/objects/validCoreType-Nugget.json');</div>
+<div class="codeline"><a name="28" href="#28">28.</a>	</div>
+<div class="codeline"><a name="29" href="#29">29.</a>	        $this-&gt;invalidCoreType = file_get_contents(__DIR__.'/objects/invalidCoreType-Nugget.json');</div>
+<div class="codeline"><a name="30" href="#30">30.</a>	</div>
+<div class="codeline"><a name="31" href="#31">31.</a>	    }</div>
+<div class="codeline"><a name="32" href="#32">32.</a>	</div>
+<div class="codeline"><a name="33" href="#33">33.</a>	    /**</div>
+<div class="codeline"><a name="34" href="#34">34.</a>	     * This gets called after each test function</div>
+<div class="codeline"><a name="35" href="#35">35.</a>	     */</div>
+<div class="codeline"><a name="36" href="#36">36.</a>	    public function tearDown()</div>
+<div class="codeline"><a name="37" href="#37">37.</a>	    {</div>
+<div class="codeline"><a name="38" href="#38">38.</a>	        //$this-&gt;myClass = null;</div>
+<div class="codeline"><a name="39" href="#39">39.</a>	    }</div>
+<div class="codeline"><a name="40" href="#40">40.</a>	</div>
+<div class="codeline"><a name="41" href="#41">41.</a>	    /**</div>
+<div class="codeline"><a name="42" href="#42">42.</a>	     * An object missing required fields should fail.</div>
+<div class="codeline"><a name="43" href="#43">43.</a>	     */</div>
+<div class="codeline"><a name="44" href="#44">44.</a>	    public function testMissingCoreDataFails()</div>
+<div class="codeline"><a name="45" href="#45">45.</a>	    {</div>
+<div class="codeline"><a name="46" href="#46">46.</a>	        $result = $this-&gt;nugget-&gt;meetsSchema($this-&gt;missingCoreType, $this-&gt;nuggetSchema);</div>
+<div class="codeline"><a name="47" href="#47">47.</a>	</div>
+<div class="codeline"><a name="48" href="#48">48.</a>	        $this-&gt;assertEquals(false, $result);</div>
+<div class="codeline"><a name="49" href="#49">49.</a>	    }</div>
+<div class="codeline"><a name="50" href="#50">50.</a>	</div>
+<div class="codeline"><a name="51" href="#51">51.</a>	    /**</div>
+<div class="codeline"><a name="52" href="#52">52.</a>	     * An object with valid core data should pass nugget validation</div>
+<div class="codeline"><a name="53" href="#53">53.</a>	     */</div>
+<div class="codeline"><a name="54" href="#54">54.</a>	    public function testValidRequiredCoreDataPasses()</div>
+<div class="codeline"><a name="55" href="#55">55.</a>	    {</div>
+<div class="codeline"><a name="56" href="#56">56.</a>	        $result = $this-&gt;nugget-&gt;meetsSchema($this-&gt;validCoreType, $this-&gt;nuggetSchema);</div>
+<div class="codeline"><a name="57" href="#57">57.</a>	</div>
+<div class="codeline"><a name="58" href="#58">58.</a>	        $this-&gt;assertEquals(true, $result);</div>
+<div class="codeline"><a name="59" href="#59">59.</a>	    }</div>
+<div class="codeline"><a name="60" href="#60">60.</a>	</div>
+<div class="codeline"><a name="61" href="#61">61.</a>	</div>
+<div class="codeline"><a name="62" href="#62">62.</a>	    /**</div>
+<div class="codeline"><a name="63" href="#63">63.</a>	     * An object with invalid core data should fail nugget validation</div>
+<div class="codeline"><a name="64" href="#64">64.</a>	     */</div>
+<div class="codeline"><a name="65" href="#65">65.</a>	    public function testInvalidRequiredCoreDataFails()</div>
+<div class="codeline"><a name="66" href="#66">66.</a>	    {</div>
+<div class="codeline"><a name="67" href="#67">67.</a>	        $result = $this-&gt;nugget-&gt;meetsSchema($this-&gt;invalidCoreType, $this-&gt;nuggetSchema);</div>
+<div class="codeline"><a name="68" href="#68">68.</a>	</div>
+<div class="codeline"><a name="69" href="#69">69.</a>	        $this-&gt;assertEquals(false, $result);</div>
+<div class="codeline"><a name="70" href="#70">70.</a>	    }</div>
+<div class="codeline"><a name="71" href="#71">71.</a>	}</div>
+
+
+		<!--Content ends here-->
+
+		<div> &nbsp; </div>
+		<div>
+			Generated Thu, 11 Jan 2018 21:56:06 -0800 by <a href="https://github.com/edsonmedina/php_testability">PHP_Testability</a>
+		</div>
+
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+	</body>
+</html>

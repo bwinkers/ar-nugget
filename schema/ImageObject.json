@@ -2,5 +2,16 @@
     "title": "ImageObject",
     "description": "An image file.",
     "required": [],
-    "properties": []
+    "properties": {
+        "caption": {
+            "title": "Caption",
+            "type": "string",
+            "description": "The caption for this object or nugget."
+        },
+        "exifData": {
+            "title": "exif Data",
+            "type": "string",
+            "description": "exif data for this object."
+        }
+    }
 }

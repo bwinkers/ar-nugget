@@ -15,6 +15,11 @@
             "name": "indentifier",
             "type": "string"
         },
+        "image": {
+            "title": "Image",
+            "type": "string",
+            "description": "A name used to refer to the thing or nugget."
+        },
         "name": {
             "description": "The name of the item.",
             "label": "Name",
