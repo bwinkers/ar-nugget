@@ -7,6 +7,10 @@ $shortopts .= "s:";  // Required - path for generated Open API schema objects
 
 $options = getopt($shortopts);
 
+if(empty($options['p']) || empty($options['o']) || empty($options['s'])) {
+  exit;
+}
+
 // Objects and their related properties are defined here. 
 $objectDir = realpath($options['o']);
 
