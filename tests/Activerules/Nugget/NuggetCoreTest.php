@@ -20,7 +20,7 @@ class NuggetCoreTest extends TestCase {
         
         $this->nugget = new \Activerules\Nugget\Nugget();
         
-        $this->nuggetSchema = $dereferencer->dereference('file://./nugget.json');
+        $this->nuggetSchema = $dereferencer->dereference('file://./Nugget.json');
         
         $this->missingCoreType = file_get_contents(__DIR__.'/objects/missingCoreType-Nugget.json');
         
