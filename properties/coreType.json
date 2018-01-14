@@ -1,0 +1,5 @@
+{
+    "description": "The core ActiveRules type",
+    "type": "string",
+    "enum": ["Person","Product","Event","PublishedWork"]
+}
