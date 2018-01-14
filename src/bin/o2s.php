@@ -171,25 +171,43 @@ function populateRefs(& $propObj, & $defs) {
 function populateObjectProperty(& $propObj, & $defs) {
     // Loop through looking for $ref's and items
     foreach($propObj as $prop => $def) {
-        switch($prop) {
-            case '$ref':
-                loadRef($def, $defs);
-                break;
-            case 'items':
-                $refType = gettype($def); // The $def has to be an object for this to be an array of $ref
-                if($refType === 'object') {
-                    // Loop through ref object
-                    foreach($def as $refKey => $refString) {
-                        // Is this our reference?
-                        if($refKey === '$ref') {
-                            // Load the reference
-                            loadRef($refString, $defs);
-                        }
-                    }
-                }
-                break;
-            default:
-                break;
+       resolvePropertyReference($prop, $def, $defs );
+    }
+}
+
+/**
+ * 
+ * @param type $prop
+ * @param type $def
+ * @param type $defs
+ */
+function resolvePropertyReference($prop, $def, & $defs ) {
+  switch($prop) {
+      case '$ref':
+          loadRef($def, $defs);
+          break;
+      case 'items':
+          processItem($def, $defs);
+          break;
+      default:
+          break;
+  }
+}
+
+/**
+ * 
+ * @param type $def
+ * @param type $defs
+ */
+function processItem($def, & $defs){
+    if(gettype($def) === 'object') {
+        // Loop through ref object
+        foreach($def as $refKey => $refString) {
+            // Is this our reference?
+            if($refKey === '$ref') {
+                // Load the reference
+                loadRef($refString, $defs);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515893645">
-  <project timestamp="1515893645">
+<coverage generated="1515896279">
+  <project timestamp="1515896279">
     <package name="Activerules\Nugget">
       <file name="/home/brian/sandbox/nugget/src/Nugget.php">
         <class name="Nugget" namespace="Activerules\Nugget">
