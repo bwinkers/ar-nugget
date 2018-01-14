@@ -82,6 +82,10 @@ class Nugget
      * @return type
      */
     public function jsonType($type) {
+      if(!is_string($type)) {
+        throw new \Activerules\Nugget\Exceptions\NuggetException('Aww shucks');
+      }
+      
       $type = strtolower($type);
       if(isset($this->types[$type])) {
         return $this->types[$type]['type'];
