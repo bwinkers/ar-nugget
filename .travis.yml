@@ -32,7 +32,11 @@ plugins:
     config:
       file_extensions: 
         - php
-        - inc      
+        - inc    
+  phan:
+    enabled: true
+    config:
+      file_extensions: "php"
 checkout_submodules: true
   
   
