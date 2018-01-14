@@ -45,7 +45,7 @@ plugins:
     enabled: true
     config:
       tests_patterns:
-        - tests/**
+        - tests/Activerules/Nugget**
 checkout_submodules: true
   
   
