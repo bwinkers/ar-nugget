@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515957484">
-  <project timestamp="1515957484">
+<coverage generated="1515963250">
+  <project timestamp="1515963250">
     <package name="Activerules\Nugget">
       <file name="/home/brian/sandbox/nugget/src/Nugget.php">
         <class name="Nugget" namespace="Activerules\Nugget">
           <metrics complexity="9" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
         </class>
-        <line num="75" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="77" type="stmt" count="9"/>
+        <line num="75" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="10"/>
+        <line num="77" type="stmt" count="10"/>
         <line num="84" type="method" name="jsonType" visibility="public" complexity="2" crap="2" count="2"/>
         <line num="85" type="stmt" count="2"/>
         <line num="86" type="stmt" count="2"/>
