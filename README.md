@@ -28,12 +28,17 @@ php src/bin/convertCSVToProperties.php
 
 ## Generate Open API schema objects
 
-ActiveRules obejct definitions are converted to Open API schema objects composed of property defintions.
+ActiveRules object definitions are converted to Open API schema objects composed of property definitions.
 
 ```
-php src/bin/convertObjectsToSchema.php
+php src/bin/o2s.php -p "./properties" -s "./schema" -o "./objects"
 ```
 
 ```
-php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json
+php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json -p properties
 ```
+
+## References
+JSON References ($ref): [https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)
+JSON Schema: [http://json-schema.org/](http://json-schema.org/)
+Schemas: [http://schema.org/](http://schema.org/)
