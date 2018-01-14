@@ -89,7 +89,7 @@ function writeSchema($schema, $schemaName) {
 function hydrateSchema($schemaDef, $schemaName) {
     
     // Set type as object if not defined otherwise
-    if(isset($schemaDef->type)) {
+    if(!isset($schemaDef->type)) {
         $schemaDef->type = 'object';
     }
 
