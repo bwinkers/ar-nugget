@@ -30,4 +30,15 @@ class NuggetExceptionTest extends TestCase {
         throw  new \Activerules\Nugget\exceptions\NuggetException('What What!');
 
     }
+    
+    /**
+     * The exception should be of type exception
+     */
+    public function testNuggetExceptionIsAnException() 
+    {
+      $this->expectException('\Activerules\Nugget\exceptions\NuggetException');
+      
+       $this->nugget->jsonType([]);
+
+    }
 }
