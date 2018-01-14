@@ -1,0 +1,4 @@
+{
+    "description": "The quality of the video.",
+    "type": "string"
+}

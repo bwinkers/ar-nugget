@@ -1,9 +1,11 @@
 {
+    "description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notesfor details. Inverse property: mainEntity.",
     "oneOf": [
-        {"$ref": "/CreativeWork.json"},
         {
-            "type": "string",
-            "format": "url"
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "type": "string"
         }
     ]
 }

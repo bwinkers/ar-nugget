@@ -1,0 +1,11 @@
+{
+    "description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

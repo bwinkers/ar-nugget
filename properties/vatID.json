@@ -1,0 +1,4 @@
+{
+    "description": "The Value-added Tax ID of the organization or person.",
+    "type": "string"
+}

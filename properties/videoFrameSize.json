@@ -1,0 +1,4 @@
+{
+    "description": "The frame size of the video.",
+    "type": "string"
+}

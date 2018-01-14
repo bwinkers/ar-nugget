@@ -1,0 +1,11 @@
+{
+    "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/ProgramMembership"
+        }
+    ]
+}

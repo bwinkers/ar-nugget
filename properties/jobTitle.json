@@ -1,0 +1,4 @@
+{
+    "description": "The job title of the person (for example, Financial Manager).",
+    "type": "string"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The category of the recipe\u2014for example, appetizer, entree, etc.",
+    "type": "string"
+}

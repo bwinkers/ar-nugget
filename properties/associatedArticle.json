@@ -1,0 +1,4 @@
+{
+    "description": "A NewsArticle associated with the Media Object.",
+    "$ref": "#/components/schema/NewsArticle"
+}

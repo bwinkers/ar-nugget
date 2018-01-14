@@ -1,0 +1,11 @@
+{
+    "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/GeospatialGeometry"
+        },
+        {
+            "$ref": "#/components/schema/Place"
+        }
+    ]
+}

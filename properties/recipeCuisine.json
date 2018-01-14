@@ -1,0 +1,4 @@
+{
+    "description": "The cuisine of the recipe (for example, French or Ethiopian).",
+    "type": "string"
+}

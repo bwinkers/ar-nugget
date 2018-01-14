@@ -1,0 +1,4 @@
+{
+    "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+    "$ref": "#/components/schema/Organization"
+}

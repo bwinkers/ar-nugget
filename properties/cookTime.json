@@ -1,0 +1,4 @@
+{
+    "description": "The time it takes to actually cook the dish, in ISO 8601 duration format.",
+    "$ref": "#/components/schema/Duration"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "A thumbnail image relevant to the Thing.",
+    "type": "string"
+}

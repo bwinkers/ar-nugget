@@ -1,0 +1,4 @@
+{
+    "description": "Indicates the primary entity described in some page or other CreativeWork. Inverse property: mainEntityOfPage.",
+    "$ref": "#/components/schema/Thing"
+}

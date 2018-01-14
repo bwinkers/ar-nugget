@@ -1,0 +1,4 @@
+{
+    "description": "Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook. Inverse property: exampleOfWork.",
+    "$ref": "#/components/schema/CreativeWork"
+}

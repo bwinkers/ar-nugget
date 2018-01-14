@@ -1,0 +1,4 @@
+{
+    "description": "Indicates the current disposition of the Action.",
+    "$ref": "#/components/schema/ActionStatusType"
+}

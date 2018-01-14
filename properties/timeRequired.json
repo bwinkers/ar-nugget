@@ -1,0 +1,4 @@
+{
+    "description": "Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'P30M', 'P1H25M'.",
+    "$ref": "#/components/schema/Duration"
+}

@@ -1,0 +1,17 @@
+{
+    "description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/AdministrativeArea"
+        },
+        {
+            "$ref": "#/components/schema/GeoShape"
+        },
+        {
+            "$ref": "#/components/schema/Place"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

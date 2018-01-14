@@ -1,6 +1,4 @@
 {
-    "description": "A Uniform Resource Locator as defined in RFC 1738.",
-    "label": "URL",
-    "name": "url",
+    "description": "URL of the item.",
     "type": "string"
 }

@@ -1,0 +1,4 @@
+{
+    "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
+    "$ref": "#/components/schema/Product"
+}

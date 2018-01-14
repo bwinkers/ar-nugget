@@ -1,0 +1,11 @@
+{
+    "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

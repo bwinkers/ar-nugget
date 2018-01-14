@@ -1,0 +1,4 @@
+{
+    "description": "The year during which the claimed copyright for the CreativeWork was first asserted.",
+    "$ref": "#/components/schema/Number"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "A publication event associated with the item.",
+    "$ref": "#/components/schema/PublicationEvent"
+}

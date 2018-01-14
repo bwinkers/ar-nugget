@@ -1,0 +1,11 @@
+{
+    "description": "The item being offered.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Product"
+        },
+        {
+            "$ref": "#/components/schema/Service"
+        }
+    ]
+}

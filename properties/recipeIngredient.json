@@ -1,0 +1,4 @@
+{
+    "description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic. Supersedes ingredients.",
+    "type": "string"
+}

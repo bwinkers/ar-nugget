@@ -1,0 +1,11 @@
+{
+    "description": "The party holding the legal copyright to the CreativeWork.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

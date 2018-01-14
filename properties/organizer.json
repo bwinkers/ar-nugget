@@ -1,0 +1,11 @@
+{
+    "description": "An organizer of an Event.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

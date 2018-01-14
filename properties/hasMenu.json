@@ -1,0 +1,14 @@
+{
+    "description": "Either the actual menu as a structured representation, as text, or a URL of the menu. Supersedes menu.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Menu"
+        },
+        {
+            "type": "string"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

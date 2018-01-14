@@ -1,9 +1,4 @@
 {
     "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-    "label": "Actions",
-    "name": "potentialActions",
-    "type": "array",
-    "items": {
-        "$ref": "#/definitions/action"
-    }
+    "$ref": "#/components/schema/Action"
 }

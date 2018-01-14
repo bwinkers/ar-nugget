@@ -1,0 +1,4 @@
+{
+    "description": "Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).",
+    "type": "string"
+}

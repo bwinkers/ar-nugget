@@ -1,0 +1,4 @@
+{
+    "description": "A person who founded this organization. Supersedes founders.",
+    "$ref": "#/components/schema/Person"
+}

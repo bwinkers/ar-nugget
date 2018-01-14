@@ -1,0 +1,11 @@
+{
+    "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/GeospatialGeometry"
+        },
+        {
+            "$ref": "#/components/schema/Place"
+        }
+    ]
+}

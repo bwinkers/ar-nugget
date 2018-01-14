@@ -1,0 +1,4 @@
+{
+    "description": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+    "$ref": "#/components/schema/Offer"
+}

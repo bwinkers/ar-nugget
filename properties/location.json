@@ -1,0 +1,14 @@
+{
+    "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Place"
+        },
+        {
+            "$ref": "#/components/schema/PostalAddress"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

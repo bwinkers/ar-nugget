@@ -1,0 +1,4 @@
+{
+    "description": "Event that this person is a performer or participant in.",
+    "$ref": "#/components/schema/Event"
+}

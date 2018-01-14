@@ -1,0 +1,11 @@
+{
+    "description": "Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom\u2019s diversity policy on both staffing and sources, typically providing staffing data.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

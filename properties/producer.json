@@ -1,0 +1,11 @@
+{
+    "description": "The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "description": "For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The number of employees in an organization e.g. business.",
+    "$ref": "#/components/schema/QuantitativeValue"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The most generic uni-directional social relation.",
+    "$ref": "#/components/schema/Person"
+}

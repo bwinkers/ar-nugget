@@ -1,0 +1,11 @@
+{
+    "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

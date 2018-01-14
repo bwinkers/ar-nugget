@@ -1,0 +1,11 @@
+{
+    "description": "A photograph of this place. Supersedes photos.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/ImageObject"
+        },
+        {
+            "$ref": "#/components/schema/Photograph"
+        }
+    ]
+}

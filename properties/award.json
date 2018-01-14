@@ -1,0 +1,4 @@
+{
+    "description": "An award won by or for this item. Supersedes awards.",
+    "type": "string"
+}

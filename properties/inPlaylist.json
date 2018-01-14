@@ -1,0 +1,4 @@
+{
+    "description": "The playlist to which this recording belongs.",
+    "$ref": "#/components/schema/MusicPlaylist"
+}

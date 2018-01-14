@@ -1,0 +1,4 @@
+{
+    "description": "The place and time the release was issued, expressed as a PublicationEvent.",
+    "$ref": "#/components/schema/PublicationEvent"
+}

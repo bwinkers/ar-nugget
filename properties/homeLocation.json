@@ -1,0 +1,11 @@
+{
+    "description": "A contact location for a person's residence.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/ContactPoint"
+        },
+        {
+            "$ref": "#/components/schema/Place"
+        }
+    ]
+}

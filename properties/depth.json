@@ -1,0 +1,11 @@
+{
+    "description": "The depth of the item.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Distance"
+        },
+        {
+            "$ref": "#/components/schema/QuantitativeValue"
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The weight of the product or person.",
+    "$ref": "#/components/schema/QuantitativeValue"
+}

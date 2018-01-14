@@ -1,0 +1,4 @@
+{
+    "description": "The work that this work has been translated from. e.g. \u7269\u79cd\u8d77\u6e90 is a translationOf \u201cOn the Origin of Species\u201d Inverse property: workTranslation.",
+    "$ref": "#/components/schema/CreativeWork"
+}

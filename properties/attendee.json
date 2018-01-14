@@ -1,0 +1,11 @@
+{
+    "description": "A person or organization attending the event. Supersedes attendees.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

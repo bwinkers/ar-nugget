@@ -1,0 +1,4 @@
+{
+    "description": "Date when this media object was uploaded to this site.",
+    "type": "string"
+}

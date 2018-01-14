@@ -1,0 +1,11 @@
+{
+    "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "$ref": "#/components/schema/Event"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "description": "For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

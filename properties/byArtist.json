@@ -1,0 +1,4 @@
+{
+    "description": "The artist that performed this album or recording.",
+    "$ref": "#/components/schema/MusicGroup"
+}

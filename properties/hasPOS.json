@@ -1,0 +1,4 @@
+{
+    "description": "Points-of-Sales operated by the organization or person.",
+    "$ref": "#/components/schema/Place"
+}

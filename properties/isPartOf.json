@@ -1,0 +1,4 @@
+{
+    "description": "Indicates a CreativeWork that this CreativeWork is (in some sense) part of. Inverse property: hasPart.",
+    "$ref": "#/components/schema/CreativeWork"
+}

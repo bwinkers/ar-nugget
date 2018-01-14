@@ -1,0 +1,4 @@
+{
+    "description": "The CreativeWork encoded by this media object.",
+    "$ref": "#/components/schema/CreativeWork"
+}

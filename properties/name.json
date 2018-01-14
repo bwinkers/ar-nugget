@@ -1,6 +1,4 @@
 {
     "description": "The name of the item.",
-    "label": "Name",
-    "name": "name",
-    "type": "string"    
+    "type": "string"
 }

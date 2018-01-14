@@ -1,0 +1,11 @@
+{
+    "description": "A performer at the event\u2014for example, a presenter, musician, musical group or actor. Supersedes performers.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

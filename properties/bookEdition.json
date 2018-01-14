@@ -1,0 +1,4 @@
+{
+    "description": "The edition of the book.",
+    "type": "string"
+}

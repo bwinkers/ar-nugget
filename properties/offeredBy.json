@@ -1,0 +1,11 @@
+{
+    "description": "A pointer to the organization or person making the offer. Inverse property: makesOffer.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

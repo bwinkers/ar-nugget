@@ -1,0 +1,4 @@
+{
+    "description": "The larger organization that this organization is a subOrganization of, if any. Supersedes branchOf. Inverse property: subOrganization.",
+    "$ref": "#/components/schema/Organization"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The current approximate inventory level for the item or items.",
+    "$ref": "#/components/schema/QuantitativeValue"
+}

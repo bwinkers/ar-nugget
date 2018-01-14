@@ -1,0 +1,4 @@
+{
+    "description": "The trailer of a movie or tv/radio series, season, episode, etc.",
+    "$ref": "#/components/schema/VideoObject"
+}

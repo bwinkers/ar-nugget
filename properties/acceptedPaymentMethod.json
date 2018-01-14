@@ -1,0 +1,11 @@
+{
+    "description": "The payment method(s) accepted by seller for this offer.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/LoanOrCredit"
+        },
+        {
+            "$ref": "#/components/schema/PaymentMethod"
+        }
+    ]
+}

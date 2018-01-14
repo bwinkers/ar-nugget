@@ -1,0 +1,11 @@
+{
+    "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/MonetaryAmount"
+        },
+        {
+            "$ref": "#/components/schema/PriceSpecification"
+        }
+    ]
+}

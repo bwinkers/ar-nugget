@@ -1,0 +1,11 @@
+{
+    "description": "A URL to a map of the place. Supersedes map, maps.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Map"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

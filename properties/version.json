@@ -1,0 +1,11 @@
+{
+    "description": "The version of the CreativeWork embodied by a specified resource.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Number"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

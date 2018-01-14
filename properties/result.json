@@ -1,9 +1,4 @@
 {
-    "description": "Test result",
-    "label": "Result",
-    "name": "result",
-    "type": "array",
-    "items": {
-        "$ref": "#/definitions/result"
-    }
+    "description": "The result produced in the action. e.g. John wrote a book.",
+    "$ref": "#/components/schema/Thing"
 }

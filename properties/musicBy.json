@@ -1,0 +1,11 @@
+{
+    "description": "The composer of the soundtrack.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/MusicGroup"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

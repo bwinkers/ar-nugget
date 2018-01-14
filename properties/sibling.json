@@ -1,0 +1,4 @@
+{
+    "description": "A sibling of the person. Supersedes siblings.",
+    "$ref": "#/components/schema/Person"
+}

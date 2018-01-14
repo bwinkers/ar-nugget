@@ -1,0 +1,4 @@
+{
+    "description": "The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.",
+    "type": "string"
+}

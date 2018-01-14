@@ -1,0 +1,4 @@
+{
+    "description": "The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours.",
+    "$ref": "#/components/schema/OpeningHoursSpecification"
+}

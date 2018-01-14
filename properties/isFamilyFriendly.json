@@ -1,0 +1,4 @@
+{
+    "description": "Indicates whether this content is family friendly.",
+    "type": " boolean"
+}

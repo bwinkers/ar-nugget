@@ -1,0 +1,4 @@
+{
+    "description": "The composition this track is a recording of. Inverse property: recordedAs.",
+    "$ref": "#/components/schema/MusicComposition"
+}

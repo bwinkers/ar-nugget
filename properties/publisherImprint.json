@@ -1,0 +1,4 @@
+{
+    "description": "The publishing division which published the comic.",
+    "$ref": "#/components/schema/Organization"
+}

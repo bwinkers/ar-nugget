@@ -1,0 +1,11 @@
+{
+    "description": "The publisher of the creative work.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

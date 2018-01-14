@@ -1,0 +1,4 @@
+{
+    "description": "The duration for which the given offer is valid.",
+    "$ref": "#/components/schema/QuantitativeValue"
+}

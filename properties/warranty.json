@@ -1,0 +1,4 @@
+{
+    "description": "The warranty promise(s) included in the offer. Supersedes warrantyPromise.",
+    "$ref": "#/components/schema/WarrantyPromise"
+}

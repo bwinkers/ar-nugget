@@ -1,0 +1,11 @@
+{
+    "description": "Genre of the creative work, broadcast channel or group.",
+    "oneOf": [
+        {
+            "type": "string"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

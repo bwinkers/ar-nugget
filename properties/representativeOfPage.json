@@ -1,0 +1,4 @@
+{
+    "description": "Indicates whether this image is representative of the content of the page.",
+    "type": " boolean"
+}

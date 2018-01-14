@@ -1,0 +1,11 @@
+{
+    "description": "A secondary contributor to the CreativeWork or Event.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

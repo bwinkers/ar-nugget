@@ -1,0 +1,4 @@
+{
+    "description": "The basic containment relation between a place and another that it contains. Inverse property: containedInPlace.",
+    "$ref": "#/components/schema/Place"
+}

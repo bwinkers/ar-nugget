@@ -1,0 +1,4 @@
+{
+    "description": "An embedded audio object.",
+    "$ref": "#/components/schema/AudioObject"
+}

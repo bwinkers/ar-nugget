@@ -1,0 +1,4 @@
+{
+    "description": "Indicates a target EntryPoint for an Action.",
+    "$ref": "#/components/schema/EntryPoint"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "Alumni of an organization. Inverse property: alumniOf.",
+    "$ref": "#/components/schema/Person"
+}

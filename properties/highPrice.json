@@ -1,0 +1,11 @@
+{
+    "description": "The highest price of all offers available.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Number"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

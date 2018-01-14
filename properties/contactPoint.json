@@ -1,0 +1,4 @@
+{
+    "description": "A contact point for a person or organization. Supersedes contactPoints.",
+    "$ref": "#/components/schema/ContactPoint"
+}

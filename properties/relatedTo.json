@@ -1,0 +1,4 @@
+{
+    "description": "The most generic familial relation.",
+    "$ref": "#/components/schema/Person"
+}

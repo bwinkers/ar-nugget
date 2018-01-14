@@ -1,0 +1,11 @@
+{
+    "description": "A colleague of the person. Supersedes colleagues.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Person"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

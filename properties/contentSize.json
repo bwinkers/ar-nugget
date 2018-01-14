@@ -1,0 +1,4 @@
+{
+    "description": "File size in (mega/kilo) bytes.",
+    "type": "string"
+}

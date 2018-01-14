@@ -1,0 +1,11 @@
+{
+    "description": "A license document that applies to this content, typically indicated by URL.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/CreativeWork"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

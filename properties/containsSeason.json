@@ -1,0 +1,4 @@
+{
+    "description": "A season that is part of the media series. Supersedes season.",
+    "$ref": "#/components/schema/CreativeWorkSeason"
+}

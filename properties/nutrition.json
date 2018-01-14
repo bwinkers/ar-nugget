@@ -1,0 +1,4 @@
+{
+    "description": "Nutrition information about the recipe or menu item.",
+    "$ref": "#/components/schema/NutritionInformation"
+}

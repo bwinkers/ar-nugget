@@ -1,0 +1,4 @@
+{
+    "description": "Fictional person connected with a creative work.",
+    "$ref": "#/components/schema/Person"
+}

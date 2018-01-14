@@ -1,0 +1,4 @@
+{
+    "description": "The availability of this item\u2014for example In stock, Out of stock, Pre-order, etc.",
+    "$ref": "#/components/schema/ItemAvailability"
+}

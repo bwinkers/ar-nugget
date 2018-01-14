@@ -1,5 +1,4 @@
 {
-    "description": "Error message",
-    "label": "Error",
-    "name": "error"    
+    "description": "For failed actions, more information on the cause of the failure.",
+    "$ref": "#/components/schema/Thing"
 }

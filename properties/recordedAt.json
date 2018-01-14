@@ -1,0 +1,4 @@
+{
+    "description": "The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event. Inverse property: recordedIn.",
+    "$ref": "#/components/schema/Event"
+}

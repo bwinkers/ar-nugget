@@ -1,0 +1,4 @@
+{
+    "description": "A review of the item. Supersedes reviews.",
+    "$ref": "#/components/schema/Review"
+}

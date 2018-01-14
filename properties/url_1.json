@@ -1,6 +1,0 @@
-{
-  "title": "URL",
-  "type": "string",
-  "format": "url",
-  "description": "A URL resource"
-}

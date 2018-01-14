@@ -1,0 +1,4 @@
+{
+    "description": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+    "type": "string"
+}

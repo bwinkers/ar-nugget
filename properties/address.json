@@ -1,0 +1,11 @@
+{
+    "description": "Physical address of the item.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/PostalAddress"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

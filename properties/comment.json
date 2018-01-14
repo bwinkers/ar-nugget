@@ -1,0 +1,4 @@
+{
+    "description": "Comments, typically from users.",
+    "$ref": "#/components/schema/Comment"
+}

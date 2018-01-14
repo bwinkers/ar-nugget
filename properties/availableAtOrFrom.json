@@ -1,0 +1,4 @@
+{
+    "description": "The place(s) from which the offer can be obtained (e.g. store locations).",
+    "$ref": "#/components/schema/Place"
+}

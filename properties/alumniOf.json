@@ -1,0 +1,11 @@
+{
+    "description": "An organization that the person is an alumni of. Inverse property: alumni.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/EducationalOrganization"
+        },
+        {
+            "$ref": "#/components/schema/Organization"
+        }
+    ]
+}

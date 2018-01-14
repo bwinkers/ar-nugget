@@ -1,0 +1,4 @@
+{
+    "description": "An episode of a tv, radio or game media within a series or season. Supersedes episodes.",
+    "$ref": "#/components/schema/Episode"
+}

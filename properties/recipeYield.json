@@ -1,0 +1,11 @@
+{
+    "description": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/QuantitativeValue"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

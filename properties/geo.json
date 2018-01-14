@@ -1,0 +1,11 @@
+{
+    "description": "The geo coordinates of the place.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/GeoCoordinates"
+        },
+        {
+            "$ref": "#/components/schema/GeoShape"
+        }
+    ]
+}

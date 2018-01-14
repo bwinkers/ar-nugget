@@ -1,0 +1,4 @@
+{
+    "description": "Indicates whether the book is an abridged edition.",
+    "type": " boolean"
+}

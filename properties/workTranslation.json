@@ -1,0 +1,4 @@
+{
+    "description": "A work that is a translation of the content of this work. e.g. \u897f\u904a\u8a18 has an English workTranslation \u201cJourney to the West\u201d,a German workTranslation \u201cMonkeys Pilgerfahrt\u201d and a Vietnamese translation T\u00e2y du k\u00fd b\u00ecnh kh\u1ea3o. Inverse property: translationOfWork.",
+    "$ref": "#/components/schema/CreativeWork"
+}

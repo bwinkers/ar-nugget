@@ -1,0 +1,4 @@
+{
+    "description": "A link to the page containing the comments of the CreativeWork.",
+    "type": "string"
+}

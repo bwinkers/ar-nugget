@@ -1,0 +1,4 @@
+{
+    "description": "Official rating of a piece of content\u2014for example,'MPAA PG-13'.",
+    "type": "string"
+}

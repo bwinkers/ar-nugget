@@ -1,0 +1,4 @@
+{
+    "description": "An additional name for a Person, can be used for a middle name.",
+    "type": "string"
+}

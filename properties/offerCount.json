@@ -1,0 +1,4 @@
+{
+    "description": "The number of offers for the product.",
+    "type": "integer"
+}

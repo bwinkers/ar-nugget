@@ -1,0 +1,4 @@
+{
+    "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+    "$ref": "#/components/schema/OfferCatalog"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "This links to a node or nodes indicating the exact quantity of the products included in the offer.",
+    "$ref": "#/components/schema/TypeAndQuantityNode"
+}

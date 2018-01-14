@@ -1,5 +1,4 @@
 {
-  "title": "Caption",
-  "type": "string",
-  "description": "The caption for this object or nugget."
+    "description": "The caption for this object.",
+    "type": "string"
 }

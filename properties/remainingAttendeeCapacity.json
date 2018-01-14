@@ -1,0 +1,4 @@
+{
+    "description": "The number of attendee places for an event that remain unallocated.",
+    "type": "integer"
+}

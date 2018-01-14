@@ -1,0 +1,14 @@
+{
+    "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Product"
+        },
+        {
+            "type": "string"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

@@ -1,5 +1,11 @@
 {
-  "title": "exif Data",
-  "type": "string",
-  "description": "exif data for this object."
+    "description": "exif data for this object.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/PropertyValue"
+        },
+        {
+            "type": "string"
+        }
+    ]
 }

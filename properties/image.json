@@ -1,5 +1,11 @@
 {
-  "title": "Image",
-  "type": "string",
-  "description": "A name used to refer to the thing or nugget."
+    "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/ImageObject"
+        },
+        {
+            "type": "string"
+        }
+    ]
 }

@@ -1,0 +1,4 @@
+{
+    "description": "The number of pages in the book.",
+    "type": "integer"
+}

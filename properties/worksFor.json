@@ -1,0 +1,4 @@
+{
+    "description": "Organizations that the person works for.",
+    "$ref": "#/components/schema/Organization"
+}

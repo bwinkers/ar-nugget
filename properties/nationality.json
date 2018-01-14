@@ -1,0 +1,4 @@
+{
+    "description": "Nationality of the person.",
+    "$ref": "#/components/schema/Country"
+}

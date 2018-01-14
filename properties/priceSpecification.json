@@ -1,0 +1,4 @@
+{
+    "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+    "$ref": "#/components/schema/PriceSpecification"
+}

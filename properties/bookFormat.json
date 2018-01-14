@@ -1,0 +1,4 @@
+{
+    "description": "The format of the book.",
+    "$ref": "#/components/schema/BookFormatType"
+}

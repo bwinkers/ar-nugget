@@ -1,0 +1,4 @@
+{
+    "description": "An alignment to an established educational framework.",
+    "$ref": "#/components/schema/AlignmentObject"
+}

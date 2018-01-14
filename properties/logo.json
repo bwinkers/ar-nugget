@@ -1,0 +1,11 @@
+{
+    "description": "An associated logo.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/ImageObject"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

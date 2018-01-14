@@ -1,0 +1,4 @@
+{
+    "description": "The cuisine of the restaurant.",
+    "type": "string"
+}

@@ -1,0 +1,11 @@
+{
+    "description": "A pointer to another, somehow related product (or multiple products).",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Product"
+        },
+        {
+            "$ref": "#/components/schema/Service"
+        }
+    ]
+}

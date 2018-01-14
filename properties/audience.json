@@ -1,0 +1,4 @@
+{
+    "description": "An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+    "$ref": "#/components/schema/Audience"
+}

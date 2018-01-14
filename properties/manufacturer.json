@@ -1,0 +1,4 @@
+{
+    "description": "The manufacturer of the product.",
+    "$ref": "#/components/schema/Organization"
+}

@@ -1,0 +1,4 @@
+{
+    "description": "The color of the product.",
+    "type": "string"
+}

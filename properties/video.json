@@ -1,0 +1,4 @@
+{
+    "description": "An embedded video object.",
+    "$ref": "#/components/schema/VideoObject"
+}

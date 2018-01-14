@@ -1,0 +1,4 @@
+{
+    "description": "A parent of this person. Supersedes parents.",
+    "$ref": "#/components/schema/Person"
+}

@@ -1,0 +1,11 @@
+{
+    "description": "Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.",
+    "oneOf": [
+        {
+            "$ref": "#/components/schema/Organization"
+        },
+        {
+            "$ref": "#/components/schema/Person"
+        }
+    ]
+}

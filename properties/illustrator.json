@@ -1,0 +1,4 @@
+{
+    "description": "The illustrator of the book.",
+    "$ref": "#/components/schema/Person"
+}

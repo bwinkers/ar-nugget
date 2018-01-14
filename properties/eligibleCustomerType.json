@@ -1,0 +1,4 @@
+{
+    "description": "The type(s) of customers for which the given offer is valid.",
+    "$ref": "#/components/schema/BusinessEntityType"
+}

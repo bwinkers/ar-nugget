@@ -1,0 +1,4 @@
+{
+    "description": "A media object that encodes this CreativeWork. This property is a synonym for associatedMedia. Supersedes encodings.",
+    "$ref": "#/components/schema/MediaObject"
+}

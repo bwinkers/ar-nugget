@@ -1,0 +1,4 @@
+{
+    "description": "The method of cooking, such as Frying, Steaming, ...",
+    "type": "string"
+}

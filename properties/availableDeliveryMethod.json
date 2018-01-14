@@ -1,0 +1,4 @@
+{
+    "description": "The delivery method(s) available for this offer.",
+    "$ref": "#/components/schema/DeliveryMethod"
+}
