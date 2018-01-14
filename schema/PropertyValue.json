@@ -16,5 +16,6 @@
     },
     "extends": [
         "Thing"
-    ]
+    ],
+    "type": "object"
 }

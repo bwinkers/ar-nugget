@@ -4,5 +4,6 @@
     "properties": [],
     "extends": [
         "Thing"
-    ]
+    ],
+    "type": "object"
 }
