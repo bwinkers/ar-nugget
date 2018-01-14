@@ -1,7 +1,7 @@
 {
     "title": "Thing",
     "description": "Base object type for everything else",
-    "required": [],
+    "required": ["name"],
     "properties": [
         "alternateName",
         "additionalType",

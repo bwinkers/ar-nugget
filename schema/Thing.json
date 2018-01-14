@@ -1,7 +1,9 @@
 {
     "title": "Thing",
     "description": "Base object type for everything else",
-    "required": [],
+    "required": [
+        "name"
+    ],
     "properties": {
         "description": {
             "description": "A description of the item.",
@@ -42,29 +44,8 @@
             "type": "string"
         }
     },
+    "type": "object",
     "definitions": {
-        "result": {
-            "title": "Result",
-            "description": "Test Result",
-            "required": [],
-            "properties": {
-                "error": {
-                    "description": "Error message",
-                    "label": "Error",
-                    "name": "error"
-                },
-                "test": {
-                    "description": "Test result",
-                    "label": "Result",
-                    "name": "result",
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://json-schema.org/draft-07/schema"
-                    }
-                }
-            },
-            "type": "object"
-        },
         "action": {
             "title": "Action",
             "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.",
@@ -85,7 +66,31 @@
                     }
                 }
             },
-            "type": "object"
+            "type": "object",
+            "definitions": {
+                "result": {
+                    "title": "Result",
+                    "description": "Test Result",
+                    "required": [],
+                    "properties": {
+                        "error": {
+                            "description": "Error message",
+                            "label": "Error",
+                            "name": "error"
+                        },
+                        "test": {
+                            "description": "Test result",
+                            "label": "Result",
+                            "name": "result",
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://json-schema.org/draft-07/schema"
+                            }
+                        }
+                    },
+                    "type": "object"
+                }
+            }
         }
     }
 }

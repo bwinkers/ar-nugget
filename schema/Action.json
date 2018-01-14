@@ -18,6 +18,7 @@
             }
         }
     },
+    "type": "object",
     "definitions": {
         "result": {
             "title": "Result",
