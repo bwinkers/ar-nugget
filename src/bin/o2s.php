@@ -187,7 +187,7 @@ function resolvePropertyReference($prop, $def, & $defs ) {
           loadRef($def, $defs);
           break;
       case 'items':
-          processItem($def, $defs);
+          checkThenProcessItem($def, $defs);
           break;
       default:
           break;
@@ -199,17 +199,26 @@ function resolvePropertyReference($prop, $def, & $defs ) {
  * @param type $def
  * @param type $defs
  */
-function processItem($def, & $defs){
+function checkThenProcessItem($def, & $defs){
     if(gettype($def) === 'object') {
-        // Loop through ref object
-        foreach($def as $refKey => $refString) {
-            // Is this our reference?
-            if($refKey === '$ref') {
-                // Load the reference
-                loadRef($refString, $defs);
-            }
-        }
+        processItem($def, $defs);
     }
+}
+
+/**
+ * 
+ * @param type $def
+ * @param type $defs
+ */
+function processItem($def, & $defs) {
+  // Loop through ref object
+  foreach($def as $refKey => $refString) {
+      // Is this our reference?
+      if($refKey === '$ref') {
+          // Load the reference
+          loadRef($refString, $defs);
+      }
+  }
 }
 
 /**
