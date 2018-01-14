@@ -19,3 +19,16 @@ after_success:
   # - travis_retry php vendor/bin/coveralls
   # or enable logging
   - travis_retry php vendor/bin/coveralls -v
+  
+plugins:
+  phpcodesniffer:
+    enabled: true
+    config:
+      file_extensions: "php,inc,lib" 
+      standard: "PSR1,PSR2"
+      ignore_warnings: true
+      
+checkout_submodules: true
+  
+  
+  
