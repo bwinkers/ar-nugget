@@ -207,21 +207,25 @@ function loadRef($refString, & $defs) {
         $parts = explode('/', $refString);
         $name = array_pop($parts);
        
-        if(!array_key_exists($name, $defs)) {
-            // Get the full path to the Defile
-            $objFile = realpath (OBJECTDIR.'/'.ucfirst($name).'.json');
+        populateRef($name, $defs);
+    }
+}
 
-            if($objFile) {
-                // Read the file contents
-                $objJSON = file_get_contents($objFile);
+function populateRef($name, & $defs) {
+    if(!array_key_exists($name, $defs)) {
+        // Get the full path to the Definition file
+        $objFile = realpath (OBJECTDIR.'/'.ucfirst($name).'.json');
 
-                // Convert JSON into a PHP object defining the schema parts
-                $schemaDef = json_decode($objJSON);
+        if($objFile) {
+            // Read the file contents
+            $objJSON = file_get_contents($objFile);
 
-                $schema = hydrateSchema($schemaDef, $name);
+            // Convert JSON into a PHP object defining the schema parts
+            $schemaDef = json_decode($objJSON);
 
-                $defs[$name] = $schema;           
-            }
+            $schema = hydrateSchema($schemaDef, $name);
+
+            $defs[$name] = $schema;           
         }
     }
 }
