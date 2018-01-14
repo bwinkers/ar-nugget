@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/aa0a4d97bb3af8d0a7a6/maintainability)](https://codeclimate.com/github/bwinkers/nugget/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/aa0a4d97bb3af8d0a7a6/test_coverage)](https://codeclimate.com/github/bwinkers/nugget/test_coverage)
 
-A PHP7 for defining, validating and processing JSON business objects.
+A PHP7 library for defining, validating and processing JSON business objects.
 
 The ActiveRules Nugget Schema treats all data as `nuggets`.
 These `nuggets` can be defined, and related using JSON files.
