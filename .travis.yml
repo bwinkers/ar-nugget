@@ -4,7 +4,7 @@ php:
   - 7.1
 env:
   global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d  
+    - CC_TEST_REPORTER_ID=c18047eab5b9de5e7e83161b517aff0c88353a00cbbf913b4713eefdf80bad3c  
 before_script: 
   - phpenv config-add myconfig.ini
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -41,6 +41,12 @@ plugins:
     enabled: true
     config:
       file_extensions: "php"
+  sonar-php:
+    enabled: true
+    config:
+      tests_patterns:
+        - src/test/**
+        - app/src/test/**
 checkout_submodules: true
   
   
