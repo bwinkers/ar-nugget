@@ -1,6 +1,7 @@
 # nugget
 [![Coverage Status](https://coveralls.io/repos/github/bwinkers/nugget/badge.svg?branch=master)](https://coveralls.io/github/bwinkers/nugget?branch=master)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/aa0a4d97bb3af8d0a7a6/maintainability)](https://codeclimate.com/github/bwinkers/nugget/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/aa0a4d97bb3af8d0a7a6/test_coverage)](https://codeclimate.com/github/bwinkers/nugget/test_coverage)
 A PHP7 for defining, validating and processing JSON business objects.
 
 The ActiveRules Nugget Schema treats all data as `nuggets`.
