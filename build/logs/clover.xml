@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1515955387">
-  <project timestamp="1515955387">
+<coverage generated="1515957484">
+  <project timestamp="1515957484">
     <package name="Activerules\Nugget">
       <file name="/home/brian/sandbox/nugget/src/Nugget.php">
         <class name="Nugget" namespace="Activerules\Nugget">
-          <metrics complexity="9" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="18" coveredelements="13"/>
+          <metrics complexity="9" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
         </class>
-        <line num="75" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
-        <line num="77" type="stmt" count="7"/>
-        <line num="84" type="method" name="jsonType" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="86" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="90" type="stmt" count="0"/>
+        <line num="75" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="77" type="stmt" count="9"/>
+        <line num="84" type="method" name="jsonType" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="86" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
         <line num="100" type="method" name="meetsSchema" visibility="public" complexity="2" crap="2" count="6"/>
         <line num="102" type="stmt" count="6"/>
         <line num="104" type="stmt" count="6"/>
@@ -24,7 +24,7 @@
         <line num="126" type="stmt" count="2"/>
         <line num="127" type="stmt" count="2"/>
         <line num="131" type="stmt" count="2"/>
-        <metrics loc="135" ncloc="104" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="18" coveredelements="13"/>
+        <metrics loc="135" ncloc="104" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
       </file>
     </package>
     <package name="Activerules\Nugget\Exceptions">
@@ -35,6 +35,6 @@
         <metrics loc="12" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="2" loc="147" ncloc="112" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="18" coveredelements="13"/>
+    <metrics files="2" loc="147" ncloc="112" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
   </project>
 </coverage>
