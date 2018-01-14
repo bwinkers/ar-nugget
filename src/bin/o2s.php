@@ -8,10 +8,11 @@ $shortopts  = "";
 $shortopts .= "o:";  // Required - path to object definitions
 $shortopts .= "p:";  // Required - path to property definitions
 $shortopts .= "s:";  // Required - path for generated Open API schema objects
+$shortopts .= "d:";  // Required - path for generated Open API schema w/ populated $refs
 
 $options = getopt($shortopts);
 
-if(empty($options['p']) || empty($options['o']) || empty($options['s'])) {
+if(empty($options['p']) || empty($options['o']) || empty($options['s'])  || empty($options['d'])) {
   exit;
 }
 
@@ -22,14 +23,78 @@ define('OBJECTDIR', realpath($options['o']));
 // They can be extended and reused across objects.
 define('PROPERTYDIR', realpath($options['p']));
 
-// A writeable directory for the OpenAPI schema definitions
+// A writeable directory for the OpenAPI schema w/o included $ref definitions
 define('SCHEMADIR', realpath($options['s']));
 
-// Process the obejct directory
+// A writeable directory for the OpenAPI schema with populated local $ref
+define('SCHEMADOCDIR', realpath($options['d']));
+
+// Process the object directory
 processObjectDirectory();
 
+// Process the object directory
+processSchemaReferences();
+
+
+
 /**
- * Process the object definitions directory 
+ * Loop through created schema file and populate definitions based on #ref
+ */
+function processSchemaReferences()
+{
+  // Create a directory iterator for the defined objects directory
+  $files = new \DirectoryIterator(SCHEMADIR);
+  
+  // Iterate through object definitions
+  foreach ($files as $fileInfo) {
+    // Make sure its a valid file
+    if(validObjectFile($fileInfo)) {
+      // Attempt creating a Schema object from the definition
+      processReferences($fileInfo->getFilename());
+    }
+  }
+}
+
+/**
+ * 
+ * @param type $objectName
+ */
+function processReferences($schemaName) {
+  
+  // Get the full path to the JSON schema file
+  $objFile = realpath (SCHEMADIR.'/'.$schemaName);
+
+  // Read the file contents
+  $objJSON = file_get_contents($objFile);
+
+  // Convert JSON into a PHP object defining the schema 
+  $schema = json_decode($objJSON, true);
+
+  // If we have schema properties continue
+  if(isset($schema['properties'])) {
+    
+    $refs = array_walk_recursive($schema, "isReference");
+    var_dump($refs);
+  }
+}
+
+/**
+ * 
+ * @param type $value
+ * @param type $key
+ */
+function isReference($value, $key) {
+  if($key === '$ref') {
+    var_dump($value);
+    return true;
+  }
+
+  return false;
+}
+
+
+/**
+ * Process the object definitions directory for defined schema
  */
 function processObjectDirectory()
 {
@@ -68,12 +133,21 @@ function processSchema($schemaName) {
   }
 }
 
-function writeSchema($schema, $schemaName) {
+function writeSchema($schema, $schemaName, $dir='schema') {
   // JSON encode the obj to get a valid spec JSON
   $spec = json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
   // Create a writeable file pointer to the OpenAPI schema location
-  $fp = fopen(SCHEMADIR.'/'.$schemaName, 'w');
+  switch($dir) {
+    case 'schemadoc':
+      $path = SCHEMADOCDIR.'/'.$schemaName;
+      break;
+      
+    default:
+      $path = SCHEMADIR.'/'.$schemaName;
+      break;
+  }
+  $fp = fopen($path, 'w');
 
   // Write the spec to the file pointer
   fwrite($fp, $spec);
@@ -141,7 +215,7 @@ function hydrateProperty($propertyFile, & $defs) {
   $propObj = json_decode($propertyDef);
 
   // Check for references and expand or hydrate as needed
-  populateRefs($propObj, $defs);
+  //populateRefs($propObj, $defs);
 
   // Use this definition as the value for the OpenAPI property
   return $propObj;
