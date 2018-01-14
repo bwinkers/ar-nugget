@@ -5,92 +5,59 @@
         "name"
     ],
     "properties": {
+        "alternateName": {
+            "description": "An alias for the item.",
+            "type": "string"
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "type": "string"
+        },
         "description": {
             "description": "A description of the item.",
-            "label": "Description",
-            "name": "description",
             "type": "string"
         },
         "identifier": {
             "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
-            "label": "Identifier",
-            "name": "indentifier",
-            "type": "string"
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "image": {
-            "title": "Image",
-            "type": "string",
-            "description": "A name used to refer to the thing or nugget."
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "name": {
             "description": "The name of the item.",
-            "label": "Name",
-            "name": "name",
             "type": "string"
         },
         "potentialAction": {
             "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-            "label": "Actions",
-            "name": "potentialActions",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/action"
-            }
+            "$ref": "#/components/schema/Action"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "type": "string"
         },
         "url": {
-            "description": "A Uniform Resource Locator as defined in RFC 1738.",
-            "label": "URL",
-            "name": "url",
+            "description": "URL of the item.",
             "type": "string"
         }
     },
-    "type": "object",
-    "definitions": {
-        "action": {
-            "title": "Action",
-            "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.",
-            "required": [],
-            "properties": {
-                "error": {
-                    "description": "Error message",
-                    "label": "Error",
-                    "name": "error"
-                },
-                "result": {
-                    "description": "Test result",
-                    "label": "Result",
-                    "name": "result",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/result"
-                    }
-                }
-            },
-            "type": "object",
-            "definitions": {
-                "result": {
-                    "title": "Result",
-                    "description": "Test Result",
-                    "required": [],
-                    "properties": {
-                        "error": {
-                            "description": "Error message",
-                            "label": "Error",
-                            "name": "error"
-                        },
-                        "test": {
-                            "description": "Test result",
-                            "label": "Result",
-                            "name": "result",
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://json-schema.org/draft-07/schema"
-                            }
-                        }
-                    },
-                    "type": "object"
-                }
-            }
-        }
-    }
+    "type": "object"
 }

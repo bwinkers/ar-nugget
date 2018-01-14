@@ -1,3 +1,149 @@
 {
-    "name": "brian"
+    "title": "Person",
+    "description": "A person (alive, dead, undead, or fictional)",
+    "required": [],
+    "properties": {
+        "additionalName": {
+            "description": "An additional name for a Person, can be used for a middle name.",
+            "type": "string"
+        },
+        "address": {
+            "description": "Physical address of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PostalAddress"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "affiliation": {
+            "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+            "$ref": "#/components/schema/Organization"
+        },
+        "alumniOf": {
+            "description": "An organization that the person is an alumni of. Inverse property: alumni.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/EducationalOrganization"
+                },
+                {
+                    "$ref": "#/components/schema/Organization"
+                }
+            ]
+        },
+        "award": {
+            "description": "An award won by or for this item. Supersedes awards.",
+            "type": "string"
+        },
+        "birthDate": {
+            "description": "Date of birth.",
+            "type": "string"
+        },
+        "birthPlace": {
+            "description": "The place where the person was born.",
+            "$ref": "#/components/schema/Place"
+        },
+        "brand": {
+            "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Brand"
+                },
+                {
+                    "$ref": "#/components/schema/Organization"
+                }
+            ]
+        },
+        "children": {
+            "description": "A child of the person.",
+            "$ref": "#/components/schema/Person"
+        },
+        "colleague": {
+            "description": "A colleague of the person. Supersedes colleagues.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Person"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "contactPoint": {
+            "description": "A contact point for a person or organization. Supersedes contactPoints.",
+            "$ref": "#/components/schema/ContactPoint"
+        },
+        "deathDate": {
+            "description": "Date of death.",
+            "type": "string"
+        },
+        "deathPlace": {
+            "description": "The place where the person died.",
+            "$ref": "#/components/schema/Place"
+        },
+        "duns": {
+            "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+            "type": "string"
+        },
+        "email": {
+            "description": "Email address.",
+            "type": "string"
+        },
+        "familyName": {
+            "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+            "type": "string"
+        },
+        "faxNumber": {
+            "description": "The fax number.",
+            "type": "string"
+        },
+        "follows": {
+            "description": "The most generic uni-directional social relation.",
+            "$ref": "#/components/schema/Person"
+        },
+        "funder": {
+            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/Person"
+                }
+            ]
+        },
+        "gender": {
+            "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GenderType"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "givenName": {
+            "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+            "type": "string"
+        },
+        "globalLocationNumber": {
+            "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+            "type": "string"
+        },
+        "hasOccupation": {
+            "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+            "$ref": "#/components/schema/Occupation"
+        },
+        "hasOfferCatalog": {
+            "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+            "$ref": "#/components/schema/OfferCatalog"
+        }
+    },
+    "extends": [
+        "Thing"
+    ],
+    "type": "object"
 }

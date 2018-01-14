@@ -4,14 +4,27 @@
     "required": [],
     "properties": {
         "caption": {
-            "title": "Caption",
-            "type": "string",
-            "description": "The caption for this object or nugget."
+            "description": "The caption for this object.",
+            "type": "string"
         },
         "exifData": {
-            "title": "exif Data",
-            "type": "string",
-            "description": "exif data for this object."
+            "description": "exif data for this object.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "representativeOfPage": {
+            "description": "Indicates whether this image is representative of the content of the page.",
+            "type": " boolean"
+        },
+        "thumbnail": {
+            "description": "Thumbnail image for an image or video.",
+            "$ref": "#/components/schema/ImageObject"
         }
     },
     "type": "object"
