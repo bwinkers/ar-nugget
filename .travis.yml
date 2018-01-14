@@ -24,10 +24,15 @@ plugins:
   phpcodesniffer:
     enabled: true
     config:
-      file_extensions: "php,inc,lib" 
+      file_extensions: "php,inc" 
       standard: "PSR1,PSR2"
       ignore_warnings: true
-      
+  phpmd:
+    enabled: true
+    config:
+      file_extensions: 
+        - php
+        - inc      
 checkout_submodules: true
   
   
