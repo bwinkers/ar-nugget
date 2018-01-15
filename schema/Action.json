@@ -60,5 +60,6 @@
             "$ref": "#/components/schema/EntryPoint"
         }
     },
+    "extends": "Thing",
     "type": "object"
 }
