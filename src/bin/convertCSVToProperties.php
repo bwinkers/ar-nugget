@@ -21,16 +21,14 @@ foreach ($dir as $fileInfo) {
     $name = $fileInfo->getFilename();
 
     // Skip '.', '..' and `.*` files
-    if (!$fileInfo->isDot() && substr($name,0,1) != '.') {
-
-        
+    if (!$fileInfo->isDot() && substr($name, 0, 1) != '.') {
         var_dump($fileInfo->getPathname());
         
         $fullPath = $fileInfo->getPathname();
         
         $row = 1;
-        if (($handle = fopen($fullPath, "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
+        if (($handle = fopen($fullPath, "r")) !== false) {
+            while (($data = fgetcsv($handle, 5000, ",")) !== false) {
                 $num = count($data);
                 echo "<p> $num fields in line $row: <br /></p>\n";
                 $row++;
@@ -52,7 +50,8 @@ foreach ($dir as $fileInfo) {
     }
 }
 
-function splitName($name) {
+function splitName($name)
+{
     $re = '/(?#! splitCamelCase Rev:20140412)
     # Split camelCase "words". Two global alternatives. Either g1of2:
       (?<=[a-z])      # Position is after a lowercase,
@@ -63,8 +62,11 @@ function splitName($name) {
     $a = preg_split($re, $ccWord);
     $count = count($a);
     for ($i = 0; $i < $count; ++$i) {
-        printf("Word %d of %d = \"%s\"\n",
-            $i + 1, $count, $a[$i]);
+        printf(
+            "Word %d of %d = \"%s\"\n",
+            $i + 1,
+            $count,
+            $a[$i]
+        );
     }
 }
-
