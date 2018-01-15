@@ -11,7 +11,5 @@
         "value",
         "valueReference"
     ],
-    "extends": [
-        "Thing"
-    ]
+    "extends": "Thing"
 }

@@ -28,7 +28,5 @@
         "hasOccupation",
         "hasOfferCatalog"        
     ],
-    "extends": [
-        "Thing"
-    ]
+    "extends": "Thing"
 }

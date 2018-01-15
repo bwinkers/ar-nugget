@@ -35,7 +35,5 @@
         "weight",
         "width"
     ],
-    "extends":[
-        "Thing"
-    ]
+    "extends": "Thing"
 }
