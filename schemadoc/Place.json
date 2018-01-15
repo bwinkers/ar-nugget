@@ -484,9 +484,7 @@
                         "$ref": "#/components/schema/OfferCatalog"
                     }
                 },
-                "extends": [
-                    "Thing"
-                ],
+                "extends": "Thing",
                 "type": "object"
             },
             "ContactPoint": null,

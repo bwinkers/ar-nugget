@@ -222,9 +222,7 @@
                         "$ref": "#/components/schema/OfferCatalog"
                     }
                 },
-                "extends": [
-                    "Thing"
-                ],
+                "extends": "Thing",
                 "type": "object"
             },
             "Thing": {

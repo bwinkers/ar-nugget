@@ -155,9 +155,7 @@
             "$ref": "#/components/schema/OfferCatalog"
         }
     },
-    "extends": [
-        "Thing"
-    ],
+    "extends": "Thing",
     "type": "object",
     "components": {
         "schema": {
@@ -484,9 +482,7 @@
                         "$ref": "#/components/schema/OfferCatalog"
                     }
                 },
-                "extends": [
-                    "Thing"
-                ],
+                "extends": "Thing",
                 "type": "object"
             },
             "ContactPoint": null,
