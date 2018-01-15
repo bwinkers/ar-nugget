@@ -1,0 +1,281 @@
+{
+    "title": "Action",
+    "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.",
+    "required": [],
+    "properties": {
+        "actionStatus": {
+            "description": "Indicates the current disposition of the Action.",
+            "$ref": "#/components/schema/ActionStatusType"
+        },
+        "agent": {
+            "description": "The direct performer or driver of the action (animate or inanimate). e.g. John wrote a book.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/Person"
+                }
+            ]
+        },
+        "endTime": {
+            "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+            "type": "string"
+        },
+        "error": {
+            "description": "For failed actions, more information on the cause of the failure.",
+            "$ref": "#/components/schema/Thing"
+        },
+        "instrument": {
+            "description": "The object that helped the agent perform the action. e.g. John wrote a book with a pen.",
+            "$ref": "#/components/schema/Thing"
+        },
+        "object": {
+            "description": "The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read a book.",
+            "$ref": "#/components/schema/Thing"
+        },
+        "participant": {
+            "description": "Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/Person"
+                }
+            ]
+        },
+        "result": {
+            "description": "The result produced in the action. e.g. John wrote a book.",
+            "$ref": "#/components/schema/Thing"
+        },
+        "startTime": {
+            "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+            "type": "string"
+        },
+        "target": {
+            "description": "Indicates a target EntryPoint for an Action.",
+            "$ref": "#/components/schema/EntryPoint"
+        }
+    },
+    "type": "object",
+    "components": {
+        "schema": {
+            "ActionStatusType": null,
+            "Organization": null,
+            "Person": {
+                "title": "Person",
+                "description": "A person (alive, dead, undead, or fictional)",
+                "required": [],
+                "properties": {
+                    "additionalName": {
+                        "description": "An additional name for a Person, can be used for a middle name.",
+                        "type": "string"
+                    },
+                    "address": {
+                        "description": "Physical address of the item.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/PostalAddress"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "affiliation": {
+                        "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+                        "$ref": "#/components/schema/Organization"
+                    },
+                    "alumniOf": {
+                        "description": "An organization that the person is an alumni of. Inverse property: alumni.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/EducationalOrganization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            }
+                        ]
+                    },
+                    "award": {
+                        "description": "An award won by or for this item. Supersedes awards.",
+                        "type": "string"
+                    },
+                    "birthDate": {
+                        "description": "Date of birth.",
+                        "type": "string"
+                    },
+                    "birthPlace": {
+                        "description": "The place where the person was born.",
+                        "$ref": "#/components/schema/Place"
+                    },
+                    "brand": {
+                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Brand"
+                            },
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            }
+                        ]
+                    },
+                    "children": {
+                        "description": "A child of the person.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "colleague": {
+                        "description": "A colleague of the person. Supersedes colleagues.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Person"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "contactPoint": {
+                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
+                        "$ref": "#/components/schema/ContactPoint"
+                    },
+                    "deathDate": {
+                        "description": "Date of death.",
+                        "type": "string"
+                    },
+                    "deathPlace": {
+                        "description": "The place where the person died.",
+                        "$ref": "#/components/schema/Place"
+                    },
+                    "duns": {
+                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email address.",
+                        "type": "string"
+                    },
+                    "familyName": {
+                        "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+                        "type": "string"
+                    },
+                    "faxNumber": {
+                        "description": "The fax number.",
+                        "type": "string"
+                    },
+                    "follows": {
+                        "description": "The most generic uni-directional social relation.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "funder": {
+                        "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "gender": {
+                        "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GenderType"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "givenName": {
+                        "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+                        "type": "string"
+                    },
+                    "globalLocationNumber": {
+                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+                        "type": "string"
+                    },
+                    "hasOccupation": {
+                        "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+                        "$ref": "#/components/schema/Occupation"
+                    },
+                    "hasOfferCatalog": {
+                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+                        "$ref": "#/components/schema/OfferCatalog"
+                    }
+                },
+                "extends": [
+                    "Thing"
+                ],
+                "type": "object"
+            },
+            "Thing": {
+                "title": "Thing",
+                "description": "Base object type for everything else",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "alternateName": {
+                        "description": "An alias for the item.",
+                        "type": "string"
+                    },
+                    "additionalType": {
+                        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the item.",
+                        "type": "string"
+                    },
+                    "identifier": {
+                        "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/PropertyValue"
+                            },
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "image": {
+                        "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/ImageObject"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "name": {
+                        "description": "The name of the item.",
+                        "type": "string"
+                    },
+                    "potentialAction": {
+                        "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+                        "$ref": "#/components/schema/Action"
+                    },
+                    "sameAs": {
+                        "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL of the item.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "EntryPoint": null
+        }
+    }
+}
