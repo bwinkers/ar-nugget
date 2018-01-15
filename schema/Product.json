@@ -224,8 +224,6 @@
             ]
         }
     },
-    "extends": [
-        "Thing"
-    ],
+    "extends": "Thing",
     "type": "object"
 }
