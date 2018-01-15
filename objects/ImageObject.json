@@ -7,5 +7,6 @@
         "exifData",
         "representativeOfPage",
         "thumbnail"
-    ]
+    ],
+    "extends": "Thing"
 }
