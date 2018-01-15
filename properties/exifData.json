@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/PropertyValue"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

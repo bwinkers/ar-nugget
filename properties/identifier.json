@@ -5,9 +5,11 @@
             "$ref": "#/components/schema/PropertyValue"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         },
         {
+            "nuggetType": "URL",
             "type": "string"
         }
     ]

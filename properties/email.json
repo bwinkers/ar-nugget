@@ -1,4 +1,5 @@
 {
     "description": "Email address.",
+    "nuggetType": "Text",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility (WebSchemas wiki lists possible values).",
+    "nuggetType": "Text",
     "type": "string"
 }

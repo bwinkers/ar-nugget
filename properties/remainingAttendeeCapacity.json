@@ -1,4 +1,5 @@
 {
     "description": "The number of attendee places for an event that remain unallocated.",
+    "nuggetType": "Integer",
     "type": "integer"
 }

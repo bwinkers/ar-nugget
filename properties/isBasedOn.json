@@ -8,6 +8,7 @@
             "$ref": "#/components/schema/Product"
         },
         {
+            "nuggetType": "URL",
             "type": "string"
         }
     ]

@@ -1,4 +1,5 @@
 {
     "description": "The telephone number.",
+    "nuggetType": "Text",
     "type": "string"
 }

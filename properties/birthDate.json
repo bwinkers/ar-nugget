@@ -1,4 +1,5 @@
 {
     "description": "Date of birth.",
+    "nuggetType": "Date",
     "type": "string"
 }

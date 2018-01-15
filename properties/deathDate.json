@@ -1,4 +1,5 @@
 {
     "description": "Date of death.",
+    "nuggetType": "Date",
     "type": "string"
 }

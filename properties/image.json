@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/ImageObject"
         },
         {
+            "nuggetType": "URL",
             "type": "string"
         }
     ]

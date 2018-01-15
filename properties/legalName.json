@@ -1,4 +1,5 @@
 {
     "description": "The official name of the organization, e.g. the registered company name.",
+    "nuggetType": "Text",
     "type": "string"
 }

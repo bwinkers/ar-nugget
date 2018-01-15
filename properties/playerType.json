@@ -1,4 +1,5 @@
 {
     "description": "Player type required\u2014for example, Flash or Silverlight.",
+    "nuggetType": "Text",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "A thumbnail image relevant to the Thing.",
+    "nuggetType": "URL",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "The bitrate of the media object.",
+    "nuggetType": "Text",
     "type": "string"
 }

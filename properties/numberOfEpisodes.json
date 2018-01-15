@@ -1,4 +1,5 @@
 {
     "description": "The number of episodes in this season or series.",
+    "nuggetType": "Integer",
     "type": "integer"
 }

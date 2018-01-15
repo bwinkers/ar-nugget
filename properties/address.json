@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/PostalAddress"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

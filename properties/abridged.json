@@ -1,4 +1,5 @@
 {
     "description": "Indicates whether the book is an abridged edition.",
+    "nuggetType": "Boolean",
     "type": " boolean"
 }

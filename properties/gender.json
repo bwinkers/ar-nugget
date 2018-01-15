@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/GenderType"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

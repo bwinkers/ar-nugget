@@ -8,6 +8,7 @@
             "$ref": "#/components/schema/ItemList"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

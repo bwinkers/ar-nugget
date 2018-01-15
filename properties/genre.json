@@ -2,9 +2,11 @@
     "description": "Genre of the creative work, broadcast channel or group.",
     "oneOf": [
         {
+            "nuggetType": "Text",
             "type": "string"
         },
         {
+            "nuggetType": "URL",
             "type": "string"
         }
     ]

@@ -2,9 +2,11 @@
     "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
     "oneOf": [
         {
+            "nuggetType": "Date",
             "type": "string"
         },
         {
+            "nuggetType": "DateTime",
             "type": "string"
         }
     ]

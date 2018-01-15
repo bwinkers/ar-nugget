@@ -1,4 +1,5 @@
 {
     "description": "An award won by or for this item. Supersedes awards.",
+    "nuggetType": "Text",
     "type": "string"
 }

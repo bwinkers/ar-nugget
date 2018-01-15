@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/QuantitativeValue"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

@@ -1,4 +1,5 @@
 {
     "description": "The cuisine of the restaurant.",
+    "nuggetType": "Text",
     "type": "string"
 }

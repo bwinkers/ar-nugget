@@ -1,4 +1,5 @@
 {
     "description": "The number of pages in the book.",
+    "nuggetType": "Integer",
     "type": "integer"
 }

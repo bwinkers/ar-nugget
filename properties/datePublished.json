@@ -1,4 +1,5 @@
 {
     "description": "Date of first broadcast/publication.",
+    "nuggetType": "Date",
     "type": "string"
 }

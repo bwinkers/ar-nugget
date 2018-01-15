@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/PhysicalActivityCategory"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         },
         {

@@ -1,4 +1,5 @@
 {
     "description": "The date when the item becomes valid.",
+    "nuggetType": "DateTime",
     "type": "string"
 }

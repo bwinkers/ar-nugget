@@ -1,4 +1,5 @@
 {
     "description": "The date that this organization was dissolved.",
+    "nuggetType": "Date",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+    "nuggetType": "Text",
     "type": "string"
 }

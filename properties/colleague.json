@@ -5,6 +5,7 @@
             "$ref": "#/components/schema/Person"
         },
         {
+            "nuggetType": "URL",
             "type": "string"
         }
     ]

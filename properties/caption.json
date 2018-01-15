@@ -1,4 +1,5 @@
 {
     "description": "The caption for this object.",
+    "nuggetType": "Text",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "Indicates whether this content is family friendly.",
+    "nuggetType": "Boolean",
     "type": " boolean"
 }

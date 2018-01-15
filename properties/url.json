@@ -1,4 +1,5 @@
 {
     "description": "URL of the item.",
+    "nuggetType": "URL",
     "type": "string"
 }

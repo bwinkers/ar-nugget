@@ -1,4 +1,5 @@
 {
     "description": "The ISBN of the book.",
+    "nuggetType": "Text",
     "type": "string"
 }

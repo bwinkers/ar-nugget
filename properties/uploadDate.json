@@ -1,4 +1,5 @@
 {
     "description": "Date when this media object was uploaded to this site.",
+    "nuggetType": "Date",
     "type": "string"
 }

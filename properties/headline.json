@@ -1,4 +1,5 @@
 {
     "description": "Headline of the article.",
+    "nuggetType": "Text",
     "type": "string"
 }

@@ -1,4 +1,5 @@
 {
     "description": "The currency accepted (in ISO 4217 currency format).",
+    "nuggetType": "Text",
     "type": "string"
 }

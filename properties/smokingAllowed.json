@@ -1,4 +1,5 @@
 {
     "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+    "nuggetType": "Boolean",
     "type": " boolean"
 }

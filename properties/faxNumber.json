@@ -1,4 +1,5 @@
 {
     "description": "The fax number.",
+    "nuggetType": "Text",
     "type": "string"
 }

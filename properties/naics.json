@@ -1,4 +1,5 @@
 {
     "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+    "nuggetType": "Text",
     "type": "string"
 }

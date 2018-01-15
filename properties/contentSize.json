@@ -1,4 +1,5 @@
 {
     "description": "File size in (mega/kilo) bytes.",
+    "nuggetType": "Text",
     "type": "string"
 }

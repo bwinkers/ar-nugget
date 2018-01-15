@@ -1,4 +1,5 @@
 {
     "description": "The time admission will commence.",
+    "nuggetType": "DateTime",
     "type": "string"
 }

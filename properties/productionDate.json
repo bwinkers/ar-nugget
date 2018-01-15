@@ -1,4 +1,5 @@
 {
     "description": "The date of production of the item, e.g. vehicle.",
+    "nuggetType": "Date",
     "type": "string"
 }

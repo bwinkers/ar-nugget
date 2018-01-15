@@ -1,4 +1,5 @@
 {
     "description": "The typical expected age range, e.g. '7-9', '11-'.",
+    "nuggetType": "Text",
     "type": "string"
 }

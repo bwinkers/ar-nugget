@@ -1,4 +1,5 @@
 {
     "description": "The price range of the business, for example $$$.",
+    "nuggetType": "Text",
     "type": "string"
 }

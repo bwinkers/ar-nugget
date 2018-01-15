@@ -1,4 +1,5 @@
 {
     "description": "The color of the product.",
+    "nuggetType": "Text",
     "type": "string"
 }

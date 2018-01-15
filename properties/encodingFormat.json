@@ -1,4 +1,5 @@
 {
     "description": "mp3, mpeg4, etc.",
+    "nuggetType": "Text",
     "type": "string"
 }

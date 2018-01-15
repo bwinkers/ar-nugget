@@ -1,4 +1,5 @@
 {
     "description": "The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.",
+    "nuggetType": "Text",
     "type": "string"
 }

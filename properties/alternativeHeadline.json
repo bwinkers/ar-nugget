@@ -1,4 +1,5 @@
 {
     "description": "A secondary title of the CreativeWork.",
+    "nuggetType": "Text",
     "type": "string"
 }

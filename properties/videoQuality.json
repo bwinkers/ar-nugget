@@ -1,4 +1,5 @@
 {
     "description": "The quality of the video.",
+    "nuggetType": "Text",
     "type": "string"
 }

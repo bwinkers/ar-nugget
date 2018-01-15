@@ -1,4 +1,5 @@
 {
     "description": "The beginning of the availability of the product or service included in the offer.",
+    "nuggetType": "DateTime",
     "type": "string"
 }

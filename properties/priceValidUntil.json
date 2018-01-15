@@ -1,4 +1,5 @@
 {
     "description": "The date after which the price is no longer available.",
+    "nuggetType": "Date",
     "type": "string"
 }

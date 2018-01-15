@@ -2,9 +2,11 @@
     "description": "The position of an item in a series or sequence of items.",
     "oneOf": [
         {
+            "nuggetType": "Integer",
             "type": "integer"
         },
         {
+            "nuggetType": "Text",
             "type": "string"
         }
     ]

@@ -1,4 +1,5 @@
 {
     "description": "Actual bytes of the media object, for example the image file or video file.",
+    "nuggetType": "URL",
     "type": "string"
 }

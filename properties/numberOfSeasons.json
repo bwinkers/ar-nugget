@@ -1,4 +1,5 @@
 {
     "description": "The number of seasons in this series.",
+    "nuggetType": "Integer",
     "type": "integer"
 }
