@@ -62,6 +62,17 @@
             "nuggetType": "URL",
             "type": "string"
         },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
+        },
         "url": {
             "description": "URL of the item.",
             "nuggetType": "URL",

@@ -30,6 +30,7 @@
             "$ref": "#/components/schema/ImageObject"
         }
     },
+    "extends": "Thing",
     "type": "object",
     "components": {
         "schema": {
@@ -72,6 +73,7 @@
                         "$ref": "#/components/schema/ImageObject"
                     }
                 },
+                "extends": "Thing",
                 "type": "object"
             }
         }
