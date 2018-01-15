@@ -141,11 +141,10 @@ function hydrateLocalRef($refSchemaName) {
 
 function findRefs($props, & $refs) {
   foreach($props as $key => $val) {
+    
     if ($key === '$ref') {
       $refs[] = $val;
-    }
-    
-    if(is_array($val)) {
+    } elseif(is_array($val)) {
       findRefs($val, $refs);
     }
   }
@@ -184,12 +183,42 @@ function processSchema($schemaName) {
 
   // Convert JSON into a PHP object defining the schema parts
   $schemaDef = json_decode($objJSON);
+  
+  mergeParentDef($schemaDef);
 
   // If we have schema properties continue
   if(isset($schemaDef->properties)) {
       $schema = hydrateSchema($schemaDef, $schemaName);
       writeSchema($schema, $schemaName);
   }
+}
+
+function mergeParentDef(& $schemaDef) {
+  if(isset($schemaDef->extends)) {
+    // Get the full path to the JSON schema file
+    $parentFile = realpath (OBJECTDIR.'/'.$schemaDef->extends);
+
+    if($parentFile) {
+      // Read the file contents
+      $parentJSON = file_get_contents($parentFile);
+
+      // Convert JSON into a PHP object defining the schema parts
+      $parentDef = json_decode($parentJSON);
+
+      if($parentDef) {
+        mergeProps($parentDef, $schemaDef);
+        mergeRequired($parentDef, $schemaDef);
+      }
+    }
+  }
+}
+
+function mergeRequired($parent, & $child) {
+  $child->required = array_merge((array)$parent->properties, (array)$child->properties);
+}
+
+function mergeProps($parent, & $child) {
+  $child->properties = array_merge($parent->properties, $child->properties);
 }
 
 function writeSchema($schema, $schemaName, $dir='schema') {
