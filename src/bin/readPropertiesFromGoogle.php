@@ -152,10 +152,9 @@ function resolveType($type) {
     $nugget = new \Activerules\Nugget\Nugget();
     
     $jsonType = $nugget->jsonType($type);
-    
-    $resolved = [];
 
     if($jsonType) {
+      $resolved['nuggetType'] = $type;
       $resolved['type'] = $jsonType;
     } else {
       // Assume we got a valid Schema name
