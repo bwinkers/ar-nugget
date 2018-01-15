@@ -73,23 +73,82 @@ function processReferences($schemaName) {
   // If we have schema properties continue
   if(isset($schema['properties'])) {
     
-    $refs = array_walk_recursive($schema, "isReference");
-    var_dump($refs);
+      $refs = [];
+
+      findRefs($schema['properties'], $refs);
+      
+      populateRefs($schema, $refs);
+
+      writeSchema($schema, $schemaName, 'schemadoc');
   }
 }
 
-/**
- * 
- * @param type $value
- * @param type $key
- */
-function isReference($value, $key) {
-  if($key === '$ref') {
-    var_dump($value);
-    return true;
+function populateRefs(& $schema, $refs){
+  array_unique($refs);
+  foreach($refs as $ref) {
+    populateRef($schema, $ref);
   }
+}
 
-  return false;
+function populateRef(& $schema, $ref) {
+  
+  $refParts = explode('/', $ref);
+  
+  $type = array_shift($refParts);
+  
+  $refSchemaName = array_pop($refParts);
+
+  if($type === '#') {
+    $refSchema = hydrateLocalRef($refSchemaName);
+    setRefSchema($schema, $refSchemaName, $refParts, $refSchema);
+  }
+}
+
+function setRefSchema(& $schema, $refSchemaName, $refParts, $refSchema) {
+  
+  $a = &$schema;
+  
+  while( count($refParts) > 0 ){
+      // get next first key
+      $k = array_shift($refParts);
+
+      // if $a isn't an array already, make it one
+      if(!is_array($a)){
+          $a = array();
+      }
+
+      // move the reference deeper
+      $a = &$a[$k];
+  }
+  $a[$refSchemaName] = $refSchema;
+
+}
+
+function hydrateLocalRef($refSchemaName) {
+  // Get the full path to the JSON schema file
+  $objFile = realpath (SCHEMADIR.'/'.$refSchemaName.'.json');
+
+  if($objFile) {
+    // Read the file contents
+    $objJSON = file_get_contents($objFile);
+
+    // Convert JSON into a PHP object defining the schema parts
+    $schemaDef = json_decode($objJSON);
+
+    return $schemaDef;
+  }
+}
+
+function findRefs($props, & $refs) {
+  foreach($props as $key => $val) {
+    if ($key === '$ref') {
+      $refs[] = $val;
+    }
+    
+    if(is_array($val)) {
+      findRefs($val, $refs);
+    }
+  }
 }
 
 
@@ -214,27 +273,8 @@ function hydrateProperty($propertyFile, & $defs) {
   // Use the serialized JSON string as a JSON object
   $propObj = json_decode($propertyDef);
 
-  // Check for references and expand or hydrate as needed
-  //populateRefs($propObj, $defs);
-
   // Use this definition as the value for the OpenAPI property
   return $propObj;
-}
-
-/**
- * Populate references
- * 
- * @param type $propObj
- * @param type $defs
- */
-function populateRefs(& $propObj, & $defs) {
- 
-    $propType = gettype($propObj);
-    
-    if($propType === 'object' || $propType === 'array') {
-        
-       populateObjectProperty($propObj, $defs);
-    }
 }
 
 /**
@@ -309,25 +349,6 @@ function loadRef($refString, & $defs) {
         $name = array_pop($parts);
        
         populateRef($name, $defs);
-    }
-}
-
-function populateRef($name, & $defs) {
-    if(!array_key_exists($name, $defs)) {
-        // Get the full path to the Definition file
-        $objFile = realpath (OBJECTDIR.'/'.ucfirst($name).'.json');
-
-        if($objFile) {
-            // Read the file contents
-            $objJSON = file_get_contents($objFile);
-
-            // Convert JSON into a PHP object defining the schema parts
-            $schemaDef = json_decode($objJSON);
-
-            $schema = hydrateSchema($schemaDef, $name);
-
-            $defs[$name] = $schema;           
-        }
     }
 }
 
