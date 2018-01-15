@@ -13,5 +13,6 @@
         "result",
         "startTime",
         "target"
-    ]
+    ],
+    "extends": "Thing"
 }
