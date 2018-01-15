@@ -20,6 +20,7 @@
         },
         "endTime": {
             "description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+            "nuggetType": "DateTime",
             "type": "string"
         },
         "error": {
@@ -51,6 +52,7 @@
         },
         "startTime": {
             "description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+            "nuggetType": "DateTime",
             "type": "string"
         },
         "target": {
@@ -70,6 +72,7 @@
                 "properties": {
                     "additionalName": {
                         "description": "An additional name for a Person, can be used for a middle name.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "address": {
@@ -79,6 +82,7 @@
                                 "$ref": "#/components/schema/PostalAddress"
                             },
                             {
+                                "nuggetType": "Text",
                                 "type": "string"
                             }
                         ]
@@ -100,10 +104,12 @@
                     },
                     "award": {
                         "description": "An award won by or for this item. Supersedes awards.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "birthDate": {
                         "description": "Date of birth.",
+                        "nuggetType": "Date",
                         "type": "string"
                     },
                     "birthPlace": {
@@ -132,6 +138,7 @@
                                 "$ref": "#/components/schema/Person"
                             },
                             {
+                                "nuggetType": "URL",
                                 "type": "string"
                             }
                         ]
@@ -142,6 +149,7 @@
                     },
                     "deathDate": {
                         "description": "Date of death.",
+                        "nuggetType": "Date",
                         "type": "string"
                     },
                     "deathPlace": {
@@ -150,18 +158,22 @@
                     },
                     "duns": {
                         "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "email": {
                         "description": "Email address.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "familyName": {
                         "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "faxNumber": {
                         "description": "The fax number.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "follows": {
@@ -186,16 +198,19 @@
                                 "$ref": "#/components/schema/GenderType"
                             },
                             {
+                                "nuggetType": "Text",
                                 "type": "string"
                             }
                         ]
                     },
                     "givenName": {
                         "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "globalLocationNumber": {
                         "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "hasOccupation": {
@@ -221,14 +236,17 @@
                 "properties": {
                     "alternateName": {
                         "description": "An alias for the item.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "additionalType": {
                         "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+                        "nuggetType": "URL",
                         "type": "string"
                     },
                     "description": {
                         "description": "A description of the item.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "identifier": {
@@ -238,9 +256,11 @@
                                 "$ref": "#/components/schema/PropertyValue"
                             },
                             {
+                                "nuggetType": "Text",
                                 "type": "string"
                             },
                             {
+                                "nuggetType": "URL",
                                 "type": "string"
                             }
                         ]
@@ -252,12 +272,14 @@
                                 "$ref": "#/components/schema/ImageObject"
                             },
                             {
+                                "nuggetType": "URL",
                                 "type": "string"
                             }
                         ]
                     },
                     "name": {
                         "description": "The name of the item.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
                     "potentialAction": {
@@ -266,10 +288,12 @@
                     },
                     "sameAs": {
                         "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                        "nuggetType": "URL",
                         "type": "string"
                     },
                     "url": {
                         "description": "URL of the item.",
+                        "nuggetType": "URL",
                         "type": "string"
                     }
                 },

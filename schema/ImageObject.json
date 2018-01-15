@@ -5,6 +5,7 @@
     "properties": {
         "caption": {
             "description": "The caption for this object.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "exifData": {
@@ -14,12 +15,14 @@
                     "$ref": "#/components/schema/PropertyValue"
                 },
                 {
+                    "nuggetType": "Text",
                     "type": "string"
                 }
             ]
         },
         "representativeOfPage": {
             "description": "Indicates whether this image is representative of the content of the page.",
+            "nuggetType": "Boolean",
             "type": " boolean"
         },
         "thumbnail": {

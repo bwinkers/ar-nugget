@@ -5,6 +5,7 @@
     "properties": {
         "additionalName": {
             "description": "An additional name for a Person, can be used for a middle name.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "address": {
@@ -14,6 +15,7 @@
                     "$ref": "#/components/schema/PostalAddress"
                 },
                 {
+                    "nuggetType": "Text",
                     "type": "string"
                 }
             ]
@@ -35,10 +37,12 @@
         },
         "award": {
             "description": "An award won by or for this item. Supersedes awards.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "birthDate": {
             "description": "Date of birth.",
+            "nuggetType": "Date",
             "type": "string"
         },
         "birthPlace": {
@@ -67,6 +71,7 @@
                     "$ref": "#/components/schema/Person"
                 },
                 {
+                    "nuggetType": "URL",
                     "type": "string"
                 }
             ]
@@ -77,6 +82,7 @@
         },
         "deathDate": {
             "description": "Date of death.",
+            "nuggetType": "Date",
             "type": "string"
         },
         "deathPlace": {
@@ -85,18 +91,22 @@
         },
         "duns": {
             "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "email": {
             "description": "Email address.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "familyName": {
             "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "faxNumber": {
             "description": "The fax number.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "follows": {
@@ -121,16 +131,19 @@
                     "$ref": "#/components/schema/GenderType"
                 },
                 {
+                    "nuggetType": "Text",
                     "type": "string"
                 }
             ]
         },
         "givenName": {
             "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "globalLocationNumber": {
             "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+            "nuggetType": "Text",
             "type": "string"
         },
         "hasOccupation": {
