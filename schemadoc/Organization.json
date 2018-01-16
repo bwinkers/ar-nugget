@@ -1331,14 +1331,12 @@
             "AdministrativeArea": null,
             "GeoShape": null,
             "Place": {
-                "title": "Person",
-                "description": "A person (alive, dead, undead, or fictional)",
-                "required": [],
+                "title": "Place",
+                "description": "Entities that have a somewhat fixed, physical extension.",
                 "properties": {
-                    "additionalName": {
-                        "description": "An additional name for a Person, can be used for a middle name.",
-                        "nuggetType": "Text",
-                        "type": "string"
+                    "additionalProperty": {
+                        "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+                        "$ref": "#/components/schema/PropertyValue"
                     },
                     "address": {
                         "description": "Physical address of the item.",
@@ -1352,55 +1350,167 @@
                             }
                         ]
                     },
-                    "affiliation": {
-                        "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-                        "$ref": "#/components/schema/Organization"
+                    "aggregateRating": {
+                        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+                        "$ref": "#/components/schema/AggregateRating"
                     },
-                    "alumniOf": {
-                        "description": "An organization that the person is an alumni of. Inverse property: alumni.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/EducationalOrganization"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
+                    "amenityFeature": {
+                        "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+                        "$ref": "#/components/schema/LocationFeatureSpecification"
                     },
-                    "award": {
-                        "description": "An award won by or for this item. Supersedes awards.",
+                    "branchCode": {
+                        "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs. For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
                         "nuggetType": "Text",
                         "type": "string"
                     },
-                    "birthDate": {
-                        "description": "Date of birth.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "birthPlace": {
-                        "description": "The place where the person was born.",
+                    "containedInPlace": {
+                        "description": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
                         "$ref": "#/components/schema/Place"
                     },
-                    "brand": {
-                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+                    "containsPlace": {
+                        "description": "The basic containment relation between a place and another that it contains. Inverse property: containedInPlace.",
+                        "$ref": "#/components/schema/Place"
+                    },
+                    "event": {
+                        "description": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+                        "$ref": "#/components/schema/Event"
+                    },
+                    "faxNumber": {
+                        "description": "The fax number.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "geo": {
+                        "description": "The geo coordinates of the place.",
                         "oneOf": [
                             {
-                                "$ref": "#/components/schema/Brand"
+                                "$ref": "#/components/schema/GeoCoordinates"
                             },
                             {
-                                "$ref": "#/components/schema/Organization"
+                                "$ref": "#/components/schema/GeoShape"
                             }
                         ]
                     },
-                    "children": {
-                        "description": "A child of the person.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "colleague": {
-                        "description": "A colleague of the person. Supersedes colleagues.",
+                    "geospatiallyContains": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
                         "oneOf": [
                             {
-                                "$ref": "#/components/schema/Person"
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCoveredBy": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCovers": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCrosses": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyDisjoint": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyEquals": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyIntersects": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyOverlaps": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyTouches": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyWithin": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "globalLocationNumber": {
+                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "hasMap": {
+                        "description": "A URL to a map of the place. Supersedes map, maps.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Map"
                             },
                             {
                                 "nuggetType": "URL",
@@ -1408,88 +1518,73 @@
                             }
                         ]
                     },
-                    "contactPoint": {
-                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
-                        "$ref": "#/components/schema/ContactPoint"
+                    "isAccessibleForFree": {
+                        "description": "A flag to signal that the item, event, or place is accessible for free. Supersedes free.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
                     },
-                    "deathDate": {
-                        "description": "Date of death.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "deathPlace": {
-                        "description": "The place where the person died.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "duns": {
-                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+                    "isicV4": {
+                        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
                         "nuggetType": "Text",
                         "type": "string"
                     },
-                    "email": {
-                        "description": "Email address.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "familyName": {
-                        "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "faxNumber": {
-                        "description": "The fax number.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "follows": {
-                        "description": "The most generic uni-directional social relation.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "funder": {
-                        "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                    "logo": {
+                        "description": "An associated logo.",
                         "oneOf": [
                             {
-                                "$ref": "#/components/schema/Organization"
+                                "$ref": "#/components/schema/ImageObject"
                             },
                             {
-                                "$ref": "#/components/schema/Person"
-                            }
-                        ]
-                    },
-                    "gender": {
-                        "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/GenderType"
-                            },
-                            {
-                                "nuggetType": "Text",
+                                "nuggetType": "URL",
                                 "type": "string"
                             }
                         ]
                     },
-                    "givenName": {
-                        "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+                    "maximumAttendeeCapacity": {
+                        "description": "The total number of individuals that may attend an event or venue.",
+                        "nuggetType": "Integer",
+                        "type": "integer"
+                    },
+                    "openingHoursSpecification": {
+                        "description": "The opening hours of a certain place.",
+                        "$ref": "#/components/schema/OpeningHoursSpecification"
+                    },
+                    "photo": {
+                        "description": "A photograph of this place. Supersedes photos.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/ImageObject"
+                            },
+                            {
+                                "$ref": "#/components/schema/Photograph"
+                            }
+                        ]
+                    },
+                    "publicAccess": {
+                        "description": "A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "review": {
+                        "description": "A review of the item. Supersedes reviews.",
+                        "$ref": "#/components/schema/Review"
+                    },
+                    "smokingAllowed": {
+                        "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "specialOpeningHoursSpecification": {
+                        "description": "The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours.",
+                        "$ref": "#/components/schema/OpeningHoursSpecification"
+                    },
+                    "telephone": {
+                        "description": "The telephone number.",
                         "nuggetType": "Text",
                         "type": "string"
-                    },
-                    "globalLocationNumber": {
-                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "hasOccupation": {
-                        "description": "The Person's occupation. For past professions, use Role for expressing dates.",
-                        "$ref": "#/components/schema/Occupation"
-                    },
-                    "hasOfferCatalog": {
-                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-                        "$ref": "#/components/schema/OfferCatalog"
                     }
                 },
-                "extends": [
-                    "Thing"
-                ],
+                "extends": "Thing",
                 "type": "object"
             },
             "Brand": null,
