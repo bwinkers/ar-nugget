@@ -1,0 +1,28 @@
+{
+    "title": "Service",
+    "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+    "required": [],
+    "properties": [
+        "aggregateRating",
+        "areaServed",
+        "audience",
+        "availableChannel",
+        "award",
+        "brand",
+        "broker",
+        "category",
+        "hasOfferCatalog",
+        "hoursAvailable",
+        "isRelatedTo",
+        "isSimilarTo",
+        "logo",
+        "offers",
+        "provider",
+        "providerMobility",
+        "review",
+        "serviceOutput",
+        "serviceType",
+        "termsOfService"
+    ],
+    "extends": "Thing"
+}
