@@ -1,0 +1,8 @@
+{
+    "title": "Audience",
+    "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+    "required": [],
+    "properties": [],
+    "extends": "Thing",
+    "type": "object"
+}
