@@ -1,0 +1,8 @@
+{
+    "title": "WebAPI",
+    "description": "An application programming interface accessible over Web/Internet technologies.",
+    "required": [],
+    "properties": [],
+    "extends": "Thing",
+    "type": "object"
+}
