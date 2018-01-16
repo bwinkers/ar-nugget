@@ -1,0 +1,8 @@
+{
+    "title": "PerformingGroup",
+    "description": "A performance group, such as a band, an orchestra, or a circus.",
+    "required": [],
+    "properties": [],
+    "extends": "Organization",
+    "type": "object"
+}
