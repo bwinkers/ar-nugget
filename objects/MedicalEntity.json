@@ -1,0 +1,15 @@
+{
+    "title": "MedicalEntity",
+    "description": "The most generic type of entity related to health and the practice of medicine.",
+    "required": [],
+    "properties": [
+        "code",
+        "guideline",
+        "legalStatus",
+        "medicineSystem",
+        "recognizingAuthority",
+        "relevantSpecialty",
+        "study"
+    ],
+    "extends": "Thing"
+}
