@@ -162,7 +162,344 @@
     "components": {
         "schema": {
             "PostalAddress": null,
-            "Organization": null,
+            "Organization": {
+                "title": "Organization",
+                "description": "An organization such as a school, NGO, corporation, club, etc.",
+                "required": [],
+                "properties": {
+                    "actionableFeedbackPolicy": {
+                        "description": "For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "address": {
+                        "description": "Physical address of the item.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/PostalAddress"
+                            },
+                            {
+                                "nuggetType": "Text",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "aggregateRating": {
+                        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+                        "$ref": "#/components/schema/AggregateRating"
+                    },
+                    "alumni": {
+                        "description": "Alumni of an organization. Inverse property: alumniOf.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "areaServed": {
+                        "description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/AdministrativeArea"
+                            },
+                            {
+                                "$ref": "#/components/schema/GeoShape"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            },
+                            {
+                                "nuggetType": "Text",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "award": {
+                        "description": "An award won by or for this item. Supersedes awards.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "brand": {
+                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Brand"
+                            },
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            }
+                        ]
+                    },
+                    "contactPoint": {
+                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
+                        "$ref": "#/components/schema/ContactPoint"
+                    },
+                    "correctionsPolicy": {
+                        "description": "For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "department": {
+                        "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
+                        "$ref": "#/components/schema/Organization"
+                    },
+                    "dissolutionDate": {
+                        "description": "The date that this organization was dissolved.",
+                        "nuggetType": "Date",
+                        "type": "string"
+                    },
+                    "diversityPolicy": {
+                        "description": "Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom\u2019s diversity policy on both staffing and sources, typically providing staffing data.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "duns": {
+                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email address.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "employee": {
+                        "description": "Someone working for this organization. Supersedes employees.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "ethicsPolicy": {
+                        "description": "Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "event": {
+                        "description": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+                        "$ref": "#/components/schema/Event"
+                    },
+                    "faxNumber": {
+                        "description": "The fax number.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "founder": {
+                        "description": "A person who founded this organization. Supersedes founders.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "foundingDate": {
+                        "description": "The date that this organization was founded.",
+                        "nuggetType": "Date",
+                        "type": "string"
+                    },
+                    "foundingLocation": {
+                        "description": "The place where the Organization was founded.",
+                        "$ref": "#/components/schema/Place"
+                    },
+                    "funder": {
+                        "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "globalLocationNumber": {
+                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "hasOfferCatalog": {
+                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+                        "$ref": "#/components/schema/OfferCatalog"
+                    },
+                    "hasPOS": {
+                        "description": "Points-of-Sales operated by the organization or person.",
+                        "$ref": "#/components/schema/Place"
+                    },
+                    "isicV4": {
+                        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "legalName": {
+                        "description": "The official name of the organization, e.g. the registered company name.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "leiCode": {
+                        "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "location": {
+                        "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Place"
+                            },
+                            {
+                                "$ref": "#/components/schema/PostalAddress"
+                            },
+                            {
+                                "nuggetType": "Text",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "logo": {
+                        "description": "An associated logo.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/ImageObject"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "makesOffer": {
+                        "description": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+                        "$ref": "#/components/schema/Offer"
+                    },
+                    "member": {
+                        "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes members, musicGroupMember. Inverse property: memberOf.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "memberOf": {
+                        "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/ProgramMembership"
+                            }
+                        ]
+                    },
+                    "naics": {
+                        "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "numberOfEmployees": {
+                        "description": "The number of employees in an organization e.g. business.",
+                        "$ref": "#/components/schema/QuantitativeValue"
+                    },
+                    "owns": {
+                        "description": "Products owned by the organization or person.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/OwnershipInfo"
+                            },
+                            {
+                                "$ref": "#/components/schema/Product"
+                            }
+                        ]
+                    },
+                    "parentOrganization": {
+                        "description": "The larger organization that this organization is a subOrganization of, if any. Supersedes branchOf. Inverse property: subOrganization.",
+                        "$ref": "#/components/schema/Organization"
+                    },
+                    "publishingPrinciples": {
+                        "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "review": {
+                        "description": "A review of the item. Supersedes reviews.",
+                        "$ref": "#/components/schema/Review"
+                    },
+                    "seeks": {
+                        "description": "A pointer to products or services sought by the organization or person (demand).",
+                        "$ref": "#/components/schema/Demand"
+                    },
+                    "sponsor": {
+                        "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "subOrganization": {
+                        "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. Inverse property: parentOrganization.",
+                        "$ref": "#/components/schema/Organization"
+                    },
+                    "taxID": {
+                        "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "telephone": {
+                        "description": "The telephone number.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "unnamedSourcesPolicy": {
+                        "description": "For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/CreativeWork"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "vatID": {
+                        "description": "The Value-added Tax ID of the organization or person.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    }
+                },
+                "extends": "Thing",
+                "type": "object"
+            },
             "EducationalOrganization": null,
             "Place": {
                 "title": "Person",
