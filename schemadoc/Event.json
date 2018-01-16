@@ -906,7 +906,14 @@
                 "extends": "Thing",
                 "type": "object"
             },
-            "Audience": null,
+            "Audience": {
+                "title": "Audience",
+                "description": "Intended audience for an item, i.e. the group for whom the item was created.",
+                "required": [],
+                "properties": [],
+                "extends": "Thing",
+                "type": "object"
+            },
             "Duration": null,
             "EventStatusType": null,
             "Language": null,
