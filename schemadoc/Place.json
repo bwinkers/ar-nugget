@@ -1,12 +1,10 @@
 {
-    "title": "Person",
-    "description": "A person (alive, dead, undead, or fictional)",
-    "required": [],
+    "title": "Place",
+    "description": "Entities that have a somewhat fixed, physical extension.",
     "properties": {
-        "additionalName": {
-            "description": "An additional name for a Person, can be used for a middle name.",
-            "nuggetType": "Text",
-            "type": "string"
+        "additionalProperty": {
+            "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+            "$ref": "#/components/schema/PropertyValue"
         },
         "address": {
             "description": "Physical address of the item.",
@@ -20,55 +18,167 @@
                 }
             ]
         },
-        "affiliation": {
-            "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-            "$ref": "#/components/schema/Organization"
+        "aggregateRating": {
+            "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+            "$ref": "#/components/schema/AggregateRating"
         },
-        "alumniOf": {
-            "description": "An organization that the person is an alumni of. Inverse property: alumni.",
-            "oneOf": [
-                {
-                    "$ref": "#/components/schema/EducationalOrganization"
-                },
-                {
-                    "$ref": "#/components/schema/Organization"
-                }
-            ]
+        "amenityFeature": {
+            "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+            "$ref": "#/components/schema/LocationFeatureSpecification"
         },
-        "award": {
-            "description": "An award won by or for this item. Supersedes awards.",
+        "branchCode": {
+            "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs. For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
             "nuggetType": "Text",
             "type": "string"
         },
-        "birthDate": {
-            "description": "Date of birth.",
-            "nuggetType": "Date",
-            "type": "string"
-        },
-        "birthPlace": {
-            "description": "The place where the person was born.",
+        "containedInPlace": {
+            "description": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
             "$ref": "#/components/schema/Place"
         },
-        "brand": {
-            "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+        "containsPlace": {
+            "description": "The basic containment relation between a place and another that it contains. Inverse property: containedInPlace.",
+            "$ref": "#/components/schema/Place"
+        },
+        "event": {
+            "description": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+            "$ref": "#/components/schema/Event"
+        },
+        "faxNumber": {
+            "description": "The fax number.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "geo": {
+            "description": "The geo coordinates of the place.",
             "oneOf": [
                 {
-                    "$ref": "#/components/schema/Brand"
+                    "$ref": "#/components/schema/GeoCoordinates"
                 },
                 {
-                    "$ref": "#/components/schema/Organization"
+                    "$ref": "#/components/schema/GeoShape"
                 }
             ]
         },
-        "children": {
-            "description": "A child of the person.",
-            "$ref": "#/components/schema/Person"
-        },
-        "colleague": {
-            "description": "A colleague of the person. Supersedes colleagues.",
+        "geospatiallyContains": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
             "oneOf": [
                 {
-                    "$ref": "#/components/schema/Person"
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyCoveredBy": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyCovers": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyCrosses": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyDisjoint": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyEquals": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyIntersects": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyOverlaps": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyTouches": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "geospatiallyWithin": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GeospatialGeometry"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "globalLocationNumber": {
+            "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "hasMap": {
+            "description": "A URL to a map of the place. Supersedes map, maps.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Map"
                 },
                 {
                     "nuggetType": "URL",
@@ -76,108 +186,93 @@
                 }
             ]
         },
-        "contactPoint": {
-            "description": "A contact point for a person or organization. Supersedes contactPoints.",
-            "$ref": "#/components/schema/ContactPoint"
+        "isAccessibleForFree": {
+            "description": "A flag to signal that the item, event, or place is accessible for free. Supersedes free.",
+            "nuggetType": "Boolean",
+            "type": " boolean"
         },
-        "deathDate": {
-            "description": "Date of death.",
-            "nuggetType": "Date",
-            "type": "string"
-        },
-        "deathPlace": {
-            "description": "The place where the person died.",
-            "$ref": "#/components/schema/Place"
-        },
-        "duns": {
-            "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+        "isicV4": {
+            "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
             "nuggetType": "Text",
             "type": "string"
         },
-        "email": {
-            "description": "Email address.",
-            "nuggetType": "Text",
-            "type": "string"
-        },
-        "familyName": {
-            "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-            "nuggetType": "Text",
-            "type": "string"
-        },
-        "faxNumber": {
-            "description": "The fax number.",
-            "nuggetType": "Text",
-            "type": "string"
-        },
-        "follows": {
-            "description": "The most generic uni-directional social relation.",
-            "$ref": "#/components/schema/Person"
-        },
-        "funder": {
-            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+        "logo": {
+            "description": "An associated logo.",
             "oneOf": [
                 {
-                    "$ref": "#/components/schema/Organization"
+                    "$ref": "#/components/schema/ImageObject"
                 },
                 {
-                    "$ref": "#/components/schema/Person"
-                }
-            ]
-        },
-        "gender": {
-            "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
-            "oneOf": [
-                {
-                    "$ref": "#/components/schema/GenderType"
-                },
-                {
-                    "nuggetType": "Text",
+                    "nuggetType": "URL",
                     "type": "string"
                 }
             ]
         },
-        "givenName": {
-            "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+        "maximumAttendeeCapacity": {
+            "description": "The total number of individuals that may attend an event or venue.",
+            "nuggetType": "Integer",
+            "type": "integer"
+        },
+        "openingHoursSpecification": {
+            "description": "The opening hours of a certain place.",
+            "$ref": "#/components/schema/OpeningHoursSpecification"
+        },
+        "photo": {
+            "description": "A photograph of this place. Supersedes photos.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "$ref": "#/components/schema/Photograph"
+                }
+            ]
+        },
+        "publicAccess": {
+            "description": "A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value",
+            "nuggetType": "Boolean",
+            "type": " boolean"
+        },
+        "review": {
+            "description": "A review of the item. Supersedes reviews.",
+            "$ref": "#/components/schema/Review"
+        },
+        "smokingAllowed": {
+            "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+            "nuggetType": "Boolean",
+            "type": " boolean"
+        },
+        "specialOpeningHoursSpecification": {
+            "description": "The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours.",
+            "$ref": "#/components/schema/OpeningHoursSpecification"
+        },
+        "telephone": {
+            "description": "The telephone number.",
             "nuggetType": "Text",
             "type": "string"
-        },
-        "globalLocationNumber": {
-            "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-            "nuggetType": "Text",
-            "type": "string"
-        },
-        "hasOccupation": {
-            "description": "The Person's occupation. For past professions, use Role for expressing dates.",
-            "$ref": "#/components/schema/Occupation"
-        },
-        "hasOfferCatalog": {
-            "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-            "$ref": "#/components/schema/OfferCatalog"
         }
     },
-    "extends": [
-        "Thing"
-    ],
+    "extends": "Thing",
     "type": "object",
     "components": {
         "schema": {
+            "PropertyValue": {
+                "description": "A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.",
+                "name": "PropertyValue",
+                "properties": [],
+                "extends": "Thing",
+                "type": "object"
+            },
             "PostalAddress": null,
-            "Organization": {
-                "title": "Organization",
-                "description": "An organization such as a school, NGO, corporation, club, etc.",
-                "required": [],
+            "AggregateRating": null,
+            "LocationFeatureSpecification": null,
+            "Place": {
+                "title": "Place",
+                "description": "Entities that have a somewhat fixed, physical extension.",
                 "properties": {
-                    "actionableFeedbackPolicy": {
-                        "description": "For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
+                    "additionalProperty": {
+                        "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+                        "$ref": "#/components/schema/PropertyValue"
                     },
                     "address": {
                         "description": "Physical address of the item.",
@@ -195,106 +290,22 @@
                         "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
                         "$ref": "#/components/schema/AggregateRating"
                     },
-                    "alumni": {
-                        "description": "Alumni of an organization. Inverse property: alumniOf.",
-                        "$ref": "#/components/schema/Person"
+                    "amenityFeature": {
+                        "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+                        "$ref": "#/components/schema/LocationFeatureSpecification"
                     },
-                    "areaServed": {
-                        "description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/AdministrativeArea"
-                            },
-                            {
-                                "$ref": "#/components/schema/GeoShape"
-                            },
-                            {
-                                "$ref": "#/components/schema/Place"
-                            },
-                            {
-                                "nuggetType": "Text",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "award": {
-                        "description": "An award won by or for this item. Supersedes awards.",
+                    "branchCode": {
+                        "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs. For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
                         "nuggetType": "Text",
                         "type": "string"
                     },
-                    "brand": {
-                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Brand"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
+                    "containedInPlace": {
+                        "description": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
+                        "$ref": "#/components/schema/Place"
                     },
-                    "contactPoint": {
-                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
-                        "$ref": "#/components/schema/ContactPoint"
-                    },
-                    "correctionsPolicy": {
-                        "description": "For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "department": {
-                        "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
-                        "$ref": "#/components/schema/Organization"
-                    },
-                    "dissolutionDate": {
-                        "description": "The date that this organization was dissolved.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "diversityPolicy": {
-                        "description": "Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom\u2019s diversity policy on both staffing and sources, typically providing staffing data.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "duns": {
-                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "email": {
-                        "description": "Email address.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "employee": {
-                        "description": "Someone working for this organization. Supersedes employees.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "ethicsPolicy": {
-                        "description": "Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
+                    "containsPlace": {
+                        "description": "The basic containment relation between a place and another that it contains. Inverse property: containedInPlace.",
+                        "$ref": "#/components/schema/Place"
                     },
                     "event": {
                         "description": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
@@ -305,18 +316,291 @@
                         "nuggetType": "Text",
                         "type": "string"
                     },
-                    "founder": {
-                        "description": "A person who founded this organization. Supersedes founders.",
-                        "$ref": "#/components/schema/Person"
+                    "geo": {
+                        "description": "The geo coordinates of the place.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeoCoordinates"
+                            },
+                            {
+                                "$ref": "#/components/schema/GeoShape"
+                            }
+                        ]
                     },
-                    "foundingDate": {
-                        "description": "The date that this organization was founded.",
-                        "nuggetType": "Date",
+                    "geospatiallyContains": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCoveredBy": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCovers": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyCrosses": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyDisjoint": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyEquals": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyIntersects": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyOverlaps": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyTouches": {
+                        "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "geospatiallyWithin": {
+                        "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/GeospatialGeometry"
+                            },
+                            {
+                                "$ref": "#/components/schema/Place"
+                            }
+                        ]
+                    },
+                    "globalLocationNumber": {
+                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+                        "nuggetType": "Text",
                         "type": "string"
                     },
-                    "foundingLocation": {
-                        "description": "The place where the Organization was founded.",
-                        "$ref": "#/components/schema/Place"
+                    "hasMap": {
+                        "description": "A URL to a map of the place. Supersedes map, maps.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Map"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "isAccessibleForFree": {
+                        "description": "A flag to signal that the item, event, or place is accessible for free. Supersedes free.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "isicV4": {
+                        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "logo": {
+                        "description": "An associated logo.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/ImageObject"
+                            },
+                            {
+                                "nuggetType": "URL",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "maximumAttendeeCapacity": {
+                        "description": "The total number of individuals that may attend an event or venue.",
+                        "nuggetType": "Integer",
+                        "type": "integer"
+                    },
+                    "openingHoursSpecification": {
+                        "description": "The opening hours of a certain place.",
+                        "$ref": "#/components/schema/OpeningHoursSpecification"
+                    },
+                    "photo": {
+                        "description": "A photograph of this place. Supersedes photos.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/ImageObject"
+                            },
+                            {
+                                "$ref": "#/components/schema/Photograph"
+                            }
+                        ]
+                    },
+                    "publicAccess": {
+                        "description": "A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "review": {
+                        "description": "A review of the item. Supersedes reviews.",
+                        "$ref": "#/components/schema/Review"
+                    },
+                    "smokingAllowed": {
+                        "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "specialOpeningHoursSpecification": {
+                        "description": "The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours.",
+                        "$ref": "#/components/schema/OpeningHoursSpecification"
+                    },
+                    "telephone": {
+                        "description": "The telephone number.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    }
+                },
+                "extends": "Thing",
+                "type": "object"
+            },
+            "Event": {
+                "description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the offers property. Repeated events may be structured as separate Event objects.",
+                "name": "Event",
+                "properties": {
+                    "actor": {
+                        "description": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. Supersedes actors.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "aggregateRating": {
+                        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+                        "$ref": "#/components/schema/AggregateRating"
+                    },
+                    "attendee": {
+                        "description": "A person or organization attending the event. Supersedes attendees.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "audience": {
+                        "description": "An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+                        "$ref": "#/components/schema/Audience"
+                    },
+                    "composer": {
+                        "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "contributor": {
+                        "description": "A secondary contributor to the CreativeWork or Event.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Organization"
+                            },
+                            {
+                                "$ref": "#/components/schema/Person"
+                            }
+                        ]
+                    },
+                    "director": {
+                        "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.",
+                        "$ref": "#/components/schema/Person"
+                    },
+                    "doorTime": {
+                        "description": "The time admission will commence.",
+                        "nuggetType": "DateTime",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+                        "$ref": "#/components/schema/Duration"
+                    },
+                    "endDate": {
+                        "description": "The end date and time of the item (in ISO 8601 date format).",
+                        "oneOf": [
+                            {
+                                "nuggetType": "Date",
+                                "type": "string"
+                            },
+                            {
+                                "nuggetType": "DateTime",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "eventStatus": {
+                        "description": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+                        "$ref": "#/components/schema/EventStatusType"
                     },
                     "funder": {
                         "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
@@ -329,33 +613,22 @@
                             }
                         ]
                     },
-                    "globalLocationNumber": {
-                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-                        "nuggetType": "Text",
-                        "type": "string"
+                    "inLanguage": {
+                        "description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/Language"
+                            },
+                            {
+                                "nuggetType": "Text",
+                                "type": "string"
+                            }
+                        ]
                     },
-                    "hasOfferCatalog": {
-                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-                        "$ref": "#/components/schema/OfferCatalog"
-                    },
-                    "hasPOS": {
-                        "description": "Points-of-Sales operated by the organization or person.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "isicV4": {
-                        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "legalName": {
-                        "description": "The official name of the organization, e.g. the registered company name.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "leiCode": {
-                        "description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
-                        "nuggetType": "Text",
-                        "type": "string"
+                    "isAccessibleForFree": {
+                        "description": "A flag to signal that the item, event, or place is accessible for free. Supersedes free.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
                     },
                     "location": {
                         "description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
@@ -372,24 +645,17 @@
                             }
                         ]
                     },
-                    "logo": {
-                        "description": "An associated logo.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/ImageObject"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
+                    "maximumAttendeeCapacity": {
+                        "description": "The total number of individuals that may attend an event or venue.",
+                        "nuggetType": "Integer",
+                        "type": "integer"
                     },
-                    "makesOffer": {
-                        "description": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+                    "offers": {
+                        "description": "An offer to provide this item\u2014for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
                         "$ref": "#/components/schema/Offer"
                     },
-                    "member": {
-                        "description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes members, musicGroupMember. Inverse property: memberOf.",
+                    "organizer": {
+                        "description": "An organizer of an Event.",
                         "oneOf": [
                             {
                                 "$ref": "#/components/schema/Organization"
@@ -399,61 +665,35 @@
                             }
                         ]
                     },
-                    "memberOf": {
-                        "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+                    "performer": {
+                        "description": "A performer at the event\u2014for example, a presenter, musician, musical group or actor. Supersedes performers.",
                         "oneOf": [
                             {
                                 "$ref": "#/components/schema/Organization"
                             },
                             {
-                                "$ref": "#/components/schema/ProgramMembership"
+                                "$ref": "#/components/schema/Person"
                             }
                         ]
                     },
-                    "naics": {
-                        "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-                        "nuggetType": "Text",
+                    "previousStartDate": {
+                        "description": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
+                        "nuggetType": "Date",
                         "type": "string"
                     },
-                    "numberOfEmployees": {
-                        "description": "The number of employees in an organization e.g. business.",
-                        "$ref": "#/components/schema/QuantitativeValue"
+                    "recordedIn": {
+                        "description": "The CreativeWork that captured all or part of this Event. Inverse property: recordedAt.",
+                        "$ref": "#/components/schema/CreativeWork"
                     },
-                    "owns": {
-                        "description": "Products owned by the organization or person.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/OwnershipInfo"
-                            },
-                            {
-                                "$ref": "#/components/schema/Product"
-                            }
-                        ]
-                    },
-                    "parentOrganization": {
-                        "description": "The larger organization that this organization is a subOrganization of, if any. Supersedes branchOf. Inverse property: subOrganization.",
-                        "$ref": "#/components/schema/Organization"
-                    },
-                    "publishingPrinciples": {
-                        "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
+                    "remainingAttendeeCapacity": {
+                        "description": "The number of attendee places for an event that remain unallocated.",
+                        "nuggetType": "Integer",
+                        "type": "integer"
                     },
                     "review": {
                         "description": "A review of the item. Supersedes reviews.",
                         "$ref": "#/components/schema/Review"
                     },
-                    "seeks": {
-                        "description": "A pointer to products or services sought by the organization or person (demand).",
-                        "$ref": "#/components/schema/Demand"
-                    },
                     "sponsor": {
                         "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
                         "oneOf": [
@@ -465,491 +705,29 @@
                             }
                         ]
                     },
-                    "subOrganization": {
-                        "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. Inverse property: parentOrganization.",
-                        "$ref": "#/components/schema/Organization"
-                    },
-                    "taxID": {
-                        "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "telephone": {
-                        "description": "The telephone number.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "unnamedSourcesPolicy": {
-                        "description": "For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.",
+                    "startDate": {
+                        "description": "The start date and time of the item (in ISO 8601 date format).",
                         "oneOf": [
                             {
-                                "$ref": "#/components/schema/CreativeWork"
+                                "nuggetType": "Date",
+                                "type": "string"
                             },
                             {
-                                "nuggetType": "URL",
+                                "nuggetType": "DateTime",
                                 "type": "string"
                             }
                         ]
                     },
-                    "vatID": {
-                        "description": "The Value-added Tax ID of the organization or person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    }
-                },
-                "extends": "Thing",
-                "type": "object"
-            },
-            "EducationalOrganization": null,
-            "Place": {
-                "title": "Person",
-                "description": "A person (alive, dead, undead, or fictional)",
-                "required": [],
-                "properties": {
-                    "additionalName": {
-                        "description": "An additional name for a Person, can be used for a middle name.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "address": {
-                        "description": "Physical address of the item.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/PostalAddress"
-                            },
-                            {
-                                "nuggetType": "Text",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "affiliation": {
-                        "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-                        "$ref": "#/components/schema/Organization"
-                    },
-                    "alumniOf": {
-                        "description": "An organization that the person is an alumni of. Inverse property: alumni.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/EducationalOrganization"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
-                    },
-                    "award": {
-                        "description": "An award won by or for this item. Supersedes awards.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "birthDate": {
-                        "description": "Date of birth.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "birthPlace": {
-                        "description": "The place where the person was born.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "brand": {
-                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Brand"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
-                    },
-                    "children": {
-                        "description": "A child of the person.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "colleague": {
-                        "description": "A colleague of the person. Supersedes colleagues.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Person"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "contactPoint": {
-                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
-                        "$ref": "#/components/schema/ContactPoint"
-                    },
-                    "deathDate": {
-                        "description": "Date of death.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "deathPlace": {
-                        "description": "The place where the person died.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "duns": {
-                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "email": {
-                        "description": "Email address.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "familyName": {
-                        "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "faxNumber": {
-                        "description": "The fax number.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "follows": {
-                        "description": "The most generic uni-directional social relation.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "funder": {
-                        "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            },
-                            {
-                                "$ref": "#/components/schema/Person"
-                            }
-                        ]
-                    },
-                    "gender": {
-                        "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/GenderType"
-                            },
-                            {
-                                "nuggetType": "Text",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "givenName": {
-                        "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "globalLocationNumber": {
-                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "hasOccupation": {
-                        "description": "The Person's occupation. For past professions, use Role for expressing dates.",
-                        "$ref": "#/components/schema/Occupation"
-                    },
-                    "hasOfferCatalog": {
-                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-                        "$ref": "#/components/schema/OfferCatalog"
-                    }
-                },
-                "extends": [
-                    "Thing"
-                ],
-                "type": "object"
-            },
-            "Brand": null,
-            "Person": {
-                "title": "Person",
-                "description": "A person (alive, dead, undead, or fictional)",
-                "required": [],
-                "properties": {
-                    "additionalName": {
-                        "description": "An additional name for a Person, can be used for a middle name.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "address": {
-                        "description": "Physical address of the item.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/PostalAddress"
-                            },
-                            {
-                                "nuggetType": "Text",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "affiliation": {
-                        "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-                        "$ref": "#/components/schema/Organization"
-                    },
-                    "alumniOf": {
-                        "description": "An organization that the person is an alumni of. Inverse property: alumni.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/EducationalOrganization"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
-                    },
-                    "award": {
-                        "description": "An award won by or for this item. Supersedes awards.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "birthDate": {
-                        "description": "Date of birth.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "birthPlace": {
-                        "description": "The place where the person was born.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "brand": {
-                        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Brand"
-                            },
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            }
-                        ]
-                    },
-                    "children": {
-                        "description": "A child of the person.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "colleague": {
-                        "description": "A colleague of the person. Supersedes colleagues.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Person"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "contactPoint": {
-                        "description": "A contact point for a person or organization. Supersedes contactPoints.",
-                        "$ref": "#/components/schema/ContactPoint"
-                    },
-                    "deathDate": {
-                        "description": "Date of death.",
-                        "nuggetType": "Date",
-                        "type": "string"
-                    },
-                    "deathPlace": {
-                        "description": "The place where the person died.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "duns": {
-                        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "email": {
-                        "description": "Email address.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "familyName": {
-                        "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "faxNumber": {
-                        "description": "The fax number.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "follows": {
-                        "description": "The most generic uni-directional social relation.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "funder": {
-                        "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            },
-                            {
-                                "$ref": "#/components/schema/Person"
-                            }
-                        ]
-                    },
-                    "gender": {
-                        "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/GenderType"
-                            },
-                            {
-                                "nuggetType": "Text",
-                                "type": "string"
-                            }
-                        ]
-                    },
-                    "givenName": {
-                        "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "globalLocationNumber": {
-                        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "hasOccupation": {
-                        "description": "The Person's occupation. For past professions, use Role for expressing dates.",
-                        "$ref": "#/components/schema/Occupation"
-                    },
-                    "hasOfferCatalog": {
-                        "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
-                        "$ref": "#/components/schema/OfferCatalog"
-                    },
-                    "hasPOS": {
-                        "description": "Points-of-Sales operated by the organization or person.",
-                        "$ref": "#/components/schema/Place"
-                    },
-                    "height": {
-                        "description": "The height of the item.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Distance"
-                            },
-                            {
-                                "$ref": "#/components/schema/QuantitativeValue"
-                            }
-                        ]
-                    },
-                    "homeLocation": {
-                        "description": "A contact location for a person's residence.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/ContactPoint"
-                            },
-                            {
-                                "$ref": "#/components/schema/Place"
-                            }
-                        ]
-                    },
-                    "honorificPrefix": {
-                        "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "honorificSuffix": {
-                        "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "isicV4": {
-                        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "jobTitle": {
-                        "description": "The job title of the person (for example, Financial Manager).",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "knows": {
-                        "description": "The most generic bi-directional social/work relation.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "makesOffer": {
-                        "description": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
-                        "$ref": "#/components/schema/Offer"
-                    },
-                    "memberOf": {
-                        "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/Organization"
-                            },
-                            {
-                                "$ref": "#/components/schema/ProgramMembership"
-                            }
-                        ]
-                    },
-                    "naics": {
-                        "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "nationality": {
-                        "description": "Nationality of the person.",
-                        "$ref": "#/components/schema/Country"
-                    },
-                    "netWorth": {
-                        "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/MonetaryAmount"
-                            },
-                            {
-                                "$ref": "#/components/schema/PriceSpecification"
-                            }
-                        ]
-                    },
-                    "owns": {
-                        "description": "Products owned by the organization or person.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/OwnershipInfo"
-                            },
-                            {
-                                "$ref": "#/components/schema/Product"
-                            }
-                        ]
-                    },
-                    "parent": {
-                        "description": "A parent of this person. Supersedes parents.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "performerIn": {
-                        "description": "Event that this person is a performer or participant in.",
+                    "subEvent": {
+                        "description": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supersedes subEvents. Inverse property: superEvent.",
                         "$ref": "#/components/schema/Event"
                     },
-                    "publishingPrinciples": {
-                        "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/CreativeWork"
-                            },
-                            {
-                                "nuggetType": "URL",
-                                "type": "string"
-                            }
-                        ]
+                    "superEvent": {
+                        "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent. Inverse property: subEvent.",
+                        "$ref": "#/components/schema/Event"
                     },
-                    "relatedTo": {
-                        "description": "The most generic familial relation.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "seeks": {
-                        "description": "A pointer to products or services sought by the organization or person (demand).",
-                        "$ref": "#/components/schema/Demand"
-                    },
-                    "sibling": {
-                        "description": "A sibling of the person. Supersedes siblings.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "sponsor": {
-                        "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+                    "translator": {
+                        "description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
                         "oneOf": [
                             {
                                 "$ref": "#/components/schema/Organization"
@@ -959,52 +737,65 @@
                             }
                         ]
                     },
-                    "spouse": {
-                        "description": "The person's spouse.",
-                        "$ref": "#/components/schema/Person"
-                    },
-                    "taxID": {
-                        "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+                    "typicalAgeRange": {
+                        "description": "The typical expected age range, e.g. '7-9', '11-'.",
                         "nuggetType": "Text",
                         "type": "string"
                     },
-                    "telephone": {
-                        "description": "The telephone number.",
-                        "nuggetType": "Text",
-                        "type": "string"
+                    "workFeatured": {
+                        "description": "A work featured in some event, e.g. exhibited in an ExhibitionEvent. Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+                        "$ref": "#/components/schema/CreativeWork"
                     },
-                    "vatID": {
-                        "description": "The Value-added Tax ID of the organization or person.",
-                        "nuggetType": "Text",
-                        "type": "string"
-                    },
-                    "weight": {
-                        "description": "The weight of the product or person.",
-                        "$ref": "#/components/schema/QuantitativeValue"
-                    },
-                    "workLocation": {
-                        "description": "A contact location for a person's place of work.",
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schema/ContactPoint"
-                            },
-                            {
-                                "$ref": "#/components/schema/Place"
-                            }
-                        ]
-                    },
-                    "worksFor": {
-                        "description": "Organizations that the person works for.",
-                        "$ref": "#/components/schema/Organization"
+                    "workPerformed": {
+                        "description": "A work performed in some event, for example a play performed in a TheaterEvent.",
+                        "$ref": "#/components/schema/CreativeWork"
                     }
                 },
                 "extends": "Thing",
                 "type": "object"
             },
-            "ContactPoint": null,
-            "GenderType": null,
-            "Occupation": null,
-            "OfferCatalog": null
+            "GeoCoordinates": null,
+            "GeoShape": null,
+            "GeospatialGeometry": null,
+            "Map": null,
+            "ImageObject": {
+                "title": "ImageObject",
+                "description": "An image file.",
+                "required": [],
+                "properties": {
+                    "caption": {
+                        "description": "The caption for this object.",
+                        "nuggetType": "Text",
+                        "type": "string"
+                    },
+                    "exifData": {
+                        "description": "exif data for this object.",
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schema/PropertyValue"
+                            },
+                            {
+                                "nuggetType": "Text",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "representativeOfPage": {
+                        "description": "Indicates whether this image is representative of the content of the page.",
+                        "nuggetType": "Boolean",
+                        "type": " boolean"
+                    },
+                    "thumbnail": {
+                        "description": "Thumbnail image for an image or video.",
+                        "$ref": "#/components/schema/ImageObject"
+                    }
+                },
+                "extends": "Thing",
+                "type": "object"
+            },
+            "OpeningHoursSpecification": null,
+            "Photograph": null,
+            "Review": null
         }
     }
 }
