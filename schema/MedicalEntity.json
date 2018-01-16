@@ -1,0 +1,8 @@
+{
+    "title": "MedicalEntity",
+    "description": "The most generic type of entity related to health and the practice of medicine.",
+    "required": [],
+    "properties": [],
+    "extends": "Thing",
+    "type": "object"
+}
