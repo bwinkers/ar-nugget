@@ -33,11 +33,11 @@ php src/bin/convertCSVToProperties.php
 ActiveRules object definitions are converted to Open API schema objects composed of property definitions.
 
 ```
-php src/bin/o2s.php -p "./properties" -s "./schema" -o "./objects"
+php src/bin/o2s.php -p "./properties" -s "./schema" -o "./objects" -d "./schemadoc"
 ```
 
 ```
-php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json -p properties
+php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json -p "./properties"
 ```
 
 ## References
