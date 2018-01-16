@@ -1,0 +1,8 @@
+{
+    "title": "MedicalOrganization",
+    "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+    "required": [],
+    "properties": [],
+    "extends": "Place",
+    "type": "object"
+}
