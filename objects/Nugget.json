@@ -3,8 +3,19 @@
     "description": "Base object type for everything else",
     "required": ["coreType"],
     "properties": [
-        "coreType"
-    ],
-    "extends": "Thing"
+        "alternateName",
+        "additionalType",
+        "coreType",
+        "description",
+        "disambiguationDescription",
+        "identifier",
+        "image",
+        "mainEntityOfpage",
+        "name",
+        "potentialAction",
+        "sameAs",
+        "subjectOf",
+        "url"        
+    ]
 }
 
