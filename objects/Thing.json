@@ -15,6 +15,7 @@
         "sameAs",
         "subjectOf",
         "url"        
-    ]
+    ],
+    "extends": "Nugget"
 }
 
