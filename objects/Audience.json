@@ -6,5 +6,5 @@
         "audienceType",
         "geographicArea"
     ],
-    "extends": "Thing"
+    "extends": "Intangible"
 }
