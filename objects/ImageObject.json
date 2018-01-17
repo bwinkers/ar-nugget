@@ -8,5 +8,5 @@
         "representativeOfPage",
         "thumbnail"
     ],
-    "extends": "Thing"
+    "extends": "MediaObject"
 }
