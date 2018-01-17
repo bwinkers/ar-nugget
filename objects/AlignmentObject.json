@@ -9,5 +9,5 @@
         "targetName",
         "targetUrl"
     ],
-    "extends": "Thing"
+    "extends": "Intangible"
 }
