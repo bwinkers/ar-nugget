@@ -225,22 +225,37 @@ function processSchema($schemaName)
 function mergeParentDef(& $schemaDef)
 {
     if (isset($schemaDef->extends)) {
+
         // Get the full path to the JSON schema file
-        $parentFile = realpath(OBJECTDIR . '/' . $schemaDef->extends);
+        $parentFile = realpath(OBJECTDIR . '/' . $schemaDef->extends . '.json');
 
         if ($parentFile) {
-            // Read the file contents
-            $parentJSON = file_get_contents($parentFile);
-
-            // Convert JSON into a PHP object defining the schema parts
-            $parentDef = json_decode($parentJSON);
-
-            if ($parentDef) {
-                mergeProps($parentDef, $schemaDef);
-                mergeRequired($parentDef, $schemaDef);
-            }
+            mergeDefs($schemaDef, $parentFile);
         }
     }
+}
+
+function mergeDefs(& $schemaDef, $parentFile){
+  // Read the file contents
+  $parentJSON = file_get_contents($parentFile);
+
+  // Convert JSON into a PHP object defining the schema parts
+  $parentDef = json_decode($parentJSON);
+
+  if ($parentDef) {
+      mergeProps($parentDef, $schemaDef);
+      mergeRequired($parentDef, $schemaDef);
+      
+      if(isset($parentDef->extends)) {
+        // Get the full path to the JSON schema file
+        $gparentFile = realpath(OBJECTDIR . '/' . $parentDef->extends . '.json');
+
+        if ($gparentFile) {
+            mergeDefs($schemaDef, $gparentFile);
+        }
+      }
+  }
+  
 }
 
 /**
@@ -250,7 +265,13 @@ function mergeParentDef(& $schemaDef)
  */
 function mergeRequired($parent, & $child)
 {
-    $child->required = array_merge((array) $parent->properties, (array) $child->properties);
+    $parentReq = [];
+    if(isset($parent->required)) {
+      $parentReq = $parent->required;
+    }
+    if(isset($child->required)) {
+      $child->required = array_merge($parentReq, $child->required);
+    }    
 }
 
 /**
@@ -307,6 +328,8 @@ function hydrateSchema($schemaDef)
 
     // Array to hold definitions created by all this object properties
     $schemaDef->definitions = array();
+    
+    sort($schemaDef->properties);
 
     // Loop through top level properties and populate, all definitions should be at top level.
     populateProperties($schemaDef);
