@@ -1,11 +1,19 @@
 {
     "title": "Person",
     "description": "A person (alive, dead, undead, or fictional)",
-    "required": [],
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "additionalName": {
             "description": "An additional name for a Person, can be used for a middle name.",
             "nuggetType": "Text",
+            "type": "string"
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
             "type": "string"
         },
         "address": {
@@ -23,6 +31,11 @@
         "affiliation": {
             "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
             "$ref": "#/components/schema/Organization"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
         },
         "alumniOf": {
             "description": "An organization that the person is an alumni of. Inverse property: alumni.",
@@ -80,6 +93,16 @@
             "description": "A contact point for a person or organization. Supersedes contactPoints.",
             "$ref": "#/components/schema/ContactPoint"
         },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
         "deathDate": {
             "description": "Date of death.",
             "nuggetType": "Date",
@@ -88,6 +111,11 @@
         "deathPlace": {
             "description": "The place where the person died.",
             "$ref": "#/components/schema/Place"
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
         },
         "duns": {
             "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
@@ -190,6 +218,34 @@
             "nuggetType": "Text",
             "type": "string"
         },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
         "isicV4": {
             "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
             "nuggetType": "Text",
@@ -221,6 +277,11 @@
         },
         "naics": {
             "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of the item.",
             "nuggetType": "Text",
             "type": "string"
         },
@@ -258,6 +319,10 @@
             "description": "Event that this person is a performer or participant in.",
             "$ref": "#/components/schema/Event"
         },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "#/components/schema/Action"
+        },
         "publishingPrinciples": {
             "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
             "oneOf": [
@@ -273,6 +338,11 @@
         "relatedTo": {
             "description": "The most generic familial relation.",
             "$ref": "#/components/schema/Person"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
         },
         "seeks": {
             "description": "A pointer to products or services sought by the organization or person (demand).",
@@ -297,6 +367,17 @@
             "description": "The person's spouse.",
             "$ref": "#/components/schema/Person"
         },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
+        },
         "taxID": {
             "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
             "nuggetType": "Text",
@@ -305,6 +386,11 @@
         "telephone": {
             "description": "The telephone number.",
             "nuggetType": "Text",
+            "type": "string"
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
             "type": "string"
         },
         "vatID": {
