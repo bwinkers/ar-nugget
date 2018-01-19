@@ -1,7 +1,10 @@
 {
     "title": "Organization",
     "description": "An organization such as a school, NGO, corporation, club, etc.",
-    "required": [],
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "actionableFeedbackPolicy": {
             "description": "For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom\u2019s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
@@ -14,6 +17,11 @@
                     "type": "string"
                 }
             ]
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
+            "type": "string"
         },
         "address": {
             "description": "Physical address of the item.",
@@ -30,6 +38,11 @@
         "aggregateRating": {
             "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
             "$ref": "#/components/schema/AggregateRating"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
         },
         "alumni": {
             "description": "Alumni of an organization. Inverse property: alumniOf.",
@@ -73,6 +86,16 @@
             "description": "A contact point for a person or organization. Supersedes contactPoints.",
             "$ref": "#/components/schema/ContactPoint"
         },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
         "correctionsPolicy": {
             "description": "For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom\u2019s) disclosure and correction policy for errors.",
             "oneOf": [
@@ -88,6 +111,11 @@
         "department": {
             "description": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
             "$ref": "#/components/schema/Organization"
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
         },
         "dissolutionDate": {
             "description": "The date that this organization was dissolved.",
@@ -178,6 +206,34 @@
             "description": "Points-of-Sales operated by the organization or person.",
             "$ref": "#/components/schema/Place"
         },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
         "isicV4": {
             "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
             "nuggetType": "Text",
@@ -251,6 +307,11 @@
             "nuggetType": "Text",
             "type": "string"
         },
+        "name": {
+            "description": "The name of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
         "numberOfEmployees": {
             "description": "The number of employees in an organization e.g. business.",
             "$ref": "#/components/schema/QuantitativeValue"
@@ -270,6 +331,10 @@
             "description": "The larger organization that this organization is a subOrganization of, if any. Supersedes branchOf. Inverse property: subOrganization.",
             "$ref": "#/components/schema/Organization"
         },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "#/components/schema/Action"
+        },
         "publishingPrinciples": {
             "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
             "oneOf": [
@@ -285,6 +350,11 @@
         "review": {
             "description": "A review of the item. Supersedes reviews.",
             "$ref": "#/components/schema/Review"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
         },
         "seeks": {
             "description": "A pointer to products or services sought by the organization or person (demand).",
@@ -304,6 +374,17 @@
         "subOrganization": {
             "description": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. Inverse property: parentOrganization.",
             "$ref": "#/components/schema/Organization"
+        },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
         },
         "taxID": {
             "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
@@ -326,6 +407,11 @@
                     "type": "string"
                 }
             ]
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
+            "type": "string"
         },
         "vatID": {
             "description": "The Value-added Tax ID of the organization or person.",
