@@ -1,0 +1,11 @@
+{
+    "title": "MusicGroup",
+    "description": "A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.",
+    "required": [],
+    "properties": [
+      "album",
+      "genre",
+      "track"
+    ],
+    "extends": "PerformingGroup"
+}
