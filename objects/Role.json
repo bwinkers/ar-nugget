@@ -7,5 +7,5 @@
         "roleName",
         "startDate"
     ],
-    "extends": "Thing"
+    "extends": "Intangible"
 }
