@@ -44,6 +44,15 @@ php src/bin/refsToURLs.php -s "./schema" -u "https://schmema.izzup.com" -o "./ob
 php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json -p "./properties"
 ```
 
+### Update schema
+```
+php src/bin/convertSchemaRefs.php -s "./schema" -r "file://./" -o "./objects-local" -t "#/components/schema/"
+```
+
+```
+php src/bin/convertSchemaRefs.php -s "./schema" -r "https://schema.izzup.com" -o "./objects-izzup" -t "#/components/schema/" 
+```
+
 ## References
 JSON References ($ref): [https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)
 
