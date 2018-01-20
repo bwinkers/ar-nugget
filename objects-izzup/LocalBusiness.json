@@ -1,0 +1,364 @@
+{
+    "title": "LocalBusiness",
+    "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+    "required": [
+        "coreType",
+        "name"
+    ],
+    "properties": {
+        "additionalProperty": {
+            "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+            "$ref": "https://schema.izzup.com/PropertyValue"
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "address": {
+            "description": "Physical address of the item.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/PostalAddress"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                }
+            ]
+        },
+        "aggregateRating": {
+            "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+            "$ref": "https://schema.izzup.com/AggregateRating"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "amenityFeature": {
+            "description": "An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.",
+            "$ref": "https://schema.izzup.com/LocationFeatureSpecification"
+        },
+        "branchCode": {
+            "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs. For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "containedInPlace": {
+            "description": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
+            "$ref": "https://schema.izzup.com/Place"
+        },
+        "containsPlace": {
+            "description": "The basic containment relation between a place and another that it contains. Inverse property: containedInPlace.",
+            "$ref": "https://schema.izzup.com/Place"
+        },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
+        "currenciesAccepted": {
+            "description": "The currency accepted (in ISO 4217 currency format).",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "event": {
+            "description": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+            "$ref": "https://schema.izzup.com/Event"
+        },
+        "faxNumber": {
+            "description": "The fax number.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "geo": {
+            "description": "The geo coordinates of the place.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeoCoordinates"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/GeoShape"
+                }
+            ]
+        },
+        "geospatiallyContains": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyCoveredBy": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyCovers": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyCrosses": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyDisjoint": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in DE-9IM)",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyEquals": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in DE-9IM. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyIntersects": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyOverlaps": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyTouches": {
+            "description": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in DE-9IM )",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "geospatiallyWithin": {
+            "description": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in DE-9IM.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/GeospatialGeometry"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Place"
+                }
+            ]
+        },
+        "globalLocationNumber": {
+            "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "hasMap": {
+            "description": "A URL to a map of the place. Supersedes map, maps.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/Map"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "isAccessibleForFree": {
+            "description": "A flag to signal that the item, event, or place is accessible for free. Supersedes free.",
+            "nuggetType": "Boolean",
+            "type": " boolean"
+        },
+        "isicV4": {
+            "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "logo": {
+            "description": "An associated logo.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "maximumAttendeeCapacity": {
+            "description": "The total number of individuals that may attend an event or venue.",
+            "nuggetType": "Integer",
+            "type": "integer"
+        },
+        "name": {
+            "description": "The name of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "openingHours": {
+            "description": "The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'. Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. Times are specified using 24:00 time. For example, 3pm is specified as 15:00. Here is an example: <time itemprop=\"openingHours\" datetime=\"Tu,Th 16:00-20:00\">Tuesdays and Thursdays 4-8pm</time>. If a business is open 7 days a week, then it can be specified as <time itemprop=\"openingHours\" datetime=\"Mo-Su\">Monday through Sunday, all day</time>.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "openingHoursSpecification": {
+            "description": "The opening hours of a certain place.",
+            "$ref": "https://schema.izzup.com/OpeningHoursSpecification"
+        },
+        "paymentAccepted": {
+            "description": "Cash, credit card, etc.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "photo": {
+            "description": "A photograph of this place. Supersedes photos.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/ImageObject"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Photograph"
+                }
+            ]
+        },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "https://schema.izzup.com/Action"
+        },
+        "priceRange": {
+            "description": "The price range of the business, for example $$$.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "publicAccess": {
+            "description": "A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value",
+            "nuggetType": "Boolean",
+            "type": " boolean"
+        },
+        "review": {
+            "description": "A review of the item. Supersedes reviews.",
+            "$ref": "https://schema.izzup.com/Review"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "smokingAllowed": {
+            "description": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+            "nuggetType": "Boolean",
+            "type": " boolean"
+        },
+        "specialOpeningHoursSpecification": {
+            "description": "The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecificationor openingHours.",
+            "$ref": "https://schema.izzup.com/OpeningHoursSpecification"
+        },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "https://schema.izzup.com/CreativeWork"
+                },
+                {
+                    "$ref": "https://schema.izzup.com/Event"
+                }
+            ]
+        },
+        "telephone": {
+            "description": "The telephone number.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
+            "type": "string"
+        }
+    },
+    "extends": "Place",
+    "type": "object"
+}
