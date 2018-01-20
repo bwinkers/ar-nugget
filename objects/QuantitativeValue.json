@@ -1,0 +1,15 @@
+{
+    "title": "QuantitativeValue",
+    "description": "A point value or interval for product characteristics and other purposes.",
+    "required": [],
+    "properties": [
+        "additionalProperty",
+        "maxValue",
+        "minValue",
+        "unitCode",
+        "unitText",
+        "value",
+        "valueReference"
+    ],
+    "extends": "StructuredValue"
+}
