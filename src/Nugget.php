@@ -98,7 +98,7 @@ class Nugget
               //$filePath = $fileInfo->getP
               // Attempt creating a Schema object from the definition
               $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
-              var_dump($newSchema);
+
               $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName);
           }
       }
@@ -111,13 +111,13 @@ class Nugget
      * @param string $path
      */
     public function writeFile($data, $path){
-      $fp = fopen($path, 'w');
+      $filePath = fopen($path, 'w');
 
       // Write the spec to the file pointer
-      fwrite($fp, $data);
+      fwrite($filePath, $data);
 
       // Close the file pointer
-      fclose($fp);
+      fclose($filePath);
     }
     
     /**

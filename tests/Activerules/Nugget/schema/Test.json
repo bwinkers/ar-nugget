@@ -1,0 +1,11 @@
+{
+    "title": "Test",
+    "description": "For testing only",
+    "properties": {
+        "testProp": {
+            "description": "TestProperty.",
+            "$ref": "#/components/schema/TestProp"
+        }
+    },
+    "type": "object"
+}
