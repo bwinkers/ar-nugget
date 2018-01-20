@@ -37,6 +37,10 @@ php src/bin/o2s.php -p "./properties" -s "./schema" -o "./objects" -d "./schemad
 ```
 
 ```
+php src/bin/refsToURLs.php -s "./schema" -u "https://schmema.izzup.com" -o "./objects-izzup"
+```
+
+```
 php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s" -c ~/.google/izzup-client_secret.json -p "./properties"
 ```
 

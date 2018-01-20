@@ -66,24 +66,23 @@ class Nugget
             'type' => 'string'
         ]
     ];
-    
-    
+
 
     /**
-     * Create a new Skeleton Instance
+     * Constructor
      */
     public function __construct()
     {
     }
     
     /**
-     * 
-     * @param type $type
-     * @return type
+     * Get the JSON type for a higher-level Nugget type
+     * @param string $type
+     * @return mixed string of mapped JSON type or boolean FALSE
      */
     public function jsonType($type) {
       if(!is_string($type)) {
-        throw new \Activerules\Nugget\Exceptions\NuggetException('Aww shucks');
+        throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid Type');
       }
       
       $type = strtolower($type);
