@@ -91,7 +91,7 @@ class Nugget
               // Attempt creating a Schema object from the definition
               $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
               var_dump($newSchema);
-              $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName.'json');
+              $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName);
           }
       }
     }
