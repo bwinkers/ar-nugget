@@ -75,6 +75,86 @@ class Nugget
     {
     }
     
+    public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) {
+      
+      // Create a directory iterator for the defined objects directory
+      $files = new \DirectoryIterator($schemaDir);
+
+      // Iterate through object definitions
+      foreach ($files as $fileInfo) {
+          // Make sure its a valid file
+          if ($this->realFile($fileInfo)) {
+              // Get the name for the new file
+              $fileName = $fileInfo->getFilename();
+              $currentFile = $fileInfo->getPathName();
+              //$filePath = $fileInfo->getP
+              // Attempt creating a Schema object from the definition
+              $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
+              var_dump($newSchema);
+              $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName.'json');
+          }
+      }
+    }
+    
+    /**
+     * 
+     * @param type $newSchema
+     * @param type $schemaOut
+     * @param type $fileName
+     */
+    public function writeFile($data, $path){
+      $fp = fopen($path, 'w');
+
+      // Write the spec to the file pointer
+      fwrite($fp, $data);
+
+      // Close the file pointer
+      fclose($fp);
+    }
+    
+    /**
+     * 
+     * @param string $file
+     * @param string $replacementPath
+     * @param string $targetPath
+     * @return string
+     */
+    public function convertSchemaFile($file, $replacementPath, $targetPath) {
+      // Read the file contents
+      $JSON = file_get_contents($file);
+      
+      return str_replace($this->pathRoot($targetPath), $this->pathRoot($replacementPath), $JSON);
+
+    }
+    
+    /**
+     * Making sure the trailing slash in path is consistent.
+     * 
+     * @param string $path
+     */
+    public function pathRoot($path) {
+      return rtrim($path, '/').'/';
+    }
+    
+    /**
+     * Filter out dot files and directories
+     * 
+     * @param string $fileInfo
+     * @return boolean
+     */
+    public function realFile($fileInfo)
+    {
+        $name = $fileInfo->getFilename();
+
+        $isValid = false;
+
+        if (!$fileInfo->isDot() && !$fileInfo->isDir() && substr($name, 0, 1) != '.') {
+            $isValid = true;
+        }
+
+        return $isValid;
+    }
+    
     /**
      * Get the JSON type for a higher-level Nugget type
      * @param string $type
