@@ -49,6 +49,10 @@ php src/bin/readPropertiesFromGoogle.php -s "1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6Z
 php src/bin/convertSchemaRefs.php -s "./schema" -r "file://./" -o "./objects-local" -t "#/components/schema/"
 ```
 
+```
+php src/bin/convertSchemaRefs.php -s "./schema" -r "https://schema.izzup.com" -o "./objects-izzup" -t "#/components/schema/" 
+```
+
 ## References
 JSON References ($ref): [https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)
 
