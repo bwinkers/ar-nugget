@@ -31,4 +31,4 @@ $schemaOut = realpath($options['o']);
 /**
  * Use Nugget
  */
-$nugget->convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath);
+echo $nugget->convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath);
