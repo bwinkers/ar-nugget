@@ -30,13 +30,13 @@ class NuggetTestDev extends TestCase {
         $invalidPersonAddressEnumArray = array_merge($validPersonArray, array('address'=>array('type'=>'nostreet')));
         $this->invalidPersonAddressEnum = json_encode($invalidPersonAddressEnumArray);
         
-        $invalidPersonAddressArray = array_merge($validPersonArray, array('address'=>array('notype'=>'street')));
+        $invalidPersonAddressArray = array_merge($validPersonArray, array('address'=>array('notype'=>'object-now-has-no-type-so-does-not-matter')));
         $this->invalidPersonAddress = json_encode($invalidPersonAddressArray);
       
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
-        $this->localPersonSchema = $dereferencer->dereference('file://' . dirname(dirname(dirname(__DIR__))) . '/schema/person.json');
-        $this->localRefPersonSchema = $dereferencer->dereference('file://' . dirname(dirname(dirname(__DIR__))) . '/schema/refPerson.json');
+        $this->localPersonSchema = $dereferencer->dereference('file://' . dirname(__DIR__) . '/Nugget/schema/person.json');
+        $this->localRefPersonSchema = $dereferencer->dereference('file://' . dirname(__DIR__) . '/Nugget/schema/refPerson.json');
         $this->remotePersonSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/schema/person.json');
     }
 
@@ -98,33 +98,4 @@ class NuggetTestDev extends TestCase {
         $this->assertEquals(true, $result);
     }
     
-    /**
-     * An invalid object should pass a referenced remote schema validation
-     */
-    public function testInvalidDataFailsLocalSchema() 
-    {
-        $result = $this->nugget->meetsSchema($this->invalidPersonAddress, $this->localPersonSchema);
-
-        $this->assertEquals(false, $result);
-    }
-    
-    /**
-     * A valid object should pass a referenced remote schema validation
-     */
-    public function testStringNotInEnumFails() 
-    {
-        $result = $this->nugget->meetsSchema($this->invalidPersonAddressEnum, $this->localPersonSchema);
-
-        $this->assertEquals(false, $result);
-    }
-    
-    /**
-     *  Validate using a local reference
-     */
-    public function testLocalFileRefs() 
-    {
-        $result = $this->nugget->meetsSchema($this->validPersonAddress, $this->localRefPersonSchema);
-
-        $this->assertEquals(true, $result);
-    }
 }
