@@ -75,6 +75,14 @@ class Nugget
     {
     }
     
+    /**
+     * Change the base of a $ref schema
+     * 
+     * @param string $schemaDir
+     * @param string $schemaOut
+     * @param string $replacementPath
+     * @param string $targetPath
+     */
     public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) {
       
       // Create a directory iterator for the defined objects directory
@@ -83,7 +91,7 @@ class Nugget
       // Iterate through object definitions
       foreach ($files as $fileInfo) {
           // Make sure its a valid file
-          if ($this->realFile($fileInfo)) {
+          if ($this->realDirFile($fileInfo)) {
               // Get the name for the new file
               $fileName = $fileInfo->getFilename();
               $currentFile = $fileInfo->getPathName();
@@ -95,12 +103,12 @@ class Nugget
           }
       }
     }
-    
+
     /**
+     * Write a file out
      * 
-     * @param type $newSchema
-     * @param type $schemaOut
-     * @param type $fileName
+     * @param string $data
+     * @param string $path
      */
     public function writeFile($data, $path){
       $fp = fopen($path, 'w');
@@ -142,7 +150,7 @@ class Nugget
      * @param string $fileInfo
      * @return boolean
      */
-    public function realFile($fileInfo)
+    public function realDirFile($fileInfo)
     {
         $name = $fileInfo->getFilename();
 
@@ -154,7 +162,7 @@ class Nugget
 
         return $isValid;
     }
-    
+
     /**
      * Get the JSON type for a higher-level Nugget type
      * @param string $type
