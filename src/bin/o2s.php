@@ -2,8 +2,6 @@
 
 require_once "vendor/autoload.php";
 
-$nugget = new \Activerules\Nugget\Nugget();
-
 $shortopts = "";
 $shortopts .= "o:";  // Required - path to object definitions
 $shortopts .= "p:";  // Required - path to property definitions
@@ -15,6 +13,8 @@ $options = getopt($shortopts);
 if (empty($options['p']) || empty($options['o']) || empty($options['s']) || empty($options['d'])) {
     exit;
 }
+
+$nugget = new \Activerules\Nugget\Nugget();
 
 // Objects and their related properties are defined here.
 define('OBJECTDIR', realpath($options['o']));
