@@ -245,17 +245,19 @@ function mergeDefs(& $schemaDef, $parentFile){
   if ($parentDef) {
       mergeProps($parentDef, $schemaDef);
       mergeRequired($parentDef, $schemaDef);
-      
-      if(isset($parentDef->extends)) {
-        // Get the full path to the JSON schema file
-        $gparentFile = realpath(OBJECTDIR . '/' . $parentDef->extends . '.json');
+      loadParent($parentDef, $schemaDef);
+  } 
+}
 
-        if ($gparentFile) {
-            mergeDefs($schemaDef, $gparentFile);
-        }
-      }
+function loadParent($parentDef, & $schemaDef) {
+  if(isset($parentDef->extends)) {
+    // Get the full path to the JSON schema file
+    $gparentFile = realpath(OBJECTDIR . '/' . $parentDef->extends . '.json');
+
+    if ($gparentFile) {
+        mergeDefs($schemaDef, $gparentFile);
+    }
   }
-  
 }
 
 /**
