@@ -59,3 +59,4 @@ JSON References ($ref): [https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-0
 JSON Schema: [http://json-schema.org/](http://json-schema.org/)
 
 Schemas: [http://schema.org/](http://schema.org/)
+
