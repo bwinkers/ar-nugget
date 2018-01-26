@@ -237,20 +237,22 @@ function mergeDefs(& $schemaDef, $parentFile){
   // Convert JSON into a PHP object defining the schema parts
   $parentDef = json_decode($parentJSON);
 
-  if ($parentDef) {
+    if ($parentDef) {
       mergeProps($parentDef, $schemaDef);
       mergeRequired($parentDef, $schemaDef);
-      
-      if(isset($parentDef->extends)) {
-        // Get the full path to the JSON schema file
-        $gparentFile = realpath(OBJECTDIR . '/' . $parentDef->extends . '.json');
+      loadParent($parentDef, $schemaDef);
+  } 
+}
 
-        if ($gparentFile) {
-            mergeDefs($schemaDef, $gparentFile);
-        }
-      }
+function loadParent($parentDef, & $schemaDef) {
+  if(isset($parentDef->extends)) {
+    // Get the full path to the JSON schema file
+    $gparentFile = realpath(OBJECTDIR . '/' . $parentDef->extends . '.json');
+
+    if ($gparentFile) {
+        mergeDefs($schemaDef, $gparentFile);
+    }
   }
-  
 }
 
 /**
