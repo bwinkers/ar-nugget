@@ -146,6 +146,6 @@
             "type": "string"
         }
     },
-    "extends": "Action",
+    "extends": "AssessAction",
     "type": "object"
 }

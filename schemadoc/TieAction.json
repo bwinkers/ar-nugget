@@ -146,7 +146,7 @@
             "type": "string"
         }
     },
-    "extends": "Action",
+    "extends": "AchieveAction",
     "type": "object",
     "components": {
         "schema": {

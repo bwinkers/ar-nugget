@@ -146,7 +146,7 @@
             "type": "string"
         }
     },
-    "extends": "Action",
+    "extends": "ReactAction",
     "type": "object",
     "components": {
         "schema": {
