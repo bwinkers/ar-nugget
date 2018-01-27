@@ -1,0 +1,10 @@
+{
+    "title": "FindAction",
+    "description": "The act of finding an object.",
+    "related": {
+      "SearchAction": "FindAction is generally lead by a SearchAction, but not necessarily."
+    },
+    "required": [],
+    "properties": [],
+    "extends": "Action"
+}
