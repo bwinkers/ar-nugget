@@ -3,5 +3,5 @@
     "description": "The act of intentionally disregarding the object. An agent ignores an object.",
     "required": [],
     "properties": [],
-    "extends": "Action"
+    "extends": "AssessAction"
 }
