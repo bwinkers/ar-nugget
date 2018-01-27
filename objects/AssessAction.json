@@ -2,8 +2,6 @@
     "title": "AssessAction",
     "description": "The act of forming one's opinion, reaction or sentiment.",
     "required": [],
-    "properties": [
-      "loser"
-    ],
+    "properties": [],
     "extends": "Action"
 }
