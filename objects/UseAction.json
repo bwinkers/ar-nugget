@@ -1,0 +1,7 @@
+{
+    "title": "UseAction",
+    "description": "The act of applying an object to its intended purpose.",
+    "required": [],
+    "properties": [],
+    "extends": "ConsumeAction"
+}
