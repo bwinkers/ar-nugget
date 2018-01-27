@@ -1,0 +1,9 @@
+{
+    "title": "LoseAction",
+    "description": "The act of being defeated in a competitive activity.",
+    "required": [],
+    "properties": [
+      "winner"
+    ],
+    "extends": "Action"
+}
