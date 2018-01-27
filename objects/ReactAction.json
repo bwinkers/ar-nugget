@@ -1,0 +1,7 @@
+{
+    "title": "ReactAction",
+    "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
+    "required": [],
+    "properties": [],
+    "extends": "Action"
+}
