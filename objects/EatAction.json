@@ -1,0 +1,7 @@
+{
+    "title": "EatAction",
+    "description": "The act of swallowing liquids.",
+    "required": [],
+    "properties": [],
+    "extends": "ConsumeAction"
+}
