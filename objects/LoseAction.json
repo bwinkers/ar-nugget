@@ -5,5 +5,5 @@
     "properties": [
       "winner"
     ],
-    "extends": "Action"
+    "extends": "AchieveAction"
 }

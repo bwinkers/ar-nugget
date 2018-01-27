@@ -1,0 +1,7 @@
+{
+    "title": "ListenAction",
+    "description": "The act of consuming audio content.",
+    "required": [],
+    "properties": [],
+    "extends": "ConsumeAction"
+}

@@ -5,5 +5,5 @@
     "properties": [
       "loser"
     ],
-    "extends": "Action"
+    "extends": "AchieveAction"
 }

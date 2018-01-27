@@ -1,0 +1,7 @@
+{
+    "title": "InstallAction",
+    "description": "The act of installing an application.",
+    "required": [],
+    "properties": [],
+    "extends": "ConsumeAction"
+}
