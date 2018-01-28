@@ -169,5 +169,32 @@ class Nugget
         
         return $jsonOut ? json_encode($cleanObject) : $cleanObject;
     }  
+    
+    
+    /**
+     *
+     * @param object $parent
+     * @param object $child
+     */
+    public function mergeRequired($parent, & $child)
+    {
+        $parentReq = [];
+        if(isset($parent->required)) {
+          $parentReq = $parent->required;
+        }
+        if(isset($child->required)) {
+          $child->required = array_merge($parentReq, $child->required);
+        }    
+    }
+
+    /**
+     *
+     * @param object $parent
+     * @param object $child
+     */
+    public function mergeProps($parent, & $child)
+    {
+        $child->properties = array_merge($parent->properties, $child->properties);
+    }
 
 }
