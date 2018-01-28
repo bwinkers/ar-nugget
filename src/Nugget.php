@@ -117,12 +117,12 @@ class Nugget
      * @return mixed string of mapped JSON type or boolean FALSE
      */
     public function jsonType($type) {
-        if(!is_string($type)) {
+        if (!is_string($type)) {
             throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid Type');
         }
 
         $type = strtolower($type);
-        if(isset($this->types[$type])) {
+        if (isset($this->types[$type])) {
             return $this->types[$type]['type'];
         }
 
@@ -162,7 +162,7 @@ class Nugget
         $cleanObject = [];
         
         foreach($schema->properties as $prop) {
-            if(isset($data->$prop)) {
+            if (isset($data->$prop)) {
                 $cleanObject[$prop] = $data->$prop;
             }
         }
@@ -179,10 +179,10 @@ class Nugget
     public function mergeRequired($parent, & $child)
     {
         $parentReq = [];
-        if(isset($parent->required)) {
+        if (isset($parent->required)) {
             $parentReq = $parent->required;
         }
-        if(isset($child->required)) {
+        if (isset($child->required)) {
             $child->required = array_merge($parentReq, $child->required);
         }    
     }
