@@ -190,13 +190,15 @@ function mergeParentDef(& $schemaDef, $objectDir)
 function mergeDefs(& $schemaDef, $parentFile, $objectDir){
   // Read the file contents
   $parentJSON = file_get_contents($parentFile);
+  
+  $nugget = new \Activerules\Nugget\Nugget();
 
   // Convert JSON into a PHP object defining the schema parts
   $parentDef = json_decode($parentJSON);
 
   if ($parentDef) {
-      mergeProps($parentDef, $schemaDef);
-      mergeRequired($parentDef, $schemaDef);
+      $nugget->mergeProps($parentDef, $schemaDef);
+      $nugget->mergeRequired($parentDef, $schemaDef);
       loadParent($parentDef, $schemaDef, $objectDir);
   } 
 }
@@ -212,31 +214,6 @@ function loadParent($parentDef, & $schemaDef, $objectDir) {
   }
 }
 
-/**
- *
- * @param object $parent
- * @param object $child
- */
-function mergeRequired($parent, & $child)
-{
-    $parentReq = [];
-    if(isset($parent->required)) {
-      $parentReq = $parent->required;
-    }
-    if(isset($child->required)) {
-      $child->required = array_merge($parentReq, $child->required);
-    }    
-}
-
-/**
- *
- * @param object $parent
- * @param object $child
- */
-function mergeProps($parent, & $child)
-{
-    $child->properties = array_merge($parent->properties, $child->properties);
-}
 
 /**
  *
