@@ -1,0 +1,312 @@
+{
+    "title": "Product",
+    "description": "Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.",
+    "properties": {
+        "additionalProperty": {
+            "description": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+            "$ref": "#/components/schema/PropertyValue"
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "aggregateRating": {
+            "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+            "$ref": "#/components/schema/AggregateRating"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "audience": {
+            "description": "An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+            "$ref": "#/components/schema/Audience"
+        },
+        "award": {
+            "description": "An award won by or for this item. Supersedes awards.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "brand": {
+            "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Brand"
+                },
+                {
+                    "$ref": "#/components/schema/Organization"
+                }
+            ]
+        },
+        "category": {
+            "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PhysicalActivityCategory"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/components/schema/Thing"
+                }
+            ]
+        },
+        "color": {
+            "description": "The color of the product.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
+        "depth": {
+            "description": "The depth of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "gtin12": {
+            "description": "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "gtin13": {
+            "description": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "gtin14": {
+            "description": "The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "gtin8": {
+            "description": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "height": {
+            "description": "The height of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "isAccessoryOrSparePartFor": {
+            "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
+            "$ref": "#/components/schema/Product"
+        },
+        "isConsumableFor": {
+            "description": "A pointer to another product (or multiple products) for which this product is a consumable.",
+            "$ref": "#/components/schema/Product"
+        },
+        "isRelatedTo": {
+            "description": "A pointer to another, somehow related product (or multiple products).",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Product"
+                },
+                {
+                    "$ref": "#/components/schema/Service"
+                }
+            ]
+        },
+        "isSimilarTo": {
+            "description": "A pointer to another, functionally similar product (or multiple products).",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Product"
+                },
+                {
+                    "$ref": "#/components/schema/Service"
+                }
+            ]
+        },
+        "itemCondition": {
+            "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+            "$ref": "#/components/schema/OfferItemCondition"
+        },
+        "logo": {
+            "description": "An associated logo.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "manufacturer": {
+            "description": "The manufacturer of the product.",
+            "$ref": "#/components/schema/Organization"
+        },
+        "material": {
+            "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Product"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "model": {
+            "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ProductModel"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                }
+            ]
+        },
+        "mpn": {
+            "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "offers": {
+            "description": "An offer to provide this item\u2014for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+            "$ref": "#/components/schema/Offer"
+        },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "#/components/schema/Action"
+        },
+        "productID": {
+            "description": "The product identifier, such as ISBN. For example: meta itemprop=\"productID\" content=\"isbn:123-456-789\".",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "productionDate": {
+            "description": "The date of production of the item, e.g. vehicle.",
+            "nuggetType": "Date",
+            "type": "string"
+        },
+        "purchaseDate": {
+            "description": "The date the item e.g. vehicle was purchased by the current owner.",
+            "nuggetType": "Date",
+            "type": "string"
+        },
+        "releaseDate": {
+            "description": "The release date of a product or product model. This can be used to distinguish the exact variant of a product.",
+            "nuggetType": "Date",
+            "type": "string"
+        },
+        "review": {
+            "description": "A review of the item. Supersedes reviews.",
+            "$ref": "#/components/schema/Review"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "sku": {
+            "description": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "weight": {
+            "description": "The weight of the product or person.",
+            "$ref": "#/components/schema/QuantitativeValue"
+        },
+        "width": {
+            "description": "The width of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        }
+    },
+    "extends": "Thing",
+    "type": "object"
+}

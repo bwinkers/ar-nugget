@@ -1,0 +1,423 @@
+{
+    "title": "Person",
+    "description": "A person (alive, dead, undead, or fictional)",
+    "required": [
+        "coreType",
+        "name"
+    ],
+    "properties": {
+        "additionalName": {
+            "description": "An additional name for a Person, can be used for a middle name.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "address": {
+            "description": "Physical address of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PostalAddress"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                }
+            ]
+        },
+        "affiliation": {
+            "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+            "$ref": "#/components/schema/Organization"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "alumniOf": {
+            "description": "An organization that the person is an alumni of. Inverse property: alumni.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/EducationalOrganization"
+                },
+                {
+                    "$ref": "#/components/schema/Organization"
+                }
+            ]
+        },
+        "award": {
+            "description": "An award won by or for this item. Supersedes awards.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "birthDate": {
+            "description": "Date of birth.",
+            "nuggetType": "Date",
+            "type": "string"
+        },
+        "birthPlace": {
+            "description": "The place where the person was born.",
+            "$ref": "#/components/schema/Place"
+        },
+        "brand": {
+            "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Brand"
+                },
+                {
+                    "$ref": "#/components/schema/Organization"
+                }
+            ]
+        },
+        "children": {
+            "description": "A child of the person.",
+            "$ref": "#/components/schema/Person"
+        },
+        "colleague": {
+            "description": "A colleague of the person. Supersedes colleagues.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Person"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "contactPoint": {
+            "description": "A contact point for a person or organization. Supersedes contactPoints.",
+            "$ref": "#/components/schema/ContactPoint"
+        },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
+        "deathDate": {
+            "description": "Date of death.",
+            "nuggetType": "Date",
+            "type": "string"
+        },
+        "deathPlace": {
+            "description": "The place where the person died.",
+            "$ref": "#/components/schema/Place"
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "duns": {
+            "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "email": {
+            "description": "Email address.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "familyName": {
+            "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "faxNumber": {
+            "description": "The fax number.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "follows": {
+            "description": "The most generic uni-directional social relation.",
+            "$ref": "#/components/schema/Person"
+        },
+        "funder": {
+            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/Person"
+                }
+            ]
+        },
+        "gender": {
+            "description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/GenderType"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                }
+            ]
+        },
+        "givenName": {
+            "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "globalLocationNumber": {
+            "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "hasOccupation": {
+            "description": "The Person's occupation. For past professions, use Role for expressing dates.",
+            "$ref": "#/components/schema/Occupation"
+        },
+        "hasOfferCatalog": {
+            "description": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+            "$ref": "#/components/schema/OfferCatalog"
+        },
+        "hasPOS": {
+            "description": "Points-of-Sales operated by the organization or person.",
+            "$ref": "#/components/schema/Place"
+        },
+        "height": {
+            "description": "The height of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        },
+        "homeLocation": {
+            "description": "A contact location for a person's residence.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ContactPoint"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "honorificPrefix": {
+            "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "honorificSuffix": {
+            "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "isicV4": {
+            "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "jobTitle": {
+            "description": "The job title of the person (for example, Financial Manager).",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "knows": {
+            "description": "The most generic bi-directional social/work relation.",
+            "$ref": "#/components/schema/Person"
+        },
+        "makesOffer": {
+            "description": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+            "$ref": "#/components/schema/Offer"
+        },
+        "memberOf": {
+            "description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/ProgramMembership"
+                }
+            ]
+        },
+        "naics": {
+            "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "nationality": {
+            "description": "Nationality of the person.",
+            "$ref": "#/components/schema/Country"
+        },
+        "netWorth": {
+            "description": "The total financial value of the person as calculated by subtracting assets from liabilities.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/MonetaryAmount"
+                },
+                {
+                    "$ref": "#/components/schema/PriceSpecification"
+                }
+            ]
+        },
+        "owns": {
+            "description": "Products owned by the organization or person.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/OwnershipInfo"
+                },
+                {
+                    "$ref": "#/components/schema/Product"
+                }
+            ]
+        },
+        "parent": {
+            "description": "A parent of this person. Supersedes parents.",
+            "$ref": "#/components/schema/Person"
+        },
+        "performerIn": {
+            "description": "Event that this person is a performer or participant in.",
+            "$ref": "#/components/schema/Event"
+        },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "#/components/schema/Action"
+        },
+        "publishingPrinciples": {
+            "description": "The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "relatedTo": {
+            "description": "The most generic familial relation.",
+            "$ref": "#/components/schema/Person"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "seeks": {
+            "description": "A pointer to products or services sought by the organization or person (demand).",
+            "$ref": "#/components/schema/Demand"
+        },
+        "sibling": {
+            "description": "A sibling of the person. Supersedes siblings.",
+            "$ref": "#/components/schema/Person"
+        },
+        "sponsor": {
+            "description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Organization"
+                },
+                {
+                    "$ref": "#/components/schema/Person"
+                }
+            ]
+        },
+        "spouse": {
+            "description": "The person's spouse.",
+            "$ref": "#/components/schema/Person"
+        },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
+        },
+        "taxID": {
+            "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "telephone": {
+            "description": "The telephone number.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "vatID": {
+            "description": "The Value-added Tax ID of the organization or person.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "weight": {
+            "description": "The weight of the product or person.",
+            "$ref": "#/components/schema/QuantitativeValue"
+        },
+        "workLocation": {
+            "description": "A contact location for a person's place of work.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ContactPoint"
+                },
+                {
+                    "$ref": "#/components/schema/Place"
+                }
+            ]
+        },
+        "worksFor": {
+            "description": "Organizations that the person works for.",
+            "$ref": "#/components/schema/Organization"
+        }
+    },
+    "extends": "Thing",
+    "type": "object"
+}
