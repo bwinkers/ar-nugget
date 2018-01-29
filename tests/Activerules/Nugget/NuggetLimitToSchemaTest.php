@@ -19,10 +19,10 @@ class NuggetLimitToSchemaTest extends TestCase {
         $dereferencer  = \Activerules\JsonReference\Dereferencer::draft4();
         
         $validPersonArray = ['name'=>'Brian'];
-        $this->validPerson = json_encode($validPersonArray);
+        $this->validPersonJSON = json_encode($validPersonArray);
         
         $dirtyPersonArray = array_merge($validPersonArray, array('lorem'=>array('remove'=>'me'), 'ipsum'=>'More BAD text to remove.'));
-        $this->dirtyPerson = json_encode($dirtyPersonArray);
+        $this->dirtyPersonJSON = json_encode($dirtyPersonArray);
 
         // All test will have these variables available to them under $this->
         $this->nugget = new \Activerules\Nugget\Nugget();
@@ -45,22 +45,13 @@ class NuggetLimitToSchemaTest extends TestCase {
      */
     public function testLimitingToSchema() 
     {
-        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPerson, $this->personSchema);
+        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPersonJSON, $this->personSchema);
         
-        $this->assertEquals($cleanPerson, $this->validPerson);
+        $this->assertEquals($cleanPerson, $this->validPersonJSON);
         
         $result = $this->nugget->meetsSchema($cleanPerson, $this->personSchema);
 
         $this->assertEquals(true, $result);
     }
-    
-    /**
-     * A known valid schema, fetched remotely, should pass validation
-     */
-    public function testLimitingToSchemaNoJson() 
-    {
-        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPerson, $this->personSchema, false);
-        
-        $this->assertEquals(true, is_array($cleanPerson));
-    }
+
 }
