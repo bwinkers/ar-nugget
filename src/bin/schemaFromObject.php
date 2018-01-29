@@ -271,6 +271,8 @@ function hydrateSchema($schemaDef,$propertiesDir)
 function populateProperties(& $schemaDef, $propertiesDir)
 {
     $props = [];
+    
+    $nugget = new \Activerules\Nugget\Nugget();
 
     // Loop through the defined properties array and load the definition for each one
     foreach ($schemaDef->properties as $property) {
@@ -279,7 +281,7 @@ function populateProperties(& $schemaDef, $propertiesDir)
         $propertyFile = realpath($propertiesDir . '/' . $property . '.json');
 
         if ($propertyFile) {
-            $props[$property] = hydrateProperty($propertyFile);
+            $props[$property] = $nugget->loadPropertyFile($propertyFile);
         }
     }
 
