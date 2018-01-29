@@ -18,9 +18,9 @@ class Nugget
      */
     public function __construct()
     {
-      include realpath(__DIR__.'/lookup/nuggetTypes.php');
-      
-      $this->types = $types;
+        include realpath(__DIR__.'/lookup/nuggetTypes.php');
+
+        $this->types = $types;
     }
     
     /**
@@ -33,23 +33,23 @@ class Nugget
      */
     public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) {
       
-      // Create a directory iterator for the defined objects directory
-      $files = new \DirectoryIterator($schemaDir);
+        // Create a directory iterator for the defined objects directory
+        $files = new \DirectoryIterator($schemaDir);
 
-      // Iterate through object definitions
-      foreach ($files as $fileInfo) {
-          // Make sure its a valid file
-          if ($this->realDirFile($fileInfo)) {
-              // Get the name for the new file
-              $fileName = $fileInfo->getFilename();
-              $currentFile = $fileInfo->getPathName();
-              //$filePath = $fileInfo->getP
-              // Attempt creating a Schema object from the definition
-              $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
+        // Iterate through object definitions
+        foreach ($files as $fileInfo) {
+            // Make sure its a valid file
+            if ($this->realDirFile($fileInfo)) {
+                // Get the name for the new file
+                $fileName = $fileInfo->getFilename();
+                $currentFile = $fileInfo->getPathName();
+                //$filePath = $fileInfo->getP
+                // Attempt creating a Schema object from the definition
+                $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
 
-              $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName);
-          }
-      }
+                $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName);
+            }
+        }
     }
 
     /**
@@ -59,13 +59,13 @@ class Nugget
      * @param string $path
      */
     public function writeFile($data, $path){
-      $filePath = fopen($path, 'w');
+        $filePath = fopen($path, 'w');
 
-      // Write the spec to the file pointer
-      fwrite($filePath, $data);
+        // Write the spec to the file pointer
+        fwrite($filePath, $data);
 
-      // Close the file pointer
-      fclose($filePath);
+        // Close the file pointer
+        fclose($filePath);
     }
     
     /**
@@ -76,10 +76,10 @@ class Nugget
      * @return string
      */
     public function convertSchemaFile($file, $replacementPath, $targetPath) {
-      // Read the file contents
-      $JSON = file_get_contents($file);
-      
-      return str_replace($this->pathRoot($targetPath), $this->pathRoot($replacementPath), $JSON);
+        // Read the file contents
+        $JSON = file_get_contents($file);
+
+        return str_replace($this->pathRoot($targetPath), $this->pathRoot($replacementPath), $JSON);
 
     }
     
@@ -117,16 +117,16 @@ class Nugget
      * @return mixed string of mapped JSON type or boolean FALSE
      */
     public function jsonType($type) {
-      if(!is_string($type)) {
-        throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid Type');
-      }
-      
-      $type = strtolower($type);
-      if(isset($this->types[$type])) {
-        return $this->types[$type]['type'];
-      }
-      
-      return false;
+        if (!is_string($type)) {
+            throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid Type');
+        }
+
+        $type = strtolower($type);
+        if (isset($this->types[$type])) {
+            return $this->types[$type]['type'];
+        }
+
+        return false;
     }
     
     /**
@@ -152,7 +152,7 @@ class Nugget
      * @param type $schema
      * @return boolean
      */
-    public function limitToSchema(string $object, $schema, $jsonOut=true)
+    public function limitToSchema(string $object, $schema)
     {
         $data = json_decode($object);
 
@@ -161,13 +161,40 @@ class Nugget
         // Start with an empty array.
         $cleanObject = [];
         
-        foreach($schema->properties as $prop => $val) {
-            if(isset($data->$prop)) {
+        foreach(array_keys((array) $schema->properties) as $prop) {
+            if (isset($data->$prop)) {
                 $cleanObject[$prop] = $data->$prop;
             }
         }
         
-        return $jsonOut ? json_encode($cleanObject) : $cleanObject;
+        return json_encode($cleanObject);
     }  
+    
+    
+    /**
+     *
+     * @param object $parent
+     * @param object $child
+     */
+    public function mergeRequired($parent, & $child)
+    {
+        $parentReq = [];
+        if (isset($parent->required)) {
+            $parentReq = $parent->required;
+        }
+        if (isset($child->required)) {
+            $child->required = array_merge($parentReq, $child->required);
+        }    
+    }
+
+    /**
+     *
+     * @param object $parent
+     * @param object $child
+     */
+    public function mergeProps($parent, & $child)
+    {
+        $child->properties = array_merge($parent->properties, $child->properties);
+    }
 
 }
