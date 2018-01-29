@@ -288,22 +288,6 @@ function populateProperties(& $schemaDef, $propertiesDir)
     $schemaDef->properties = $props;
 }
 
-/**
- *
- * @param string $filePath
- */
-function hydrateProperty($propertyFile)
-{
-
-  // Read the file into a PHP string
-    $propertyDef = file_get_contents($propertyFile);
-
-    // Use the serialized JSON string as a JSON object
-    $propObj = json_decode($propertyDef);
-
-    // Use this definition as the value for the OpenAPI property
-    return $propObj;
-}
 
 /**
  *
