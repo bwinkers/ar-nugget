@@ -271,6 +271,8 @@ function hydrateSchema($schemaDef,$propertiesDir)
 function populateProperties(& $schemaDef, $propertiesDir)
 {
     $props = [];
+    
+    $nugget = new \Activerules\Nugget\Nugget();
 
     // Loop through the defined properties array and load the definition for each one
     foreach ($schemaDef->properties as $property) {
@@ -279,29 +281,13 @@ function populateProperties(& $schemaDef, $propertiesDir)
         $propertyFile = realpath($propertiesDir . '/' . $property . '.json');
 
         if ($propertyFile) {
-            $props[$property] = hydrateProperty($propertyFile);
+            $props[$property] = $nugget->loadPropertyFile($propertyFile);
         }
     }
 
     $schemaDef->properties = $props;
 }
 
-/**
- *
- * @param string $filePath
- */
-function hydrateProperty($propertyFile)
-{
-
-  // Read the file into a PHP string
-    $propertyDef = file_get_contents($propertyFile);
-
-    // Use the serialized JSON string as a JSON object
-    $propObj = json_decode($propertyDef);
-
-    // Use this definition as the value for the OpenAPI property
-    return $propObj;
-}
 
 /**
  *

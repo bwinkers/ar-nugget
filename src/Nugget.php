@@ -200,5 +200,23 @@ class Nugget
         sort($properties);
         $child->properties = $properties;
     }
+    
+    
+    /**
+     *
+     * @param string $filePath
+     */
+    public function loadPropertyFile($propertyFile)
+    {
+
+        // Read the file into a PHP string
+        $propertyDef = file_get_contents($propertyFile);
+
+        // Use the serialized JSON string as a JSON object
+        $propObj = json_decode($propertyDef);
+
+        // Use this definition as the value for the OpenAPI property
+        return $propObj;
+    }
 
 }
