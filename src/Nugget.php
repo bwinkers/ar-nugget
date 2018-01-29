@@ -183,7 +183,9 @@ class Nugget
             $parentReq = $parent->required;
         }
         if (isset($child->required)) {
-            $child->required = array_merge($parentReq, $child->required);
+            $merged = array_unique(array_merge($parentReq, $child->required));
+            sort($merged);
+            $child->required = $merged;
         }    
     }
 
@@ -194,7 +196,9 @@ class Nugget
      */
     public function mergeProps($parent, & $child)
     {
-        $child->properties = array_merge($parent->properties, $child->properties);
+        $properties = array_unique(array_merge($parent->properties, $child->properties));
+        sort($properties);
+        $child->properties = $properties;
     }
 
 }
