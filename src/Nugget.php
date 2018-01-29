@@ -161,7 +161,7 @@ class Nugget
         // Start with an empty array.
         $cleanObject = [];
         
-        foreach($schema->properties as $prop) {
+        foreach(array_keys((array) $schema->properties) as $prop) {
             if (isset($data->$prop)) {
                 $cleanObject[$prop] = $data->$prop;
             }
