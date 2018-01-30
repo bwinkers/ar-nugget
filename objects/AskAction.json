@@ -1,0 +1,10 @@
+{
+    "title": "AskAction",
+    "description": "The act of posing a question / favor to someone.",
+    "required": [],
+    "properties": [
+      "question"
+    ],
+    "related": [],
+    "extends": "CommunicateAction"
+}
