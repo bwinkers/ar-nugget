@@ -6,7 +6,9 @@
       "resultComment"
     ],
     "related": [
-      "AskAction"
+      {
+        "AskAction": "Appears generally as an origin of a ReplyAction."
+      }
     ],
     "extends": "CommunicateAction"
 }
