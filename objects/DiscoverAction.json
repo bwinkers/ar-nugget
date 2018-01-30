@@ -1,0 +1,7 @@
+{
+    "title": "DiscoverAction",
+    "description": "The act of discovering/finding an object.",
+    "required": [],
+    "properties": [],
+    "extends": "FindAction"
+}
