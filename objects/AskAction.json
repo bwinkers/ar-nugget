@@ -5,6 +5,5 @@
     "properties": [
       "question"
     ],
-    "related": [],
     "extends": "CommunicateAction"
 }

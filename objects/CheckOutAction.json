@@ -4,9 +4,15 @@
     "required": [],
     "properties": [],
     "related": [
-      "CheckOutAction",
-      "DepartAction",
-      "CancelAction"
+      {
+        "CheckInAction": "The antonym of CheckOutAction."
+      },
+      {
+        "DepartAction": "Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service"
+      },
+      {
+        "CancelAction": "Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service."
+      }
     ],
     "extends": "CommunicateAction"
 }

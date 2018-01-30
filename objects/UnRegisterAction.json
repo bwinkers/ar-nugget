@@ -1,0 +1,15 @@
+{
+    "title": "UnRegisterAction",
+    "description": "The act of un-registering from a service.",
+    "required": [],
+    "properties": [],
+    "related": [
+      {
+        "RegisterAction": "antonym of UnRegisterAction."
+      },
+      {
+        "Leave": "Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people."
+      }
+    ],
+    "extends": "InteractAction"
+}

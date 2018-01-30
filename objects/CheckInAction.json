@@ -4,9 +4,15 @@
     "required": [],
     "properties": [],
     "related": [
-      "CheckOutAction",
-      "ArriveAction",
-      "ConfirmAction"
+      {
+        "CheckOutAction": "The antonym of CheckInAction."
+      },
+      {
+        "ArriveAction": "Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service."
+      },
+      {
+        "ConfirmAction": "Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service rather than its validity/existence."
+      }
     ],
     "extends": "CommunicateAction"
 }

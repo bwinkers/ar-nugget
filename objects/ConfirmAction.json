@@ -4,7 +4,9 @@
     "required": [],
     "properties": [],
     "related": [
-      "CancelAction"
+      {
+         "CancelAction": "The antonym of ConfirmAction."
+      }
     ],
     "extends": "InformAction"
 }
