@@ -1,6 +1,6 @@
 {
-    "title": "TrackAction",
-    "description": "An agent tracks an object for updates.",
+    "title": "BefriendAction",
+    "description": "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.",
     "required": [
         "coreType",
         "name"
@@ -147,9 +147,8 @@
         }
     },
     "related": [
-        "FollowAction",
-        "SubscribeAction"
+        "FollowAction"
     ],
-    "extends": "FindAction",
+    "extends": "InteractAction",
     "type": "object"
 }
