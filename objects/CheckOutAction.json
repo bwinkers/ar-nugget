@@ -1,0 +1,12 @@
+{
+    "title": "CheckOutAction",
+    "description": "The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).",
+    "required": [],
+    "properties": [],
+    "related": [
+      "CheckOutAction",
+      "DepartAction",
+      "CancelAction"
+    ],
+    "extends": "CommunicateAction"
+}
