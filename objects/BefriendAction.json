@@ -4,7 +4,9 @@
     "required": [],
     "properties": [],
     "related": [
-      "FollowAction"
+      {
+        "FollowAction": "FindAction is generally lead by a SearchAction, but not necessarily."
+      }
     ],
     "extends": "InteractAction"
 }
