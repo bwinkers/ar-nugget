@@ -1,0 +1,13 @@
+{
+    "title": "TrackAction",
+    "description": "An agent tracks an object for updates.",
+    "required": [],
+    "properties": [
+      "deliveryMethod"
+    ],
+    "related": [
+      "FollowAction",
+      "SubscribeAction"
+    ],
+    "extends": "FindAction"
+}
