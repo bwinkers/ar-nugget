@@ -8,5 +8,5 @@
       "recipient"
     ],
     "related": [],
-    "extends": "CommunicateAction"
+    "extends": "InteractAction"
 }
