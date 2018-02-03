@@ -54,7 +54,7 @@ function processProperties($properties)
 
 /**
  *
- * @param type $propertyRow
+ * @param array $propertyRow
  */
 function processPropertyRow($propertyRow)
 {
@@ -70,8 +70,8 @@ function processPropertyRow($propertyRow)
 
 /**
  *
- * @param type $property
- * @return type
+ * @param string $property
+ * @return string
  */
 function processProperty($property)
 {
@@ -85,7 +85,7 @@ function processProperty($property)
 
 /**
  *
- * @param type $property
+ * @param string $property
  */
 function createProperty($property)
 {
@@ -100,7 +100,7 @@ function createProperty($property)
 
 /**
  *
- * @param type $property
+ * @param string $property
  */
 function hydrateTypes(& $property)
 {
@@ -116,8 +116,8 @@ function hydrateTypes(& $property)
 
 /**
  *
- * @param type $property
- * @param type $types
+ * @param string $property
+ * @param array $types
  */
 function hydrateOneOfType(& $property, $types)
 {
@@ -135,8 +135,8 @@ function hydrateOneOfType(& $property, $types)
 
 /**
  *
- * @param type $property
- * @param type $type
+ * @param string $property
+ * @param string $type
  */
 function hydrateSingleType(& $property, $type)
 {
@@ -147,7 +147,7 @@ function hydrateSingleType(& $property, $type)
 
 /**
  *
- * @param type $type
+ * @param string $type
  * @return string
  */
 function resolveType($type)
@@ -168,8 +168,9 @@ function resolveType($type)
 }
 
 /**
- *
- * @param type $property
+ * 
+ * @param string $property
+ * @param string $propertyName
  */
 function writeProperty($property, $propertyName)
 {
