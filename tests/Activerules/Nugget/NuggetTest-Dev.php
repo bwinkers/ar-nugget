@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class NuggetTestDev extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -96,5 +97,4 @@ class NuggetTestDev extends TestCase
 
         $this->assertEquals(true, $result);
     }
-
 }

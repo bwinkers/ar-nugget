@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaBuilderLoadPropertyFileTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -26,5 +27,4 @@ class SchemaBuilderLoadPropertyFileTest extends TestCase
 
         $this->assertEquals('property', $result->test);
     }
-
 }

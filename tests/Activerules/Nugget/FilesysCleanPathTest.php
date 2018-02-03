@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class FilesysCleanPathTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -36,5 +37,4 @@ class FilesysCleanPathTest extends TestCase
 
         $this->assertEquals('/my/path/', $path);
     }
-
 }

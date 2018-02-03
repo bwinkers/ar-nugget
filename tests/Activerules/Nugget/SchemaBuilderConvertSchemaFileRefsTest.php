@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaBuilderConvertSchemaFileRefsTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -45,5 +46,4 @@ class SchemaBuilderConvertSchemaFileRefsTest extends TestCase
     "type": "object"
 }'), preg_replace('/\v(?:[\v\h]+)/', '', $JSON));
     }
-
 }

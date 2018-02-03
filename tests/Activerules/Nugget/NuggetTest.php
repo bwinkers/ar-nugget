@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class NuggetTestDev extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -53,5 +54,4 @@ class NuggetTestDev extends TestCase
         $result = is_a($this->nugget->openAPI, 'Activerules\Nugget\openAPI');
         $this->assertEquals(true, $result);
     }
-
 }

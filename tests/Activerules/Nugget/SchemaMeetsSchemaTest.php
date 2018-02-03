@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaMeetsSchemaTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -90,5 +91,4 @@ class SchemaMeetsSchemaTest extends TestCase
 
         $this->assertEquals(false, $result);
     }
-
 }

@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaBuilderMergeRequiredTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -39,5 +40,4 @@ class SchemaBuilderMergeRequiredTest extends TestCase
 
         $this->assertEquals($expected, $req);
     }
-
 }

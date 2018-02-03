@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaLimitToSchemaTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -50,5 +51,4 @@ class SchemaLimitToSchemaTest extends TestCase
 
         $this->assertEquals(true, $result);
     }
-
 }

@@ -10,6 +10,7 @@ use Activerules\Nugget\exceptions\NuggetException;
 
 class NuggetExceptionTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -37,5 +38,4 @@ class NuggetExceptionTest extends TestCase
 
         $this->openAPI->jsonType([]);
     }
-
 }

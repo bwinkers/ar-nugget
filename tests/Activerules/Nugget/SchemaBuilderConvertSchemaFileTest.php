@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class SchemaBuilderConvertSchemaFileTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -38,5 +39,4 @@ class SchemaBuilderConvertSchemaFileTest extends TestCase
     "type": "object"
 }'), json_decode($path));
     }
-
 }

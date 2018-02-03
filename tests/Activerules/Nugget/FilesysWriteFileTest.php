@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class NuggetWriteFileTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -32,5 +33,4 @@ class NuggetWriteFileTest extends TestCase
 
         $this->assertEquals($content, $writtenContent);
     }
-
 }

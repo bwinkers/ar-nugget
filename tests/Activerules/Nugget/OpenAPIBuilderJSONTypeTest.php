@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class OpenAPIJSONTypeTest extends TestCase
 {
+
     /**
      * This gets called before all test functions
      */
@@ -39,5 +40,4 @@ class OpenAPIJSONTypeTest extends TestCase
 
         $this->assertEquals('string', $result);
     }
-
 }
