@@ -4,9 +4,6 @@ namespace Activerules\Nugget;
 
 use PHPUnit\Framework\TestCase;
 
-// Need more test
-
-
 class SchemaBuilderMergeRequiredTest extends TestCase
 {
 
