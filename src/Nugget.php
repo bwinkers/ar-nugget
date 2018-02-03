@@ -15,11 +15,7 @@ class Nugget
      * Constructor
      */
     public function __construct()
-    {
-        include realpath(__DIR__.'/lookup/nuggetTypes.php');
-
-        $this->types = $types;
-        
+    {        
         $this->filesys = new \Activerules\Nugget\Filesys();
         
         $this->schema = new \Activerules\Nugget\Schema();
