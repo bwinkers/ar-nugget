@@ -5,7 +5,7 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget
+ * The Nugget SChema Builder functions
  */
 class SchemaBuilder
 {
@@ -17,16 +17,16 @@ class SchemaBuilder
         $this->filesys = new \Activerules\Nugget\Filesys();
         $this->schema = new \Activerules\Nugget\Schema();
     }
-        
+
     /**
      * Change the base of a $ref schema
-     * 
+     *
      * @param string $schemaDir
      * @param string $schemaOut
      * @param string $replacementPath
      * @param string $targetPath
      */
-    public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) 
+    public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath)
     {
         // Create a directory iterator for the defined objects directory
         $files = new \DirectoryIterator($schemaDir);
@@ -42,26 +42,26 @@ class SchemaBuilder
                 // Attempt creating a Schema object from the definition
                 $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
 
-                $this->filesys->writeFile($newSchema, $this->filesys->cleanPath($schemaOut).$fileName);
+                $this->filesys->writeFile($newSchema, $this->filesys->cleanPath($schemaOut) . $fileName);
             }
         }
     }
 
     /**
-     * 
+     *
      * @param string $file
      * @param string $replacementPath
      * @param string $targetPath
      * @return string
      */
-    public function convertSchemaFile($file, $replacementPath, $targetPath) 
+    public function convertSchemaFile($file, $replacementPath, $targetPath)
     {
         // Read the file contents
         $JSON = file_get_contents($file);
 
         return str_replace($this->filesys->cleanPath($targetPath), $this->filesys->cleanPath($replacementPath), $JSON);
     }
-    
+
     /**
      *
      * @param object $parent
@@ -77,7 +77,7 @@ class SchemaBuilder
             $merged = array_unique(array_merge($parentReq, $child->required));
             sort($merged);
             $child->required = $merged;
-        }    
+        }
     }
 
     /**
@@ -91,8 +91,7 @@ class SchemaBuilder
         sort($properties);
         $child->properties = $properties;
     }
-    
-    
+
     /**
      *
      * @param string $filePath
@@ -108,4 +107,5 @@ class SchemaBuilder
         // Use this definition as the value for the OpenAPI property
         return $propObj;
     }
+
 }

@@ -5,10 +5,11 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget 
+ * The Nugget OpenAPI interaction functions
  */
 class OpenAPI
 {
+
     protected $types;
 
     /**
@@ -16,16 +17,16 @@ class OpenAPI
      * @param string $type
      * @return mixed string of mapped JSON type or boolean FALSE
      */
-    public function jsonType($type) 
+    public function jsonType($type)
     {
         if (!is_string($type)) {
             throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid type, it must be a string.');
         }
-        
-        if(!is_array($this->types)) {
-          include realpath(__DIR__.'/lookup/nuggetTypes.php');
 
-          $this->types = $types;
+        if (!is_array($this->types)) {
+            include realpath(__DIR__ . '/lookup/nuggetTypes.php');
+
+            $this->types = $types;
         }
 
         $type = strtolower($type);
@@ -35,4 +36,5 @@ class OpenAPI
 
         return false;
     }
+
 }

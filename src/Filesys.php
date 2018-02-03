@@ -5,17 +5,10 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget 
+ * The Nugget file system functions
  */
 class Filesys
 {
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-    }
-
     /**
      * Write a file out
      * 
@@ -32,17 +25,17 @@ class Filesys
         // Close the file pointer
         fclose($filePath);
     }
-      
+
     /**
      * Making sure the trailing slash in path is consistent.
      * 
      * @param string $path
      */
-    public function cleanPath($path) 
+    public function cleanPath($path)
     {
-      return rtrim($path, '/').'/';
+        return rtrim($path, '/') . '/';
     }
-    
+
     /**
      * Filter out dot files and directories
      * 
@@ -61,4 +54,5 @@ class Filesys
 
         return $isValid;
     }
+
 }

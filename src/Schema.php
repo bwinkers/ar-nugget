@@ -5,7 +5,7 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget 
+ * The Nugget Schema functions
  */
 class Schema
 {
@@ -21,10 +21,10 @@ class Schema
         $data = json_decode($object);
 
         $validator = new \Activerules\JsonGuard\Validator($data, $schema);
-   
-        return $validator->fails() ? false : true ;
+
+        return $validator->fails() ? false : true;
     }
-    
+
     /**
      * Remove all properties not defined in the schema
      * 
@@ -40,13 +40,14 @@ class Schema
         // We don't loop though data becasue it could be much larger than the schema.
         // Start with an empty array.
         $cleanObject = [];
-        
-        foreach(array_keys((array) $schema->properties) as $prop) {
+
+        foreach (array_keys((array) $schema->properties) as $prop) {
             if (isset($data->$prop)) {
                 $cleanObject[$prop] = $data->$prop;
             }
         }
-        
+
         return json_encode($cleanObject);
-    }      
+    }
+
 }
