@@ -28,7 +28,7 @@ class Schema
 
     /**
      * Remove all properties not defined in the schema
-     * 
+     *
      * @param string $object
      * @param type $schema
      * @return boolean
