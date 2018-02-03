@@ -22,7 +22,8 @@ class Filesys
      * @param string $data
      * @param string $path
      */
-    public function writeFile($data, $path){
+    public function writeFile($data, $path)
+    {
         $filePath = fopen($path, 'w');
 
         // Write the spec to the file pointer
@@ -37,7 +38,8 @@ class Filesys
      * 
      * @param string $path
      */
-    public function cleanPath($path) {
+    public function cleanPath($path) 
+    {
       return rtrim($path, '/').'/';
     }
     
