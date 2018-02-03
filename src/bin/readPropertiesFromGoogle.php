@@ -156,6 +156,8 @@ function resolveType($type)
 
     $jsonType = $nugget->jsonType($type);
 
+    $resolved = []; // Array of resolved types
+
     if ($jsonType) {
         $resolved['nuggetType'] = $type;
         $resolved['type'] = $jsonType;
@@ -168,7 +170,7 @@ function resolveType($type)
 }
 
 /**
- * 
+ *
  * @param string $property
  * @param string $propertyName
  */
