@@ -5,7 +5,7 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget 
+ * The Nugget
  */
 class Nugget
 {

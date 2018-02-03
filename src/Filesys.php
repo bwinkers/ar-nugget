@@ -12,7 +12,7 @@ class Filesys
 
     /**
      * Write a file out
-     * 
+     *
      * @param string $data
      * @param string $path
      */
@@ -29,7 +29,7 @@ class Filesys
 
     /**
      * Making sure the trailing slash in path is consistent.
-     * 
+     *
      * @param string $path
      */
     public function cleanPath($path)
@@ -39,7 +39,7 @@ class Filesys
 
     /**
      * Filter out dot files and directories
-     * 
+     *
      * @param string $fileInfo
      * @return boolean
      */
