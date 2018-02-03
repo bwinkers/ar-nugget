@@ -5,7 +5,7 @@ namespace Activerules\Nugget;
 use Activerules\Nugget\Exceptions\NuggetException;
 
 /**
- * The Nugget 
+ * The Nugget
  */
 class SchemaBuilder
 {
@@ -26,7 +26,8 @@ class SchemaBuilder
      * @param string $replacementPath
      * @param string $targetPath
      */
-    public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) {
+    public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) 
+    {
         // Create a directory iterator for the defined objects directory
         $files = new \DirectoryIterator($schemaDir);
 
@@ -53,7 +54,8 @@ class SchemaBuilder
      * @param string $targetPath
      * @return string
      */
-    public function convertSchemaFile($file, $replacementPath, $targetPath) {
+    public function convertSchemaFile($file, $replacementPath, $targetPath) 
+    {
         // Read the file contents
         $JSON = file_get_contents($file);
 
