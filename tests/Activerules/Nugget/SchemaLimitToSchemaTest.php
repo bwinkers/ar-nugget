@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetLimitToSchemaTest extends TestCase {
+class SchemaLimitToSchemaTest extends TestCase {
   
     /**
      * This gets called before all test functions
