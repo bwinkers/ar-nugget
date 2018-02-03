@@ -110,10 +110,10 @@ function setRefSchema(& $schema, $refSchemaName, $refParts, $refSchema)
  * @param string $refSchemaName
  * @return object
  */
-function hydrateLocalRef($refSchemaName)
+function hydrateLocalRef($refSchemaName, $schemaDir = '')
 {
     // Get the full path to the JSON schema file
-    $objFile = realpath(SCHEMADIR . '/' . $refSchemaName . '.json');
+    $objFile = realpath($schemaDir . '/' . $refSchemaName . '.json');
 
     if ($objFile) {
         // Read the file contents
