@@ -164,7 +164,7 @@ function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
 
     // If we have schema properties continue
     if (isset($schemaDef->properties)) {
-        $schema = hydrateSchema($schemaDef,$propertiesDir);
+        $schema = hydrateSchema($schemaDef, $propertiesDir);
         writeSchema($schema, $schemaName, $schemaDir);
     }
 }
@@ -239,7 +239,7 @@ function writeSchema($schema, $schemaName, $dir)
  *
  * @param object $schemaDef
  */
-function hydrateSchema($schemaDef,$propertiesDir)
+function hydrateSchema($schemaDef, $propertiesDir)
 {
 
   // Set type as object if not defined otherwise
