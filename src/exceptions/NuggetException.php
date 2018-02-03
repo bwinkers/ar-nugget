@@ -8,5 +8,5 @@ namespace Activerules\Nugget\Exceptions;
  */
 class NuggetException extends \Exception
 {
-
+    
 }
