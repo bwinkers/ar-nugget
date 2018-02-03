@@ -1,0 +1,7 @@
+{
+    "title": "DeactivateAction",
+    "description": "The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).",
+    "required": [],
+    "properties": [],
+    "extends": "ControlAction"
+}

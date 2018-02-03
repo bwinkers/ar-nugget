@@ -1,0 +1,9 @@
+{
+    "title": "CommentAction",
+    "description": "The act of generating a comment about a subject.",
+    "required": [],
+    "properties": [
+      "resultComment"
+    ],
+    "extends": "CommunicateAction"
+}

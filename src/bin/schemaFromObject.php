@@ -190,13 +190,15 @@ function mergeParentDef(& $schemaDef, $objectDir)
 function mergeDefs(& $schemaDef, $parentFile, $objectDir){
   // Read the file contents
   $parentJSON = file_get_contents($parentFile);
+  
+  $nugget = new \Activerules\Nugget\Nugget();
 
   // Convert JSON into a PHP object defining the schema parts
   $parentDef = json_decode($parentJSON);
 
   if ($parentDef) {
-      mergeProps($parentDef, $schemaDef);
-      mergeRequired($parentDef, $schemaDef);
+      $nugget->mergeProps($parentDef, $schemaDef);
+      $nugget->mergeRequired($parentDef, $schemaDef);
       loadParent($parentDef, $schemaDef, $objectDir);
   } 
 }
@@ -212,31 +214,6 @@ function loadParent($parentDef, & $schemaDef, $objectDir) {
   }
 }
 
-/**
- *
- * @param object $parent
- * @param object $child
- */
-function mergeRequired($parent, & $child)
-{
-    $parentReq = [];
-    if(isset($parent->required)) {
-      $parentReq = $parent->required;
-    }
-    if(isset($child->required)) {
-      $child->required = array_merge($parentReq, $child->required);
-    }    
-}
-
-/**
- *
- * @param object $parent
- * @param object $child
- */
-function mergeProps($parent, & $child)
-{
-    $child->properties = array_merge($parent->properties, $child->properties);
-}
 
 /**
  *
@@ -294,6 +271,8 @@ function hydrateSchema($schemaDef,$propertiesDir)
 function populateProperties(& $schemaDef, $propertiesDir)
 {
     $props = [];
+    
+    $nugget = new \Activerules\Nugget\Nugget();
 
     // Loop through the defined properties array and load the definition for each one
     foreach ($schemaDef->properties as $property) {
@@ -302,29 +281,13 @@ function populateProperties(& $schemaDef, $propertiesDir)
         $propertyFile = realpath($propertiesDir . '/' . $property . '.json');
 
         if ($propertyFile) {
-            $props[$property] = hydrateProperty($propertyFile);
+            $props[$property] = $nugget->loadPropertyFile($propertyFile);
         }
     }
 
     $schemaDef->properties = $props;
 }
 
-/**
- *
- * @param string $filePath
- */
-function hydrateProperty($propertyFile)
-{
-
-  // Read the file into a PHP string
-    $propertyDef = file_get_contents($propertyFile);
-
-    // Use the serialized JSON string as a JSON object
-    $propObj = json_decode($propertyDef);
-
-    // Use this definition as the value for the OpenAPI property
-    return $propObj;
-}
 
 /**
  *

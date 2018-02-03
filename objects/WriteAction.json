@@ -1,0 +1,9 @@
+{
+    "title": "WriteAction",
+    "description": "The act of capturing still images of objects using a camera.",
+    "required": [],
+    "properties": [
+      "inLanguage"
+    ],
+    "extends": "CreateAction"
+}
