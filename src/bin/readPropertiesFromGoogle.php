@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 $nugget = new \Activerules\Nugget\Nugget();
 
 
-$shortopts  = "";
+$shortopts = "";
 $shortopts .= "s:";  // Required - Google Spreadsheet ID
 $shortopts .= "p:";  // Required - path to property definitions directory
 $shortopts .= "c:";  // Required - path to credentials file for Google Drive API
@@ -23,12 +23,11 @@ define('PROPERTYDIR', realpath($options['p']));
 
 
 define('SCOPES', implode(
-    ' ',
-    array(
-  Google_Service_Sheets::SPREADSHEETS_READONLY)
+                ' ', array(
+    Google_Service_Sheets::SPREADSHEETS_READONLY)
 ));
 
-putenv('GOOGLE_APPLICATION_CREDENTIALS='.realpath($options['c']));
+putenv('GOOGLE_APPLICATION_CREDENTIALS=' . realpath($options['c']));
 
 $client = new Google_Client();
 $client->setScopes(SCOPES);
@@ -42,7 +41,6 @@ $properties = $response->getValues();
 
 // Process the fetched properties
 processProperties($properties);
-
 /**
  *
  * @param type $properties
@@ -81,7 +79,7 @@ function processProperty($property)
     if (propertyExists($property)) {
         return;
     }
-  
+
     createProperty($property);
 }
 
@@ -94,9 +92,9 @@ function createProperty($property)
     // Save property name
     $propertyName = $property['name'];
     unset($property['name']);
-   
+
     hydrateTypes($property);
-  
+
     writeProperty($property, $propertyName);
 }
 
@@ -108,7 +106,7 @@ function hydrateTypes(& $property)
 {
     $types = $property['types'];
     unset($property['types']);
-  
+
     if (count($types) === 1) {
         hydrateSingleType($property, $types[0]);
     } else {
@@ -124,14 +122,14 @@ function hydrateTypes(& $property)
 function hydrateOneOfType(& $property, $types)
 {
     $resolvedTypes = [];
-  
+
     foreach ($types as $type) {
         $typeData = resolveType($type);
         $resolvedTypes[] = $typeData;
     }
-  
+
     $resolved['oneOf'] = $resolvedTypes;
-  
+
     $property = array_merge($property, $resolved);
 }
 
@@ -143,7 +141,7 @@ function hydrateOneOfType(& $property, $types)
 function hydrateSingleType(& $property, $type)
 {
     $typeData = resolveType($type);
-  
+
     $property = array_merge($property, $typeData);
 }
 
@@ -155,7 +153,7 @@ function hydrateSingleType(& $property, $type)
 function resolveType($type)
 {
     $nugget = new \Activerules\Nugget\Nugget();
-    
+
     $jsonType = $nugget->jsonType($type);
 
     if ($jsonType) {
@@ -163,9 +161,9 @@ function resolveType($type)
         $resolved['type'] = $jsonType;
     } else {
         // Assume we got a valid Schema name
-        $resolved['$ref'] = "#/components/schema/". $type;
+        $resolved['$ref'] = "#/components/schema/" . $type;
     }
-    
+
     return $resolved;
 }
 
@@ -179,7 +177,7 @@ function writeProperty($property, $propertyName)
     $spec = json_encode($property, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
     // Create a writeable file pointer to the OpenAPI schema location
-    $file = fopen(PROPERTYDIR.'/'.$propertyName.'.json', 'w');
+    $file = fopen(PROPERTYDIR . '/' . $propertyName . '.json', 'w');
 
     // Write the spec to the file pointer
     fwrite($file, $spec);
