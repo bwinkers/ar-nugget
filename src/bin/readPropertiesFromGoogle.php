@@ -179,13 +179,13 @@ function writeProperty($property, $propertyName)
     $spec = json_encode($property, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
     // Create a writeable file pointer to the OpenAPI schema location
-    $fp = fopen(PROPERTYDIR.'/'.$propertyName.'.json', 'w');
+    $file = fopen(PROPERTYDIR.'/'.$propertyName.'.json', 'w');
 
     // Write the spec to the file pointer
-    fwrite($fp, $spec);
+    fwrite($file, $spec);
 
     // Close the file pointer
-    fclose($fp);
+    fclose($file);
 }
 
 /**
