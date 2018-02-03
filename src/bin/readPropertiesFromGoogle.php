@@ -2,9 +2,7 @@
 // include your composer dependencies
 require_once 'vendor/autoload.php';
 
-
 $nugget = new \Activerules\Nugget\Nugget();
-
 
 $shortopts = "";
 $shortopts .= "s:";  // Required - Google Spreadsheet ID
