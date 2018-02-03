@@ -8,24 +8,16 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetConvertSchemaFileTest extends TestCase {
+class SchemaBuilderConvertSchemaFileTest extends TestCase {
   
     /**
      * This gets called before all test functions
      */
     public function setUp() 
     {
-        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->builder = new \Activerules\Nugget\SchemaBuilder();
     }
 
-    /**
-     * This gets called after each test function
-     */
-    public function tearDown() 
-    {
-        //$this->myClass = null;
-    }
-    
     /**
      * A trailing slash path has a single trailing slash at the end
      */
@@ -33,7 +25,7 @@ class NuggetConvertSchemaFileTest extends TestCase {
     {
         $filePath = realpath('./tests/Activerules/Nugget/schema/Test.json');
      
-        $path = $this->nugget->convertSchemaFile($filePath, 'https://schema.izzup.com/', '#/components/schema/');
+        $path = $this->builder->convertSchemaFile($filePath, 'https://schema.izzup.com/', '#/components/schema/');
 
         $this->assertEquals('{
     "title": "Test",

@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetMergePropsTest extends TestCase {
+class SchemaBuilderMergePropsTest extends TestCase {
   
     /**
      * This gets called before all test functions
@@ -16,17 +16,8 @@ class NuggetMergePropsTest extends TestCase {
     public function setUp() 
     {
         // All test will have these variables available to them under $this->
-        $this->nugget = new \Activerules\Nugget\Nugget();  
+        $this->builder = new \Activerules\Nugget\SchemaBuilder();  
     }
-
-    /**
-     * This gets called after each test function
-     */
-    public function tearDown() 
-    {
-        //$this->myClass = null;
-    }
-    
     
     /**
      * A known valid schema, fetched remotely, should pass validation
@@ -39,7 +30,7 @@ class NuggetMergePropsTest extends TestCase {
         $child = new \StdClass();
         $child->properties = ['age', 'address', 'alias'];
         
-        $this->nugget->mergeProps($parent, $child);
+        $this->builder->mergeProps($parent, $child);
         
         $expected = ['address', 'age', 'alias', 'name'];
 

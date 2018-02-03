@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetJSONTypeTest extends TestCase {
+class OpenAPIJSONTypeTest extends TestCase {
   
     /**
      * This gets called before all test functions
@@ -18,16 +18,8 @@ class NuggetJSONTypeTest extends TestCase {
         // Use the Activerules dereferencer
         $dereferencer  = \Activerules\JsonReference\Dereferencer::draft4();
         
-        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->openAPI = new \Activerules\Nugget\OpenAPI();
             
-    }
-
-    /**
-     * This gets called after each test function
-     */
-    public function tearDown() 
-    {
-        //$this->myClass = null;
     }
     
     /**
@@ -35,7 +27,7 @@ class NuggetJSONTypeTest extends TestCase {
      */
     public function testInvalidTypeFails() 
     {
-        $result = $this->nugget->jsonType('fooglesnaps');
+        $result = $this->openAPI->jsonType('fooglesnaps');
 
         $this->assertEquals(false, $result);
     }
@@ -45,7 +37,7 @@ class NuggetJSONTypeTest extends TestCase {
      */
     public function testValidTypePasses() 
     {
-        $result = $this->nugget->jsonType('Text');
+        $result = $this->openAPI->jsonType('Text');
 
         $this->assertEquals('string', $result);
     }

@@ -8,22 +8,14 @@ use PHPUnit\Framework\TestCase;
 // Need more test
 
 
-class NuggetConvertSchemaFileRefsTest extends TestCase {
+class SchemaBuilderConvertSchemaFileRefsTest extends TestCase {
   
     /**
      * This gets called before all test functions
      */
     public function setUp() 
     {
-        $this->nugget = new \Activerules\Nugget\Nugget();
-    }
-
-    /**
-     * This gets called after each test function
-     */
-    public function tearDown() 
-    {
-        //$this->myClass = null;
+        $this->builder = new \Activerules\Nugget\SchemaBuilder();
     }
     
     /**
@@ -36,7 +28,7 @@ class NuggetConvertSchemaFileRefsTest extends TestCase {
       $schemaOut = realpath('./tests/Activerules/Nugget/schemaOut/');
       
       // Run the nugget to copnvert the schema $refs
-      $this->nugget->convertSchemaFileRefs($schemaDir, $schemaOut, 'https://schema.izzup.com/', '#/components/schema/');
+      $this->builder->convertSchemaFileRefs($schemaDir, $schemaOut, 'https://schema.izzup.com/', '#/components/schema/');
       
       // Read the created file contents
       $file = realpath('./tests/Activerules/Nugget/schemaOut/Test.json');
