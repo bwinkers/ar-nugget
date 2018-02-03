@@ -17,7 +17,7 @@ class NuggetExceptionTest extends TestCase {
      */
     public function setUp() 
     {
-        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->openAPI = new \Activerules\Nugget\OpenAPI();
     }
     
     /**
@@ -38,7 +38,7 @@ class NuggetExceptionTest extends TestCase {
     {
       $this->expectException('\Activerules\Nugget\exceptions\NuggetException');
       
-       $this->nugget->jsonType([]);
+       $this->openAPI->jsonType([]);
 
     }
 }
