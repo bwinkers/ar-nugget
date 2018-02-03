@@ -9,6 +9,8 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class SchemaBuilder
 {
+    public $filesys;
+    public $schema;
 
     /**
      * Constructor
