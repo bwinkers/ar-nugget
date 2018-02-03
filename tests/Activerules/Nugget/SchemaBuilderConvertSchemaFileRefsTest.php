@@ -32,7 +32,7 @@ class SchemaBuilderConvertSchemaFileRefsTest extends TestCase
 
         // Read the created file contents
         $file = realpath('./tests/Activerules/Nugget/schemaOut/Test.json');
-        $JSON = file_get_contents($file);
+        $json = file_get_contents($file);
 
         $this->assertEquals(preg_replace('/\v(?:[\v\h]+)/', '', '{
     "title": "Test",
@@ -44,6 +44,6 @@ class SchemaBuilderConvertSchemaFileRefsTest extends TestCase
         }
     },
     "type": "object"
-}'), preg_replace('/\v(?:[\v\h]+)/', '', $JSON));
+}'), preg_replace('/\v(?:[\v\h]+)/', '', $json));
     }
 }

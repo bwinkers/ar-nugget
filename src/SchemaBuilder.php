@@ -58,9 +58,9 @@ class SchemaBuilder
     public function convertSchemaFile($file, $replacementPath, $targetPath)
     {
         // Read the file contents
-        $JSON = file_get_contents($file);
+        $json = file_get_contents($file);
 
-        return str_replace($this->filesys->cleanPath($targetPath), $this->filesys->cleanPath($replacementPath), $JSON);
+        return str_replace($this->filesys->cleanPath($targetPath), $this->filesys->cleanPath($replacementPath), $json);
     }
 
     /**
