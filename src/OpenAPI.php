@@ -16,8 +16,8 @@ class OpenAPI
      * @param string $type
      * @return mixed string of mapped JSON type or boolean FALSE
      */
-    public function jsonType($type) {
-      
+    public function jsonType($type) 
+    {
         if (!is_string($type)) {
             throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid type, it must be a string.');
         }
