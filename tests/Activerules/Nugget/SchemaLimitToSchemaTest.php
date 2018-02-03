@@ -25,7 +25,7 @@ class NuggetLimitToSchemaTest extends TestCase {
         $this->dirtyPersonJSON = json_encode($dirtyPersonArray);
 
         // All test will have these variables available to them under $this->
-        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->schema = new \Activerules\Nugget\Schema();
         $this->personSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
         //$this->personSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/objects/person.json'); 
         
@@ -45,11 +45,11 @@ class NuggetLimitToSchemaTest extends TestCase {
      */
     public function testLimitingToSchema() 
     {
-        $cleanPerson = $this->nugget->limitToSchema($this->dirtyPersonJSON, $this->personSchema);
+        $cleanPerson = $this->schema->limitToSchema($this->dirtyPersonJSON, $this->personSchema);
         
         $this->assertEquals($cleanPerson, $this->validPersonJSON);
         
-        $result = $this->nugget->meetsSchema($cleanPerson, $this->personSchema);
+        $result = $this->schema->meetsSchema($cleanPerson, $this->personSchema);
 
         $this->assertEquals(true, $result);
     }

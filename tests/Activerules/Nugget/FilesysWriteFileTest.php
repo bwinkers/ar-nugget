@@ -15,17 +15,9 @@ class NuggetWriteFileTest extends TestCase {
      */
     public function setUp() 
     {
-        $this->nugget = new \Activerules\Nugget\Nugget();
+        $this->nugget = new \Activerules\Nugget\Filesys();
     }
 
-    /**
-     * This gets called after each test function
-     */
-    public function tearDown() 
-    {
-        //$this->myClass = null;
-    }
-    
     /**
      * A trailing slash path has a single trailing slash at the end
      */
