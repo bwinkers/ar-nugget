@@ -9,9 +9,7 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class Nugget
 {
-  
     protected $types;
-
 
     /**
      * Constructor
@@ -34,7 +32,6 @@ class Nugget
      * @param string $targetPath
      */
     public function convertSchemaFileRefs($schemaDir, $schemaOut, $replacementPath, $targetPath) {
-      
         // Create a directory iterator for the defined objects directory
         $files = new \DirectoryIterator($schemaDir);
 
@@ -66,7 +63,6 @@ class Nugget
         $JSON = file_get_contents($file);
 
         return str_replace($this->filesys->cleanPath($targetPath), $this->filesys->cleanPath($replacementPath), $JSON);
-
     }
 
     /**
@@ -124,7 +120,6 @@ class Nugget
      */
     public function loadPropertyFile($propertyFile)
     {
-
         // Read the file into a PHP string
         $propertyDef = file_get_contents($propertyFile);
 
@@ -134,5 +129,4 @@ class Nugget
         // Use this definition as the value for the OpenAPI property
         return $propObj;
     }
-
 }

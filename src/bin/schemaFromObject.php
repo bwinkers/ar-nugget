@@ -151,8 +151,7 @@ function findRefs($props, & $refs)
  */
 function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
 {
-
-  // Get the full path to the JSON schema file
+    // Get the full path to the JSON schema file
     $objFile = realpath($objectDir . '/' . $schemaName);
 
     // Read the file contents
@@ -177,7 +176,6 @@ function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
 function mergeParentDef(& $schemaDef, $objectDir)
 {
     if (isset($schemaDef->extends)) {
-
         // Get the full path to the JSON schema file
         $parentFile = realpath($objectDir . '/' . $schemaDef->extends . '.json');
 
@@ -228,13 +226,13 @@ function writeSchema($schema, $schemaName, $dir)
 
     $path = rtrim($dir, '/') . '/' . $schemaName;
 
-    $fp = fopen($path, 'w');
+    $file = fopen($path, 'w');
 
     // Write the spec to the file pointer
-    fwrite($fp, $spec);
+    fwrite($file, $spec);
 
     // Close the file pointer
-    fclose($fp);
+    fclose($file);
 }
 
 /**
@@ -276,8 +274,7 @@ function populateProperties(& $schemaDef, $propertiesDir)
 
     // Loop through the defined properties array and load the definition for each one
     foreach ($schemaDef->properties as $property) {
-
-    // Get the full path to the JSON property JSON file
+        // Get the full path to the JSON property JSON file
         $propertyFile = realpath($propertiesDir . '/' . $property . '.json');
 
         if ($propertyFile) {
@@ -313,12 +310,12 @@ function resolvePropertyReference($prop, $def, & $defs)
     switch ($prop) {
     case '$ref':
       loadRef($def, $defs);
-      break;
+    break;
     case 'items':
       checkThenProcessItem($def, $defs);
-      break;
+    break;
     default:
-      break;
+    break;
   }
 }
 
