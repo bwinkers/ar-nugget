@@ -9,7 +9,6 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class Nugget
 {
-
     protected $types;
 
     /**
@@ -25,5 +24,4 @@ class Nugget
 
         $this->builder = new \Activerules\Nugget\SchemaBuilder();
     }
-
 }

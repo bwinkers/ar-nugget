@@ -1,5 +1,4 @@
 <?php
-
 require_once "vendor/autoload.php";
 
 $shortopts = "";
@@ -26,6 +25,7 @@ $propertiesDir = realpath($options['p']);
 
 // Process the object directory
 processObjectDirectory($objectDir, $schemaDir, $propertiesDir);
+
 /**
  * Process the object definitions directory for defined schema
  * @param string $objectDir

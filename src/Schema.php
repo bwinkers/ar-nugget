@@ -9,6 +9,7 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class Schema
 {
+
     /**
      * Determine if an object is valid
      *
@@ -49,5 +50,4 @@ class Schema
 
         return json_encode($cleanObject);
     }
-
 }

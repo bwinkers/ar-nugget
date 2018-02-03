@@ -9,7 +9,6 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class OpenAPI
 {
-
     protected $types;
 
     /**
@@ -36,5 +35,4 @@ class OpenAPI
 
         return false;
     }
-
 }

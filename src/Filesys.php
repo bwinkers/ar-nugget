@@ -9,6 +9,7 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class Filesys
 {
+
     /**
      * Write a file out
      * 
@@ -54,5 +55,4 @@ class Filesys
 
         return $isValid;
     }
-
 }

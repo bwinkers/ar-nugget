@@ -9,6 +9,7 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class SchemaBuilder
 {
+
     /**
      * Constructor
      */
@@ -107,5 +108,4 @@ class SchemaBuilder
         // Use this definition as the value for the OpenAPI property
         return $propObj;
     }
-
 }

@@ -1,5 +1,4 @@
 <?php
-
 // include your composer dependencies
 require_once 'vendor/autoload.php';
 
@@ -41,6 +40,7 @@ $properties = $response->getValues();
 
 // Process the fetched properties
 processProperties($properties);
+
 /**
  *
  * @param type $properties

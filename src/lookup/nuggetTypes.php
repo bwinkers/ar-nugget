@@ -1,5 +1,4 @@
 <?php
-
 $types = [
     'integer' => [
         'type' => 'integer',
