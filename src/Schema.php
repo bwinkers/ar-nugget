@@ -48,6 +48,5 @@ class Schema
         }
         
         return json_encode($cleanObject);
-    }  
-    
+    }      
 }
