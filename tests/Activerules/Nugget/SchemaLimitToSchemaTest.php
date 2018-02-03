@@ -4,9 +4,6 @@ namespace Activerules\Nugget;
 
 use PHPUnit\Framework\TestCase;
 
-// Need more test
-
-
 class SchemaLimitToSchemaTest extends TestCase
 {
 
@@ -27,7 +24,7 @@ class SchemaLimitToSchemaTest extends TestCase
         // All test will have these variables available to them under $this->
         $this->schema = new \Activerules\Nugget\Schema();
         $this->personSchema = $dereferencer->dereference('file://' . __DIR__ . '/schema/person.json');
-        //$this->personSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/objects/person.json'); 
+        //$this->personSchema = $dereferencer->dereference('https://rawgit.com/bwinkers/nugget/master/tests/Activerules/Nugget/objects/person.json');
     }
 
     /**
