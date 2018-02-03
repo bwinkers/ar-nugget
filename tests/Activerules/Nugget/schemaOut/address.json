@@ -1,11 +1,11 @@
 {
-    "title": "Address",
-    "type": "object",
-    "properties": {
-        "type": {
-            "type": "string",
-            "oneOf": ["geo","street","freeForm"]
-        }
-    },
-    "required": ["type"]
+  "title": "Address",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "oneOf": ["geo", "street", "freeForm"]
+    }
+  },
+  "required": ["type"]
 }
