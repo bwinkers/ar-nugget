@@ -26,6 +26,6 @@ class Nugget
         
         $this->openAPI = new \Activerules\Nugget\openAPI();
         
-        $this->schemaBuilder = new \Activerules\Nugget\SchemaBuilder();
+        $this->builder = new \Activerules\Nugget\SchemaBuilder();
     }
 }
