@@ -26,8 +26,6 @@ $propertiesDir = realpath($options['p']);
 
 // Process the object directory
 processObjectDirectory($objectDir, $schemaDir, $propertiesDir);
-
-
 /**
  * Process the object definitions directory for defined schema
  * @param string $objectDir
@@ -35,7 +33,7 @@ processObjectDirectory($objectDir, $schemaDir, $propertiesDir);
  */
 function processObjectDirectory($objectDir, $schemaDir, $propertiesDir)
 {
-  $nugget = new \Activerules\Nugget\Nugget();
+    $nugget = new \Activerules\Nugget\Nugget();
     // Create a directory iterator for the defined objects directory
     $files = new \DirectoryIterator($objectDir);
 
@@ -106,6 +104,7 @@ function setRefSchema(& $schema, $refSchemaName, $refParts, $refSchema)
     }
     $schemaRef[$refSchemaName] = $refSchema;
 }
+
 /**
  *
  * @param string $refSchemaName
@@ -143,8 +142,6 @@ function findRefs($props, & $refs)
     }
 }
 
-
-
 /**
  *
  * @param string $objectName
@@ -160,7 +157,7 @@ function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
     // Convert JSON into a PHP object defining the schema parts
     $schemaDef = json_decode($objJSON);
 
-    mergeParentDef($schemaDef,$objectDir);
+    mergeParentDef($schemaDef, $objectDir);
 
     // If we have schema properties continue
     if (isset($schemaDef->properties)) {
@@ -185,33 +182,34 @@ function mergeParentDef(& $schemaDef, $objectDir)
     }
 }
 
-function mergeDefs(& $schemaDef, $parentFile, $objectDir){
-  // Read the file contents
-  $parentJSON = file_get_contents($parentFile);
-  
-  $nugget = new \Activerules\Nugget\Nugget();
+function mergeDefs(& $schemaDef, $parentFile, $objectDir)
+{
+    // Read the file contents
+    $parentJSON = file_get_contents($parentFile);
 
-  // Convert JSON into a PHP object defining the schema parts
-  $parentDef = json_decode($parentJSON);
+    $nugget = new \Activerules\Nugget\Nugget();
 
-  if ($parentDef) {
-      $nugget->mergeProps($parentDef, $schemaDef);
-      $nugget->mergeRequired($parentDef, $schemaDef);
-      loadParent($parentDef, $schemaDef, $objectDir);
-  } 
-}
+    // Convert JSON into a PHP object defining the schema parts
+    $parentDef = json_decode($parentJSON);
 
-function loadParent($parentDef, & $schemaDef, $objectDir) {
-  if(isset($parentDef->extends)) {
-    // Get the full path to the JSON schema file
-    $gparentFile = realpath($objectDir . '/' . $parentDef->extends . '.json');
-
-    if ($gparentFile) {
-        mergeDefs($schemaDef, $gparentFile, $objectDir);
+    if ($parentDef) {
+        $nugget->mergeProps($parentDef, $schemaDef);
+        $nugget->mergeRequired($parentDef, $schemaDef);
+        loadParent($parentDef, $schemaDef, $objectDir);
     }
-  }
 }
 
+function loadParent($parentDef, & $schemaDef, $objectDir)
+{
+    if (isset($parentDef->extends)) {
+        // Get the full path to the JSON schema file
+        $gparentFile = realpath($objectDir . '/' . $parentDef->extends . '.json');
+
+        if ($gparentFile) {
+            mergeDefs($schemaDef, $gparentFile, $objectDir);
+        }
+    }
+}
 
 /**
  *
@@ -242,14 +240,14 @@ function writeSchema($schema, $schemaName, $dir)
 function hydrateSchema($schemaDef, $propertiesDir)
 {
 
-  // Set type as object if not defined otherwise
+    // Set type as object if not defined otherwise
     if (!isset($schemaDef->type)) {
         $schemaDef->type = 'object';
     }
 
     // Array to hold definitions created by all this object properties
     $schemaDef->definitions = array();
-    
+
     sort($schemaDef->properties);
 
     // Loop through top level properties and populate, all definitions should be at top level.
@@ -269,7 +267,7 @@ function hydrateSchema($schemaDef, $propertiesDir)
 function populateProperties(& $schemaDef, $propertiesDir)
 {
     $props = [];
-    
+
     $nugget = new \Activerules\Nugget\Nugget();
 
     // Loop through the defined properties array and load the definition for each one
@@ -284,7 +282,6 @@ function populateProperties(& $schemaDef, $propertiesDir)
 
     $schemaDef->properties = $props;
 }
-
 
 /**
  *
@@ -308,15 +305,15 @@ function populateObjectProperty(& $propObj, & $defs)
 function resolvePropertyReference($prop, $def, & $defs)
 {
     switch ($prop) {
-    case '$ref':
-      loadRef($def, $defs);
-      break;
-    case 'items':
-      checkThenProcessItem($def, $defs);
-      break;
-    default:
-    break;
-  }
+        case '$ref':
+            loadRef($def, $defs);
+            break;
+        case 'items':
+            checkThenProcessItem($def, $defs);
+            break;
+        default:
+            break;
+    }
 }
 
 /**
