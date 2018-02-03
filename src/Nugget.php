@@ -9,7 +9,10 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class Nugget
 {
-    protected $types;
+    public $types;
+    public $filesys;
+    public $schema;
+    public $builder;
 
     /**
      * Constructor
