@@ -21,6 +21,8 @@ class Nugget
         include realpath(__DIR__.'/lookup/nuggetTypes.php');
 
         $this->types = $types;
+        
+        $this->filesys = new \Activerules\Nugget\Filesys();
     }
     
     /**
@@ -39,7 +41,7 @@ class Nugget
         // Iterate through object definitions
         foreach ($files as $fileInfo) {
             // Make sure its a valid file
-            if ($this->realDirFile($fileInfo)) {
+            if ($this->filesys->realDirFile($fileInfo)) {
                 // Get the name for the new file
                 $fileName = $fileInfo->getFilename();
                 $currentFile = $fileInfo->getPathName();
@@ -47,27 +49,11 @@ class Nugget
                 // Attempt creating a Schema object from the definition
                 $newSchema = $this->convertSchemaFile($currentFile, $replacementPath, $targetPath);
 
-                $this->writeFile($newSchema, $this->pathRoot($schemaOut).$fileName);
+                $this->filesys->writeFile($newSchema, $this->filesys->cleanPath($schemaOut).$fileName);
             }
         }
     }
 
-    /**
-     * Write a file out
-     * 
-     * @param string $data
-     * @param string $path
-     */
-    public function writeFile($data, $path){
-        $filePath = fopen($path, 'w');
-
-        // Write the spec to the file pointer
-        fwrite($filePath, $data);
-
-        // Close the file pointer
-        fclose($filePath);
-    }
-    
     /**
      * 
      * @param string $file
@@ -79,36 +65,8 @@ class Nugget
         // Read the file contents
         $JSON = file_get_contents($file);
 
-        return str_replace($this->pathRoot($targetPath), $this->pathRoot($replacementPath), $JSON);
+        return str_replace($this->filesys->cleanPath($targetPath), $this->filesys->cleanPath($replacementPath), $JSON);
 
-    }
-    
-    /**
-     * Making sure the trailing slash in path is consistent.
-     * 
-     * @param string $path
-     */
-    public function pathRoot($path) {
-      return rtrim($path, '/').'/';
-    }
-    
-    /**
-     * Filter out dot files and directories
-     * 
-     * @param string $fileInfo
-     * @return boolean
-     */
-    public function realDirFile($fileInfo)
-    {
-        $name = $fileInfo->getFilename();
-
-        $isValid = false;
-
-        if (!$fileInfo->isDot() && !$fileInfo->isDir() && substr($name, 0, 1) != '.') {
-            $isValid = true;
-        }
-
-        return $isValid;
     }
 
     /**
@@ -128,48 +86,6 @@ class Nugget
 
         return false;
     }
-    
-    /**
-     * Determine if an object is valid
-     *
-     * @param string $object, JSON serialized object
-     * @param type $schema
-     * @return boolean
-     */
-    public function meetsSchema(string $object, $schema)
-    {
-        $data = json_decode($object);
-
-        $validator = new \Activerules\JsonGuard\Validator($data, $schema);
-   
-        return $validator->fails() ? false : true ;
-    }
-    
-    /**
-     * Remove all properties not defined in the schema
-     * 
-     * @param string $object
-     * @param type $schema
-     * @return boolean
-     */
-    public function limitToSchema(string $object, $schema)
-    {
-        $data = json_decode($object);
-
-        // We loop through the top level schema objects and only use the data elements defined therein.
-        // We don't loop though data becasue it could be much larger than the schema.
-        // Start with an empty array.
-        $cleanObject = [];
-        
-        foreach(array_keys((array) $schema->properties) as $prop) {
-            if (isset($data->$prop)) {
-                $cleanObject[$prop] = $data->$prop;
-            }
-        }
-        
-        return json_encode($cleanObject);
-    }  
-    
     
     /**
      *
