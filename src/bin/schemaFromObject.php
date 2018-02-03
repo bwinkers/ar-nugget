@@ -310,10 +310,10 @@ function resolvePropertyReference($prop, $def, & $defs)
     switch ($prop) {
     case '$ref':
       loadRef($def, $defs);
-    break;
+      break;
     case 'items':
       checkThenProcessItem($def, $defs);
-    break;
+      break;
     default:
     break;
   }
@@ -365,4 +365,3 @@ function loadRef($refString, & $defs)
         populateRef($name, $defs);
     }
 }
-
