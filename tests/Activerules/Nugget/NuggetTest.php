@@ -4,10 +4,10 @@ namespace Activerules\Nugget;
 
 use PHPUnit\Framework\TestCase;
 
-// Need more test
+require_once 'vendor/autoload.php';
 
 
-class NuggetTestDev extends TestCase
+class NuggetTest extends TestCase
 {
 
     /**
