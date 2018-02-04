@@ -39,6 +39,10 @@ class GClient
     }
     
     public function setScopes($scopes) {
-        $this->gClient->setSCopes($scopes);
+        $this->gClient->setScopes($scopes);
+    }
+    
+    public function getScopes() {
+        return $this->gClient->getScopes();
     }
 }
