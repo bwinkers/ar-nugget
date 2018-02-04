@@ -97,7 +97,7 @@ class SchemaBuilder
 
     /**
      *
-     * @param string $filePath
+     * @param string $propertyFile
      */
     public function loadPropertyFile($propertyFile)
     {
