@@ -23,7 +23,7 @@ class GSheet
 
         $gClient = $client->gClient();
 
-        $sheet = new \Google_Service_Sheets($gClient);
+        $sheet = new Google_Service_Sheets($gClient);
 
         $this->gSheet = $sheet;
     }
