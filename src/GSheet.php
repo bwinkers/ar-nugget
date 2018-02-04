@@ -4,6 +4,7 @@ namespace Activerules\Nugget;
 
 use Activerules\Nugget\GClient;
 use Activerules\Nugget\Exceptions\NuggetException;
+use Google_Service_Sheets;
 
 /**
  * The Nugget Google Client V4
