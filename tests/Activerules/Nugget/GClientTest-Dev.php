@@ -26,20 +26,19 @@ class GClientTest extends TestCase
 
         // All test will have these variables available to them under $this->
         $this->client = new \Activerules\Nugget\GClient($credentials);
-        
+
         $readScopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
 
         $this->client->setScopes($readScopes);
     }
 
-   /**
+    /**
      * The client class type should be correct
      */
     public function testClientType()
     {
         $clientType = get_class($this->client);
-       
+
         $this->assertEquals('Activerules\Nugget\GClient', $clientType);
     }
-
 }
