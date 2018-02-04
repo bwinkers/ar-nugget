@@ -25,8 +25,12 @@ class GClientTest extends TestCase
             'type' => 'service_account',
         ];
 
+        $scopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
+        
         // All test will have these variables available to them under $this->
         $this->client = new \Activerules\Nugget\GClient($credentials);
+        $this->scopedClient = new \Activerules\Nugget\GClient($credentials, $scopes);
+        
     }
 
     /**
@@ -54,11 +58,7 @@ class GClientTest extends TestCase
      */
     public function testGClientTypeScoped()
     {
-        $scopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
-        
-        $this->client->setScopes($scopes);
-                
-        $clientType = get_class($this->client->gClient());
+        $clientType = get_class($this->scopedClient->gClient());
 
         $this->assertEquals('Google_Client', $clientType);
     }
