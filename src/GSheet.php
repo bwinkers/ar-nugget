@@ -3,7 +3,6 @@
 namespace Activerules\Nugget;
 
 use Activerules\Nugget\GClient;
-
 use Activerules\Nugget\Exceptions\NuggetException;
 
 require_once 'vendor/autoload.php';
@@ -13,7 +12,6 @@ require_once 'vendor/autoload.php';
  */
 class GSheet
 {
-    
     public $gSheet;
 
     /**
@@ -23,23 +21,31 @@ class GSheet
      */
     public function __construct($client)
     {
-        
+
         $gClient = $client->gClient();
-        
+
         $sheet = new \Google_Service_Sheets($gClient);
-        
+
         $this->gSheet = $sheet;
     }
-    
+
     /**
      * 
      * @return object
      */
-    public function gSheet() {
+    public function gSheet()
+    {
         return $this->gSheet;
     }
-    
-    public function getSpreadsheetValues($spreadsheetID, $range) {
-        return $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
+
+    public function getSpreadsheetValues($spreadsheetID, $range)
+    {
+
+        try {
+            $vals = $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
+            return $vals;
+        } catch (Exception $ex) {
+            return [];
+        }
     }
 }
