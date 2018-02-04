@@ -16,14 +16,14 @@ class GSheetReaderTest extends TestCase
     {
         $this->sheetUrl = 'https://docs.google.com/spreadsheets/d/1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s/export?format=csv&id=1NeU79bJ-Zic-fwKK2PPuxntNXnbkyMKf6ZTIUHp1n4s&gid=0';
     }
-    
+
     /**
      * The gClient class type should be correct
      */
     public function testGClientReader()
     {
         $sheet = new \Activerules\Nugget\GSheetReader($this->sheetUrl);
-     
+
         $this->assertEquals(true, is_object($sheet));
     }
 }

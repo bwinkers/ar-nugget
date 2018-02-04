@@ -22,20 +22,20 @@ class GSheetTest extends TestCase
             'client_id' => 'client123',
             'type' => 'service_account',
         ];
-        
+
         $readScopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
 
         // All test will have these variables available to them under $this->
         $this->readClient = new \Activerules\Nugget\GClient($credentials);
         $this->readClient->setScopes($readScopes);
-        
+
         $this->errors = array();
         set_error_handler(array($this, "errorHandler"));
     }
-    
-    public function errorHandler($errno, $errstr, $errfile, $errline, $errcontext) {
-        $this->errors[] = compact("errno", "errstr", "errfile",
-            "errline", "errcontext");
+
+    public function errorHandler($errno, $errstr, $errfile, $errline, $errcontext)
+    {
+        $this->errors[] = compact("errno", "errstr", "errfile", "errline", "errcontext");
     }
 
     /**
@@ -44,40 +44,41 @@ class GSheetTest extends TestCase
     public function testService()
     {
         $sheet = new \Activerules\Nugget\GSheet($this->readClient);
-        
+
         $classType = get_class($sheet);
 
         $this->assertEquals('Activerules\Nugget\GSheet', $classType);
     }
-    
+
     /**
      * The gClient class type should be correct
      */
     public function testGClient()
     {
         $sheet = new \Activerules\Nugget\GSheet($this->readClient);
-        
+
         $classType = get_class($sheet->gSheet());
 
         $this->assertEquals('Google_Service_Sheets', $classType);
     }
-    
+
     /**
      * Ensure invalid data fails.
      * Testing with valid data only happens in dev.
      */
-    public function testBogusRequestFails() {
-        
-            $this->expectException('Exception');
+    public function testBogusRequestFails()
+    {
 
-            $gSheet = new \Activerules\Nugget\GSheet($this->readClient);
-        
-            $spreadsheetID = 'sizzle-frix-find-me-not';
+        $this->expectException('Exception');
 
-            $range = 'IncomingProperties!A1:C';
+        $gSheet = new \Activerules\Nugget\GSheet($this->readClient);
 
-            $response = $gSheet->getSpreadsheetValues($spreadsheetID, $range);
+        $spreadsheetID = 'sizzle-frix-find-me-not';
 
-            $properties = $response->getValues();
+        $range = 'IncomingProperties!A1:C';
+
+        $response = $gSheet->getSpreadsheetValues($spreadsheetID, $range);
+
+        $properties = $response->getValues();
     }
 }

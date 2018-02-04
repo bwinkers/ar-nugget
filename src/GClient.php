@@ -3,6 +3,7 @@
 namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
+use Google_Client;
 
 /**
  * The Nugget Google Client V4
@@ -27,8 +28,8 @@ class GClient
         $gClient = new \Google_Client($config);
 
         $gClient->setAuthConfig($credentials);
-        
-        if($scopes) {
+
+        if ($scopes) {
             $this->setScopes($scopes);
         }
 
