@@ -4,8 +4,7 @@ namespace Activerules\Nugget;
 
 use Activerules\Nugget\GClient;
 use Activerules\Nugget\Exceptions\NuggetException;
-
-require_once 'vendor/autoload.php';
+use Google_Service_Sheets;
 
 /**
  * The Nugget Google Client V4
@@ -15,7 +14,7 @@ class GSheet
     public $gSheet;
 
     /**
-     * 
+     *
      * @param array $credentials
      * @param array $scopes
      */
@@ -30,7 +29,7 @@ class GSheet
     }
 
     /**
-     * 
+     *
      * @return object
      */
     public function gSheet()
@@ -42,13 +41,13 @@ class GSheet
     {
 
         $vals = [];
-        
+
         try {
             $vals = $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
         }
-        
+
         return $vals;
     }
 }

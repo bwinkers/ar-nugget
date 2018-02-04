@@ -19,10 +19,7 @@ $spreadsheetID = $options['s'];
 define('PROPERTYDIR', realpath($options['p']));
 
 
-define('SCOPES', implode(
-                ' ', array(
-    Google_Service_Sheets::SPREADSHEETS_READONLY)
-));
+define('SCOPES', implode(' ', array(Google_Service_Sheets::SPREADSHEETS_READONLY)));
 
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . realpath($options['c']));
 
