@@ -14,9 +14,9 @@ class GClient
     /**
      *
      * @param object $credentials
-     * @param string $scope
+     * @param string $scopes
      */
-    public function __construct($credentials)
+    public function __construct($credentials, $scopes = null)
     {
 
         $config = array(
@@ -27,6 +27,10 @@ class GClient
         $gClient = new \Google_Client($config);
 
         $gClient->setAuthConfig($credentials);
+        
+        if($scopes) {
+            $this->setScopes($scopes);
+        }
 
         $this->gClient = $gClient;
     }
