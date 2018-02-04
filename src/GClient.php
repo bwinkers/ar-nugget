@@ -26,14 +26,13 @@ class GClient
         );
 
         $gClient = new \Google_Client($config);
+        $this->gClient = $gClient;
 
         $gClient->setAuthConfig($credentials);
 
         if ($scopes) {
             $this->setScopes($scopes);
-        }
-
-        $this->gClient = $gClient;
+        }  
     }
 
     public function gClient()
