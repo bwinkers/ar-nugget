@@ -13,7 +13,7 @@ class GSheet
     public $gSheet;
 
     /**
-     * 
+     *
      * @param array $credentials
      * @param array $scopes
      */
@@ -28,7 +28,7 @@ class GSheet
     }
 
     /**
-     * 
+     *
      * @return object
      */
     public function gSheet()
@@ -40,13 +40,13 @@ class GSheet
     {
 
         $vals = [];
-        
+
         try {
             $vals = $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
         }
-        
+
         return $vals;
     }
 }
