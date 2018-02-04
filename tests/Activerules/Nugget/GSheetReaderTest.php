@@ -32,10 +32,20 @@ class GSheetReaderTest extends TestCase
     /**
      * The gClient class type should be correct
      */
-    public function testGClientReader()
+    public function testGClientReaderType()
     {
         $sheet = new \Activerules\Nugget\GSheetReader($this->sheetUrl);
      
         $this->assertEquals(true, is_object($sheet));
+    }
+    
+    /**
+     * The gClient class type should be correct
+     */
+    public function testGClientReader()
+    {
+        $sheet = new \Activerules\Nugget\GSheetReader($this->sheetUrl);
+     
+        $this->assertEquals(true, is_string($sheet->gSheet()));
     }
 }
