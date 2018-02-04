@@ -3,6 +3,8 @@
 namespace Activerules\Nugget;
 
 use PHPUnit\Framework\TestCase;
+use Google_Service_Sheets;
+use Activerules\Nugget\GClient;
 
 require_once 'vendor/autoload.php';
 
@@ -42,6 +44,20 @@ class GClientTest extends TestCase
      */
     public function testGClientType()
     {
+        $clientType = get_class($this->client->gClient());
+
+        $this->assertEquals('Google_Client', $clientType);
+    }
+    
+    /**
+     * The gClient class type should be correct
+     */
+    public function testGClientTypeScoped()
+    {
+        $scopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
+        
+        $this->client->setScopes($scopes);
+                
         $clientType = get_class($this->client->gClient());
 
         $this->assertEquals('Google_Client', $clientType);
