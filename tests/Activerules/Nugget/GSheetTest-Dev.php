@@ -14,7 +14,7 @@ class GSheetTest extends TestCase
      */
     public function setUp()
     {
-        $config = '/home/brian/.google/izzup-client_secret.json';
+        $config = '~/.google/izzup-client_secret.json';
 
         if (file_exists($config)) {
 
