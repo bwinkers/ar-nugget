@@ -53,8 +53,9 @@ class GClientTest extends TestCase
      */
     public function testSettingScope()
     {
-        $clientType = get_class($this->client->gClient());
-       
-        $this->assertEquals('Google_Client', $clientType);
+        
+        $this->client->setScopes(\Google_Service_Sheets::SPREADSHEETS_READONLY);
+        $scopes = $this->client->getScopes();
+        $this->assertEquals('https://www.googleapis.com/auth/spreadsheets.readonly', $scopes[0]);
     }
 }
