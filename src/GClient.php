@@ -3,6 +3,7 @@
 namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
+use Google_Client;
 
 /**
  * The Nugget Google Client V4
