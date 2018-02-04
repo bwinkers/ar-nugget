@@ -14,15 +14,14 @@ class GSheetTest extends TestCase
      */
     public function setUp()
     {
-        $config = '/home/brian/.google/izzup-client_secret.json';
-
-        if (file_exists($config)) {
-
-            $json = file_get_contents($config);
-            if (!$credentials = json_decode($json, true)) {
-                throw new LogicException('invalid json for auth config');
-            }
-        }
+        // Mock credentials
+        $credentials = [
+            'private_key_id' => 'key123',
+            'private_key' => 'privatekey',
+            'client_email' => 'test@example.com',
+            'client_id' => 'client123',
+            'type' => 'service_account',
+        ];
         
         $readScopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
 
@@ -40,6 +39,30 @@ class GSheetTest extends TestCase
         
         $classType = get_class($sheet);
 
-        $this->assertEquals('Activerules\Nugget\GSheet', $classType);
+        $this->assertEquals(@'Activerules\Nugget\GSheet', $classType);
+    }
+    
+    /**
+     * Ensure invalid data fails.
+     * Testing with valid data only happens in dev.
+     */
+    public function testBogusRequestFails() {
+        
+//$this->expectException('TEST');
+
+            $gSheet = new \Activerules\Nugget\GSheet($this->readClient);
+        
+            $spreadsheetID = 'sizzle-frix-find-me-not';
+
+            $range = 'IncomingProperties!A1:C';
+
+            $response = $gSheet->getSpreadsheetValues($spreadsheetID, $range);
+
+            $properties = $response->getValues();
+        
+
+ 
+        
+        
     }
 }
