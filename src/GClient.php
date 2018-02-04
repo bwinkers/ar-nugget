@@ -27,8 +27,8 @@ class GClient
         $gClient = new \Google_Client($config);
 
         $gClient->setAuthConfig($credentials);
-        
-        if($scopes) {
+
+        if ($scopes) {
             $this->setScopes($scopes);
         }
 
