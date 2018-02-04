@@ -4,8 +4,6 @@ namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
 
-require_once 'vendor/autoload.php';
-
 /**
  * The Nugget Google Client V4
  */
