@@ -47,7 +47,19 @@ class GSheetTest extends TestCase
         
         $classType = get_class($sheet);
 
-        $this->assertEquals(@'Activerules\Nugget\GSheet', $classType);
+        $this->assertEquals('Activerules\Nugget\GSheet', $classType);
+    }
+    
+    /**
+     * The gClient class type should be correct
+     */
+    public function testGClient()
+    {
+        $sheet = new \Activerules\Nugget\GSheet($this->readClient);
+        
+        $classType = get_class($sheet->gSheet());
+
+        $this->assertEquals('Google_Service_Sheets', $classType);
     }
     
     /**
