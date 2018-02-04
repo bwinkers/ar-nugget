@@ -3,6 +3,7 @@
 namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
+use Activerules\JsonGuard\Validator;
 
 /**
  * The Nugget Schema functions
