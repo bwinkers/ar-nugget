@@ -9,11 +9,10 @@ use Activerules\Nugget\Exceptions\NuggetException;
  */
 class GClient
 {
-    
     protected $gClient;
 
     /**
-     * 
+     *
      * @param object $credentials
      * @param string $scope
      */
@@ -28,19 +27,22 @@ class GClient
         $gClient = new \Google_Client($config);
 
         $gClient->setAuthConfig($credentials);
-        
+
         $this->gClient = $gClient;
     }
-    
-    public function gClient() {
+
+    public function gClient()
+    {
         return $this->gClient;
     }
-    
-    public function setScopes($scopes) {
+
+    public function setScopes($scopes)
+    {
         $this->gClient->setScopes($scopes);
     }
-    
-    public function getScopes() {
+
+    public function getScopes()
+    {
         return $this->gClient->getScopes();
     }
 }
