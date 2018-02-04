@@ -28,6 +28,14 @@ class GSheetTest extends TestCase
         // All test will have these variables available to them under $this->
         $this->readClient = new \Activerules\Nugget\GClient($credentials);
         $this->readClient->setScopes($readScopes);
+        
+        $this->errors = array();
+        set_error_handler(array($this, "errorHandler"));
+    }
+    
+    public function errorHandler($errno, $errstr, $errfile, $errline, $errcontext) {
+        $this->errors[] = compact("errno", "errstr", "errfile",
+            "errline", "errcontext");
     }
 
     /**
@@ -48,7 +56,7 @@ class GSheetTest extends TestCase
      */
     public function testBogusRequestFails() {
         
-//$this->expectException('TEST');
+            $this->expectException('Exception');
 
             $gSheet = new \Activerules\Nugget\GSheet($this->readClient);
         
@@ -59,10 +67,5 @@ class GSheetTest extends TestCase
             $response = $gSheet->getSpreadsheetValues($spreadsheetID, $range);
 
             $properties = $response->getValues();
-        
-
- 
-        
-        
     }
 }
