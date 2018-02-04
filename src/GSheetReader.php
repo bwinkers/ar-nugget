@@ -4,7 +4,6 @@ namespace Activerules\Nugget;
 
 use Activerules\Nugget\Exceptions\NuggetException;
 
-
 /**
  * The Nugget anonymous Google Spreadsheet reader.
  * This reads data from a public spreadsheet.
@@ -23,7 +22,7 @@ class GSheetReader
         $gSheet = $this->loadGsheetCSV($url);
         $this->gSheet = $gSheet;
     }
-    
+
     /**
      * Fetch CSV data from public Google Spreadsheet
      * @param type $url
@@ -31,8 +30,8 @@ class GSheetReader
      */
     public function loadGsheetCSV($url)
     {
-       $file= file_get_contents($url);
-       return $file;
+        $file = file_get_contents($url);
+        return $file;
     }
 
     /**
