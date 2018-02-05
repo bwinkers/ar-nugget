@@ -1,7 +1,7 @@
 {
-    "title": "WearAction",
-    "description": "The act of dressing oneself in clothing.",
-    "required": [],
-    "properties": [],
-    "extends": "UseAction"
+  "title": "WearAction",
+  "description": "The act of dressing oneself in clothing.",
+  "required": [],
+  "properties": [],
+  "extends": "UseAction"
 }

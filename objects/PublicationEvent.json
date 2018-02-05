@@ -1,11 +1,11 @@
 {
-    "title": "PublicationEvent",
-    "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
-    "required": [],
-    "properties": [
-        "isAccessibleForFree",
-        "publishedBy",
-        "publishedOn"
-    ],
-    "extends": "Event"
+  "title": "PublicationEvent",
+  "description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
+  "required": [],
+  "properties": [
+    "isAccessibleForFree",
+    "publishedBy",
+    "publishedOn"
+  ],
+  "extends": "Event"
 }

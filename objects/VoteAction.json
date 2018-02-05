@@ -1,9 +1,9 @@
 {
-    "title": "VoteAction",
-    "description": "The act of expressing a preference from a fixed/finite/structured set of choices/options.",
-    "required": [],
-    "properties": [
-      "candidate"
-    ],
-    "extends": "ChooseAction"
+  "title": "VoteAction",
+  "description": "The act of expressing a preference from a fixed/finite/structured set of choices/options.",
+  "required": [],
+  "properties": [
+    "candidate"
+  ],
+  "extends": "ChooseAction"
 }

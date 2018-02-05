@@ -1,11 +1,11 @@
 {
-    "title": "CookAction",
-    "description": "The act of producing/preparing food.",
-    "required": [],
-    "properties": [
-      "foodEstablishment",
-      "foodEvent",
-      "recipe"
-    ],
-    "extends": "CreateAction"
+  "title": "CookAction",
+  "description": "The act of producing/preparing food.",
+  "required": [],
+  "properties": [
+    "foodEstablishment",
+    "foodEvent",
+    "recipe"
+  ],
+  "extends": "CreateAction"
 }

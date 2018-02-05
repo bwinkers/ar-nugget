@@ -1,10 +1,10 @@
 {
-    "description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
-    "title": "Brand",
-    "properties": [
-        "aggregateRating",
-        "logo",
-        "review"
-    ],
-    "extends": "Intangible"
+  "description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
+  "title": "Brand",
+  "properties": [
+    "aggregateRating",
+    "logo",
+    "review"
+  ],
+  "extends": "Intangible"
 }

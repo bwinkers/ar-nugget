@@ -1,17 +1,17 @@
 {
-    "title": "ContactPoint",
-    "description": "A contact point—for example, a Customer Complaints department.",
-    "required": [],
-    "properties": [
-        "areaServed",
-        "availableLanguage",
-        "contactOption",
-        "contactType",
-        "email",
-        "faxNumber",
-        "hoursAvailable",
-        "productSupported",
-        "telephone"
-    ],
-    "extends": "StructuredValue"
+  "title": "ContactPoint",
+  "description": "A contact point—for example, a Customer Complaints department.",
+  "required": [],
+  "properties": [
+    "areaServed",
+    "availableLanguage",
+    "contactOption",
+    "contactType",
+    "email",
+    "faxNumber",
+    "hoursAvailable",
+    "productSupported",
+    "telephone"
+  ],
+  "extends": "StructuredValue"
 }
