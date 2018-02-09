@@ -1,0 +1,7 @@
+{
+    "title": "BookmarkAction",
+    "description": "An agent bookmarks/flags/labels/tags/marks an object.",
+    "required": [],
+    "properties": [],
+    "extends": "OrganizeAction"
+}
