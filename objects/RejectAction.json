@@ -1,0 +1,10 @@
+{
+    "title": "RejectAction",
+    "description": "The act of rejecting to/adopting an object.",
+    "required": [],
+    "properties": [],
+    "related": [
+      { "AcceptAction": "The antonym of RejectAction." }
+    ],
+    "extends": "AllocateAction"
+}
