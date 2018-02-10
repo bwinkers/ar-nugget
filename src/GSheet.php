@@ -9,9 +9,8 @@ use Google_Service_Sheets;
 /**
  * The Nugget Google Client V4
  */
-class GSheet
+class GSheet extends Google_Service_Sheets
 {
-    public $gSheet;
 
     /**
      *
@@ -20,18 +19,7 @@ class GSheet
      */
     public function __construct($client)
     {
-        $gSheet = new Google_Service_Sheets($client);
-
-        $this->gSheet = $gSheet;
-    }
-
-    /**
-     *
-     * @return object
-     */
-    public function gSheet()
-    {
-        return $this->gSheet;
+        parent::__construct($client);
     }
 
     /**
@@ -43,7 +31,7 @@ class GSheet
     public function getSpreadsheetValues($spreadsheetID, $range)
     {
         try {
-            return $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
+            return $this->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
             return;
