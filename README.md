@@ -19,15 +19,6 @@ Rules can then be applied to any changes to an object.
 
 ```php vendor/bin/phpunit tests/Activerules/Nugget/NuggetTest-Dev.php --testdox```
 
-## Generate Property definitions from CSV files
-
-Import property name, type and description from a CSV file.
-More options will be added later.
-
-```
-php src/bin/convertCSVToProperties.php
-```
-
 ## Generate Open API schema objects
 
 ActiveRules object definitions are converted to Open API schema objects composed of property definitions.
