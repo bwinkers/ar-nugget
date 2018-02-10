@@ -41,7 +41,7 @@ class NuggetTest extends TestCase
      */
     public function testSchemaBuilderType()
     {
-        $result = is_a($this->nugget->builder, 'Activerules\Nugget\SchemaBuilder');
+        $result = is_a($this->nugget->schemaBuilder, 'Activerules\Nugget\SchemaBuilder');
         $this->assertEquals(true, $result);
     }
 
