@@ -23,6 +23,12 @@ Rules can then be applied to any changes to an object.
 
 ActiveRules object definitions are converted to Open API schema objects composed of property definitions.
 
+### Schema from object definitions
+
+```
+php src/bin/schemaFromObject.php -p "./properties" -o "./objects" -s "./t2" 
+```
+
 ```
 php src/bin/o2s.php -p "./properties" -s "./schema" -o "./objects" -d "./schemadoc"
 ```
