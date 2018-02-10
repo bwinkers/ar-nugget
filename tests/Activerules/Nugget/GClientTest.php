@@ -26,11 +26,10 @@ class GClientTest extends TestCase
         ];
 
         $scopes = \Google_Service_Sheets::SPREADSHEETS_READONLY;
-        
+
         // All test will have these variables available to them under $this->
         $this->client = new \Activerules\Nugget\GClient($credentials);
         $this->scopedClient = new \Activerules\Nugget\GClient($credentials, $scopes);
-        
     }
 
     /**
