@@ -39,11 +39,15 @@ class GSheet
 
     public function getSpreadsheetValues($spreadsheetID, $range)
     {
+
+        $vals = [];
+
         try {
             $vals = $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
-            return $vals;
         } catch (Exception $ex) {
             // Log error
-        }   
+        }
+
+        return $vals;
     }
 }
