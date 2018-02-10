@@ -6,7 +6,9 @@
     "borrower"
   ],
   "related": [
-    { "BorrowAction": "Reciprocal of LendAction." }
+    {
+      "BorrowAction": "Reciprocal of LendAction."
+    }
   ],
   "extends": "TransferAction"
 }

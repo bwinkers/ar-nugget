@@ -1,9 +1,9 @@
 {
-    "title": "AuthorizeAction",
-    "description": "The act of granting permission to an object.",
-    "required": [],
-    "properties": [
-      "recipient"
-    ],
-    "extends": "AllocateAction"
+  "title": "AuthorizeAction",
+  "description": "The act of granting permission to an object.",
+  "required": [],
+  "properties": [
+    "recipient"
+  ],
+  "extends": "AllocateAction"
 }

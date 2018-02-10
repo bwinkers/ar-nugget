@@ -1,10 +1,12 @@
 {
-    "title": "AcceptAction",
-    "description": "The act of committing to/adopting an object.",
-    "required": [],
-    "properties": [],
-    "related": [
-      { "RejectAction": "The antonym of AcceptAction." }
-    ],
-    "extends": "AllocateAction"
+  "title": "AcceptAction",
+  "description": "The act of committing to/adopting an object.",
+  "required": [],
+  "properties": [],
+  "related": [
+    {
+      "RejectAction": "The antonym of AcceptAction."
+    }
+  ],
+  "extends": "AllocateAction"
 }

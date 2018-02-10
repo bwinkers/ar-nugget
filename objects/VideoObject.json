@@ -1,16 +1,16 @@
 {
-    "title": "VideoObject",
-    "description": "A video file.",
-    "required": [],
-    "properties": [
-        "acctor",
-        "caption",
-        "director",
-        "musicBy",
-        "thumbnail",
-        "transcript",
-        "videoFrameSize",
-        "videoQuality"
-    ],
-    "extends": "MediaObject"
+  "title": "VideoObject",
+  "description": "A video file.",
+  "required": [],
+  "properties": [
+    "acctor",
+    "caption",
+    "director",
+    "musicBy",
+    "thumbnail",
+    "transcript",
+    "videoFrameSize",
+    "videoQuality"
+  ],
+  "extends": "MediaObject"
 }

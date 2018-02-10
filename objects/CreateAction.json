@@ -1,7 +1,7 @@
 {
-    "title": "CreateAction",
-    "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
-    "required": [],
-    "properties": [],
-    "extends": "Action"
+  "title": "CreateAction",
+  "description": "The act of deliberately creating/producing/generating/building a result out of the agent.",
+  "required": [],
+  "properties": [],
+  "extends": "Action"
 }

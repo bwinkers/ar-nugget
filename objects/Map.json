@@ -1,8 +1,8 @@
 {
-    "description": "A map",
-    "title": "Map",
-    "properties": [
-        "mapType"
-    ],
-    "extends": "CreativeWork"
+  "description": "A map",
+  "title": "Map",
+  "properties": [
+    "mapType"
+  ],
+  "extends": "CreativeWork"
 }

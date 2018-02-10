@@ -1,11 +1,11 @@
 {
-    "title": "RsvpAction",
-    "description": "The act of notifying an event organizer as to whether you expect to attend the event.",
-    "required": [],
-    "properties": [
-      "additionalNumberOfGuests",
-      "comment",
-      "rsvpResponse"
-    ],
-    "extends": "InformAction"
+  "title": "RsvpAction",
+  "description": "The act of notifying an event organizer as to whether you expect to attend the event.",
+  "required": [],
+  "properties": [
+    "additionalNumberOfGuests",
+    "comment",
+    "rsvpResponse"
+  ],
+  "extends": "InformAction"
 }

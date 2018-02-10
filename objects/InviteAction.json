@@ -1,9 +1,9 @@
 {
-    "title": "InviteAction",
-    "description": "The act of asking someone to attend an event. Reciprocal of RsvpAction.",
-    "required": [],
-    "properties": [
-      "event"
-    ],
-    "extends": "CommunicateAction"
+  "title": "InviteAction",
+  "description": "The act of asking someone to attend an event. Reciprocal of RsvpAction.",
+  "required": [],
+  "properties": [
+    "event"
+  ],
+  "extends": "CommunicateAction"
 }

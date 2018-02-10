@@ -1,9 +1,9 @@
 {
-    "title": "WebAPI",
-    "description": "An application programming interface accessible over Web/Internet technologies.",
-    "required": [],
-    "properties": [
-        "documentation"
-    ],
-    "extends": "Service"
+  "title": "WebAPI",
+  "description": "An application programming interface accessible over Web/Internet technologies.",
+  "required": [],
+  "properties": [
+    "documentation"
+  ],
+  "extends": "Service"
 }

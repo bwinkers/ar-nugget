@@ -1,7 +1,7 @@
 {
-    "title": "ViewAction",
-    "description": "The act of consuming static visual content.",
-    "required": [],
-    "properties": [],
-    "extends": "ConsumeAction"
+  "title": "ViewAction",
+  "description": "The act of consuming static visual content.",
+  "required": [],
+  "properties": [],
+  "extends": "ConsumeAction"
 }

@@ -7,8 +7,12 @@
     "toLocation"
   ],
   "related": [
-    { "ReceiveAction": "Unlike ReceiveAction, TakeAction implies that ownership has been transfered." },
-    { "GiveAction": "The reciprocal of TakeAction." }
+    {
+      "ReceiveAction": "Unlike ReceiveAction, TakeAction implies that ownership has been transfered."
+    },
+    {
+      "GiveAction": "The reciprocal of TakeAction."
+    }
   ],
   "extends": "TransferAction"
 }

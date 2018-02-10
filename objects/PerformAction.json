@@ -1,9 +1,9 @@
 {
-    "title": "PerformAction",
-    "description": "The act of participating in performance arts.",
-    "required": [],
-    "properties": [
-      "entertainmentBusiness"
-    ],
-    "extends": "PlayAction"
+  "title": "PerformAction",
+  "description": "The act of participating in performance arts.",
+  "required": [],
+  "properties": [
+    "entertainmentBusiness"
+  ],
+  "extends": "PlayAction"
 }

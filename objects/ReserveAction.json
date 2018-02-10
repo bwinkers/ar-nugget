@@ -1,10 +1,12 @@
 {
-    "title": "ReserveAction",
-    "description": "Reserving a concrete object.",
-    "required": [],
-    "properties": [],
-    "related": [
-      { "ScheduledAction": " Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation." }
-    ],
-    "extends": "PlanAction"
+  "title": "ReserveAction",
+  "description": "Reserving a concrete object.",
+  "required": [],
+  "properties": [],
+  "related": [
+    {
+      "ScheduledAction": " Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation."
+    }
+  ],
+  "extends": "PlanAction"
 }

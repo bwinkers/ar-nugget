@@ -1,6 +1,6 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
-    "properties": [],
-    "extends": "CreativeWork"
+  "description": "A photograph",
+  "title": "Photograph",
+  "properties": [],
+  "extends": "CreativeWork"
 }

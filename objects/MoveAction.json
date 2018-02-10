@@ -1,15 +1,15 @@
 {
-    "title": "MoveAction",
-    "description": "The act of an agent relocating to a place.",
-    "required": [],
-    "related": [
-      {
-        "TransferAction": "Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object."
-      }
-    ],
-    "properties": [
-      "fromLocation",
-      "toLocation"
-    ],
-    "extends": "Action"
+  "title": "MoveAction",
+  "description": "The act of an agent relocating to a place.",
+  "required": [],
+  "related": [
+    {
+      "TransferAction": "Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object."
+    }
+  ],
+  "properties": [
+    "fromLocation",
+    "toLocation"
+  ],
+  "extends": "Action"
 }

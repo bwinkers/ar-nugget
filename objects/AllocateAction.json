@@ -1,9 +1,9 @@
 {
-    "title": "AllocateAction",
-    "description": "The act of organizing tasks/objects/events by associating resources to it.",
-    "required": [],
-    "properties": [
-      "purpose"
-    ],
-    "extends": "OrganizeAction"
+  "title": "AllocateAction",
+  "description": "The act of organizing tasks/objects/events by associating resources to it.",
+  "required": [],
+  "properties": [
+    "purpose"
+  ],
+  "extends": "OrganizeAction"
 }

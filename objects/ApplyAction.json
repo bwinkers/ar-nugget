@@ -1,10 +1,12 @@
 {
-    "title": "ApplyAction",
-    "description": "The act of registering to an organization/service without the guarantee to receive it.",
-    "required": [],
-    "properties": [],
-    "related": [
-      { "RegisterAction": "Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted." }
-    ],
-    "extends": "OrganizeAction"
+  "title": "ApplyAction",
+  "description": "The act of registering to an organization/service without the guarantee to receive it.",
+  "required": [],
+  "properties": [],
+  "related": [
+    {
+      "RegisterAction": "Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted."
+    }
+  ],
+  "extends": "OrganizeAction"
 }
