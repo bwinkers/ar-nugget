@@ -1,0 +1,10 @@
+{
+  "title": "PayAction",
+  "description": "An agent pays a price to a participant.",
+  "required": [],
+  "properties": [
+    "purpose",
+    "recipient"
+  ],
+  "extends": "TradeAction"
+}
