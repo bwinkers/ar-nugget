@@ -37,17 +37,18 @@ class GSheet
         return $this->gSheet;
     }
 
+    /**
+     * 
+     * @param string $spreadsheetID
+     * @param string $range
+     * @return type
+     */
     public function getSpreadsheetValues($spreadsheetID, $range)
     {
-
-        $vals = [];
-
         try {
-            $vals = $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
+            return $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
         }
-
-        return $vals;
     }
 }
