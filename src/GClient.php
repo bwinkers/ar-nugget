@@ -10,8 +10,6 @@ use Google_Client;
  */
 class GClient extends Google_Client
 {
-    protected $gClient;
-
     /**
      *
      * @param object $credentials
@@ -26,7 +24,6 @@ class GClient extends Google_Client
         );
 
         parent::__construct($config);
-        //$this->gClient = $gClient;
 
         $this->setAuthConfig($credentials);
 
