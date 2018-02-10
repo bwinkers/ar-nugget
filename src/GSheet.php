@@ -20,12 +20,9 @@ class GSheet
      */
     public function __construct($client)
     {
+        $gSheet = new Google_Service_Sheets($client);
 
-        $gClient = $client->gClient();
-
-        $sheet = new Google_Service_Sheets($gClient);
-
-        $this->gSheet = $sheet;
+        $this->gSheet = $gSheet;
     }
 
     /**
