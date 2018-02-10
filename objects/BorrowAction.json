@@ -1,0 +1,12 @@
+{
+  "title": "BorrowAction",
+  "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.",
+  "required": [],
+  "properties": [
+    "lender"
+  ],
+  "related": [
+    { "LendAction": "Reciprocal of BorrowAction." }
+  ],
+  "extends": "TransferAction"
+}
