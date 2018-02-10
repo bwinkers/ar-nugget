@@ -40,7 +40,7 @@ function processObjectDirectory($objectDir, $schemaDir, $propertiesDir)
     // Iterate through object definitions
     foreach ($files as $fileInfo) {
         // Make sure its a valid file
-        if ($nugget->realDirFile($fileInfo)) {
+        if ($nugget->filesys->realDirFile($fileInfo)) {
             // Attempt creating a Schema object from the definition
             processSchema($objectDir, $propertiesDir, $fileInfo->getFilename(), $schemaDir);
         }
@@ -193,8 +193,8 @@ function mergeDefs(& $schemaDef, $parentFile, $objectDir)
     $parentDef = json_decode($parentJSON);
 
     if ($parentDef) {
-        $nugget->mergeProps($parentDef, $schemaDef);
-        $nugget->mergeRequired($parentDef, $schemaDef);
+        $nugget->schemaBuilder->mergeProps($parentDef, $schemaDef);
+        $nugget->schemaBuilder->mergeRequired($parentDef, $schemaDef);
         loadParent($parentDef, $schemaDef, $objectDir);
     }
 }
@@ -276,7 +276,7 @@ function populateProperties(& $schemaDef, $propertiesDir)
         $propertyFile = realpath($propertiesDir . '/' . $property . '.json');
 
         if ($propertyFile) {
-            $props[$property] = $nugget->loadPropertyFile($propertyFile);
+            $props[$property] = $nugget->schemaBuilder->loadPropertyFile($propertyFile);
         }
     }
 
