@@ -15,7 +15,8 @@
         "activerules/json-guard": "^1.0.4",
         "activerules/json-reference": "^1.1.1",
         "google/apiclient": "^2.0",
-        "asimlqt/php-google-spreadsheet-client": "3.0.*"
+        "asimlqt/php-google-spreadsheet-client": "3.0.*",
+        "aws/aws-sdk-php": "^3.52"
     },
     "require-dev": {
         "tracy/tracy": "^2.4",
