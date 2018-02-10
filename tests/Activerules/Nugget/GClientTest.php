@@ -46,26 +46,6 @@ class GClientTest extends TestCase
     /**
      * The gClient class type should be correct
      */
-    public function testGClientType()
-    {
-        $clientType = get_class($this->client->gClient());
-
-        $this->assertEquals('Google_Client', $clientType);
-    }
-    
-    /**
-     * The gClient class type should be correct
-     */
-    public function testGClientTypeScoped()
-    {
-        $clientType = get_class($this->scopedClient->gClient());
-
-        $this->assertEquals('Google_Client', $clientType);
-    }
-
-    /**
-     * The gClient class type should be correct
-     */
     public function testSettingScope()
     {
 
