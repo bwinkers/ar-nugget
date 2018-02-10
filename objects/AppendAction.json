@@ -1,0 +1,9 @@
+{
+  "title": "AppendAction",
+  "description": "The act of inserting at the end if an ordered collection.",
+  "required": [],
+  "properties": [
+    "toLocation"
+  ],
+  "extends": "InsertAction"
+}
