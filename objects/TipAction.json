@@ -1,0 +1,9 @@
+{
+  "title": "TipAction",
+  "description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
+  "required": [],
+  "properties": [
+    "recipient"  
+  ],
+  "extends": "TradeAction"
+}
