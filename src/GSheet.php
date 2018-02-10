@@ -13,9 +13,8 @@ class GSheet extends Google_Service_Sheets
 {
 
     /**
-     *
-     * @param array $credentials
-     * @param array $scopes
+     * 
+     * @param object $client
      */
     public function __construct($client)
     {
