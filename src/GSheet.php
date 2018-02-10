@@ -34,7 +34,6 @@ class GSheet extends Google_Service_Sheets
             return $this->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
-            return;
         }
     }
 }
