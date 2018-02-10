@@ -1,0 +1,91 @@
+{
+    "description": "A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.",
+    "title": "InteractionCounter",
+    "properties": {
+        "additionalType": {
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "alternateName": {
+            "description": "An alias for the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "coreType": {
+            "description": "The core ActiveRules type",
+            "type": "string",
+            "enum": [
+                "Person",
+                "Product",
+                "Event",
+                "PublishedWork"
+            ]
+        },
+        "description": {
+            "description": "A description of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "identifier": {
+            "description": "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/PropertyValue"
+                },
+                {
+                    "nuggetType": "Text",
+                    "type": "string"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "image": {
+            "description": "An image of the item. This can be a URL or a fully described ImageObject.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/ImageObject"
+                },
+                {
+                    "nuggetType": "URL",
+                    "type": "string"
+                }
+            ]
+        },
+        "name": {
+            "description": "The name of the item.",
+            "nuggetType": "Text",
+            "type": "string"
+        },
+        "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+            "$ref": "#/components/schema/Action"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "nuggetType": "URL",
+            "type": "string"
+        },
+        "subjectOf": {
+            "description": "A CreativeWork or Event about this Thing.. Inverse property: about.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/CreativeWork"
+                },
+                {
+                    "$ref": "#/components/schema/Event"
+                }
+            ]
+        },
+        "url": {
+            "description": "URL of the item.",
+            "nuggetType": "URL",
+            "type": "string"
+        }
+    },
+    "extends": "StructuredValue",
+    "type": "object"
+}
