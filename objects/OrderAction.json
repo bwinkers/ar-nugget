@@ -3,7 +3,7 @@
   "description": "An agent orders an object/product/service to be delivered/sent.",
   "required": [],
   "properties": [
-    "recipient"
+    "deliveryMethod"
   ],
   "extends": "TradeAction"
 }
