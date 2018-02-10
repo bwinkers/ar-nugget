@@ -49,6 +49,7 @@ class GSheet
             return $this->gSheet->spreadsheets_values->get($spreadsheetID, $range);
         } catch (Exception $ex) {
             // Log error
+            return;
         }
     }
 }
