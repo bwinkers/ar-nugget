@@ -84,20 +84,7 @@
     "version",
     "video",
     "workExample",
-    "workTranslation",
-    "Properties from Thing",
-    "additionalType",
-    "alternateName",
-    "description",
-    "disambiguatingDescription",
-    "identifier",
-    "image",
-    "mainEntityOfPage",
-    "name",
-    "potentialAction",
-    "sameAs",
-    "subjectOf",
-    "url"
+    "workTranslation"
   ],
   "extends": "Thing"
 }
