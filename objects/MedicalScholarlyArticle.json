@@ -3,5 +3,5 @@
   "description": "A scholarly article in the medical domain.",
   "required": [],
   "properties": ["publicationType"],
-  "extends": "Article"
+  "extends": "ScholarlyArticle"
 }
