@@ -227,11 +227,6 @@
             "description": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. Supersedes directors.",
             "$ref": "#/components/schema/Person"
         },
-        "disambiguatingDescription": {
-            "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-            "nuggetType": "Text",
-            "type": "string"
-        },
         "discussionUrl": {
             "description": "A link to the page containing the comments of the CreativeWork.",
             "nuggetType": "URL",
@@ -416,18 +411,6 @@
         "mainEntity": {
             "description": "Indicates the primary entity described in some page or other CreativeWork. Inverse property: mainEntityOfPage.",
             "$ref": "#/components/schema/Thing"
-        },
-        "mainEntityOfPage": {
-            "description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notesfor details. Inverse property: mainEntity.",
-            "oneOf": [
-                {
-                    "$ref": "#/components/schema/CreativeWork"
-                },
-                {
-                    "nuggetType": "URL",
-                    "type": "string"
-                }
-            ]
         },
         "material": {
             "description": "A material that something is made from, e.g. leather, wool, cotton, paper.",

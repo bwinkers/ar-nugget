@@ -1,0 +1,10 @@
+{
+  "title": "Blog",
+  "description": "Reference documentation for application programming interfaces (APIs).",
+  "required": [],
+  "properties": [
+    "blogPost",
+    "issn"
+  ],
+  "extends": "CreativeWork"
+}

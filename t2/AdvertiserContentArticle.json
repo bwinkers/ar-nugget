@@ -1,6 +1,10 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
+    "title": "AdvertiserContentArticle",
+    "description": "An Article that an external entity has paid to place or to produce to its specifications. Includes advertorials, sponsored content, native advertising and other paid content.",
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "about": {
             "description": "The subject matter of the content. Inverse property: subjectOf.",
@@ -639,6 +643,6 @@
             "$ref": "#/components/schema/CreativeWork"
         }
     },
-    "extends": "CreativeWork",
+    "extends": "Article",
     "type": "object"
 }

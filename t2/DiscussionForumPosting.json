@@ -1,6 +1,10 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
+    "title": "DiscussionForumPosting",
+    "description": "A posting to a discussion forum.",
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "about": {
             "description": "The subject matter of the content. Inverse property: subjectOf.",
@@ -639,6 +643,6 @@
             "$ref": "#/components/schema/CreativeWork"
         }
     },
-    "extends": "CreativeWork",
+    "extends": "SocialMediaPosting",
     "type": "object"
 }

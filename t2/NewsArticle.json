@@ -1,6 +1,10 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
+    "title": "NewsArticle",
+    "description": "A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.",
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "about": {
             "description": "The subject matter of the content. Inverse property: subjectOf.",
@@ -639,6 +643,6 @@
             "$ref": "#/components/schema/CreativeWork"
         }
     },
-    "extends": "CreativeWork",
+    "extends": "Article",
     "type": "object"
 }

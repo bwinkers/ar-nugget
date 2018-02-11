@@ -1,6 +1,10 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
+    "title": "ScholarlyArticle",
+    "description": "A scholarly article.",
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "about": {
             "description": "The subject matter of the content. Inverse property: subjectOf.",
@@ -639,6 +643,6 @@
             "$ref": "#/components/schema/CreativeWork"
         }
     },
-    "extends": "CreativeWork",
+    "extends": "Article",
     "type": "object"
 }

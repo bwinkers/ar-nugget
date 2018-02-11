@@ -1,6 +1,10 @@
 {
-    "description": "A photograph",
-    "title": "Photograph",
+    "title": "AnalysisNewsArticle",
+    "description": "An AnalysisNewsArticle is a NewsArticle that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions.",
+    "required": [
+        "coreType",
+        "name"
+    ],
     "properties": {
         "about": {
             "description": "The subject matter of the content. Inverse property: subjectOf.",
@@ -639,6 +643,6 @@
             "$ref": "#/components/schema/CreativeWork"
         }
     },
-    "extends": "CreativeWork",
+    "extends": "NewsArticle",
     "type": "object"
 }
