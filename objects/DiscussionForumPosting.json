@@ -1,0 +1,7 @@
+{
+  "title": "DiscussionForumPosting",
+  "description": "A posting to a discussion forum.",
+  "required": [],
+  "properties": [],
+  "extends": "SocialMediaPosting"
+}
