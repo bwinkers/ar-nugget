@@ -1,0 +1,7 @@
+{
+  "title": "BlogPosting",
+  "description": "A blog post",
+  "required": [],
+  "properties": [],
+  "extends": "SocialMediaPosting"
+}
