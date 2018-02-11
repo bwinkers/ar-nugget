@@ -1,0 +1,11 @@
+{
+  "title": "LiveBlogPosting",
+  "description": "A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.",
+  "required": [],
+  "properties": [
+    "coverageZEndTime",
+    "coverageStartTime",
+    "liveBlogUpdate"
+  ],
+  "extends": "BlogPosting"
+}
