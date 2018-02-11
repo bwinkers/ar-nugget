@@ -1,0 +1,7 @@
+{
+  "title": "ScholarlyArticle",
+  "description": "A scholarly article.",
+  "required": [],
+  "properties": [],
+  "extends": "Article"
+}
