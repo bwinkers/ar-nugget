@@ -1,0 +1,17 @@
+{
+  "title": "CreativeWorkSeason",
+  "description": "A media season e.g. tv, radio, video game etc.",
+  "required": [],
+  "properties": [
+    "actor",
+    "director",
+    "endDate",
+    "episode",
+    "numberOfEpisodes",
+    "partOfSeries",
+    "productionCompany",
+    "seasonNumber",
+    "trailer"
+  ],
+  "extends": ["CreativeWork"]
+}
