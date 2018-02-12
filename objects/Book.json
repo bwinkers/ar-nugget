@@ -1,0 +1,14 @@
+{
+  "title": "Book",
+  "description": "A book",
+  "required": [],
+  "properties": [
+    "abridged",
+    "bookEdition",
+    "bookFormat",
+    "illustrator",
+    "isbn",
+    "numberOfPages"
+  ],
+  "extends": "CreativeWork"
+}

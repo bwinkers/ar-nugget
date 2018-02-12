@@ -1,0 +1,7 @@
+{
+  "title": "ComicCoverArt",
+  "description": "The artwork on the cover of a comic.",
+  "required": [],
+  "properties": [],
+  "extends": ["ComicStory", "CoverArt"]
+}
