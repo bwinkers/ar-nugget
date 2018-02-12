@@ -6,5 +6,5 @@
     "duration",
     "readBy"
   ],
-  "extends": "AudioObject"
+  "extends": ["AudioObject","Book"]
 }
