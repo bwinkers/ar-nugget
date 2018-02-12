@@ -1,0 +1,7 @@
+{
+  "title": "TVSeason",
+  "description": "Season dedicated to TV broadcast and associated online delivery.",
+  "required": [],
+  "properties": ["countryOfOrigin"],
+  "extends": ["CreativeWork, CreativeWorkSeason"]
+}
