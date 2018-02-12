@@ -1,0 +1,15 @@
+{
+  "title": "Clip",
+  "description": "A short TV or radio program or a segment/part of a program.",
+  "required": [],
+  "properties": [
+    "actor",
+    "clipNumber",
+    "director",
+    "musicBy",
+    "partOfEpisode",
+    "partOfSeason",
+    "partOfSeries"
+  ],
+  "extends": ["CreativeWork"]
+}
