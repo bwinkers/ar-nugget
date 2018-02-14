@@ -1,0 +1,10 @@
+{
+    "title": "Collection",
+    "description": "A created collection of Creative Works or other artefacts.",
+    "required": [],
+    "properties": [],
+    "extends": [
+        "CreativeWork"
+    ],
+    "type": "object"
+}
