@@ -20,27 +20,6 @@ class SchemaBuilder
         $this->filesys = new \Activerules\Nugget\Filesys();
         $this->schema = new \Activerules\Nugget\Schema();
     }
-    
-    /**
-     * Create a populated schema from a Nugget object definition file.
-     * 
-     * @param string $objectFilePath
-     * @param string $schemaFilepath
-     * @param string $propsDir
-     */
-    public function convertObjectFileToSchemaFile($objectFilePath, $schemaFilepath, $propsDir) 
-    {
-        try {
-            // Load Nugget object definition from object path
-            
-            // Convert Nugget object to a fleshed out schema
-            
-            // Write out schema
-            
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        } 
-    }
 
     /**
      * Change the base of a $ref schema
