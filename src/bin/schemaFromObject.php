@@ -143,8 +143,11 @@ function findRefs($props, & $refs)
 }
 
 /**
- *
- * @param string $objectName
+ * 
+ * @param string $objectDir
+ * @param string $propertiesDir
+ * @param string $schemaName
+ * @param string $schemaDir
  */
 function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
 {
@@ -167,12 +170,13 @@ function processSchema($objectDir, $propertiesDir, $schemaName, $schemaDir)
 }
 
 /**
- *
+ * 
  * @param object $schemaDef
+ * @param string $objectDir
  */
 function mergeParentDef(& $schemaDef, $objectDir)
 {
-    if (isset($schemaDef->extends)) {
+    if (isset($schemaDef->extends) AND is_string($schemaDef->extends)) {
         // Get the full path to the JSON schema file
         $parentFile = realpath($objectDir . '/' . $schemaDef->extends . '.json');
 
@@ -201,7 +205,7 @@ function mergeDefs(& $schemaDef, $parentFile, $objectDir)
 
 function loadParent($parentDef, & $schemaDef, $objectDir)
 {
-    if (isset($parentDef->extends)) {
+    if (isset($parentDef->extends) AND is_string($parentDef->extends)) {
         // Get the full path to the JSON schema file
         $gparentFile = realpath($objectDir . '/' . $parentDef->extends . '.json');
 
