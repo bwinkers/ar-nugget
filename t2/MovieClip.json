@@ -1,0 +1,10 @@
+{
+    "title": "MovieClip",
+    "description": "A short segment/part of a movie.",
+    "required": [],
+    "properties": [],
+    "extends": [
+        "Clip"
+    ],
+    "type": "object"
+}
