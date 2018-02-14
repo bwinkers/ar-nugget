@@ -1,0 +1,16 @@
+{
+    "title": "AudioBook",
+    "description": "An audiobook",
+    "required": [],
+    "properties": {
+        "duration": {
+            "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+            "$ref": "#/components/schema/Duration"
+        }
+    },
+    "extends": [
+        "AudioObject",
+        "Book"
+    ],
+    "type": "object"
+}
