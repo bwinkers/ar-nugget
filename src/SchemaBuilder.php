@@ -51,7 +51,8 @@ class SchemaBuilder
     }
 
     /**
-     *
+     * Replace a string in the schema 
+     * 
      * @param string $file
      * @param string $replacementPath
      * @param string $targetPath
@@ -66,7 +67,8 @@ class SchemaBuilder
     }
 
     /**
-     *
+     * Merge the parent required fields into the child.
+     * 
      * @param object $parent
      * @param object $child
      */
@@ -84,7 +86,8 @@ class SchemaBuilder
     }
 
     /**
-     *
+     * Merge properties from parent into child.
+     * 
      * @param object $parent
      * @param object $child
      */
@@ -96,8 +99,10 @@ class SchemaBuilder
     }
 
     /**
-     *
+     * Pull a property definition from a file.
+     * 
      * @param string $propertyFile
+     * @return object
      */
     public function loadPropertyFile($propertyFile)
     {
