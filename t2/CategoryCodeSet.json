@@ -1,0 +1,10 @@
+{
+    "title": "CategoryCodeSet",
+    "description": "A set of Category Code values.",
+    "required": [],
+    "properties": [],
+    "extends": [
+        "CreativeWork"
+    ],
+    "type": "object"
+}
