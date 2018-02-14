@@ -1,0 +1,10 @@
+{
+    "title": "TVClip",
+    "description": "A short TV program or a segment/part of a TV program.",
+    "required": [],
+    "properties": [],
+    "extends": [
+        "Clip"
+    ],
+    "type": "object"
+}
