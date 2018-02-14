@@ -2,7 +2,7 @@
 
 namespace Activerules\Nugget;
 
-use Activerules\Nugget\Exceptions\NuggetException;
+use Activerules\Nugget\Exception\NuggetException;
 
 /**
  * The Nugget anonymous Google Spreadsheet reader.
