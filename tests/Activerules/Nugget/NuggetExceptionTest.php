@@ -3,7 +3,7 @@
 namespace Activerules\Nugget;
 
 use PHPUnit\Framework\TestCase;
-use Activerules\Nugget\exceptions\NuggetException;
+use Activerules\Nugget\Exception\NuggetException;
 
 // Need more test
 
@@ -24,9 +24,9 @@ class NuggetExceptionTest extends TestCase
      */
     public function testExceptionIsAnException()
     {
-        $this->expectException('\Activerules\Nugget\exceptions\NuggetException');
+        $this->expectException('\Activerules\Nugget\Exception\NuggetException');
 
-        throw new \Activerules\Nugget\exceptions\NuggetException('What What!');
+        throw new \Activerules\Nugget\Exception\NuggetException('What What!');
     }
 
     /**
@@ -34,7 +34,7 @@ class NuggetExceptionTest extends TestCase
      */
     public function testNuggetExceptionIsAnException()
     {
-        $this->expectException('\Activerules\Nugget\exceptions\NuggetException');
+        $this->expectException('\Activerules\Nugget\Exception\NuggetException');
 
         $this->openAPI->jsonType([]);
     }
