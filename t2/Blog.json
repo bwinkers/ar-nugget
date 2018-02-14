@@ -1,6 +1,6 @@
 {
     "title": "Blog",
-    "description": "Reference documentation for application programming interfaces (APIs).",
+    "description": "A blog",
     "required": [
         "coreType",
         "name"
