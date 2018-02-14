@@ -2,7 +2,7 @@
 
 namespace Activerules\Nugget;
 
-use Activerules\Nugget\Exceptions\NuggetException;
+use Activerules\Nugget\Exception\NuggetException;
 
 /**
  * The Nugget OpenAPI interaction functions
@@ -19,7 +19,7 @@ class OpenAPI
     public function jsonType($type)
     {
         if (!is_string($type)) {
-            throw new \Activerules\Nugget\Exceptions\NuggetException('Invalid type, it must be a string.');
+            throw new \Activerules\Nugget\Exception\NuggetException('Invalid type, it must be a string.');
         }
 
         if (!is_array($this->types)) {
