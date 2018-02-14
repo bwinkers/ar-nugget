@@ -1,0 +1,33 @@
+{
+    "title": "VisualArtwork",
+    "description": "A work of art that is primarily visual in character.",
+    "required": [],
+    "properties": {
+        "depth": {
+            "description": "The depth of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        },
+        "width": {
+            "description": "The width of the item.",
+            "oneOf": [
+                {
+                    "$ref": "#/components/schema/Distance"
+                },
+                {
+                    "$ref": "#/components/schema/QuantitativeValue"
+                }
+            ]
+        }
+    },
+    "extends": [
+        "CreativeWork"
+    ],
+    "type": "object"
+}
