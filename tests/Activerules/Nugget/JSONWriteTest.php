@@ -16,6 +16,11 @@ class JSONWriteTest extends TestCase
     {
         // All test will have these variables available to them under $this->
         $this->json = new \Activerules\Nugget\JSON();
+        
+        $object = new \stdClass();
+        $object->name = 'Brian';
+        $this->object = $object;
+        
         $this->validJSON = '{"name":"Brian"}';
     }
 
@@ -28,7 +33,7 @@ class JSONWriteTest extends TestCase
         
         $path = $path . '/writeTest.json';
 
-        $this->json->write($this->validJSON, $path);
+        $this->json->write($this->object, $path);
         
         $result = $this->json->fromFile($path);
 
