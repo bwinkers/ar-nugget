@@ -1,7 +1,7 @@
 {
   "title": "ReserveAction",
   "description": "Reserving a concrete object.",
-  "required": [],
+
   "properties": [],
   "related": [
     {

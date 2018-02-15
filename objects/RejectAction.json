@@ -1,7 +1,7 @@
 {
   "title": "RejectAction",
   "description": "The act of rejecting to/adopting an object.",
-  "required": [],
+
   "properties": [],
   "related": [
     {

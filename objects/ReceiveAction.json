@@ -1,7 +1,7 @@
 {
   "title": "ReceiveAction",
   "description": "The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.",
-  "required": [],
+
   "properties": [
     "deliveryMethod",
     "sender"

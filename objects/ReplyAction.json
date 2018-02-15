@@ -1,7 +1,7 @@
 {
   "title": "ReplyAction",
   "description": "The act of responding to a question/message asked/sent by the object. Related to AskAction",
-  "required": [],
+
   "properties": [
     "resultComment"
   ],
