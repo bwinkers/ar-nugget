@@ -1,7 +1,7 @@
 {
   "title": "SearchAction",
   "description": "The act of searching for an object.",
-  "required": [],
+
   "properties": [
     "query"
   ],

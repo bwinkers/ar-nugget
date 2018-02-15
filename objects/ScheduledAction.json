@@ -1,7 +1,7 @@
 {
   "title": "ScheduledAction",
   "description": "Reserving a concrete object.",
-  "required": [],
+
   "properties": [],
   "related": [
     {
