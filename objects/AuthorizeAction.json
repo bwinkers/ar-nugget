@@ -1,7 +1,7 @@
 {
   "title": "AuthorizeAction",
   "description": "The act of granting permission to an object.",
-  "required": [],
+
   "properties": [
     "recipient"
   ],

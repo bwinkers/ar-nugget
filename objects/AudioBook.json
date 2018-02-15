@@ -1,7 +1,7 @@
 {
   "title": "AudioBook",
   "description": "An audiobook",
-  "required": [],
+
   "properties": [
     "duration",
     "readBy"

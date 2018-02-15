@@ -1,7 +1,7 @@
 {
   "title": "AssignAction",
   "description": "The act of allocating an action/event/task to some destination (someone or something).",
-  "required": [],
+
   "properties": [],
   "extends": "AllocateAction"
 }
