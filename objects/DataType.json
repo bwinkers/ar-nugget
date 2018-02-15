@@ -1,7 +1,7 @@
 {
   "title": "DataType",
   "description": "The basic data types such as Integers, Strings, etc.",
-  "required": [],
+
   "properties": [],
   "subclassOf": "rdf:LClass"
 }
