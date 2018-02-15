@@ -1,7 +1,7 @@
 {
   "title": "OrderAction",
   "description": "An agent orders an object/product/service to be delivered/sent.",
-  "required": [],
+
   "properties": [
     "deliveryMethod"
   ],

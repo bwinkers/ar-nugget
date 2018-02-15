@@ -1,7 +1,7 @@
 {
   "title": "Offer",
   "description": "An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book. For GTIN-related fields, see Check Digit calculator and validation guide from GS1.",
-  "required": [],
+
   "properties": [
     "acceptedPaymentMethod",
     "addOn",
