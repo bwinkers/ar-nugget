@@ -1,7 +1,7 @@
 {
   "title": "VisualArtwork",
   "description": "A work of art that is primarily visual in character.",
-  "required": [],
+
   "properties": [
     "artEdition",
     "artMedium",

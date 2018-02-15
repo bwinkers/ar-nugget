@@ -1,7 +1,7 @@
 {
   "title": "VideoObject",
   "description": "A video file.",
-  "required": [],
+
   "properties": [
     "acctor",
     "caption",
