@@ -25,14 +25,9 @@ class JSON
      */
     public function write($data, $path)
     {
-        $data = $this->valid($data);
-
-        if($data) {
-            $data = json_encode($data);
-            return $this->filesys->writeFile($data, $path);
-        }
+        $data = json_encode($data);
         
-        return false;
+        return $this->filesys->writeFile($data, $path);
     }
 
     /**
