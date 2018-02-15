@@ -1,7 +1,7 @@
 {
   "title": "WinAction",
   "description": "The act of achieving victory in a competitive activity.",
-  "required": [],
+
   "properties": [
     "loser"
   ],

@@ -1,7 +1,7 @@
 {
   "title": "WatchAction",
   "description": "The act of consuming dynamic/moving visual content.",
-  "required": [],
+
   "properties": [],
   "extends": "ConsumeAction"
 }
