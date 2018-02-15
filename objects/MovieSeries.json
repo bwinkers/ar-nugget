@@ -1,0 +1,13 @@
+{
+  "title": "MovieSeries",
+  "description": "A series of movies. Included movies can be indicated with the hasPart property.",
+  "required": [],
+  "properties": [
+    "actor",
+    "director",
+    "musicBy",
+    "productionCompany",
+    "trailer"
+  ],
+  "extends": ["CreativeWorkSeries"]
+}
