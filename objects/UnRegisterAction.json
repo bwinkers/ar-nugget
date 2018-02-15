@@ -1,7 +1,7 @@
 {
   "title": "UnRegisterAction",
   "description": "The act of un-registering from a service.",
-  "required": [],
+
   "properties": [],
   "related": [
     {
