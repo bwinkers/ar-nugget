@@ -1,7 +1,7 @@
 {
   "title": "CreativeWork",
   "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-  "required": [],
+
   "properties": [
     "about",
     "accessMode",
