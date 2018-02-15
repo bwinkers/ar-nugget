@@ -1,7 +1,7 @@
 {
   "title": "PlanAction",
   "description": "The act of planning the execution of an event/task/action/reservation/plan to a future date.",
-  "required": [],
+
   "properties": [
     "scheduledTime"
   ],

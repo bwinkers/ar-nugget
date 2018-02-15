@@ -1,7 +1,7 @@
 {
   "title": "PlayAction",
   "description": "The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.",
-  "required": [],
+
   "properties": [
     "audience",
     "event"

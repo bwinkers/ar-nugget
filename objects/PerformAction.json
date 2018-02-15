@@ -1,7 +1,7 @@
 {
   "title": "PerformAction",
   "description": "The act of participating in performance arts.",
-  "required": [],
+
   "properties": [
     "entertainmentBusiness"
   ],
