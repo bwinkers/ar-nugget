@@ -1,8 +1,0 @@
-{
-    "title": "Number",
-    "description": "Data type: Number.",
-    "required": [],
-    "properties": [],
-    "extends": "DataType",
-    "type": "object"
-}
