@@ -9,6 +9,8 @@ The ActiveRules Nugget Schema treats all data as `nuggets`.
 These `nuggets` can be defined, and related using JSON files.
 Rules can then be applied to any changes to an object.
 
+The resulting schema will be moving to dataencyclopedia.com.
+
 ## Testing 
 
 ## Local only tests (run by Travis CI)
