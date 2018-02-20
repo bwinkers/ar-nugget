@@ -59,3 +59,6 @@ JSON Schema: [http://json-schema.org/](http://json-schema.org/)
 
 Schemas: [http://schema.org/](http://schema.org/)
 
+## Sponsored By:
+[UltriNet](http://www.ultri.net)
+
