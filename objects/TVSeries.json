@@ -1,0 +1,17 @@
+{
+  "title": "TVSeries",
+  "description": "CreativeWorkSeries dedicated to TV broadcast and associated online delivery.",
+  "properties": [
+    "actor",
+    "containsSeason",
+    "countryOfOrigin",
+    "director",
+    "episode",
+    "musicBy",
+    "numberOfEpsisodes",
+    "numberOfSeasons",
+    "productionCompany",
+    "trailer"
+  ],
+  "extends": ["CreativeWorkSeries"]
+}
