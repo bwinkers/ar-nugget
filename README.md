@@ -9,6 +9,8 @@ The ActiveRules Nugget Schema treats all data as `nuggets`.
 These `nuggets` can be defined, and related using JSON files.
 Rules can then be applied to any changes to an object.
 
+The resulting schema will be moving to dataencyclopedia.com.
+
 ## Testing 
 
 ## Local only tests (run by Travis CI)
@@ -56,4 +58,7 @@ JSON References ($ref): [https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-0
 JSON Schema: [http://json-schema.org/](http://json-schema.org/)
 
 Schemas: [http://schema.org/](http://schema.org/)
+
+## Sponsored By:
+[UltriNet](http://www.ultri.net)
 
