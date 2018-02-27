@@ -1,0 +1,24 @@
+{
+    "title": "VideoGameSeries",
+    "description": "A video game series.",
+    "properties": [
+        "actor",
+        "characterAttribute",
+        "cheatCode",
+        "containsSeason",
+        "director",
+        "episode",
+        "gameItem",
+        "gameLocation",
+        "gamePlatform",
+        "musicBy",
+        "numberOfEpisodes",
+        "numberOfPlayers",
+        "numberOfSeasons",
+        "playMode",
+        "productionCompany",
+        "quest",
+        "trailer"
+    ],
+    "extends": ["CreativeWorkSeries"]
+}
