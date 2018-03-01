@@ -1,0 +1,6 @@
+{
+    "title": "DataCatalog",
+    "description": "A collection of datasets.",
+    "properties": ["dataset","measurementTechnique"],
+    "extends": ["CreativeWork"]
+}
