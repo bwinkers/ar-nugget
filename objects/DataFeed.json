@@ -1,0 +1,8 @@
+{
+    "title": "DataFeed",
+    "description": "A single feed providing structured information about one or more entities or topics.",
+    "properties": [
+        "dataFeedElement"
+    ],
+    "extends": ["DataSet"]
+}
