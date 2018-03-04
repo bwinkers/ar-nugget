@@ -1,0 +1,12 @@
+{
+    "title": "DataSet",
+    "description": "A body of structured information describing some topic(s) of interest.",
+    "properties": [
+        "distribution",
+        "includedInDataCatalog",
+        "issn",
+        "measurementTechnique",
+        "variableMeasured"
+    ],
+    "extends": ["CreativeWork"]
+}
