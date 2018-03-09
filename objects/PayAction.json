@@ -1,10 +1,9 @@
 {
-  "title": "PayAction",
-  "description": "An agent pays a price to a participant.",
-
-  "properties": [
-    "purpose",
-    "recipient"
-  ],
-  "extends": "TradeAction"
+    "title": "PayAction",
+    "description": "An agent pays a price to a participant.",
+    "properties": [
+        "purpose",
+        "recipient"
+    ],
+    "extends": "TradeAction"
 }

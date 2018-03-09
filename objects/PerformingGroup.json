@@ -1,7 +1,6 @@
 {
-  "title": "PerformingGroup",
-  "description": "A performance group, such as a band, an orchestra, or a circus.",
-
-  "properties": [],
-  "extends": "Organization"
+    "title": "PerformingGroup",
+    "description": "A performance group, such as a band, an orchestra, or a circus.",
+    "properties": [],
+    "extends": "Organization"
 }

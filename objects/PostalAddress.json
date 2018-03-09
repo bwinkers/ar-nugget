@@ -1,14 +1,13 @@
 {
-  "title": "PostalAddress",
-  "description": "The mailing address. May be partial.",
-
-  "properties": [
-    "addressCountry",
-    "addressLocality",
-    "addressRegion",
-    "postOfficeBoxNumber",
-    "postalCode",
-    "streetAddress"
-  ],
-  "extends": "ContactPoint"
+    "title": "PostalAddress",
+    "description": "The mailing address. May be partial.",
+    "properties": [
+        "addressCountry",
+        "addressLocality",
+        "addressRegion",
+        "postOfficeBoxNumber",
+        "postalCode",
+        "streetAddress"
+    ],
+    "extends": "ContactPoint"
 }

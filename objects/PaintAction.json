@@ -1,7 +1,6 @@
 {
-  "title": "PaintAction",
-  "description": "The act of producing a painting, typically with paint and canvas as instruments.",
-
-  "properties": [],
-  "extends": "CreateAction"
+    "title": "PaintAction",
+    "description": "The act of producing a painting, typically with paint and canvas as instruments.",
+    "properties": [],
+    "extends": "CreateAction"
 }

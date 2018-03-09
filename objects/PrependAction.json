@@ -1,9 +1,8 @@
 {
-  "title": "PrependAction",
-  "description": "The act of inserting at the beginning if an ordered collection.",
-
-  "properties": [
-    "toLocation"
-  ],
-  "extends": "InsertAction"
+    "title": "PrependAction",
+    "description": "The act of inserting at the beginning if an ordered collection.",
+    "properties": [
+        "toLocation"
+    ],
+    "extends": "InsertAction"
 }
