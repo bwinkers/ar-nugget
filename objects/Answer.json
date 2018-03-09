@@ -1,11 +1,10 @@
 {
-  "title": "VisualArtwork",
-  "description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
-
-  "properties": [
-    "downVote",
-    "parentItem",
-    "upvoteCount"
-  ],
-  "extends": ["Comment"]
+    "title": "VisualArtwork",
+    "description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
+    "properties": [
+        "downVote",
+        "parentItem",
+        "upvoteCount"
+    ],
+    "extends": ["Comment"]
 }

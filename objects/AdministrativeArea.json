@@ -1,7 +1,6 @@
 {
-  "title": "AdministrativeArea",
-  "description": "A geographical region, typically under the jurisdiction of a particular government.",
-
-  "properties": [],
-  "extends": "Place"
+    "title": "AdministrativeArea",
+    "description": "A geographical region, typically under the jurisdiction of a particular government.",
+    "properties": [],
+    "extends": "Place"
 }

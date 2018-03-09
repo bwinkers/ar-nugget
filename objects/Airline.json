@@ -1,10 +1,9 @@
 {
-  "title": "Airline",
-  "description": "An organization that provides flights for passengers.",
-
-  "properties": [
-    "boardingPolicy",
-    "iataCode"
-  ],
-  "extends": "Organization"
+    "title": "Airline",
+    "description": "An organization that provides flights for passengers.",
+    "properties": [
+        "boardingPolicy",
+        "iataCode"
+    ],
+    "extends": "Organization"
 }

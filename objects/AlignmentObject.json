@@ -1,13 +1,12 @@
 {
-  "title": "AlignmentObject",
-  "description": "An intangible item that describes an alignment between a learning resource and a node in an educational framework.",
-
-  "properties": [
-    "alignmentType",
-    "educationalFramework",
-    "targetDescription",
-    "targetName",
-    "targetUrl"
-  ],
-  "extends": "Intangible"
+    "title": "AlignmentObject",
+    "description": "An intangible item that describes an alignment between a learning resource and a node in an educational framework.",
+    "properties": [
+        "alignmentType",
+        "educationalFramework",
+        "targetDescription",
+        "targetName",
+        "targetUrl"
+    ],
+    "extends": "Intangible"
 }

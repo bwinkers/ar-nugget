@@ -1,8 +1,8 @@
 {
-  "description": "Quantity: Duration (use ISO 8601 duration format).",
-  "title": "AudioObject",
-  "properties": [
-    "transcript"
-  ],  
-  "extends": "MediaObject"
+    "description": "Quantity: Duration (use ISO 8601 duration format).",
+    "title": "AudioObject",
+    "properties": [
+        "transcript"
+    ],
+    "extends": "MediaObject"
 }

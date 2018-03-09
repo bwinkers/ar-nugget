@@ -1,7 +1,6 @@
 {
-  "title": "AchieveAction",
-  "description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
-
-  "properties": [],
-  "extends": "Action"
+    "title": "AchieveAction",
+    "description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
+    "properties": [],
+    "extends": "Action"
 }

@@ -1,9 +1,8 @@
 {
-  "title": "AskAction",
-  "description": "The act of posing a question / favor to someone.",
-
-  "properties": [
-    "question"
-  ],
-  "extends": "CommunicateAction"
+    "title": "AskAction",
+    "description": "The act of posing a question / favor to someone.",
+    "properties": [
+        "question"
+    ],
+    "extends": "CommunicateAction"
 }

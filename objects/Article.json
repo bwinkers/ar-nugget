@@ -1,15 +1,14 @@
 {
-  "title": "Article",
-  "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.",
-
-  "properties": [
-    "articleBody",
-    "articleSection",
-    "pageEnd",
-    "pageStart",
-    "pagination",
-    "speakable",
-    "wordCount"
-  ],
-  "extends": "CreativeWork"
+    "title": "Article",
+    "description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.",
+    "properties": [
+        "articleBody",
+        "articleSection",
+        "pageEnd",
+        "pageStart",
+        "pagination",
+        "speakable",
+        "wordCount"
+    ],
+    "extends": "CreativeWork"
 }

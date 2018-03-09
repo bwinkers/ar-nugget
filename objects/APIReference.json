@@ -1,12 +1,11 @@
 {
-  "title": "APIReference",
-  "description": "Reference documentation for application programming interfaces (APIs).",
-
-  "properties": [
-    "assemblyVersion",
-    "executableLibraryname",
-    "programmingModel",
-    "targePlatform"
-  ],
-  "extends": "TechArticle"
+    "title": "APIReference",
+    "description": "Reference documentation for application programming interfaces (APIs).",
+    "properties": [
+        "assemblyVersion",
+        "executableLibraryname",
+        "programmingModel",
+        "targePlatform"
+    ],
+    "extends": "TechArticle"
 }

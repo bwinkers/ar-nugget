@@ -1,10 +1,9 @@
 {
-  "title": "AudioBook",
-  "description": "An audiobook",
-
-  "properties": [
-    "duration",
-    "readBy"
-  ],
-  "extends": ["AudioObject", "Book"]
+    "title": "AudioBook",
+    "description": "An audiobook",
+    "properties": [
+        "duration",
+        "readBy"
+    ],
+    "extends": ["AudioObject", "Book"]
 }
