@@ -1,9 +1,8 @@
 {
-  "title": "ConsumeAction",
-  "description": "The act of ingesting information/resources/food.",
-
-  "properties": [
-    "expectsAcceptanceOf"
-  ],
-  "extends": "Action"
+    "title": "ConsumeAction",
+    "description": "The act of ingesting information/resources/food.",
+    "properties": [
+        "expectsAcceptanceOf"
+    ],
+    "extends": "Action"
 }

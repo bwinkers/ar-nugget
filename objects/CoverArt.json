@@ -1,7 +1,6 @@
 {
-  "title": "CoverArt",
-  "description": "The artwork on the outer surface of a CreativeWork.",
-
-  "properties": [],
-  "extends": ["VisualArtwork"]
+    "title": "CoverArt",
+    "description": "The artwork on the outer surface of a CreativeWork.",
+    "properties": [],
+    "extends": ["VisualArtwork"]
 }

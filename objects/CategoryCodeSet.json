@@ -1,9 +1,8 @@
 {
-  "title": "CategoryCodeSet",
-  "description": "A set of Category Code values.",
-
-  "properties": [
-    "hasCategoryCode"
-  ],
-  "extends": ["CreativeWork"]
+    "title": "CategoryCodeSet",
+    "description": "A set of Category Code values.",
+    "properties": [
+        "hasCategoryCode"
+    ],
+    "extends": ["CreativeWork"]
 }

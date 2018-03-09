@@ -1,12 +1,11 @@
 {
-  "title": "ConfirmAction",
-  "description": "The act of notifying someone that a future event/action is going to happen as expected.",
-
-  "properties": [],
-  "related": [
-    {
-      "CancelAction": "The antonym of ConfirmAction."
-    }
-  ],
-  "extends": "InformAction"
+    "title": "ConfirmAction",
+    "description": "The act of notifying someone that a future event/action is going to happen as expected.",
+    "properties": [],
+    "related": [
+        {
+            "CancelAction": "The antonym of ConfirmAction."
+        }
+    ],
+    "extends": "InformAction"
 }

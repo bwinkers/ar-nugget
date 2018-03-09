@@ -1,7 +1,6 @@
 {
-  "title": "ControlAction",
-  "description": "An agent controls a device or application.",
-
-  "properties": [],
-  "extends": "Action"
+    "title": "ControlAction",
+    "description": "An agent controls a device or application.",
+    "properties": [],
+    "extends": "Action"
 }

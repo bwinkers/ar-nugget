@@ -1,15 +1,14 @@
 {
-  "title": "Clip",
-  "description": "A short TV or radio program or a segment/part of a program.",
-
-  "properties": [
-    "actor",
-    "clipNumber",
-    "director",
-    "musicBy",
-    "partOfEpisode",
-    "partOfSeason",
-    "partOfSeries"
-  ],
-  "extends": ["CreativeWork"]
+    "title": "Clip",
+    "description": "A short TV or radio program or a segment/part of a program.",
+    "properties": [
+        "actor",
+        "clipNumber",
+        "director",
+        "musicBy",
+        "partOfEpisode",
+        "partOfSeason",
+        "partOfSeries"
+    ],
+    "extends": ["CreativeWork"]
 }

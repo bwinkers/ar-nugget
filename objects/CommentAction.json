@@ -1,9 +1,8 @@
 {
-  "title": "CommentAction",
-  "description": "The act of generating a comment about a subject.",
-
-  "properties": [
-    "resultComment"
-  ],
-  "extends": "CommunicateAction"
+    "title": "CommentAction",
+    "description": "The act of generating a comment about a subject.",
+    "properties": [
+        "resultComment"
+    ],
+    "extends": "CommunicateAction"
 }

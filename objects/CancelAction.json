@@ -1,7 +1,6 @@
 {
-  "title": "CancelAction",
-  "description": "The act of asserting that a future event/action is no longer going to happen.",
-
-  "properties": [],
-  "extends": "PlanAction"
+    "title": "CancelAction",
+    "description": "The act of asserting that a future event/action is no longer going to happen.",
+    "properties": [],
+    "extends": "PlanAction"
 }

@@ -1,7 +1,6 @@
 {
-  "title": "Collection",
-  "description": "A created collection of Creative Works or other artefacts.",
-
-  "properties": [],
-  "extends": ["CreativeWork"]
+    "title": "Collection",
+    "description": "A created collection of Creative Works or other artefacts.",
+    "properties": [],
+    "extends": ["CreativeWork"]
 }
