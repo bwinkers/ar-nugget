@@ -1,7 +1,6 @@
 {
-  "title": "Number",
-  "description": "Data type: Number.",
-
-  "properties": [],
-  "extends": "DataType"
+    "title": "Number",
+    "description": "Data type: Number.",
+    "properties": [],
+    "extends": "DataType"
 }

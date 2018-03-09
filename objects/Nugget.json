@@ -1,21 +1,21 @@
 {
-  "title": "Nugget",
-  "description": "Base object type for everything else",
-  "required": ["coreType"],
-  "properties": [
-    "alternateName",
-    "additionalType",
-    "coreType",
-    "description",
-    "disambiguationDescription",
-    "identifier",
-    "image",
-    "mainEntityOfpage",
-    "name",
-    "potentialAction",
-    "sameAs",
-    "subjectOf",
-    "url"        
-  ]
+    "title": "Nugget",
+    "description": "Base object type for everything else",
+    "required": ["coreType"],
+    "properties": [
+        "alternateName",
+        "additionalType",
+        "coreType",
+        "description",
+        "disambiguationDescription",
+        "identifier",
+        "image",
+        "mainEntityOfpage",
+        "name",
+        "potentialAction",
+        "sameAs",
+        "subjectOf",
+        "url"
+    ]
 }
 

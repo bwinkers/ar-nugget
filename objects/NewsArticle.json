@@ -1,13 +1,12 @@
 {
-  "title": "NewsArticle",
-  "description": "A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.",
-
-  "properties": [
-    "dateline",
-    "printColumn",
-    "printEdition",
-    "printPage",
-    "printSection"
-  ],
-  "extends": "Article"
+    "title": "NewsArticle",
+    "description": "A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.",
+    "properties": [
+        "dateline",
+        "printColumn",
+        "printEdition",
+        "printPage",
+        "printSection"
+    ],
+    "extends": "Article"
 }
