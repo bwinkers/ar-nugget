@@ -1,12 +1,11 @@
 {
-  "title": "ImageObject",
-  "description": "An image file.",
-
-  "properties": [
-    "caption",
-    "exifData",
-    "representativeOfPage",
-    "thumbnail"
-  ],
-  "extends": "MediaObject"
+    "title": "ImageObject",
+    "description": "An image file.",
+    "properties": [
+        "caption",
+        "exifData",
+        "representativeOfPage",
+        "thumbnail"
+    ],
+    "extends": "MediaObject"
 }

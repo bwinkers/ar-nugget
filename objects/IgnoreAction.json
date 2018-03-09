@@ -1,7 +1,6 @@
 {
-  "title": "IgnoreAction",
-  "description": "The act of intentionally disregarding the object. An agent ignores an object.",
-
-  "properties": [],
-  "extends": "AssessAction"
+    "title": "IgnoreAction",
+    "description": "The act of intentionally disregarding the object. An agent ignores an object.",
+    "properties": [],
+    "extends": "AssessAction"
 }

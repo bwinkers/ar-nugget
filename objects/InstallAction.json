@@ -1,7 +1,6 @@
 {
-  "title": "InstallAction",
-  "description": "The act of installing an application.",
-
-  "properties": [],
-  "extends": "ConsumeAction"
+    "title": "InstallAction",
+    "description": "The act of installing an application.",
+    "properties": [],
+    "extends": "ConsumeAction"
 }

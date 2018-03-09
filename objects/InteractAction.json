@@ -1,7 +1,6 @@
 {
-  "title": "InteractAction",
-  "description": "The act of interacting with another person or organization.",
-
-  "properties": [],
-  "extends": "Action"
+    "title": "InteractAction",
+    "description": "The act of interacting with another person or organization.",
+    "properties": [],
+    "extends": "Action"
 }
