@@ -1,14 +1,13 @@
 {
-  "title": "SearchAction",
-  "description": "The act of searching for an object.",
-
-  "properties": [
-    "query"
-  ],
-  "related": [
-    {
-      "FindAction": "SearchAction generally leads to a FindAction, but not necessarily."
-    }
-  ],
-  "extends": "Action"
+    "title": "SearchAction",
+    "description": "The act of searching for an object.",
+    "properties": [
+        "query"
+    ],
+    "related": [
+        {
+            "FindAction": "SearchAction generally leads to a FindAction, but not necessarily."
+        }
+    ],
+    "extends": "Action"
 }

@@ -1,7 +1,6 @@
 {
-  "title": "ScholarlyArticle",
-  "description": "A scholarly article.",
-
-  "properties": [],
-  "extends": "Article"
+    "title": "ScholarlyArticle",
+    "description": "A scholarly article.",
+    "properties": [],
+    "extends": "Article"
 }

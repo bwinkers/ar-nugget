@@ -1,28 +1,27 @@
 {
-  "title": "Service",
-  "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-
-  "properties": [
-    "aggregateRating",
-    "areaServed",
-    "audience",
-    "availableChannel",
-    "award",
-    "brand",
-    "broker",
-    "category",
-    "hasOfferCatalog",
-    "hoursAvailable",
-    "isRelatedTo",
-    "isSimilarTo",
-    "logo",
-    "offers",
-    "provider",
-    "providerMobility",
-    "review",
-    "serviceOutput",
-    "serviceType",
-    "termsOfService"
-  ],
-  "extends": "Intangible"
+    "title": "Service",
+    "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+    "properties": [
+        "aggregateRating",
+        "areaServed",
+        "audience",
+        "availableChannel",
+        "award",
+        "brand",
+        "broker",
+        "category",
+        "hasOfferCatalog",
+        "hoursAvailable",
+        "isRelatedTo",
+        "isSimilarTo",
+        "logo",
+        "offers",
+        "provider",
+        "providerMobility",
+        "review",
+        "serviceOutput",
+        "serviceType",
+        "termsOfService"
+    ],
+    "extends": "Intangible"
 }

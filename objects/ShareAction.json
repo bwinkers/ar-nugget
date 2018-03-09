@@ -1,7 +1,6 @@
 {
-  "title": "ShareAction",
-  "description": "The act of distributing content to people for their amusement or edification.",
-
-  "properties": [],
-  "extends": "CommunicateAction"
+    "title": "ShareAction",
+    "description": "The act of distributing content to people for their amusement or edification.",
+    "properties": [],
+    "extends": "CommunicateAction"
 }

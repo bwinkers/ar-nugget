@@ -1,7 +1,6 @@
 {
-  "title": "SuspendAction",
-  "description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
-
-  "properties": [],
-  "extends": "ControlAction"
+    "title": "SuspendAction",
+    "description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
+    "properties": [],
+    "extends": "ControlAction"
 }
