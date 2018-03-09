@@ -1,16 +1,15 @@
 {
-  "title": "GeoCoordinates",
-  "description": "Data type: Number.",
-
-  "properties": [
-    "address",
-    "addressCountry",
-    "elevation",
-    "latitude",
-    "longitude",
-    "postalCode"
-  ],
-  "extends": "StructuredValue"
+    "title": "GeoCoordinates",
+    "description": "Data type: Number.",
+    "properties": [
+        "address",
+        "addressCountry",
+        "elevation",
+        "latitude",
+        "longitude",
+        "postalCode"
+    ],
+    "extends": "StructuredValue"
 }
 
 

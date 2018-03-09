@@ -1,18 +1,17 @@
 {
-  "title": "GeospatialGeometry",
-  "description": "An organization that provides flights for passengers.",
-
-  "properties": [
-    "geospatiallyContains",
-    "geospatiallyCoveredBy",
-    "geospatiallyCovers",
-    "geospatiallyCrosses",
-    "geospatiallyDisjoint",
-    "geospatiallyEquals",
-    "geospatiallyIntersects",
-    "geospatiallyOverlaps",
-    "geospatiallyTouches",
-    "geospatiallyWithin"
-  ],
-  "extends": "Intangible"
+    "title": "GeospatialGeometry",
+    "description": "An organization that provides flights for passengers.",
+    "properties": [
+        "geospatiallyContains",
+        "geospatiallyCoveredBy",
+        "geospatiallyCovers",
+        "geospatiallyCrosses",
+        "geospatiallyDisjoint",
+        "geospatiallyEquals",
+        "geospatiallyIntersects",
+        "geospatiallyOverlaps",
+        "geospatiallyTouches",
+        "geospatiallyWithin"
+    ],
+    "extends": "Intangible"
 }
