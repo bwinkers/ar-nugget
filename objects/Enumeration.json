@@ -1,8 +1,7 @@
 {
-  "title": "Enumeration",
-  "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
-
-  "properties": [],
-  "extends": "Intangible",
-  "supersededBy": ["Class", "Enumeration", "Property"]
+    "title": "Enumeration",
+    "description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
+    "properties": [],
+    "extends": "Intangible",
+    "supersededBy": ["Class", "Enumeration", "Property"]
 }

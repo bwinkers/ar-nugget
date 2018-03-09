@@ -1,9 +1,8 @@
 {
-  "title": "EndorseAction",
-  "description": "An agent approves/certifies/likes/supports/sanction an object.",
-
-  "properties": [
-    "endorsee"
-  ],
-  "extends": "ReactAction"
+    "title": "EndorseAction",
+    "description": "An agent approves/certifies/likes/supports/sanction an object.",
+    "properties": [
+        "endorsee"
+    ],
+    "extends": "ReactAction"
 }

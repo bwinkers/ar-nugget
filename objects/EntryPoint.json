@@ -1,13 +1,13 @@
 {
-  "description": "An entry point, within some Web-based protocol.",
-  "title": "EntryPoint",
-  "properties": [
-    "actionApplication",
-    "actionPlatform",
-    "contentType",
-    "encodingType",
-    "httpMethod",
-    "urlTemplate"
-  ],
-  "extends": "Intangible"
+    "description": "An entry point, within some Web-based protocol.",
+    "title": "EntryPoint",
+    "properties": [
+        "actionApplication",
+        "actionPlatform",
+        "contentType",
+        "encodingType",
+        "httpMethod",
+        "urlTemplate"
+    ],
+    "extends": "Intangible"
 }
