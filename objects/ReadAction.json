@@ -1,7 +1,6 @@
 {
-  "title": "ReadAction",
-  "description": "The act of consuming written content.",
-
-  "properties": [],
-  "extends": "ConsumeAction"
+    "title": "ReadAction",
+    "description": "The act of consuming written content.",
+    "properties": [],
+    "extends": "ConsumeAction"
 }

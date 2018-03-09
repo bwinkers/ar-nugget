@@ -1,11 +1,10 @@
 {
-  "title": "Rating",
-  "description": "The average rating based on multiple ratings or reviews.",
-
-  "properties": [
-    "temReviewed",
-    "ratingCount",
-    "reviewCount"
-  ],
-  "extends": "Intangible"
+    "title": "Rating",
+    "description": "The average rating based on multiple ratings or reviews.",
+    "properties": [
+        "temReviewed",
+        "ratingCount",
+        "reviewCount"
+    ],
+    "extends": "Intangible"
 }

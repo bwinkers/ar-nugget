@@ -1,10 +1,9 @@
 {
-  "title": "ReplaceAction",
-  "description": "The act of editing a recipient by replacing an old object with a new object.",
-
-  "properties": [
-    "replacer",
-    "replacee"
-  ],
-  "extends": "UpdateAction"
+    "title": "ReplaceAction",
+    "description": "The act of editing a recipient by replacing an old object with a new object.",
+    "properties": [
+        "replacer",
+        "replacee"
+    ],
+    "extends": "UpdateAction"
 }

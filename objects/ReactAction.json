@@ -1,7 +1,6 @@
 {
-  "title": "ReactAction",
-  "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
-
-  "properties": [],
-  "extends": "AssessAction"
+    "title": "ReactAction",
+    "description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
+    "properties": [],
+    "extends": "AssessAction"
 }

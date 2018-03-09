@@ -1,12 +1,11 @@
 {
-  "title": "Review",
-  "description": "A review of an item - for example, of a restaurant, movie, or store.",
-
-  "properties": [
-    "itemReviewed",
-    "reviewAspect",
-    "reviewBody",	
-    "reviewRating"
-  ],
-  "extends": "CreativeWork"
+    "title": "Review",
+    "description": "A review of an item - for example, of a restaurant, movie, or store.",
+    "properties": [
+        "itemReviewed",
+        "reviewAspect",
+        "reviewBody",
+        "reviewRating"
+    ],
+    "extends": "CreativeWork"
 }

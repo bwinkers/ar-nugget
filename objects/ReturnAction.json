@@ -1,9 +1,8 @@
 {
-  "title": "ReturnAction",
-  "description": "The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).",
-
-  "properties": [
-    "receipient"
-  ],
-  "extends": "TransferAction"
+    "title": "ReturnAction",
+    "description": "The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).",
+    "properties": [
+        "receipient"
+    ],
+    "extends": "TransferAction"
 }

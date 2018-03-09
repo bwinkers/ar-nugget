@@ -1,7 +1,6 @@
 {
-  "title": "ReportageNewsArticle",
-  "description": "The ReportageNewsArticle type is a subtype of NewsArticle representing news articles which are the result of journalistic news reporting conventions.",
-
-  "properties": [],
-  "extends": "NewsArticle"
+    "title": "ReportageNewsArticle",
+    "description": "The ReportageNewsArticle type is a subtype of NewsArticle representing news articles which are the result of journalistic news reporting conventions.",
+    "properties": [],
+    "extends": "NewsArticle"
 }
