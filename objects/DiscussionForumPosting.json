@@ -1,7 +1,6 @@
 {
-  "title": "DiscussionForumPosting",
-  "description": "A posting to a discussion forum.",
-
-  "properties": [],
-  "extends": "SocialMediaPosting"
+    "title": "DiscussionForumPosting",
+    "description": "A posting to a discussion forum.",
+    "properties": [],
+    "extends": "SocialMediaPosting"
 }

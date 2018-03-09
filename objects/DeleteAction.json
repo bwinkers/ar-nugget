@@ -1,7 +1,6 @@
 {
-  "title": "DeleteAction",
-  "description": "The act of editing a recipient by removing one of its objects.",
-
-  "properties": [],
-  "extends": "UpdateAction"
+    "title": "DeleteAction",
+    "description": "The act of editing a recipient by removing one of its objects.",
+    "properties": [],
+    "extends": "UpdateAction"
 }

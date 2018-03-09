@@ -1,7 +1,6 @@
 {
-  "title": "DownloadAction",
-  "description": "The act of downloading an object.",
-
-  "properties": [],
-  "extends": "TransferAction"
+    "title": "DownloadAction",
+    "description": "The act of downloading an object.",
+    "properties": [],
+    "extends": "TransferAction"
 }
