@@ -1,7 +1,6 @@
 {
-  "title": "BlogPosting",
-  "description": "A blog post",
-
-  "properties": [],
-  "extends": "SocialMediaPosting"
+    "title": "BlogPosting",
+    "description": "A blog post",
+    "properties": [],
+    "extends": "SocialMediaPosting"
 }

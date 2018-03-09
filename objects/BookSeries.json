@@ -1,7 +1,6 @@
 {
-  "title": "BookSeries",
-  "description": "A series of books. Included books can be indicated with the hasPart property.",
-
-  "properties": [],
-  "extends": ["CreativeWorkSeries"]
+    "title": "BookSeries",
+    "description": "A series of books. Included books can be indicated with the hasPart property.",
+    "properties": [],
+    "extends": ["CreativeWorkSeries"]
 }

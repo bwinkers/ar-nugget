@@ -1,14 +1,13 @@
 {
-  "title": "BorrowAction",
-  "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.",
-
-  "properties": [
-    "lender"
-  ],
-  "related": [
-    {
-      "LendAction": "Reciprocal of BorrowAction."
-    }
-  ],
-  "extends": "TransferAction"
+    "title": "BorrowAction",
+    "description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.",
+    "properties": [
+        "lender"
+    ],
+    "related": [
+        {
+            "LendAction": "Reciprocal of BorrowAction."
+        }
+    ],
+    "extends": "TransferAction"
 }

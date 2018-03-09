@@ -1,14 +1,13 @@
 {
-  "title": "Book",
-  "description": "A book",
-
-  "properties": [
-    "abridged",
-    "bookEdition",
-    "bookFormat",
-    "illustrator",
-    "isbn",
-    "numberOfPages"
-  ],
-  "extends": "CreativeWork"
+    "title": "Book",
+    "description": "A book",
+    "properties": [
+        "abridged",
+        "bookEdition",
+        "bookFormat",
+        "illustrator",
+        "isbn",
+        "numberOfPages"
+    ],
+    "extends": "CreativeWork"
 }
