@@ -1,10 +1,9 @@
 {
-  "title": "Blog",
-  "description": "A blog",
-
-  "properties": [
-    "blogPost",
-    "issn"
-  ],
-  "extends": "CreativeWork"
+    "title": "Blog",
+    "description": "A blog",
+    "properties": [
+        "blogPost",
+        "issn"
+    ],
+    "extends": "CreativeWork"
 }
