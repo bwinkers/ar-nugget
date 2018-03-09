@@ -1,7 +1,6 @@
 {
-  "title": "TVClip",
-  "description": "A short TV program or a segment/part of a TV program.",
-
-  "properties": [],
-  "extends": ["Clip"]
+    "title": "TVClip",
+    "description": "A short TV program or a segment/part of a TV program.",
+    "properties": [],
+    "extends": ["Clip"]
 }

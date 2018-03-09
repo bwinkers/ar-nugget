@@ -1,7 +1,6 @@
 {
-  "title": "TVSeason",
-  "description": "Season dedicated to TV broadcast and associated online delivery.",
-
-  "properties": ["countryOfOrigin"],
-  "extends": ["CreativeWork, CreativeWorkSeason"]
+    "title": "TVSeason",
+    "description": "Season dedicated to TV broadcast and associated online delivery.",
+    "properties": ["countryOfOrigin"],
+    "extends": ["CreativeWork, CreativeWorkSeason"]
 }

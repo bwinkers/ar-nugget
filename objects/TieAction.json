@@ -1,7 +1,6 @@
 {
-  "title": "TieAction",
-  "description": "The act of reaching a draw in a competitive activity.",
-
-  "properties": [],
-  "extends": "AchieveAction"
+    "title": "TieAction",
+    "description": "The act of reaching a draw in a competitive activity.",
+    "properties": [],
+    "extends": "AchieveAction"
 }

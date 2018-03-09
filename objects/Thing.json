@@ -1,21 +1,21 @@
 {
-  "title": "Thing",
-  "description": "Base object type for everything else",
-  "required": ["name"],
-  "properties": [
-    "alternateName",
-    "additionalType",
-    "description",
-    "disambiguationDescription",
-    "identifier",
-    "image",
-    "mainEntityOfpage",
-    "name",
-    "potentialAction",
-    "sameAs",
-    "subjectOf",
-    "url"        
-  ],
-  "extends": "Nugget"
+    "title": "Thing",
+    "description": "Base object type for everything else",
+    "required": ["name"],
+    "properties": [
+        "alternateName",
+        "additionalType",
+        "description",
+        "disambiguationDescription",
+        "identifier",
+        "image",
+        "mainEntityOfpage",
+        "name",
+        "potentialAction",
+        "sameAs",
+        "subjectOf",
+        "url"
+    ],
+    "extends": "Nugget"
 }
 

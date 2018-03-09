@@ -1,9 +1,8 @@
 {
-  "title": "TipAction",
-  "description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
-
-  "properties": [
-    "recipient"  
-  ],
-  "extends": "TradeAction"
+    "title": "TipAction",
+    "description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
+    "properties": [
+        "recipient"
+    ],
+    "extends": "TradeAction"
 }
