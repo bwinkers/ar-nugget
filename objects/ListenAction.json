@@ -1,7 +1,6 @@
 {
-  "title": "ListenAction",
-  "description": "The act of consuming audio content.",
-
-  "properties": [],
-  "extends": "ConsumeAction"
+    "title": "ListenAction",
+    "description": "The act of consuming audio content.",
+    "properties": [],
+    "extends": "ConsumeAction"
 }

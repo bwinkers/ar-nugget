@@ -1,12 +1,11 @@
 {
-  "title": "LocalBusiness",
-  "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-
-  "properties": [
-    "currenciesAccepted",
-    "openingHours",
-    "paymentAccepted",
-    "priceRange"
-  ],
-  "extends": "Place"
+    "title": "LocalBusiness",
+    "description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
+    "properties": [
+        "currenciesAccepted",
+        "openingHours",
+        "paymentAccepted",
+        "priceRange"
+    ],
+    "extends": "Place"
 }

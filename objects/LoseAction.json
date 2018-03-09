@@ -1,9 +1,8 @@
 {
-  "title": "LoseAction",
-  "description": "The act of being defeated in a competitive activity.",
-
-  "properties": [
-    "winner"
-  ],
-  "extends": "AchieveAction"
+    "title": "LoseAction",
+    "description": "The act of being defeated in a competitive activity.",
+    "properties": [
+        "winner"
+    ],
+    "extends": "AchieveAction"
 }
