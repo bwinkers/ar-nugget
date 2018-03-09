@@ -1,7 +1,6 @@
 {
-  "title": "MedicalScholarlyArticle",
-  "description": "A scholarly article in the medical domain.",
-
-  "properties": ["publicationType"],
-  "extends": "ScholarlyArticle"
+    "title": "MedicalScholarlyArticle",
+    "description": "A scholarly article in the medical domain.",
+    "properties": ["publicationType"],
+    "extends": "ScholarlyArticle"
 }

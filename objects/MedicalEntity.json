@@ -1,15 +1,14 @@
 {
-  "title": "MedicalEntity",
-  "description": "The most generic type of entity related to health and the practice of medicine.",
-
-  "properties": [
-    "code",
-    "guideline",
-    "legalStatus",
-    "medicineSystem",
-    "recognizingAuthority",
-    "relevantSpecialty",
-    "study"
-  ],
-  "extends": "Thing"
+    "title": "MedicalEntity",
+    "description": "The most generic type of entity related to health and the practice of medicine.",
+    "properties": [
+        "code",
+        "guideline",
+        "legalStatus",
+        "medicineSystem",
+        "recognizingAuthority",
+        "relevantSpecialty",
+        "study"
+    ],
+    "extends": "Thing"
 }

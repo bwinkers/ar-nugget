@@ -1,11 +1,10 @@
 {
-  "title": "MedicalOrganization",
-  "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-
-  "properties": [
-    "healthPlanNetworkId",
-    "isAcceptingNewPatients",
-    "medicalSpecialty"
-  ],
-  "extends": "Place"
+    "title": "MedicalOrganization",
+    "description": "A medical organization (physical or not), such as hospital, institution or clinic.",
+    "properties": [
+        "healthPlanNetworkId",
+        "isAcceptingNewPatients",
+        "medicalSpecialty"
+    ],
+    "extends": "Place"
 }
