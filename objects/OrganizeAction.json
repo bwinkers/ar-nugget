@@ -1,7 +1,6 @@
 {
-  "title": "OrganizeAction",
-  "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
-
-  "properties": [],
-  "extends": "Action"
+    "title": "OrganizeAction",
+    "description": "The act of manipulating/administering/supervising/controlling one or more objects.",
+    "properties": [],
+    "extends": "Action"
 }
