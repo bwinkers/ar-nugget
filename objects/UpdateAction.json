@@ -1,9 +1,8 @@
 {
-  "title": "UpdateAction",
-  "description": "The act of managing by changing/editing the state of the object.",
-
-  "properties": [
-    "targetCollection"
-  ],
-  "extends": "Action"
+    "title": "UpdateAction",
+    "description": "The act of managing by changing/editing the state of the object.",
+    "properties": [
+        "targetCollection"
+    ],
+    "extends": "Action"
 }

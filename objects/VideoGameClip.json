@@ -1,7 +1,6 @@
 {
-  "title": "VideoGameClip",
-  "description": "A short segment/part of a video game.",
-
-  "properties": [],
-  "extends": ["Clip"]
+    "title": "VideoGameClip",
+    "description": "A short segment/part of a video game.",
+    "properties": [],
+    "extends": ["Clip"]
 }
