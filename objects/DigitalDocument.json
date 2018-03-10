@@ -2,7 +2,7 @@
     "title": "DigitalDocument",
     "description": "An electronic file or document.",
     "properties": [
-        "hasDigitalDocumentPermiss"
+        "hasDigitalDocumentPermission"
     ],
     "extends": "CreativeWork"
 }
