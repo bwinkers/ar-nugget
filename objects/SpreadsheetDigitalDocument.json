@@ -1,0 +1,6 @@
+{
+    "title": "SpreadsheetDigitalDocument",
+    "description": "A spreadsheet file.",
+    "properties": [],
+    "extends": "DigitalDocument"
+}
